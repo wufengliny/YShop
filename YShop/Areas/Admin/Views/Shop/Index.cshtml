@@ -1,0 +1,200 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model List<Yax.Model.ShopGood>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">商品列表</h3>
+    <div class="content">
+        <form action="/admin/shop/index" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" name="ID" class="form-control" value="@Request.QueryString["ID"]" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="name" class="form-control" value="@Request.QueryString["name"]" placeholder="名称">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ftime" name="ftime" value="@Request.QueryString["ftime"]" placeholder="开始时间" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ttime" name="ttime" value="@Request.QueryString["ttime"]" placeholder="结束时间" />
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label class="control-label" style="margin-left: 5px;">类型:</label>
+                        <select class="btn btn-default dropdown-toggle" id="Typew" name="Typew">
+                            <option value="">==请选择==</option>
+                            <option value="1">置顶</option>
+                            <option value="2">热销</option>
+                            <option value="3">推荐</option>
+                            <option value="5">最新</option>
+                            <option value="4">下架</option>
+                        </select>
+                        <script>
+                            $("#Typew").val('@Request.QueryString["Typew"]');
+                        </script>
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <div class="btn-toolbar">
+            <div class="btn-group" role="group">
+                <a href="/admin/shop/AddGoods?menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加</a>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        名称
+                    </th>
+                    <th>
+                        库存
+                    </th>
+                    <th>
+                        类别
+                    </th>
+                    <th>
+                        图片
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        积分
+                    </th>
+                    <th>
+                        类型 @*（置顶 热门 推荐）  售卖中 已下架 *@
+                    </th>
+                    <th>
+                        价格  @*（原件  售价）*@
+                    </th>
+
+                    <th>
+                        点击量
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Name
+                                </td>
+                                <td>
+                                    @Model[i].StockNum
+                                </td>
+                                <td>
+                                    <a href="/admin//shop/Index?cid=@Model[i].CID&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]">
+                                        @Model[i].Namefirst<br />
+                                        @Model[i].Namesecond<br />
+                                    </a>
+                                </td>
+                                <td>
+                                    <img src="@Model[i].CoverSmall" style="width:100px;height:100px;" />
+                                </td>
+                                <td>
+                                    添加：@Model[i].AddTime
+                                    <br />
+                                    修改：@Model[i].UpdateTime
+                                </td>
+                                <td>
+                                    @Model[i].JiFen
+                                </td>
+                                <td>
+                                    @if (Model[i].IsTop == 1)
+                                    {
+                                        <span>置顶</span><br />
+                                    }
+                                    @if (Model[i].IsHot == 1)
+                                    {
+                                        <span>热销</span><br />
+                                    }
+                                    @if (Model[i].IsRecomand == 1)
+                                    {
+                                        <span>推荐</span><br />
+                                    }
+                                    @if (Model[i].IsDown == 1)
+                                    {
+                                        <span style="color:red">已下架</span>
+                                    }
+                                </td>
+                                <td>
+                                    原价：<span style="text-decoration:line-through">@Model[i].Price </span> <br />
+                                    售价：<span style="color:red">@Model[i].SalePrice</span>
+                                </td>
+                                <td id="Enable1267">
+                                    @Model[i].Hits
+                                </td>
+
+                                <td>
+                                    <a class="btn btn-success btn-xs"
+                                       href="/admin/shop/AddGoods?menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]&id=@Model[i].ID" title="编辑">编辑</a>
+                                    <a class="btn btn-danger btn-xs" href="#this" onclick="UpdEnable(@Model[i].ID,0)">删除</a>
+                                    <a class="btn btn-info btn-xs"
+                                       href="/admin/shop/ShopImg?gname=@Model[i].Name&gid=@Model[i].ID&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]">图片</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+
+<script>
+
+    $(function () {
+        $('#ftime').focus(function () {
+            $('#ftime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#ftime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD 00:00:00' });
+
+        $('#ttime').focus(function () {
+            $('#ttime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#ttime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+    })
+
+    function UpdEnable(id,val)
+    {
+        if (confirm("确定要删除？")) {
+            $.post("/admin/shop/upEnable?enable=" + val + "&id=" + id, "", function (res) {
+                //alert(res);
+                window.location.reload();
+            })
+        }
+    }
+</script>
+

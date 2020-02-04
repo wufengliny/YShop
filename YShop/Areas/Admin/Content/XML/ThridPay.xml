@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Module Title="设置"  ID="001" Link="/admin/home/index?menuid=001_m1"  Mark="xitongzhuye1" >
+    <Item ID="001_m1" Title="系统主页" Link="/admin/home/index" Mark="xitongzhuye1" Icon="glyphicon glyphicon-home" ></Item>
+    <Item ID="001_m2" Title="短信接口" Link="/admin/config/PhoneMsgJK" Mark="duanxinjiekou2" Icon="glyphicon glyphicon-flag"></Item>
+    <Item ID="001_m3" Title="短信记录" Link="/admin/config/phonemsg" Mark="duanxinjilu3" Icon="glyphicon glyphicon-th-list"></Item>
+    <Item ID="001_m4" Title="系统参数" Link="/admin/Config/SysConfig?gname=tpaydata" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+  </Module>
+  <Module Title="安全中心"  ID="002" Link="/admin/config/log?menuid=002_m1" Mark="Log7" >
+     <Item ID="002_m1" Title="日志" Link="/admin/config/log" Mark="Log7" Icon="glyphicon glyphicon-fire"></Item>
+    <Item ID="002_m2" Title="权限组" Link="/admin/admin/AdminGroup" Mark="power8"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m3" Title="管理员列表" Link="/admin/admin/index" Mark="adminlist9"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m4" Title="二级密码" Link="/admin/admin/SecondPwd" Mark="secondpwd10"  Icon="glyphicon glyphicon-adjust"></Item>
+  </Module>
+  <Module Title="代理列表"  ID="003" Link="/admin/TPay/DLList?menuid=003_m1" Mark="tpaydllist031" >
+    <Item ID="003_m1" Title="代理列表" Link="/admin/TPay/DLList" Mark="tpaydllist031" Icon="glyphicon glyphicon-user"></Item>
+  </Module>
+
+   <Module Title="商户列表"  ID="004" Link="/admin/TPay/UserList?menuid=004_m1" Mark="tpayuserlist032" >
+    <Item ID="004_m1" Title="商户列表" Link="/admin/TPay/UserList" Mark="tpayuserlist032" Icon="glyphicon glyphicon-user"></Item>
+     <Item ID="004_m2" Title="订单管理" Link="/admin/TPay/UserOrder" Mark="tpayuserOrder039" Icon="glyphicon glyphicon-user"></Item>
+  </Module>
+    <Module Title="提现管理"  ID="007" Link="/admin/TPay/UserTiXian?menuid=007_m1" Mark="tpaytixian036" >
+    <Item ID="007_m1" Title="商户提现" Link="/admin/TPay/UserTiXian" Mark="tpaytixian036" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="007_m2" Title="代理提现" Link="/admin/TPay/AgentTiXian" Mark="tpaytixian037" Icon="glyphicon glyphicon-user"></Item>
+  </Module>
+  <Module Title="支付接口"  ID="006" Link="/admin/TPay/ZFBList?menuid=006_m1" Mark="tpayzfb033" >
+    <Item ID="006_m1" Title="支付宝配置" Link="/admin/TPay/ZFBList" Mark="tpayzfb033" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="006_m2" Title="微信配置" Link="/admin/TPay/WXList" Mark="tpaywx033" Icon="glyphicon glyphicon-user"></Item>
+  </Module>
+  <Module Title="开发"  ID="005" Link="/admin/menu/NowHT?menuid=005_m1"  Mark="dangqianht17">
+    <Item ID="005_m1" Title="当前后台" Link="/admin/menu/NowHT"  Mark="dangqianht17" Icon="glyphicon glyphicon-tree-conifer"></Item>
+    <Item ID="005_m2" Title="本地数据类型" Link="/admin/LData/LDataType"  Mark="Ldatatype18" Icon="glyphicon glyphicon-star"></Item>
+    <Item ID="005_m3" Title="本地数据" Link="/admin/LData/Index"  Mark="LData19" Icon="glyphicon glyphicon-glass"></Item>
+  </Module>
+  
+  
+</Menu>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商户中心</title>
+   
+    <link href="/Content/SH/Css/css.css" rel="stylesheet" />
+    <link href="/Content/SH/Css/y.css" rel="stylesheet" />
+    <script src="/Content/SH/js/modernizr.js"></script>
+    <script src="/Content/SH/js/jquery.js"></script>
+    <script src="/Content/SH/js/jquery-1.10.2.min.js"></script>
+   
+    <script src="/Content/SH/js/admin/bootstrap.js"></script>
+    <script src="/Content/SH/js/datetimepicker.js"></script>
+    <script src="/Content/SH/js/jquery.unobtrusive-ajax.js"></script>
+  
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#this" style="font-size:22px">商户中心</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a title="修改密码" href="~/API.zip" >API文档下载</a></li>
+                    <li><a title="修改密码" href="#this" onclick="ResetAdminPass()">修改密码</a></li>
+                    <li><a href="/login/LoginOut">退出</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+    function ResetAdminPass() {
+        $loadModal('/ShangHu/ModPwd');
+    }
+        </script>
+    </nav>
+
+
+    <div class="container-fluid">
+        <input type="hidden" id="urlinfo" value="2">
+        <div>
+            <div id="sitebar-nav" class="col-sm-3 col-md-2 sidebar">
+                <ul class="nav nav-sidebar">
+                    <li class="@(Request.QueryString["menuid"]=="1"?"active":"")">
+                        <a href="/ShangHu/UserInfo?menuid=1" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>商户信息
+                        </a>
+                    </li>
+                    <li class="@(Request.QueryString["menuid"]=="3"?"active":"")">
+                        <a href="/ShangHu/ShangPriCode?menuid=3" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>商户密钥
+                        </a>
+                    </li>
+                    <li  class="@(Request.QueryString["menuid"]=="2"?"active":"")">
+                        <a href="/ShangHu/UserOrder?menuid=2" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>订单记录
+                        </a>
+                    </li>
+                    <li class="@(Request.QueryString["menuid"]=="4"?"active":"")">
+                        <a href="/ShangHu/UserTiXian?menuid=4" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>商户提现
+                        </a>
+                    </li>
+                    <li class="@(Request.QueryString["menuid"]=="5"?"active":"")">
+                        <a href="/ShangHu/TiXianList?menuid=5" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>提现记录
+                        </a>
+                    </li>
+                    <li class="@(Request.QueryString["menuid"]=="6"?"active":"")">
+                        <a href="/ShangHu/PayWayTest?menuid=6" class="list-group-item">
+                            <span class="glyphicon glyphicon-user">&nbsp;</span>通道测试
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+
+
+
+
+    <div id="modal-container"></div>
+
+
+    <script src="/Content/SH/js/jquery.validate.min.js"></script>
+    <script src="/Content/SH/js/jquery.validate.unobtrusive.js"></script>
+    <script src="/Content/SH/js/admin/site.js"></script>
+</body>
+</html>

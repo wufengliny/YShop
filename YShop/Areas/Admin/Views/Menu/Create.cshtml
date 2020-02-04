@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+    <form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">菜单</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">菜单名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.Name" id="txtname" name="txtname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">类型</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="Typew2" id="Typew2" >
+                                <option value="1">通用</option>
+                                <option value="2">企业</option>
+                                <option value="3">开发</option>
+                                <option value="4">商城</option>
+                                <option value="5">一级</option>
+                                <option value="6">其他</option>
+                            </select>
+
+                        </div>
+                    </div>
+      
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">URL</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.url" id="Href" name="Href" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">图标</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.icon" id="Icon" name="Icon" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">打开方式</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="Target" id="Target">
+                                <option value="_blank">新窗口</option>
+                                <option value="_self">原页面</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.memo" id="Memo" name="Memo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub()
+    {
+        if ($("#txtname").val() == "")
+        {
+            $("#txtname").focus();
+            alert('菜单名称不能为空');
+            return;
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/menu/Createpost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+    $("#Typew2").val('@ViewBag.typew');
+    $("#Target").val('@ViewBag.target');
+  
+</script>

@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.Y_User>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">@(ViewBag.UserType)列表</h3>
+    <div class="content">
+
+
+
+        <form action="/admin/member/MemberAMH" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Account" name="Account" value="@Request.QueryString["Account"]" placeholder="账号" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">类型:</label>
+                    <select class="btn btn-default dropdown-toggle" id="VIP" name="VIP">
+                        <option value="">==全部==</option>
+                        <option value="0">非VIP</option>
+                        <option value="1">VIP</option>
+                    </select>
+                    <script>
+                        $("#VIP").val('@Request.QueryString["VIP"]');
+                    </script>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        账号
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        注册时间
+                    </th>
+                    <th>
+                        VIP
+                    </th>
+             
+                    <th>
+                        登录次数
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Account
+                                </td>
+                                <td>
+                                    @{
+                                        if (Model[i].Effect == 1)
+                                        {
+                                            <span>正常</span>
+                                        }
+                                        else
+                                        {
+                                            <span style="color:red">封号</span>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @Model[i].AddTime
+                                </td>
+                                <td>
+                                    @{
+                                        if (Model[i].VIP == 1)
+                                        {
+                                            if (Model[i].VIPEndTime.Year > 2200)
+                                            {
+                                                <span style="color:red">永久</span>
+                                            }
+                                            else if (Model[i].VIPEndTime < DateTime.Now)
+                                            {
+                                                <span>已过期</span>
+                                            }
+                                            else
+                                            {
+                                                <span style="color:red">@Model[i].VIPEndTime.ToString()</span>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span>未开通</span>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @Model[i].LoginCount
+                                </td>
+
+                                <td>
+                                    @{ if (Model[i].Effect == 1)
+                                        {
+                                            <a class="btn btn-danger btn-xs" onclick="deladmin(@Model[i].ID,2,'禁止登陆')">禁止登陆</a>
+                                        }
+                                        else
+                                        {
+                                            <a class="btn btn-info btn-xs" onclick="deladmin(@Model[i].ID,1,'恢复正常')">恢复正常</a>
+                                        }
+                                    }
+                                    <a class="btn btn-success btn-xs" onclick="czvip(@Model[i].ID)" title="充值">充值VIP</a>
+                                </td>
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+<script>
+    function deladmin(id,effect,name)
+    {
+        if(confirm("确定要"+name+"？")){
+            $.post("/admin/member/delmember?id="+id+"&effect="+effect,"",function(res){
+                alert(res);
+                location.reload();
+            })
+        }
+    }
+   
+    function czvip(id)
+    {
+        $loadModal('/admin/member/ChongZhiVIP?id=' + id);
+    }
+   
+</script>

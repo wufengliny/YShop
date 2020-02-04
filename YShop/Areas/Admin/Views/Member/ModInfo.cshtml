@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "会员资料";
+}
+
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">会员资料</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">手机号</label>
+                        <div class="col-sm-10">
+                            <input type="text" value="@ViewBag.phone" id="phone" readonly="readonly" name="phone" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">姓名/身份证号码</label>
+                        <div class="col-sm-10">
+                            <input type="text" placeholder="姓名" style="width:45%;display:inline;" id="RealName" name="RealName" value="@ViewBag.RealName" class="form-control" />
+                            <input type="text" placeholder="身份证号码" style="width:50%;display:inline;" value="@ViewBag.IDCard" id="IDCard" name="IDCard" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">身份证图</label>
+                        <div class="col-sm-10">
+                            @{
+                                if (!string.IsNullOrEmpty(ViewBag.IDCardImgZheng))
+                                {
+                                    <a href="@ViewBag.IDCardImgZheng" target="_blank">身份证正面</a>
+                                }
+                                else
+                                {
+                                    <span style="color:red">会员未上传(正面)</span>
+                                }
+                                if (!string.IsNullOrEmpty(ViewBag.IDCardImgBei))
+                                {
+                                    <a href="@ViewBag.IDCardImgBei" target="_blank">身份证反面</a>
+                                }
+                                else
+                                {
+                                    <span style="color:red">会员未上传(反面)</span>
+                                }
+                                if (!string.IsNullOrEmpty(ViewBag.IDCardImgShouChi))
+                                {
+                                    <a href="@ViewBag.IDCardImgShouChi" target="_blank">手持身份证</a>
+                                }
+                                else
+                                {
+                                    <span style="color:red">会员未上传(手持)</span>
+                                }
+                                if (!string.IsNullOrEmpty(ViewBag.IDCardSelf))
+                                {
+                                    <a href="@ViewBag.IDCardSelf" target="_blank">自拍照</a>
+                                }
+                                else
+                                {
+                                    <span style="color:red">会员未上传(自拍照)</span>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">银行名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" value="@ViewBag.BankName" id="BankName" name="BankName" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">银行卡号</label>
+                        <div class="col-sm-10">
+                            <input type="text" value="@ViewBag.BankCardNO" id="BankCardNO" name="BankCardNO" class="form-control" />
+                        </div>
+                    </div>
+        
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">现居住地</label>
+                        <div class="col-sm-10">
+                            <input type="text" value="@ViewBag.LivePlace" readonly="readonly" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">单位信息</label>
+                        <div class="col-sm-10">
+                            <textarea readonly="readonly" style="height:200px;text-align:left;"  class="form-control">
+单位名称：@ViewBag.JobCompanyName  
+单位地址：@ViewBag.WorkPlace 
+职位：@ViewBag.JobName
+工龄：@ViewBag.JobAge
+单位电话：@ViewBag.JobCompanyPhone
+月收入：@ViewBag.JobMoney
+联系人1：@ViewBag.ContactMan
+联系人2：@ViewBag.ContactMan2
+                            </textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+<style>
+    input, select, textarea {
+        max-width: 450px;
+    }
+</style>
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        var idcard = $("#IDCard").val();
+        if (isCardNo(idcard))
+        {
+            var datamenu = $("#_ModalForm").serialize();
+            $.post("/admin/Member/ModInfoPost", datamenu, function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+        else
+        {
+            alert("身份证输入不合法");
+        }
+    
+    }
+
+    function isCardNo(card) {
+        // 身份证号码为15位或者18位，15位时全为数字，18位前17位为数字，最后一位是校验位，可能为数字或字符X  
+        var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        if (reg.test(card) === false) {
+            return false;
+        }
+        return true;
+    }
+</script>
+

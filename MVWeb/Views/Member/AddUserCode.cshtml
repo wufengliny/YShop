@@ -1,0 +1,122 @@
+﻿
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzmemberBT memberPaddingTop">
+        <div class="container">
+            当前位置:
+            <a class="kzmemberBTLi" href="/member/index">会员中心</a>
+            <a class="kzmemberBTLi" href="#this">会员注册码</a>
+        </div>
+    </section>
+    <!--渠道代理列表-->
+    <section class="kzagentList">
+        <div class="container">
+            <div class="kzagentInner">
+                <div class="kzheader">生成注册码</div>
+                <table>
+                    <tr>
+                        <td class="kzleft">我的资产：</td>
+                        <td class="kzright">
+                           积分：<span class="kzyellowPrice">@ViewBag.JIFen</span>
+                            点券：<span class="kzyellowPrice">@ViewBag.DianQuan</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="kzleft">说明：</td>
+                        <td class="kzright">
+                           生成注册码会扣除@(ViewBag.jfval)积分/点券 （优先扣除点券，点券不足再使用积分）
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a class="kzsubBtn" id="btnmake" onclick="makecode()" href="#this">生成</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="kzagentInner">
+                <div class="kzheader">未使用的注册码地址</div>
+                <table>
+                    <tr>
+                        <th>序号</th>
+                        <th>注册地址</th>
+                        <th>操作</th>
+                    </tr>
+                    @{
+                        List<Yax.Model.M_RegUserCode> list = ViewBag.list;
+                        if (list != null && list.Count > 0)
+                        {
+                            for (int i = 0; i < list.Count; i++)
+                            {
+                                <tr>
+                                    <td>@(i+1)</td>
+                                    <td >
+                                       <input style="width:100%" id="txt@(i)" readonly="readonly" value="@(ViewBag.RegPreUrl + list[i].RegCode)"/>
+                                    </td>
+                                    <td onclick="copydo('txt@(i)')" style="background-color:#ffcb05">
+                                        复制
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                    
+                
+                </table>
+
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!--移动端页脚-->
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+
+    <script src="~/Content/js/jquery-1.7.1.js"></script>
+    <script>
+        function makecode()
+        {
+            $("#btnmake").hide();
+            $.post("/member/MakeRegUserCodestr", "", function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+        function copydo(obj)
+        {
+            document.getElementById(obj).select();
+            document.execCommand("Copy");
+            alert('已复制到粘贴板');
+           
+        }
+    </script>
+</body>
+
+</html>

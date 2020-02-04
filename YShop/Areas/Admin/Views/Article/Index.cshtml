@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "文章";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">文章</h3>
+    <div class="content">
+        <form action="/admin/Article/index" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" name="ID" class="form-control" value="@Request.QueryString["ID"]" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">类型:</label>
+                    <select class="btn btn-default dropdown-toggle" id="Typew" name="Typew">
+                        <option value="">==全部==</option>
+                        @Html.Raw(ViewBag.atype);
+                    </select>
+                    <script>
+                        $("#Typew").val('@Request.QueryString["Typew"]');
+                    </script>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">其他:</label>
+                    <select class="btn btn-default dropdown-toggle" id="othert" name="othert">
+                        <option value="">==请选择==</option>
+                        <option value="1">首页</option>
+                        <option value="2">推荐</option>
+                        <option value="3">热门</option>
+                    </select>
+                    <script>
+                        $("#othert").val('@Request.QueryString["othert"]');
+                    </script>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="adduser" class="form-control" value="@Request.QueryString["adduser"]" placeholder="添加人">
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="Name" class="form-control" value="@Request.QueryString["Name"]" placeholder="文章名称">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <div class="btn-toolbar">
+            <div class="btn-group" role="group">
+                <a href="/admin/article/AddArticle?menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加</a>
+            </div>
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        类型
+                    </th>
+                    <th>
+                        名称
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        其他
+                    </th>
+                    <th>
+                        排序
+                    </th>
+                    <th>
+                        添加人
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                            System.Data.DataTable dt = Model;
+                            if (dt != null && dt.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                   @dt.Rows[i]["ID"]  
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["AtName"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Name"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["AddTime"]<br />
+                                    @dt.Rows[i]["UpdateTime"]
+                                </td>
+                                <td>
+                                    @if (dt.Rows[i]["IsIndex"].ToString() == "1")
+                                            {
+                                        <span>首页</span>
+                                    }
+                                    @if (dt.Rows[i]["IsRecoommend"].ToString() == "1")
+                                            {
+                                        <span>推荐</span>
+                                    }
+                                    @if (dt.Rows[i]["IsHot"].ToString() == "1")
+                                            {
+                                        <span>热门</span>
+                                    }
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Sort"].ToString()
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["AdminName"].ToString()
+                                <td>
+                                    <a class="btn btn-success btn-xs" onclick="edit(@dt.Rows[i]["ID"])" title="编辑">编辑</a>
+                                    @if (dt.Rows[i]["IsIndex"].ToString() == "1")
+                                    {
+                                        <a class="btn btn-warning btn-xs" onclick="UpdIndex(@dt.Rows[i]["ID"],0)" >取消首页</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-info btn-xs" onclick="UpdIndex(@dt.Rows[i]["ID"],1)">设为首页</a>
+                                    }
+                                    <a class="btn btn-danger btn-xs" onclick="UpdEnable(@dt.Rows[i]["ID"],'@dt.Rows[i]["Name"]')" href="#this">
+                                        删除
+                                    </a>
+
+                                    <a class="btn btn-warning btn-xs" onclick="setsort(@dt.Rows[i]["ID"],'up','@dt.Rows[i]["Sort"]')" title="上"><span class="glyphicon glyphicon-arrow-up"></span></a>
+                                    <a class="btn btn-warning btn-xs" onclick="setsort(@dt.Rows[i]["ID"],'down','@dt.Rows[i]["Sort"]')" title="下"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                                </td>
+                            </tr>
+                        }
+                }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+
+<script>
+    function setsort(id, sorttype, sort) {
+        $.post("/admin/Article/NewsSetSort?id=" + id + "&sorttype=" + sorttype + "&sort=" + sort, "", function (res) {
+            location.reload();
+        })
+    }
+    function create() {
+        $loadModal('/admin/Article/AddCategory');
+    };
+
+    function edit(id) {
+        window.location.href = '/admin/Article/AddArticle?id=' + id + '&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]';
+        // window.open('/Article/AddArticle?id=' + id + '&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]');
+    };
+    function UpdEnable(id,val)
+    {
+        if(confirm('确定删除？'))
+        {
+            $.post("/admin/Article/upEnableArticle?enable=" + val + "&id=" + id, "", function (res) {
+                //alert(res);
+                window.location.reload();
+            })
+        }
+    }
+    function UpdIndex(id,val)
+    {
+        $.post("/admin/Article/UPIndexArticle?enable=" + val + "&id=" + id, "", function (res) {
+            //alert(res);
+            window.location.reload();
+        })
+    }
+    function UpHot(id,val)
+    {
+        $.post("/admin/Article/UPHotArticle?enable=" + val + "&id=" + id, "", function (res) {
+            //alert(res);
+            window.location.reload();
+        })
+    }
+    function UpRecommend(id,val)
+    {
+        $.post("/admin/Article/UPIsRecoommendArticle?enable=" + val + "&id=" + id, "", function (res) {
+            //alert(res);
+            window.location.reload();
+        })
+    }
+</script>

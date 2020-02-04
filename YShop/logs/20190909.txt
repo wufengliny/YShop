@@ -1,0 +1,6 @@
+连接不上数据库： errmsg:无法打开登录所请求的数据库 "puhui"。登录失败。
+用户 'NT AUTHORITY\SYSTEM' 登录失败。----Url：http://localhost:801/admin/Login/chkL?txtName=yuadmin&txtPwd=bong111时间：2019/9/9 星期一 下午 7:06:37
+连接不上数据库： errmsg:无法打开登录所请求的数据库 "puhui"。登录失败。
+用户 'NT AUTHORITY\SYSTEM' 登录失败。----Url：http://localhost:801/admin/Login/chkL?txtName=yuadmin&txtPwd=bong111时间：2019/9/9 星期一 下午 7:07:14
+连接不上数据库： errmsg:无法打开登录所请求的数据库 "puhui"。登录失败。
+用户 'NT AUTHORITY\SYSTEM' 登录失败。----Url：http://localhost:801/admin/Login/chkL?txtName=yuadmin&txtPwd=bong111时间：2019/9/9 星期一 下午 7:07:49

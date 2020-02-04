@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Module Title="设置"  ID="001" Link="/admin/home/index?menuid=001_m1"  Mark="xitongzhuye1" >
+    <Item ID="001_m1" Title="系统主页" Link="/admin/home/index" Mark="xitongzhuye1" Icon="glyphicon glyphicon-home" ></Item>
+    <Item ID="001_m5" Title="漫站设置" Link="/admin/Config/SysConfig?gname=MVMan" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+  </Module>
+  <Module Title="安全中心"  ID="002" Link="/admin/config/log?menuid=002_m1" Mark="Log7" >
+    <Item ID="002_m1" Title="日志" Link="/admin/config/log" Mark="Log7" Icon="glyphicon glyphicon-fire"></Item>
+    <Item ID="002_m2" Title="权限组" Link="/admin/admin/AdminGroup" Mark="power8"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m3" Title="管理员列表" Link="/admin/admin/index" Mark="adminlist9"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m4" Title="二级密码" Link="/admin/admin/SecondPwd" Mark="secondpwd10"  Icon="glyphicon glyphicon-adjust"></Item>
+  </Module>
+  <Module Title="会员列表"  ID="003" Link="/admin/member/indexMV?menuid=003_m1" Mark="Memberlist11" >
+    <Item ID="003_m1" Title="会员列表" Link="/admin/member/indexMV" Mark="Memberlist11" Icon="glyphicon glyphicon-user"></Item>
+     <Item ID="003_m2" Title="代理列表" Link="/admin/member/indexMV?UserType=代理" Mark="Memberlist11" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m3" Title="积分明细" Link="/admin/member/JifenDetail" Mark="JifenDetail11" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m4" Title="点券明细" Link="/admin/member/DianQuanDetail" Mark="DianQuanDetail11" Icon="glyphicon glyphicon-user"></Item>
+   <Item ID="003_m5" Title="代理提现" Link="/admin/ManHua/TiXian" Mark="Mtixian11" Icon="glyphicon glyphicon-list-alt"></Item>
+  </Module>
+  <Module Title="文章列表"  ID="004" Link="/admin/Article/index?menuid=004_m2" Mark="wenzhang15">
+    <Item ID="004_m2" Title="文章列表" Link="/admin/Article/index" Mark="wenzhang15" Icon="glyphicon glyphicon-list-alt"></Item>
+    <Item ID="004_m1" Title="文章分类" Link="/admin/Article/Category" Mark="wenzhangfenlei16" Icon="glyphicon glyphicon-tower"></Item>
+  </Module>
+  <Module Title="开发"  ID="005" Link="/admin/menu/NowHT?menuid=005_m1"  Mark="dangqianht17">
+    <Item ID="005_m1" Title="当前后台" Link="/admin/menu/NowHT"  Mark="dangqianht17" Icon="glyphicon glyphicon-tree-conifer"></Item>
+    <Item ID="005_m2" Title="本地数据类型" Link="/admin/LData/LDataType"  Mark="Ldatatype18" Icon="glyphicon glyphicon-star"></Item>
+    <Item ID="005_m3" Title="本地数据" Link="/admin/LData/Index"  Mark="LData19" Icon="glyphicon glyphicon-glass"></Item>
+  </Module>
+</Menu>

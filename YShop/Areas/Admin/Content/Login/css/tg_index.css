@@ -1,0 +1,61 @@
+﻿@charset "utf-8";
+.hauto{ height:auto !important;}
+
+/*会员中心*/
+.m_hy{ height:auto; overflow:hidden; text-align:center; margin-top:180px;}
+
+/*--  左侧菜单  --*/
+.hy_left{ width:210px; float:left; overflow:hidden; display:inline-block; border:1px #ccc solid; box-shadow:0px 0px 5px #cecece; background:#FFF; margin:5px 10px 5px 5px; text-align:center;}
+.hy_h1{ height:40px; text-align:center; line-height:40px; background:#585858; color:#FFF; font-size:16px; font-weight:100;}
+.hy_left dl{ margin:0 auto; padding:0px;}
+.hy_left dl dt{ margin:0 auto; padding:0px; height:38px; line-height:38px; font-weight:bold; background:url(../images/hy_ico01.jpg) no-repeat center center; color:#000;}
+.hy_left dl dd a{ margin:0 auto; padding:0px; width:185px; height:38px; line-height:38px; border-bottom:1px #e4e4e4 solid; display:inline-block; background-position:50px 14px; transition:all .6s;}
+.hy_left dl dd a:hover{ color:#900; background:url(../images/hy_ico02.jpg) no-repeat 59px 14px; text-indent:10px;}
+.hy_left dl dd:nth-last-child(1) a{ border-bottom:1px #fff solid; }
+
+
+/*--  右侧内容  --*/
+.hy_right{ width:828px; float:left; overflow:hidden; display:inline-block; border:1px #ccc solid; box-shadow:0px 0px 3px #cecece; background:#FFF; margin:5px 0px 5px 16px; }
+.hy_box{ width:700px; height:auto; overflow:hidden; border:0px #e4e4e4 solid; margin:50px auto; padding:0px;}
+.hy_box_l{ width:166px; height:166px; float:left; overflow:hidden; margin-right:33px;}
+.hy_box_r{ width:500px; height:auto; float:right; overflow:hidden; text-align:left;}
+.hy_name{ height:40px; border-bottom:1px #CCCCCC dashed; font-size:14px; margin-bottom:10px;}
+.hy_name strong{ font-size:24px; font-weight:normal;}
+.hy_box_r p{ line-height:25px; font-size:12px;}
+
+.hy_gg{ width:698px; height:40px; line-height:40px; text-align:left; overflow:hidden; border:1px #e4e4e4 solid; margin:50px auto; padding:0px; background:#fafafa;}
+.hy_gg h6{ width:80px; font-size:14px; margin-left:15px; float:left;}
+.hy_gg .gg_txt{ font-size:12px; float:left;}
+.hy_gg .gg_txt a{ width:520px; overflow:hidden; float:left;}
+.hy_gg .gg_txt a:hover{ color:#900;}
+.hy_gg .gg_txt span{float:left;}
+
+
+.hy_dd{ width:760px; overflow:hidden; margin:40px auto; padding:0px;}
+
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #e8e8e8;
+	border-collapse: collapse;
+	width:100%;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #e8e8e8;
+	background-color: #f1f1f1;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #e8e8e8;
+	background-color: #ffffff;
+}
+table.gridtable tr:hover td{
+	background-color: #f8f8f8;
+}

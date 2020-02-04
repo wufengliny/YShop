@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\publish\chw</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>08/15/2019 01:01:09</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>08/15/2019 01:01:09</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>08/16/2019 18:05:59</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>08/16/2019 18:05:59</publishTime>
+    </File>
+    <File Include="bin/ChwYuDing.dll">
+      <publishTime>08/16/2019 18:05:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>12/07/2015 19:04:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>03/10/2016 14:26:18</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>03/09/2016 12:00:14</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>03/10/2016 14:26:26</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>03/09/2016 11:57:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/15/2015 02:06:24</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/02/2017 11:58:49</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>11/28/2016 15:27:54</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/18/2015 20:19:44</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/18/2015 20:19:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/ThoughtWorks.QRCode.dll">
+      <publishTime>05/16/2018 23:33:05</publishTime>
+    </File>
+    <File Include="bin/Yax.BLL.dll">
+      <publishTime>08/16/2019 18:05:47</publishTime>
+    </File>
+    <File Include="bin/Yax.Common.dll">
+      <publishTime>08/16/2019 18:05:46</publishTime>
+    </File>
+    <File Include="bin/Yax.Dal.dll">
+      <publishTime>08/16/2019 18:05:47</publishTime>
+    </File>
+    <File Include="bin/Yax.Model.dll">
+      <publishTime>08/16/2019 18:05:46</publishTime>
+    </File>
+    <File Include="bin/Yax.SqlHelper.dll">
+      <publishTime>08/16/2019 18:05:46</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>01/28/2015 04:02:22</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>01/28/2015 04:02:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Deployment.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.Razor.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Webpages.resources.dll">
+      <publishTime>01/28/2015 04:04:32</publishTime>
+    </File>
+    <File Include="Content/css/base.scss">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/chwconfig.scss">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.css">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.css.map">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.scss">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.css">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.css.map">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.scss">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/kzconfig.scss">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/css/swiper,animate,scroll.min.css">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/images/public/alipayIcon.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/aside.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/asideBG.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/closeredbtn.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/kzicon.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/loginBg.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/logo.png">
+      <publishTime>08/15/2019 10:22:29</publishTime>
+    </File>
+    <File Include="Content/images/public/m01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m02.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m03.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m04.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m05.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m06.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m07.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m08.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/m09.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/membericon.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/mid-circle.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/navbar.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/ok.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/openredbtn.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redbg.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redbottombg.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redcoin.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redcoins.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redgoto.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redseal.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/redtopbg.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/SecKillIcon.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/small-circle.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/weixincode.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/public/wxpayIcon.png">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/about01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/about02.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/acd01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/acgz01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/active01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/acxz01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/ad01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/banner/01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/indexli01.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/myorder.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/news1.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/newstemp.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/o1.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/qr.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/share.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/vccode.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/images/temp/weixin.jpg">
+      <publishTime>08/15/2019 01:02:33</publishTime>
+    </File>
+    <File Include="Content/js/datetimepicker.js">
+      <publishTime>08/16/2019 10:23:02</publishTime>
+    </File>
+    <File Include="Content/js/jquery.min.js">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/kingzhu.js">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/kingzhu2.js">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/laydate/laydate.js">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/need/laydate.css">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/dahong/icon.png">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/dahong/laydate.css">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/default/icon.png">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/default/laydate.css">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/molv/icon.png">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/laydate/skins/molv/laydate.css">
+      <publishTime>08/16/2019 10:23:52</publishTime>
+    </File>
+    <File Include="Content/js/layer,wow,scroll.js">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/icon-ext.png">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/icon.png">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/layer.css">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-0.gif">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-1.gif">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-2.gif">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="Content/js/swiper.jquery.min.js">
+      <publishTime>08/15/2019 01:02:32</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/15/2019 01:01:10</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/calendar.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/config.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/lang/en.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/lang/vssver2.scc">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/lang/zh-cn.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/lang/zh-tw.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/My97DatePicker.htm">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/datePicker.gif">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/default/datepicker.css">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/default/img.gif">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/default/vssver2.scc">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/vssver2.scc">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/WdatePicker.css">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/whyGreen/bg.jpg">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/whyGreen/datepicker.css">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/whyGreen/img.gif">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/skin/whyGreen/vssver2.scc">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/vssver2.scc">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="plug/My97DatePicker/WdatePicker.js">
+      <publishTime>08/16/2019 10:52:59</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>08/16/2019 18:05:55</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/15/2019 20:49:47</publishTime>
+    </File>
+    <File Include="Views/Home/MHView.cshtml">
+      <publishTime>08/15/2019 21:48:28</publishTime>
+    </File>
+    <File Include="Views/Login/Error.cshtml">
+      <publishTime>08/15/2019 11:34:09</publishTime>
+    </File>
+    <File Include="Views/Login/Login.cshtml">
+      <publishTime>08/15/2019 11:15:44</publishTime>
+    </File>
+    <File Include="Views/Login/Reg.cshtml">
+      <publishTime>08/15/2019 11:14:10</publishTime>
+    </File>
+    <File Include="Views/Login/test.cshtml">
+      <publishTime>08/16/2019 10:25:11</publishTime>
+    </File>
+    <File Include="Views/Member/Index.cshtml">
+      <publishTime>08/16/2019 16:41:08</publishTime>
+    </File>
+    <File Include="Views/Member/MyYuDing.cshtml">
+      <publishTime>08/16/2019 16:52:12</publishTime>
+    </File>
+    <File Include="Views/Member/YuDIng.cshtml">
+      <publishTime>08/16/2019 16:20:14</publishTime>
+    </File>
+    <File Include="Views/PartV/Footer.cshtml">
+      <publishTime>08/15/2019 21:37:05</publishTime>
+    </File>
+    <File Include="Views/PartV/FooterJC.cshtml">
+      <publishTime>08/15/2019 10:14:40</publishTime>
+    </File>
+    <File Include="Views/PartV/HeadJC.cshtml">
+      <publishTime>08/16/2019 10:09:29</publishTime>
+    </File>
+    <File Include="Views/PartV/LeftNav.cshtml">
+      <publishTime>08/16/2019 18:00:40</publishTime>
+    </File>
+    <File Include="Views/PartV/MemberTop.cshtml">
+      <publishTime>08/15/2019 11:38:02</publishTime>
+    </File>
+    <File Include="Views/PartV/Nav.cshtml">
+      <publishTime>08/16/2019 18:01:39</publishTime>
+    </File>
+    <File Include="Views/PartV/PhoneNav.cshtml">
+      <publishTime>08/15/2019 11:34:45</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>08/15/2019 01:01:01</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/16/2019 18:05:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

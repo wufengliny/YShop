@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Module Title="关于我们"  ID="001" Link="/admin/Article/ArticleOther?id=1&amp;menuid=001_m1" Mark="wenzhang15">
+    <Item ID="001_m1" Title="关于我们" Link="/admin/Article/ArticleOther?id=1" Mark="wenzhang15" Icon="glyphicon glyphicon-tag"></Item>
+     <Item ID="001_m2" Title="团队风采" Link="/admin/config/Img?ImgType=3&amp;tname=团队风采" Mark="imagetype23" Icon="glyphicon glyphicon-tasks"></Item>
+    <Item ID="001_m3" Title="荣誉证书" Link="/admin/config/Img?ImgType=4&amp;tname=荣誉证书" Mark="imagetype23" Icon="glyphicon glyphicon-tasks"></Item>
+    <Item ID="001_m4" Title="人才招聘" Link="/admin/Article/listCategoryOther?Category=rc&amp;CName=人才招聘" Mark="wenzhang30" Icon="glyphicon glyphicon-list-alt"></Item>
+  </Module>
+    <Module Title="工厂设施"  ID="008" Link="/admin/config/Img?ImgType=2&amp;tname=工厂设施&amp;menuid=008_m1" Mark="imagetype23">
+    <Item ID="008_m1" Title="工厂设施	" Link="/admin/config/Img?ImgType=2&amp;tname=工厂设施" Mark="imagetype23" Icon="glyphicon glyphicon-tasks"></Item>
+  </Module>
+  <Module Title="经典案例"  ID="002" Link="/admin/qiye/Product?menuid=002_m2" Mark="Product27">
+    <Item ID="002_m1" Title="案例类型	" Link="/admin/qiye/ProductType" Mark="ProductType26" Icon="glyphicon glyphicon-tower"></Item>
+    <Item ID="002_m2" Title="经典案例" Link="/admin/qiye/Product" Mark="Product27" Icon="glyphicon glyphicon-list-alt"></Item>
+  </Module>
+
+  <Module Title="新闻中心"  ID="003" Link="/admin/Article/index?menuid=004_m2" Mark="wenzhang15">
+    <Item ID="003_m1" Title="新闻分类	" Link="/admin/Article/Category" Mark="wenzhangfenlei16" Icon="glyphicon glyphicon-tower"></Item>
+    <Item ID="003_m2" Title="新闻中心" Link="/admin/Article/index" Mark="wenzhang15" Icon="glyphicon glyphicon-list-alt"></Item>
+  </Module>
+    <Module Title="联系我们"  ID="007" Link="/admin/Article/ArticleOther?id=4&amp;menuid=007_m1" Mark="wenzhang15">
+    <Item ID="007_m1" Title="联系方式	" Link="/admin/Article/ArticleOther?id=4" Mark="wenzhang15" Icon="glyphicon glyphicon-tower"></Item>
+    <Item ID="007_m2" Title="客户留言" Link="/admin/qiye/Index" Mark="liuyan25" Icon="glyphicon glyphicon-list-alt"></Item>
+    <Item ID="007_m3" Title="地图代码" Link="/admin/Article/ArticleOther?id=2" Mark="wenzhang15" Icon="glyphicon glyphicon-tower"></Item>
+  </Module>
+  <Module Title="开发"  ID="004" Link="/admin/menu/NowHT?menuid=005_m1"  Mark="dangqianht17">
+    <Item ID="004_m1" Title="当前后台" Link="/admin/menu/NowHT" Mark="dangqianht17" Icon="glyphicon glyphicon-tree-conifer"></Item>
+  </Module>
+  <Module Title="设置"  ID="005" Link="/admin/home/index?menuid=001_m1"  Mark="xitongzhuye1" >
+    <Item ID="005_m1" Title="系统主页" Link="/admin/home/index" Mark="xitongzhuye1" Icon="glyphicon glyphicon-home" ></Item>
+    <Item ID="005_m4" Title="友情链接" Link="/admin/config/FriendLink" Mark="FriendLink21" Icon="glyphicon glyphicon-cloud"></Item>
+    <Item ID="005_m5" Title="Seo优化" Link="/admin/Config/SysConfig?gname=qiyeseo"  Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+    <Item ID="005_m6" Title="参数配置" Link="/admin/Config/SysConfig?gname=qiyecs" Mark="changguishezhi4"  Icon="glyphicon glyphicon-wrench"></Item>
+  </Module>
+  <Module Title="安全中心"  ID="006" Link="/admin/config/log?menuid=006_m1" Mark="Log7" >
+    <Item ID="006_m1" Title="日志" Link="/admin/config/log" Mark="Log7" Icon="glyphicon glyphicon-fire"></Item>
+    <Item ID="006_m2" Title="权限组" Link="/admin/admin/AdminGroup" Mark="power8"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="006_m3" Title="管理员列表" Link="/admin/admin/index" Mark="adminlist9"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="006_m4" Title="二级密码" Link="/admin/admin/SecondPwd" Mark="secondpwd10"  Icon="glyphicon glyphicon-adjust"></Item>
+  </Module>
+</Menu>

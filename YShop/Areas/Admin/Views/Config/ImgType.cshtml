@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "ImgType";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@model List<Yax.Model.Img_Type>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">图片类型</h3>
+    <div class="content">
+        <div class="btn-toolbar">
+        </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        名称
+                    </th>
+                    <th>
+                        添加时间
+                    </th>
+
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    <a href="/admin/config/Img?ImgType=@Model[i].ID&tname=@Model[i].Name&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]">
+                                        @Model[i].Name
+                                    </a>
+                                </td>
+                                <td>
+                                    @Model[i].AddTime
+                                </td>
+                                <td>
+                                    <a  class="btn btn-success btn-xs" onclick="edit(@Model[i].ID)" title="编辑">编辑名称</a>
+                                    <a class="btn btn-info btn-xs" href="/admin/config/Img?ImgType=@Model[i].ID&tname=@Model[i].Name&menuid=@Request.QueryString["menuid"]&pid=@Request.QueryString["pid"]" title="编辑图片">编辑图片</a>
+                                    @if (new Yax.BLL.CurrentUser().Id == 1)
+                                    {
+                                        <a class="btn btn-danger btn-xs" style="display:none" onclick="del(@Model[i].ID,'@Model[i].Name')" title="删除">删除</a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+<script>
+    function create()
+    {
+        $loadModal('/admin/Config/ImgTypeAdd');
+    }
+
+    function edit(id)
+    {
+        $loadModal('/admin/Config/ImgTypeAdd?id='+id);
+    }
+    function del(id,name)
+    {
+        if(confirm("确定要删除"))
+        {
+            $.post("/admin/Config/delImgType?id="+id+"&name="+name,"",function(res){
+                alert(res);
+                location.reload();
+            })
+        }
+    }
+</script>

@@ -1,0 +1,156 @@
+﻿@{
+    ViewBag.Title = "借款审核";
+}
+
+
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <input type="hidden" id="st3" value="@ViewBag.st3" />
+    <input type="hidden" id="st7" value="@ViewBag.st7" />
+    <input type="hidden" id="st8" value="@ViewBag.st8" />
+    <input type="hidden" id="st9" value="@ViewBag.st9" />
+    <input type="hidden" id="st10" value="@ViewBag.st10" />
+
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">借款审核</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">客户名</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.RealName" id="RealName" name="RealName" readonly="readonly" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">订单号</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.OrderNO" id="OrderNO" name="OrderNO" readonly="readonly" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">状态</label>
+                        <div class="col-sm-9 aaab" >
+                          <label>
+                              <input type="radio" onclick="doshowhide(this,1)" name="State" value="1" /> 审核未通过
+                            </label>  
+                            <label>
+                                <input type="radio" onclick="doshowhide(this,2)" name="State" value="2" /> 正在审核
+                            </label>
+                        <label><input type="radio" onclick="doshowhide(this,3)" name="State" value="3" /> 审核通过</label>    
+                            <label><input type="radio" onclick="doshowhide(this,4)" name="State" value="4" /> 还款保证</label>   
+                            <label><input type="radio" onclick="doshowhide(this,5)" name="State" value="5" /> 提现成功</label> <br />
+                            <label><input type="radio" onclick="doshowhide(this,6)" name="State" value="6" /> 待激活账户</label> 
+                            <label><input type="radio" onclick="doshowhide(this,7)" name="State" value="7" /> 贷款资金冻结</label>  
+                            <label><input type="radio" onclick="doshowhide(this,8)" name="State" value="8" /> 收取保险费</label>  
+                            <label><input type="radio" onclick="doshowhide(this,9)" name="State" value="9" /> 银行流水不足</label>   <br />
+                            <label><input type="radio" onclick="doshowhide(this,10)" name="State" value="10" /> VIP加急到账</label>  
+                            <label><input type="radio" onclick="doshowhide(this,11)" name="State" value="11" /> 二次通过</label>  
+                            <label><input type="radio" onclick="doshowhide(this,12)" name="State" value="12" /> 订单退款</label> 
+                        </div>
+                    </div>
+                    <div class="form-group" id="divTiKuanPWD" style="display:none">
+                        <label class="col-sm-3 control-label" >提现密码</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="" id="TiKuanPWD" name="TiKuanPWD"  class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group" id="divmsg" style="display:none">
+                        <label class="col-sm-3 control-label">短信通知</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="height:70px;" name="msg" id="msg"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">订单状态说明</label>
+                        <div class="col-sm-9">
+                          <textarea  class="form-control" style="height:70px;"  name="memo" id="memo" ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+<style>
+    input, select, textarea {
+        max-width: 400px;
+    }
+</style>
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        var State = $('input:radio[name="State"]:checked').val();
+        if (State == 'undefined' || State == '' || State == null)
+        {
+            alert('请选择订单状态!');
+            return false;
+        }
+ 
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/BankCard/ModJieKuanStatePost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+
+    function doshowhide(obj,vas)
+    {
+        if (vas == 1 || vas == 2 || vas == 4 || vas == 5 || vas == 6 || vas == 11 || vas == 12)
+        {
+            hidemima();
+            hidemsg();
+        }
+        if (vas == 3) {
+            showmima();
+            showmsg();
+            $("#msg").val($("#st3").val());
+        }
+        if (vas == 7) {
+            showmsg();
+            $("#msg").val($("#st7").val());
+        }
+        if(vas==8)
+        {
+            showmsg();
+            $("#msg").val($("#st8").val());
+        }
+        if (vas == 9) {
+            showmsg();
+            $("#msg").val($("#st9").val());
+        }
+        if (vas == 10) {
+            showmsg();
+            $("#msg").val($("#st10").val());
+        }
+
+    }
+    function hidemima()
+    {
+        $("#divTiKuanPWD").hide();
+    }
+    function hidemsg()
+    {
+        $("#divmsg").hide();
+    }
+    function showmima() {
+        $("#divTiKuanPWD").show();
+    }
+    function showmsg() {
+        $("#divmsg").show();
+    }
+</script>

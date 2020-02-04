@@ -1,0 +1,93 @@
+﻿@{
+    Layout = null;
+}
+
+<script src="~/Content/js/ajaxfileupload.js"></script>
+<script type="text/javascript">
+    function ajaxFileUpload() {
+        $.ajaxFileUpload
+        (
+            {
+                url: '/admin/home/AjaxPic', //用于文件上传的服务器端请求地址
+                secureuri: false, //一般设置为false
+                fileElementId: 'upmg', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data)  //服务器成功响应处理函数
+                {
+                    if (data.statu == "1") {
+                        $("#erimg").attr("src", data.msg);
+                        $("#Imgurl").val(data.msg);
+                    }
+                    else {
+                        alert(data.msg)
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            }
+        )
+        return false;
+    }
+</script>
+
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="ProductID" value="@Request.QueryString["ProductID"]" />
+    <input type="hidden" name="imgid" value="@Request.QueryString["imgid"]" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">图片</label>
+                        <div class="col-sm-9">
+                            <input type="file" onchange="ajaxFileUpload()" name="upmg" id="upmg" />
+                            <input type="hidden" value="@ViewBag.Imgurl" name="Imgurl" id="Imgurl" />
+                            <img style="max-width:400px;" src="@ViewBag.Imgurl" id="erimg"  />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">排序</label>
+                        <div class="col-sm-9">
+                          <input  type="number" class="form-control" value="@ViewBag.Sort" name="Sort" id="Sort"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">说明</label>
+                        <div class="col-sm-9">
+                            <input  type="text" style="color:red" class="form-control" readonly="readonly" value="数字越小，排序越靠前"/>
+                           
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+   </div>
+</form>
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        if ($("#Imgurl").val() == "") {
+            alert('请选择要上传的图片');
+            return;
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/qiye/ProductImgAddPost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body>
+    <!--public header-->
+  @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+
+    <!--public aside bar-->
+    @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
+
+    <!--新闻详情-->
+    <section class="kzcontentWrap kzcontentNewsDWrap wow fadeInUp">
+        <div class="container">
+            <div class="kzcontentInner">
+                <div class="kzcontentPanel">
+                    <div class="kznewsBtn" style="text-align:center">
+                        <a href="/home/MHView?id=@ViewBag.mid" class="kzprev">目录</a>
+                    </div>
+                        <h4 class="kznewsTitle">@ViewBag.name - @ViewBag.cname</h4>
+                        <div class="kznewsDinfBox">
+                            <span class="kznewEditer">总共：@ViewBag.TotalRecord 张</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="kznewsDContentBox" id="idcontainer">
+                            <img src="@ViewBag.pic" style="width: 100%;" />
+                        </div>
+                        <div id="loadingdiv" style="text-align:center;display:none">
+                            <img src="/content/images/pic_loading.gif" />
+                        </div>
+                        <div class="kznewsBtn" id="btnload" style="text-align:center">
+                            <a href="#this" onclick="Loadmore()" class="kzprev">
+                                <span id="pindex">1</span>/@ViewBag.TotalRecord  <span id="smsg">(点击加载下一张)</span>
+                            </a>
+                        </div>
+                        <div class="kznewsBtn">
+                            @{
+                                if (!string.IsNullOrEmpty(ViewBag.preName))
+                                {
+                                    <a href="@ViewBag.preUrl" class="kzprev">上一篇:@ViewBag.preName</a>
+                                }
+                                if (!string.IsNullOrEmpty(ViewBag.nextName))
+                                {
+                                    <a href="@ViewBag.nextUrl" class="kznext">下一篇:@ViewBag.nextName</a>
+                                }
+                            }
+
+
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!--移动端页脚-->
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+    <input type="hidden" id="cid" value="@Request.QueryString["cid"]" />
+    <script>
+        function Loadmore()
+        {
+            var cid = $("#cid").val();
+            var pindex = parseInt($("#pindex").html()) + 1;
+            $("#btnload").hide();
+            $("#loadingdiv").show();
+            $.post("/home/MHPicAjax?pagenow=" + pindex, "cid=" + cid, function (res) {
+                if (res == "no") {
+                    $("#loadingdiv").hide();
+                    $("#btnload").show();
+                    $("#smsg").html("本章加载完毕");
+                }
+                else {
+                    $("#idcontainer img").last().after(res);
+                    $("#btnload").show();
+                    $("#loadingdiv").hide();
+                    $("#pindex").html(pindex);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

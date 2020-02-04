@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">游艇预定</h3>
+    <div class="content">
+        <form action="/admin/ChwBoat/BoatOrder" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Phone" name="Phone" value="@Request.QueryString["Phone"]" placeholder="手机号"  />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">状态:</label>
+                    <select class="btn btn-default dropdown-toggle" id="State" name="State">
+                        <option value="">==全部==</option>
+                        <option value="待审核">待审核</option>
+                        <option value="已审核">已审核</option>
+                        <option value="已取消">已取消</option>
+                    </select>
+                </div>
+                <script>
+                    $("#State").val('@Request.QueryString["State"]');
+                </script>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="Account" class="form-control" value="@Request.QueryString["Account"]" placeholder="账号">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        游艇
+                    </th>
+                    <th>
+                        开始/结束
+                    </th>
+                    <th>
+                        账号
+                    </th>
+                    <th>
+                       电话
+                    </th>
+                    <th>
+                        人数
+                    </th>
+                    <th>
+                        申请时间
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                   System.Data.DataTable dt=ViewBag.dt;
+                    if (dt != null && dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @dt.Rows[i]["ID"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Name"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["BeginTime"] <br />
+                                    @dt.Rows[i]["EndTime"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Account"]
+                                    
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Phone"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["PeopleNum"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["AddTime"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["State"]
+                                </td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" onclick="modstate(@dt.Rows[i]["ID"])" title="审核">审核</a>
+                                </td>
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+<script>
+    function modstate(id)
+    {
+        $loadModal('/admin/ChwBoat/ModOrderState?id=' + id);
+    }
+</script>

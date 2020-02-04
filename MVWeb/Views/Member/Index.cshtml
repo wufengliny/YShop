@@ -1,0 +1,124 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzMemberNewLinkWrap">
+        <div class="container clearfix">
+            <div class="kzMemberNewLinkInner">
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-finance" href="/member/newsview?id=@ViewBag.Latestid">
+                        <h5>每日更新</h5>
+                        <span>火爆一手资源</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-finance" href="/member/DailyList">
+                        <h5>历史更新</h5>
+                        <span>海量资源</span>
+                    </a>
+                </div>
+
+
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-finance" href="/member/myjifen">
+                        <h5>我的</h5>
+                        <span>积分/点券</span>
+                    </a>
+                </div>
+      
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-team" href="/member/myuser">
+                        <h5>我的会员</h5>
+                        <span>我的客户</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-team" href="/member/mylike">
+                        <h5>我的收藏</h5>
+                        <span>把喜欢的都藏在这里哦</span>
+                    </a>
+                </div>
+           @{
+               if (new Yax.BLL.QuickData.CurrentUserMV().UserType == "代理")
+               {
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-meOrder" href="/member/AddUserCode">
+                        <h5>生成注册码</h5>
+                        <span>赚钱从这里开始</span>
+                    </a>
+                </div>
+               }
+        }
+   
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-shareOrder" href="/member/TiXian">
+                        <h5>提现管理</h5>
+                        <span>钱钱钱</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-set" href="/member/ModPwd">
+                        <h5>修改密码</h5>
+                        <span>修改密码</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-set" href="/member/LoginIP">
+                        <h5>我的登录足迹</h5>
+                        <span>历史登录IP</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-nomination" href="/Member/NewsView?id=11">
+                        <h5>成为代理</h5>
+                        <span>商机从此入</span>
+                    </a>
+                </div>
+               
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-guide" href="/Member/NewsView?id=5">
+                        <h5>注意事项</h5>
+                        <span>常见问题</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-guide" href="/Member/NewsView?id=6">
+                        <h5>新手指南</h5>
+                        <span>新手指南</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+ 
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+</body>
+</html>

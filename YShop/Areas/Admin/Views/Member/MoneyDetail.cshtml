@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "MoneyDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@model List<Yax.Model.MoneyDetail>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">资金明细</h3>
+    <div class="content">
+
+        <form action="/admin/member/MoneyDetail" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone" name="phone" value="@Request.QueryString["phone"]" placeholder="手机号" />
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        手机号
+                    </th>
+                    <th>
+                        姓名
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                    <th>
+                        变化前/变化后
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        类型
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Phone
+                                </td>
+                                <td>
+                                    @Model[i].RealName
+                             
+                                </td>
+                                <td>
+                                    @Model[i].Money
+                                  
+                                </td>
+                                <td>
+                                    @Model[i].PreMoney  /  @Model[i].AfterMoney
+                                </td>
+                                <td>
+                                    @Model[i].AddTime
+                                </td>
+                                <td>
+                                   @(Yax.Common.JieKuanHelper.JD.GetMoneyDetailTypeName(Model[i].CZtype))
+                                </td>
+                     
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+<script>
+   
+</script>

@@ -1,0 +1,467 @@
+系统错误：errmsg:信息：未将对象引用设置到对象的实例。----<br/>堆栈：   在 ASP._Page_Areas_Admin_Views_qiye_Product_cshtml.Execute() 位置 e:\Codes\代码\YShop\YShop\Areas\Admin\Views\QiYe\Product.cshtml:行号 93
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/qiye/Product?id=2&menuid=46&pid=45时间：2019/3/20 9:59:35
+系统错误：errmsg:信息：未将对象引用设置到对象的实例。----<br/>堆栈：   在 ASP._Page_Areas_Admin_Views_qiye_Product_cshtml.Execute() 位置 e:\Codes\代码\YShop\YShop\Areas\Admin\Views\QiYe\Product.cshtml:行号 93
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/qiye/Product?id=2&menuid=46&pid=45时间：2019/3/20 9:59:40
+系统错误：errmsg:信息：未将对象引用设置到对象的实例。----<br/>堆栈：   在 ASP._Page_Areas_Admin_Views_qiye_Product_cshtml.Execute() 位置 e:\Codes\代码\YShop\YShop\Areas\Admin\Views\QiYe\Product.cshtml:行号 93
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/qiye/Product?id=2&menuid=46&pid=45时间：2019/3/20 10:00:17
+系统错误：errmsg:信息：未将对象引用设置到对象的实例。----<br/>堆栈：   在 ASP._Page_Areas_Admin_Views_qiye_Product_cshtml.Execute() 位置 e:\Codes\代码\YShop\YShop\Areas\Admin\Views\QiYe\Product.cshtml:行号 93
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/qiye/Product?id=2&pid=45时间：2019/3/20 10:00:41
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 10:44:50
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 11:06:50
+连接不上数据库： errmsg:超时时间已到。超时时间已到，但是尚未从池中获取连接。出现这种情况可能是因为所有池连接均在使用，并且达到了最大池大小。----Url：http://localhost:8033/admin/menu/NowHT?menuid=35&pid=33时间：2019/3/20 14:45:20
+连接不上数据库： errmsg:超时时间已到。超时时间已到，但是尚未从池中获取连接。出现这种情况可能是因为所有池连接均在使用，并且达到了最大池大小。----Url：http://localhost:8033/admin/menu/NowHT?menuid=35&pid=33时间：2019/3/20 14:45:35
+系统错误：errmsg:信息：未将对象引用设置到对象的实例。----<br/>堆栈：   在 ASP._Page_Views_home_Index_cshtml.Execute() 位置 e:\Codes\代码\YShop\YShop\Views\Home\Index.cshtml:行号 413
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/home/index?menuid=1时间：2019/3/20 15:31:16
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:07:13
+系统错误：errmsg:信息：参数化查询 '(@Name nvarchar(500),@Imgurl nvarchar(500),@ImgUlrSmall nvarchar' 需要参数 '@Href'，但未提供该参数。----<br/>堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Yax.SQLServerDAL.SqlHelper.ExecuteNonQuery(CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 E:\Codes\代码\YShop\Yax.Dal\SqlHelper.cs:行号 86
+   在 Yax.SQLServerDAL.DataProvider.Web_ImgAdd(Web_Img model) 位置 E:\Codes\代码\YShop\Yax.Dal\Web_Img.cs:行号 92
+   在 Yax.BLL.Web_Img.Add(Web_Img model) 位置 E:\Codes\代码\YShop\Yax.BLL\Web_Img.cs:行号 17
+   在 YShop.Areas.Admin.Controllers.ConfigController.ImgAddPost() 位置 E:\Codes\代码\YShop\YShop\Areas\Admin\Controllers\ConfigController.cs:行号 446
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/config/ImgAddPost时间：2019/3/20 20:07:58
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:08:42
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:08:49
+系统错误：errmsg:信息：参数化查询 '(@Name nvarchar(500),@Imgurl nvarchar(500),@ImgUlrSmall nvarchar' 需要参数 '@Href'，但未提供该参数。----<br/>堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   在 Yax.SQLServerDAL.SqlHelper.ExecuteNonQuery(CommandType cmdType, String cmdText, SqlParameter[] commandParameters) 位置 E:\Codes\代码\YShop\Yax.Dal\SqlHelper.cs:行号 86
+   在 Yax.SQLServerDAL.DataProvider.Web_ImgAdd(Web_Img model) 位置 E:\Codes\代码\YShop\Yax.Dal\Web_Img.cs:行号 92
+   在 Yax.BLL.Web_Img.Add(Web_Img model) 位置 E:\Codes\代码\YShop\Yax.BLL\Web_Img.cs:行号 17
+   在 YShop.Areas.Admin.Controllers.ConfigController.ImgAddPost() 位置 E:\Codes\代码\YShop\YShop\Areas\Admin\Controllers\ConfigController.cs:行号 446
+   在 lambda_method(Closure , ControllerBase , Object[] )
+   在 System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass42.<BeginInvokeSynchronousActionMethod>b__41()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass37.<>c__DisplayClass39.<BeginInvokeActionMethodWithFilters>b__33()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass4f.<InvokeActionMethodFilterAsynchronously>b__49()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<>c__DisplayClass2a.<BeginInvokeAction>b__20()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/config/ImgAddPost时间：2019/3/20 20:08:51
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:10:27
+系统错误：errmsg:信息：未找到视图“ConfigImgAddPost”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/config/ConfigImgAddPost.aspx
+~/Areas/Admin/Views/config/ConfigImgAddPost.ascx
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.aspx
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.ascx
+~/Views/config/ConfigImgAddPost.aspx
+~/Views/config/ConfigImgAddPost.ascx
+~/Views/Shared/ConfigImgAddPost.aspx
+~/Views/Shared/ConfigImgAddPost.ascx
+~/Areas/Admin/Views/config/ConfigImgAddPost.cshtml
+~/Areas/Admin/Views/config/ConfigImgAddPost.vbhtml
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.cshtml
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.vbhtml
+~/Views/config/ConfigImgAddPost.cshtml
+~/Views/config/ConfigImgAddPost.vbhtml
+~/Views/Shared/ConfigImgAddPost.cshtml
+~/Views/Shared/ConfigImgAddPost.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/config/ConfigImgAddPost时间：2019/3/20 20:10:28
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:10:51
+系统错误：errmsg:信息：未找到视图“ConfigImgAddPost”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/config/ConfigImgAddPost.aspx
+~/Areas/Admin/Views/config/ConfigImgAddPost.ascx
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.aspx
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.ascx
+~/Views/config/ConfigImgAddPost.aspx
+~/Views/config/ConfigImgAddPost.ascx
+~/Views/Shared/ConfigImgAddPost.aspx
+~/Views/Shared/ConfigImgAddPost.ascx
+~/Areas/Admin/Views/config/ConfigImgAddPost.cshtml
+~/Areas/Admin/Views/config/ConfigImgAddPost.vbhtml
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.cshtml
+~/Areas/Admin/Views/Shared/ConfigImgAddPost.vbhtml
+~/Views/config/ConfigImgAddPost.cshtml
+~/Views/config/ConfigImgAddPost.vbhtml
+~/Views/Shared/ConfigImgAddPost.cshtml
+~/Views/Shared/ConfigImgAddPost.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/config/ConfigImgAddPost时间：2019/3/20 20:10:53
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:14:23
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:20:24
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:28:55
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:34:12
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:35:24
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:35:37
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:37:19
+系统错误：errmsg:信息：未找到视图“AjaxPic”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: 
+~/Areas/Admin/Views/home/AjaxPic.aspx
+~/Areas/Admin/Views/home/AjaxPic.ascx
+~/Areas/Admin/Views/Shared/AjaxPic.aspx
+~/Areas/Admin/Views/Shared/AjaxPic.ascx
+~/Views/home/AjaxPic.aspx
+~/Views/home/AjaxPic.ascx
+~/Views/Shared/AjaxPic.aspx
+~/Views/Shared/AjaxPic.ascx
+~/Areas/Admin/Views/home/AjaxPic.cshtml
+~/Areas/Admin/Views/home/AjaxPic.vbhtml
+~/Areas/Admin/Views/Shared/AjaxPic.cshtml
+~/Areas/Admin/Views/Shared/AjaxPic.vbhtml
+~/Views/home/AjaxPic.cshtml
+~/Views/home/AjaxPic.vbhtml
+~/Views/Shared/AjaxPic.cshtml
+~/Views/Shared/AjaxPic.vbhtml----<br/>堆栈：   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.<>c__DisplayClass1a.<InvokeActionResultWithFilters>b__17()
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass25.<BeginInvokeAction>b__22(IAsyncResult asyncResult)----Url：http://localhost:8033/admin/home/AjaxPic时间：2019/3/20 20:37:30

@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "我的客户";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+}
+
+<script src="~/Content/js/ChangeData.js"></script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">我的客户</h3>
+    <div class="content">
+        
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        商户号
+                    </th>
+                    <th>
+                        微信费率
+                    </th>
+                    <th>
+                        支付宝费率
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    List<Yax.Model.TPay_User> list = ViewBag.list;
+                    if (list != null && list.Count > 0)
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @list[i].ID
+                                </td>
+                                <td>
+                                    @list[i].Account
+                                </td>
+                                <td>
+                                    @list[i].WXFee
+                                </td>
+                                <td>
+                                    @list[i].ZFBFee
+                                </td>
+                               
+                                
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+
+
+
+<script>
+    $(function () {
+        $('#BGTime').focus(function () {
+            $('#BGTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#BGTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD 00:00:00' });
+
+        $('#EndTime').focus(function () {
+            $('#EndTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 23:59:59"))' });
+        });
+        $('#EndTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+    })
+    function create() {
+        $loadModal('/admin/LData/LDataAdd');
+    };
+
+    function edit(id) {
+        $loadModal('/admin/LData/LDataAdd?id=' + id);
+    };
+</script>
+
+

@@ -1,0 +1,151 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+   @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body class="memberbody">
+    <!--public header-->
+   @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzmemberBT memberPaddingTop">
+        <div class="container">
+            当前位置:
+            <a class="kzmemberBTLi" href="/member/index">会员中心</a>
+            <a class="kzmemberBTLi" href="#this">提现</a>
+        </div>
+    </section>
+
+    <!--渠道统计-->
+    <section class="kzchannelWrap">
+        <div class="container">
+            <div class="kzchannelInner clearfix">
+                <div class="span12">
+                    <div class="kzchannelLi">
+                        <span class="kzcount">@ViewBag.JIFen <i></i></span>
+                        <p class="kzTips">我的积分</p>
+                        <a class="kzWCBtn" href="/member/BindTiXianBank">绑定提现账户</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--渠道代理列表-->
+    <section class="kzagentList">
+        <div class="container">
+            <div class="kzagentInner">
+                <div class="kzheader">提现</div>
+                <table>
+                    <tr>
+                        <td class="kzleft">可提现金额：</td>
+                        <td class="kzright"><span class="kzyellowPrice">@(ViewBag.JIFen/10)元</span></td>
+                    </tr>
+                    <tr>
+                        <td class="kzleft">提现微信账户：</td>
+                        <td class="kzright"><span class="kzyellowPrice">@(ViewBag.ContactMan)</span></td>
+                    </tr>
+                    <tr>
+                        <td class="kzleft">本次提现金额：</td>
+                        <td class="kzright">
+                            <input class="kzinput" id="money" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a class="kzsubBtn" id="btnsub" onclick="subinf()" href="#this">提交</a>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="kzagentInner">
+                <div class="kzheader">提现明细</div>
+                <table>
+                    <tr>
+                        <th>提现金额</th>
+                        <th>时间</th>
+                        <th>状态</th>
+                        <th>备注</th>
+                    </tr>
+                    @{
+                        List<Yax.Model.TiXian> list = ViewBag.list;
+                        if (list != null && list.Count > 0)
+                        {
+                            for (int i = 0; i < list.Count; i++)
+                            {
+                                <tr>
+                                    <td >@list[i].Money</td>
+                                    <td data-th="时间">@list[i].AddTime.ToString("yyyy-MM-dd")</td>
+                                    <td data-th="状态">
+                                    @{ 
+                                        if(list[i].State==1)
+                                        {
+                                            <span>待审核</span>
+                                        }
+                                        if (list[i].State == 2)
+                                        {
+                                            <span>审核不通过</span>
+                                        }
+                                        if (list[i].State == 3)
+                                        {
+                                            <span>已出款</span>
+                                        }
+                                    }
+                                    </td>
+                                    <td data-th="备注">
+                                        @list[i].Memo
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    }
+                   
+                  
+                </table>
+
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!--移动端页脚-->
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+    <script>
+        function subinf()
+        {
+            $("#btnsub").hide();
+            var money = $("#money").val();
+            $.post("/member/TiXianPost", "money=" + money, function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+    </script>
+</body>
+
+</html>

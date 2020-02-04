@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "参数列表";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.Config>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">参数列表</h3>
+    <div class="content">
+        @if (new Yax.BLL.CurrentUser().Id == 1)
+        {
+            <div class="btn-toolbar">
+                <div class="btn-group" role="group">
+                    <button type="button" onclick="create()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+                </div>
+            </div>
+        }
+        <form action="/admin/Config/SysConfig" class="form-inline" method="get">
+            <input type="hidden" name="GName" id="GName" value="@Request.QueryString["GName"]" />
+            <div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="kName" class="form-control" value="@Request.QueryString["kName"]">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        名称
+                    </th>
+                    <th>
+                        值
+                    </th>
+    
+                    <th>
+                        备注
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Name
+                                </td>
+                                <td title="@Model[i].Value">
+                                    @(Yax.Common.Utils.GetSubstring(Model[i].Value,50,"......")) 
+                                </td>
+                                <td >
+                                    @Model[i].Memo
+                                </td>
+                                <td>
+                                    <a class="btn btn-success btn-xs" onclick="edit(@Model[i].ID)">修改</a>
+                                    @*<a class="btn btn-danger btn-xs" onclick="delconfig(@Model[i].ID)">删除</a>*@
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+
+
+
+   
+</div>
+@*<script src="~/Content/js/datetimepicker.js"></script>*@
+<script type="text/javascript">
+    function create() {
+        var GName=$("#GName").val();
+        $loadModal('/admin/config/AddSysConfig?GName='+GName);
+    }
+
+    function edit(id) {
+        $loadModal('/admin/config/AddSysConfig?id=' + id);
+    }
+    function delconfig(id) {
+        if (confirm("确定要删除")) {
+            $.post("/admin/config/DelConfig?id=" + id , "", function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+    }
+</script>

@@ -1,0 +1,6 @@
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/时间：2019/9/18 星期三 下午 5:05:39
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/时间：2019/9/18 星期三 下午 5:07:33
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/时间：2019/9/18 星期三 下午 5:07:34
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/时间：2019/9/18 星期三 下午 5:07:35
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/member/index时间：2019/9/18 星期三 下午 5:07:36
+连接不上数据库： errmsg:用户 'IIS APPPOOL\ManHuaMV' 登录失败。----Url：http://localhost:806/时间：2019/9/18 星期三 下午 5:07:39

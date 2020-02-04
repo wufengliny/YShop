@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    @{
+        string isReadOnly = "";
+        string pwdPlaceholder = "";
+        if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+        {
+            isReadOnly = "readonly=\"readonly\"";
+            pwdPlaceholder = "放空不修改";
+        }
+
+    }
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">会员</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">账号</label>
+                        <div class="col-sm-9"> 
+                            <input type="text" value="@ViewBag.Account" readonly="readonly" id="txtAccount" name="txtAccount" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">密码</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="" id="pwd" name="pwd" placeholder="@pwdPlaceholder" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">类型</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" name="UserType" id="UserType">
+                                <option value="普通" @(ViewBag.UserType == "普通" ? "selected=selected" : "")>普通会员</option>
+                                <option value="超级" @(ViewBag.UserType == "超级" ? "selected=selected" : "")>超级会员</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.Memo" id="Memo" name="Memo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        var Account = $("#txtAccount").val();
+        if (Account == "") {
+            $("#Account").focus();
+            alert('账号不能为空');
+            return;
+        }
+        var pwdplace = $("#pwd").attr("placeholder");
+        if (pwdplace == "")
+        {
+            if ($("#pwd").val() == "") {
+                $("#pwd").focus();
+                alert('密码不能为空');
+                return;
+            }
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/Member/YTModPost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

@@ -1,0 +1,8 @@
+﻿
+.photodel {
+    width:15px;
+    height:15px;
+    display:inline-block;
+    background: transparent url("/Areas/Admin/Content/images/flash_up_ico.png") no-repeat scroll 0% 0%;
+    background-position: -13px 0px;
+}

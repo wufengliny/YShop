@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Module Title="设置"  ID="001" Link="/admin/home/index?menuid=001_m1" Mark="xitongzhuye1">
+    <Item ID="001_m1" Title="系统主页" Link="/admin/home/index" Mark="xitongzhuye1" Icon="glyphicon glyphicon-home" ></Item>
+    <Item ID="001_m2" Title="短信接口" Link="/admin/config/PhoneMsgJK" Mark="duanxinjiekou2" Icon="glyphicon glyphicon-flag"></Item>
+    <Item ID="001_m3" Title="短信记录" Link="/admin/config/phonemsg" Mark="duanxinjilu3" Icon="glyphicon glyphicon-th-list"></Item>
+    <Item ID="001_m4" Title="常规设置" Link="/admin/Config/SysConfig" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+    <Item ID="001_m5" Title="短信设置" Link="/admin/Config/SysConfig?gname=duanxin" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+    <Item ID="001_m6" Title="贷款设置" Link="/admin/Config/SysConfig?gname=daikuan" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+    <Item ID="001_m7" Title="收款账号" Link="/admin/BankCard/index" Mark="shoukuanzhanghao5" Icon="glyphicon glyphicon-flag"></Item>
+    <Item ID="001_m8" Title="图片" Link="/admin/config/ConfigImg" Mark="pic6" Icon="glyphicon glyphicon-picture"></Item>
+  </Module>
+  <Module Title="安全中心"  ID="002" Link="/admin/config/log?menuid=002_m1" Mark="Log7" >
+    <Item ID="002_m1" Title="日志" Link="/admin/config/log" Mark="Log7" Icon="glyphicon glyphicon-fire"></Item>
+    <Item ID="002_m2" Title="权限组" Link="/admin/admin/AdminGroup" Mark="power8"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m3" Title="管理员列表" Link="/admin/admin/index" Mark="adminlist9"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m4" Title="二级密码" Link="/admin/admin/SecondPwd" Mark="secondpwd10"  Icon="glyphicon glyphicon-adjust"></Item>
+  </Module>
+  <Module Title="会员列表"  ID="003" Link="/admin/member/index?menuid=003_m1" Mark="Memberlist11" >
+    <Item ID="003_m1" Title="会员列表" Link="/admin/member/index" Mark="Memberlist11" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m2" Title="借款列表" Link="/admin/BankCard/JieKuan" Mark="Jiekuan12" Icon="glyphicon glyphicon-sound-stereo"></Item>
+    <Item ID="003_m3" Title="提现列表" Link="/admin/BankCard/TiXian" Mark="tixian13" Icon="glyphicon glyphicon-log-out"></Item>
+    <Item ID="003_m4" Title="资金明细" Link="/admin/member/MoneyDetail" Mark="zijin14" Icon="glyphicon glyphicon-barcode"></Item>
+  </Module>
+  <Module Title="文章列表"  ID="004" Link="/admin/Article/index?menuid=004_m1" Mark="wenzhang15">
+    <Item ID="004_m1" Title="文章分类" Link="/admin/Article/Category" Mark="wenzhangfenlei16" Icon="glyphicon glyphicon-tower"></Item>
+    <Item ID="004_m2" Title="文章列表" Link="/admin/Article/index" Mark="wenzhang15" Icon="glyphicon glyphicon-list-alt"></Item>
+  </Module>
+  <Module Title="开发"  ID="005" Link="/admin/menu/NowHT?menuid=005_m1"  Mark="dangqianht17">
+    <Item ID="005_m1" Title="当前后台" Link="/admin/menu/NowHT" Mark="dangqianht17" Icon="glyphicon glyphicon-tree-conifer"></Item>
+  </Module>
+</Menu>

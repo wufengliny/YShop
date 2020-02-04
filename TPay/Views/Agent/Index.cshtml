@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+}
+
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">代理信息</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td style="width:150px">
+                        账户
+                    </td>
+                    <td colspan="5"><input readonly="readonly" class="form-control" type="text" value="@ViewBag.Account" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        余额
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" readonly="readonly"
+                               placeholder="" type="text" value="@ViewBag.Money" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        已提现金额
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" readonly="readonly"
+                               placeholder="" type="text" value="@ViewBag.OutMoney" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        提现方式
+                    </td>
+                    <td colspan="5">
+                        <select class="form-control" id="CalWay" name="CalWay">
+                            <option @(ViewBag.CalWay == "银行卡" ? "selected=selected" : "") value="银行卡">银行卡</option>
+                            <option @(ViewBag.CalWay == "微信" ? "selected=selected" : "") value="微信">微信</option>
+                            <option @(ViewBag.CalWay == "支付宝" ? "selected=selected" : "") value="支付宝">支付宝</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        微信账号
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="WXAccount" id="WXAccount"
+                               placeholder="" type="text" value="@ViewBag.WXAccount" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        支付宝账号
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="ZFBAccount" id="ZFBAccount"
+                               placeholder="" type="text" value="@ViewBag.ZFBAccount" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        银行名称
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="CalBankName" id="CalBankName"
+                               placeholder="" type="text" value="@ViewBag.CalBankName" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        银行卡号
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="CalBankNo" id="CalBankNo"
+                               placeholder="" type="text" value="@ViewBag.CalBankNo" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        持卡人姓名
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="CalMan" id="CalMan"
+                               placeholder="" type="text" value="@ViewBag.CalMan" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    input {
+        width: 400%;
+        max-width: 100%;
+    }
+
+    input, select, textarea {
+        max-width: 100%;
+    }
+</style>
+
+<link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+<script src="~/plug/kindeditor/kindeditor-min.js"></script>
+<script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    function dosub() {
+        //alert($("#Content").val());
+        //return;
+        var data = $("#_ModalForm").serialize();
+        $.post("/Agent/AgentInfoPost", data, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

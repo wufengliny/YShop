@@ -1,0 +1,9 @@
+﻿  .pagination {
+            text-align: center;
+            margin: 10px 0;
+        }
+           .pagination li {
+                display: inline-block;
+                background-color: #F69246;
+                padding: 5px 10px;
+            }

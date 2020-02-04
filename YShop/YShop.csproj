@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{642C9609-A7D1-4965-A113-46B13BF7B9B3}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YShop</RootNamespace>
+    <AssemblyName>YShop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AMHVedioController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BankCardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChatController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ChwBoatController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ConfigController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FileUPController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LDataController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManHuaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MemberController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrdersController.cs" />
+    <Compile Include="Areas\Admin\Controllers\QiYeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ShopController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TPayController.cs" />
+    <Compile Include="Areas\Member\Controllers\UserController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ValidateCodeController.cs" />
+    <Compile Include="Filters\ErrorFilter.cs" />
+    <Compile Include="Filters\MemActionAttribute.cs" />
+    <Compile Include="Filters\PowerFiler.cs" />
+    <Compile Include="Filters\QiYeActionAttribute.cs" />
+    <Compile Include="Filters\WebActionAttribute.cs" />
+    <Compile Include="Filters\YUActionAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Areas\Admin\Content\Css\bootstrap-responsiv.css" />
+    <Content Include="Areas\Admin\Content\Css\css.css" />
+    <Content Include="Areas\Admin\Content\Css\dataTables.bootstra.css" />
+    <Content Include="Areas\Admin\Content\Css\y.css" />
+    <Content Include="Areas\Admin\Content\images\ajax-loader.gif" />
+    <Content Include="Areas\Admin\Content\images\down.png" />
+    <Content Include="Areas\Admin\Content\images\downloads.png" />
+    <Content Include="Areas\Admin\Content\images\flash_up_ico.png" />
+    <Content Include="Areas\Admin\Content\images\load_img2.gif" />
+    <Content Include="Areas\Admin\Content\images\main-wait.gif" />
+    <Content Include="Areas\Admin\Content\images\refund.png" />
+    <Content Include="Areas\Admin\Content\images\up.png" />
+    <Content Include="Areas\Admin\Content\images\updater.png" />
+    <Content Include="Areas\Admin\Content\js\ace-elements.min.js" />
+    <Content Include="Areas\Admin\Content\js\ace-extra.min.js" />
+    <Content Include="Areas\Admin\Content\js\ace.min.js" />
+    <Content Include="Areas\Admin\Content\js\admin\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\admin\calendar.js" />
+    <Content Include="Areas\Admin\Content\js\admin\modal.js" />
+    <Content Include="Areas\Admin\Content\js\admin\select-create.js" />
+    <Content Include="Areas\Admin\Content\js\admin\site.js" />
+    <Content Include="Areas\Admin\Content\js\admin\userList.js" />
+    <Content Include="Areas\Admin\Content\js\admin\value-adjust.js" />
+    <Content Include="Areas\Admin\Content\js\ajaxfileupload.js" />
+    <Content Include="Areas\Admin\Content\js\all.JS" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap-timepicker.min.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\ChangeData.js" />
+    <Content Include="Areas\Admin\Content\js\dataTables.bootstrap.js" />
+    <Content Include="Areas\Admin\Content\js\daterangepicker.min.js" />
+    <Content Include="Areas\Admin\Content\js\datetimepicker.js" />
+    <Content Include="Areas\Admin\Content\js\echarts.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot\jquery.flot.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="Areas\Admin\Content\js\flot\jquery.flot.resize.min.js" />
+    <None Include="Areas\Admin\Content\js\jquery-1.10.2.intellisense.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.10.2.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery-ui-1.10.3.full.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.dataTables.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.sparkline.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.unobtrusive-ajax.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Areas\Admin\Content\js\jquery.validate-vsdoc.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.min.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Areas\Admin\Content\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Areas\Admin\Content\js\js\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Content\js\js\IISHelp.js" />
+    <Content Include="Areas\Admin\Content\js\js\jquery-1.10.2.min.js" />
+    <Content Include="Areas\Admin\Content\js\js\js.js" />
+    <Content Include="Areas\Admin\Content\js\laydate\laydate.js" />
+    <Content Include="Areas\Admin\Content\js\laydate\need\laydate.css" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\dahong\icon.png" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\dahong\laydate.css" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\default\icon.png" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\default\laydate.css" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\molv\icon.png" />
+    <Content Include="Areas\Admin\Content\js\laydate\skins\molv\laydate.css" />
+    <Content Include="Areas\Admin\Content\js\modernizr-2.6.2.js" />
+    <Content Include="Areas\Admin\Content\js\modernizr.js" />
+    <Content Include="Areas\Admin\Content\js\popover.js" />
+    <Content Include="Areas\Admin\Content\js\respond.js" />
+    <Content Include="Areas\Admin\Content\js\respond.min.js" />
+    <Content Include="Areas\Admin\Content\js\SelectUsers.js" />
+    <Content Include="Areas\Admin\Content\js\summernote.js" />
+    <Content Include="Areas\Admin\Content\js\switch.js" />
+    <Content Include="Areas\Admin\Content\Login\css\tg_index.css" />
+    <Content Include="Areas\Admin\Content\Login\css\tg_style.css" />
+    <Content Include="Areas\Admin\Content\Login\images\bg.jpg" />
+    <Content Include="Areas\Admin\Content\Login\images\ewm.jpg" />
+    <Content Include="Areas\Admin\Content\Login\images\fx01.png" />
+    <Content Include="Areas\Admin\Content\Login\images\fx02.png" />
+    <Content Include="Areas\Admin\Content\Login\images\hy_ico01.jpg" />
+    <Content Include="Areas\Admin\Content\Login\images\hy_ico02.jpg" />
+    <Content Include="Areas\Admin\Content\Login\images\hy_ico03.jpg" />
+    <Content Include="Areas\Admin\Content\Login\images\h_bg.png" />
+    <Content Include="Areas\Admin\Content\Login\images\logo.png" />
+    <Content Include="Areas\Admin\Content\Login\images\ly.png" />
+    <Content Include="Areas\Admin\Content\Login\images\news_tit01.png" />
+    <Content Include="Areas\Admin\Content\Login\images\news_tit02.png" />
+    <Content Include="Areas\Admin\Content\Login\images\sj.png" />
+    <Content Include="Areas\Admin\Content\Login\images\skin_icons.png" />
+    <Content Include="Areas\Admin\Content\Login\images\top_header_bg.gif" />
+    <Content Include="Areas\Admin\Content\Login\images\zp_topbar_bg.gif" />
+    <Content Include="Areas\Admin\Content\Login\js\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="Areas\Admin\Content\Login\js\index.js" />
+    <Content Include="Areas\Admin\Content\Login\js\index2.js" />
+    <Content Include="Areas\Admin\Content\Login\js\jquery-1.4.2.min.js" />
+    <Content Include="Areas\Admin\Content\Login\js\jquery-rebox.js" />
+    <Content Include="Areas\Admin\Content\Login\js\jquery.easing.1.3.js" />
+    <Content Include="Areas\Admin\Content\Login\js\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\Login\js\jquery.mousewheel.min.js" />
+    <Content Include="Areas\Admin\Content\Login\js\scrolltopcontrol.js" />
+    <Content Include="Areas\Admin\Content\XML\AMHVedio.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Content\XML\CHWYuDing.xml" />
+    <Content Include="Areas\Admin\Content\XML\DongManAdminMenu.xml" />
+    <Content Include="Areas\Admin\Content\XML\ThridPay.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Content\XML\KaiFaAdminMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Admin\Content\XML\PuHuiAdminMenu.xml" />
+    <Content Include="Areas\Admin\Content\XML\QiYeAdminMenu.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\Member\Views\Web.config" />
+    <Content Include="Areas\Member\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\Admin\Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\Admin\Content\fonts\FontAwesome.otf" />
+    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Areas\Admin\Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Admin\Content\js\jquery-1.10.2.min.map" />
+    <Content Include="Areas\Admin\Content\js\zh_CN.json" />
+    <Content Include="Areas\Admin\Views\Admin\AddAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AddGroup.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\AdminGroup.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\ModPwd.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\AddArticle.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\AddCategory.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\ArticleOther.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Category.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\AddFriendLink.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\AddSysConfig.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\FriendLink.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Img.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\ImgAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\ImgType.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\ImgTypeAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\Log.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\LogDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\PadCardAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\PayCard.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\SysConfig.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\AddMember.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ShoujianAddress.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\leftmenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\topmenu.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\DoSendGood.cshtml" />
+    <Content Include="Areas\Admin\Views\Orders\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\AddGoods.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\AddImg.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\CateGory.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\CreateCateGory.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shop\ShopImg.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Admin\Test.cshtml" />
+    <Content Include="Content\css\kingzhu-old0503.css" />
+    <Content Include="Content\css\kingzhu.css" />
+    <Content Include="Content\css\swiper,animate,scroll.min.css" />
+    <Content Include="Content\images\pic_loading.gif" />
+    <Content Include="Content\images\public\alipayIcon.png" />
+    <Content Include="Content\images\public\aside.jpg" />
+    <Content Include="Content\images\public\asideBG.jpg" />
+    <Content Include="Content\images\public\closeredbtn.png" />
+    <Content Include="Content\images\public\kzicon.png" />
+    <Content Include="Content\images\public\loginBg.jpg" />
+    <Content Include="Content\images\public\logo.png" />
+    <Content Include="Content\images\public\m01.jpg" />
+    <Content Include="Content\images\public\m02.jpg" />
+    <Content Include="Content\images\public\m03.jpg" />
+    <Content Include="Content\images\public\m04.jpg" />
+    <Content Include="Content\images\public\m05.jpg" />
+    <Content Include="Content\images\public\m06.jpg" />
+    <Content Include="Content\images\public\m07.jpg" />
+    <Content Include="Content\images\public\m08.jpg" />
+    <Content Include="Content\images\public\m09.jpg" />
+    <Content Include="Content\images\public\membericon.png" />
+    <Content Include="Content\images\public\mid-circle.png" />
+    <Content Include="Content\images\public\navbar.png" />
+    <Content Include="Content\images\public\ok.png" />
+    <Content Include="Content\images\public\openredbtn.png" />
+    <Content Include="Content\images\public\redbg.png" />
+    <Content Include="Content\images\public\redbottombg.png" />
+    <Content Include="Content\images\public\redcoin.png" />
+    <Content Include="Content\images\public\redcoins.png" />
+    <Content Include="Content\images\public\redgoto.png" />
+    <Content Include="Content\images\public\redseal.png" />
+    <Content Include="Content\images\public\redtopbg.png" />
+    <Content Include="Content\images\public\SecKillIcon.png" />
+    <Content Include="Content\images\public\small-circle.png" />
+    <Content Include="Content\images\public\weixincode.jpg" />
+    <Content Include="Content\images\public\wxpayIcon.png" />
+    <Content Include="Content\images\temp\about01.jpg" />
+    <Content Include="Content\images\temp\about02.jpg" />
+    <Content Include="Content\images\temp\acd01.jpg" />
+    <Content Include="Content\images\temp\acgz01.jpg" />
+    <Content Include="Content\images\temp\active01.jpg" />
+    <Content Include="Content\images\temp\acxz01.jpg" />
+    <Content Include="Content\images\temp\ad01.jpg" />
+    <Content Include="Content\images\temp\banner\01.jpg" />
+    <Content Include="Content\images\temp\indexli01.jpg" />
+    <Content Include="Content\images\temp\myorder.jpg" />
+    <Content Include="Content\images\temp\news1.jpg" />
+    <Content Include="Content\images\temp\newstemp.jpg" />
+    <Content Include="Content\images\temp\o1.jpg" />
+    <Content Include="Content\images\temp\qr.jpg" />
+    <Content Include="Content\images\temp\share.jpg" />
+    <Content Include="Content\images\temp\vccode.jpg" />
+    <Content Include="Content\images\temp\weixin.jpg" />
+    <Content Include="Content\js\ajaxfileupload.js" />
+    <Content Include="Content\js\jquery-1.7.1.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\kingzhu.js" />
+    <Content Include="Content\js\kingzhu2.js" />
+    <Content Include="Content\js\layer,wow,scroll.js" />
+    <Content Include="Content\js\skin\default\icon-ext.png" />
+    <Content Include="Content\js\skin\default\icon.png" />
+    <Content Include="Content\js\skin\default\layer.css" />
+    <Content Include="Content\js\skin\default\loading-0.gif" />
+    <Content Include="Content\js\skin\default\loading-1.gif" />
+    <Content Include="Content\js\skin\default\loading-2.gif" />
+    <Content Include="Content\js\swiper.jquery.min.js" />
+    <Content Include="Content\KayJs\kay.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.swf" />
+    <Content Include="Content\Player\ckplayer\ckplayer.xml" />
+    <Content Include="Content\Player\ckplayer\language.xml" />
+    <Content Include="Content\Player\ckplayer\style.xml" />
+    <Content Include="Content\QiYe\css\boyitong.css" />
+    <Content Include="Content\QiYe\css\lib\reset.css" />
+    <Content Include="Content\QiYe\css\plugins\swiper.min.css" />
+    <Content Include="Content\QiYe\images\icons\top.png" />
+    <Content Include="Content\QiYe\images\static\code.jpg" />
+    <Content Include="Content\QiYe\images\static\honor1.jpg" />
+    <Content Include="Content\QiYe\images\static\honor2.jpg" />
+    <Content Include="Content\QiYe\images\static\honor3.jpg" />
+    <Content Include="Content\QiYe\images\static\logo-red.png" />
+    <Content Include="Content\QiYe\images\static\logo.png" />
+    <Content Include="Content\QiYe\images\static\map.jpg" />
+    <Content Include="Content\QiYe\images\static\pageBg.jpg" />
+    <Content Include="Content\QiYe\images\temp\case.jpg" />
+    <Content Include="Content\QiYe\images\temp\case1.jpg" />
+    <Content Include="Content\QiYe\images\temp\case2.jpg" />
+    <Content Include="Content\QiYe\images\temp\detail.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities1.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities2.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities3.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities4.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities5.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities6.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities7.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities8.jpg" />
+    <Content Include="Content\QiYe\images\temp\facilities9.jpg" />
+    <Content Include="Content\QiYe\images\temp\index-bg.jpg" />
+    <Content Include="Content\QiYe\images\temp\index-swiper1.jpg" />
+    <Content Include="Content\QiYe\images\temp\index-swiper2.jpg" />
+    <Content Include="Content\QiYe\images\temp\news.jpg" />
+    <Content Include="Content\QiYe\images\temp\who1.png" />
+    <Content Include="Content\QiYe\images\temp\who2.png" />
+    <Content Include="Content\QiYe\js\boyitong.js" />
+    <Content Include="Content\QiYe\js\lib\jquery-3.3.1.min.js" />
+    <Content Include="Content\QiYe\js\plugins\masonry-docs.min.js" />
+    <Content Include="Content\QiYe\js\plugins\swiper.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="images\main-wait.gif" />
+    <Content Include="plug\kindeditor\examples\auto-height.html" />
+    <Content Include="plug\kindeditor\examples\colorpicker.html" />
+    <Content Include="plug\kindeditor\examples\custom-plugin.html" />
+    <Content Include="plug\kindeditor\examples\custom-theme.html" />
+    <Content Include="plug\kindeditor\examples\default.html" />
+    <Content Include="plug\kindeditor\examples\dialog.html" />
+    <Content Include="plug\kindeditor\examples\dynamic-load.html" />
+    <Content Include="plug\kindeditor\examples\file-dialog.html" />
+    <Content Include="plug\kindeditor\examples\file-manager.html" />
+    <Content Include="plug\kindeditor\examples\filter-mode.html" />
+    <Content Include="plug\kindeditor\examples\image-dialog.html" />
+    <Content Include="plug\kindeditor\examples\index.css" />
+    <Content Include="plug\kindeditor\examples\index.html" />
+    <Content Include="plug\kindeditor\examples\jquery-ui.html" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.css" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\css\smoothness\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="plug\kindeditor\examples\jquery-ui\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="plug\kindeditor\examples\jquery.html" />
+    <Content Include="plug\kindeditor\examples\jquery.js" />
+    <Content Include="plug\kindeditor\examples\multi-image-dialog.html" />
+    <Content Include="plug\kindeditor\examples\multi-language.html" />
+    <Content Include="plug\kindeditor\examples\newline.html" />
+    <Content Include="plug\kindeditor\examples\node.html" />
+    <Content Include="plug\kindeditor\examples\paste-type.html" />
+    <Content Include="plug\kindeditor\examples\qqstyle.html" />
+    <Content Include="plug\kindeditor\examples\readonly.html" />
+    <Content Include="plug\kindeditor\examples\simple.html" />
+    <Content Include="plug\kindeditor\examples\uploadbutton.html" />
+    <Content Include="plug\kindeditor\examples\url-type.html" />
+    <Content Include="plug\kindeditor\examples\word-count.html" />
+    <Content Include="plug\kindeditor\kindeditor-all-min.js" />
+    <Content Include="plug\kindeditor\kindeditor-all.js" />
+    <Content Include="plug\kindeditor\kindeditor-min.js" />
+    <Content Include="plug\kindeditor\kindeditor.js" />
+    <Content Include="plug\kindeditor\lang\ar.js" />
+    <Content Include="plug\kindeditor\lang\en.js" />
+    <Content Include="plug\kindeditor\lang\ko.js" />
+    <Content Include="plug\kindeditor\lang\zh_CN.js" />
+    <Content Include="plug\kindeditor\lang\zh_TW.js" />
+    <Content Include="plug\kindeditor\license.txt" />
+    <Content Include="plug\kindeditor\plugins\anchor\anchor.js" />
+    <Content Include="plug\kindeditor\plugins\autoheight\autoheight.js" />
+    <Content Include="plug\kindeditor\plugins\baidumap\baidumap.js" />
+    <Content Include="plug\kindeditor\plugins\baidumap\index.html" />
+    <Content Include="plug\kindeditor\plugins\baidumap\map.html" />
+    <Content Include="plug\kindeditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="plug\kindeditor\plugins\code\code.js" />
+    <Content Include="plug\kindeditor\plugins\code\prettify.css" />
+    <Content Include="plug\kindeditor\plugins\code\prettify.js" />
+    <Content Include="plug\kindeditor\plugins\emoticons\emoticons.js" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\0.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\1.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\10.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\100.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\101.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\102.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\103.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\104.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\105.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\106.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\107.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\108.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\109.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\11.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\110.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\111.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\112.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\113.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\114.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\115.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\116.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\117.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\118.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\119.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\12.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\120.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\121.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\122.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\123.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\124.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\125.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\126.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\127.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\128.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\129.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\13.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\130.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\131.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\132.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\133.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\134.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\14.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\15.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\16.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\17.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\18.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\19.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\2.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\20.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\21.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\22.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\23.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\24.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\25.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\26.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\27.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\28.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\29.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\3.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\30.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\31.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\32.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\33.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\34.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\35.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\36.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\37.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\38.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\39.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\4.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\40.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\41.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\42.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\43.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\44.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\45.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\46.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\47.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\48.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\49.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\5.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\50.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\51.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\52.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\53.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\54.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\55.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\56.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\57.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\58.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\59.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\6.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\60.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\61.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\62.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\63.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\64.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\65.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\66.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\67.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\68.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\69.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\7.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\70.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\71.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\72.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\73.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\74.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\75.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\76.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\77.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\78.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\79.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\8.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\80.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\81.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\82.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\83.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\84.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\85.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\86.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\87.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\88.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\89.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\9.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\90.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\91.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\92.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\93.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\94.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\95.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\96.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\97.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\98.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\99.gif" />
+    <Content Include="plug\kindeditor\plugins\emoticons\images\static.gif" />
+    <Content Include="plug\kindeditor\plugins\filemanager\filemanager.js" />
+    <Content Include="plug\kindeditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="plug\kindeditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="plug\kindeditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="plug\kindeditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="plug\kindeditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="plug\kindeditor\plugins\flash\flash.js" />
+    <Content Include="plug\kindeditor\plugins\image\image.js" />
+    <Content Include="plug\kindeditor\plugins\image\images\align_left.gif" />
+    <Content Include="plug\kindeditor\plugins\image\images\align_right.gif" />
+    <Content Include="plug\kindeditor\plugins\image\images\align_top.gif" />
+    <Content Include="plug\kindeditor\plugins\image\images\refresh.png" />
+    <Content Include="plug\kindeditor\plugins\insertfile\insertfile.js" />
+    <Content Include="plug\kindeditor\plugins\lineheight\lineheight.js" />
+    <Content Include="plug\kindeditor\plugins\link\link.js" />
+    <Content Include="plug\kindeditor\plugins\map\map.html" />
+    <Content Include="plug\kindeditor\plugins\map\map.js" />
+    <Content Include="plug\kindeditor\plugins\media\media.js" />
+    <Content Include="plug\kindeditor\plugins\multiimage\images\image.png" />
+    <Content Include="plug\kindeditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="plug\kindeditor\plugins\multiimage\images\select-files-zh_CN.png" />
+    <Content Include="plug\kindeditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="plug\kindeditor\plugins\multiimage\multiimage.js" />
+    <Content Include="plug\kindeditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="plug\kindeditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="plug\kindeditor\plugins\preview\preview.js" />
+    <Content Include="plug\kindeditor\plugins\quickformat\quickformat.js" />
+    <Content Include="plug\kindeditor\plugins\table\table.js" />
+    <Content Include="plug\kindeditor\plugins\template\html\1.html" />
+    <Content Include="plug\kindeditor\plugins\template\html\2.html" />
+    <Content Include="plug\kindeditor\plugins\template\html\3.html" />
+    <Content Include="plug\kindeditor\plugins\template\template.js" />
+    <Content Include="plug\kindeditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="plug\kindeditor\themes\common\anchor.gif" />
+    <Content Include="plug\kindeditor\themes\common\blank.gif" />
+    <Content Include="plug\kindeditor\themes\common\flash.gif" />
+    <Content Include="plug\kindeditor\themes\common\loading.gif" />
+    <Content Include="plug\kindeditor\themes\common\media.gif" />
+    <Content Include="plug\kindeditor\themes\common\rm.gif" />
+    <Content Include="plug\kindeditor\themes\default\background.png" />
+    <Content Include="plug\kindeditor\themes\default\default.css" />
+    <Content Include="plug\kindeditor\themes\default\default.png" />
+    <Content Include="plug\kindeditor\themes\qq\editor.gif" />
+    <Content Include="plug\kindeditor\themes\qq\qq.css" />
+    <Content Include="plug\kindeditor\themes\simple\simple.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Config\PhoneMsg.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\TiXian.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\PhoneMsgJK.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\JieKuan.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\ModJieKuanState.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ModPwd.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ModInfo.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\dakuaninfo.cshtml" />
+    <Content Include="Areas\Admin\Views\BankCard\TiXianMIma.cshtml" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Areas\Admin\Views\BankCard\ModJieKuanMoney.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ShenHe.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ChongZhi.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\MoneyDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\MenuGroup.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\CreateMenuGroup.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\MenuFenPei.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\MenuGoList.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\NowHT.cshtml" />
+    <Content Include="Areas\Admin\Views\LData\LDataType.cshtml" />
+    <Content Include="Areas\Admin\Views\LData\LDataTypeAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\LData\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\LData\LDataAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\ChatmsgAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Chat\ChatmsgDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\LiuYanDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\ProductType.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\Product.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\ProductTypeAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\ProductAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\ProductImg.cshtml" />
+    <Content Include="Areas\Admin\Views\QiYe\ProductImgAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\ConfigImg.cshtml" />
+    <Content Include="Areas\Admin\Views\Config\ConfigImgAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Power.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\SecondPwd.cshtml" />
+    <Content Include="Content\QiYe\css\boyitong.css.map" />
+    <Content Include="Content\QiYe\css\boyitong.scss" />
+    <Content Include="Content\QiYe\css\lib\reset.css.map" />
+    <Content Include="Content\QiYe\css\lib\reset.scss" />
+    <Content Include="Areas\Admin\Views\Article\listCategoryOther.cshtml" />
+    <Content Include="Areas\Admin\Views\Article\AddArticleCategoryOther.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\IndexMV.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\JiFenChongZhi.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\JifenDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\DianQuanDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\ManHua\TiXian.cshtml" />
+    <Content Include="Areas\Admin\Views\ManHua\TixianShenHe.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\IndexYT.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\YTMod.cshtml" />
+    <Content Include="Areas\Admin\Views\ChwBoat\MyBoatAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\ChwBoat\MyBoat.cshtml" />
+    <Content Include="Areas\Admin\Views\ChwBoat\BoatOrder.cshtml" />
+    <Content Include="Areas\Admin\Views\ChwBoat\ModOrderState.cshtml" />
+    <Content Include="Areas\Admin\Views\AMHVedio\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AMHVedio\AddVedio.cshtml" />
+    <Content Include="Areas\Admin\Views\AMHVedio\PlayVedio.cshtml" />
+    <Content Include="Areas\Admin\Views\AMHVedio\sysvedio.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\MemberAMH.cshtml" />
+    <Content Include="Areas\Admin\Views\Member\ChongZhiVIP.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\DLList.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\AddDL.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\SetDLState.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\UserList.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\AddUser.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\SetUserState.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\ZFBList.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\AddZFB.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\WXList.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\WXAdd.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\UserTiXian.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\AgentTiXian.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\UserTiXianState.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\AgentiXianState.cshtml" />
+    <Content Include="Areas\Admin\Views\TPay\UserOrder.cshtml" />
+    <Content Include="Content\css\base.scss" />
+    <Content Include="Content\css\chwconfig.scss" />
+    <Content Include="Content\css\kingzhu-old0503.css.map" />
+    <Content Include="Content\css\kingzhu-old0503.scss" />
+    <Content Include="Content\css\kingzhu.css.map" />
+    <Content Include="Content\css\kingzhu.scss" />
+    <Content Include="Content\css\kzconfig.scss" />
+    <None Include="Properties\PublishProfiles\YShop.pubxml" />
+    <Content Include="Views\PartV\HeadJC.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\zhifu.cshtml" />
+    <Content Include="Views\Home\pay.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\PartV\Footer.cshtml" />
+    <Content Include="Views\PartV\FooterJC.cshtml" />
+    <Content Include="Views\PartV\LeftNav.cshtml" />
+    <Content Include="Views\PartV\MemberTop.cshtml" />
+    <Content Include="Views\PartV\Nav.cshtml" />
+    <Content Include="Views\PartV\PhoneNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Member\Content\" />
+    <Folder Include="Models\" />
+    <Folder Include="plug\kindeditor\attached\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DDAPI\DDAPI.csproj">
+      <Project>{95ce9e4e-e55b-445d-95ba-dbc365930a79}</Project>
+      <Name>DDAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.BLL\Yax.BLL.csproj">
+      <Project>{a26fa0b3-7986-421e-9246-2d6070ba4c01}</Project>
+      <Name>Yax.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Common\Yax.Common.csproj">
+      <Project>{5162d766-2771-4802-8f4e-9216e82742a1}</Project>
+      <Name>Yax.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Model\Yax.Model.csproj">
+      <Project>{eff8e1c1-e927-497d-a9f3-1cd437b9e115}</Project>
+      <Name>Yax.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1677</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1677/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

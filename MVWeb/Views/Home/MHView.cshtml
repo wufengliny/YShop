@@ -1,0 +1,139 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="@ViewBag.Name">
+    <meta name="description" content="@ViewBag.Introduce" />
+    <title>天巫漫画--@ViewBag.Name</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body class="kzactiveBody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+
+    <!--public aside bar-->
+    @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
+
+   
+    <!--面包屑导航-->
+    <section class="kzcurrentNavBox wow fadeInDown">
+        <div class="container">
+            您的位置:
+            <p class="kzcurrentNavList">
+                <a href="/">天巫漫画</a>
+                <a href="#this">漫画</a>
+                <a href="#this">@ViewBag.Name</a>
+            </p>
+        </div>
+    </section>
+    <!--详情头部-->
+    <section class="kzACHeaderWrap">
+        <div class="container">
+            <div class="kzACHeaderInner clearfix">
+                <div class="span6 col-sm-12">
+                    <div class="swiper-container kzACDBanner-container wow fadeInLeft">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" style="text-align:center">
+                                <img src="@ViewBag.Cover" alt="" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="span6 col-sm-12">
+                    <div class="kzbuyTicketForm wow fadeInRight">
+                        <h5 >@ViewBag.Name</h5>
+                        <div class="kzbuyPriceBar">
+                            <span class="kzclickCount" style="float:none">@ViewBag.Introduce</span>
+                        </div>
+                        <div class="kzbuyPriceBar addlike" >
+                            <span class="addlikespan" id="spanlike" onclick="dolike()" style="float:none">@ViewBag.likestr</span>
+                        </div>
+                        <div style="margin-top:50px;">
+                            @{
+                                List<Yax.Model.M_Chapter> list = ViewBag.list;
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                                    <a href="/home/MHPic?cid=@list[i].ID" class="span3 col-sm-12  dddklo">
+                                        <span class="spandiji">@list[i].Name</span>
+                                    </a>
+                                }
+                            }
+                         
+                        </div>
+                    </div>
+               
+                </div>
+            </div>
+        </div>
+    </section>
+    <input type="hidden" id="id"  value="@Request.QueryString["id"]" />
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+
+    <style>
+        .dddklo :hover{
+             background-color:yellow;
+        }
+        .dddklo{
+               text-align:center;
+               margin-top:5px;
+               padding:5px;
+        }
+        .spandiji{
+            padding:5px 10px;
+            background-color:#f2fcfc;
+        }
+        .addlike:hover{
+             background-color:#dcde12;
+        }
+        .addlike{
+            width:100px;
+            background-color:#fff;
+            border:1px solid black;
+            padding:10px 20px;
+            text-align:center;
+        }
+        .addlikespan
+        {
+            font-weight:800;
+            font-size:large;
+             color:#0034ff;
+        }
+    </style>
+    <script>
+        function dolike()
+        {
+            var id = $("#id").val();
+            var likestr = $("#spanlike").html();
+            if (likestr == "加入收藏")
+            {
+                $.post("/home/MHDoLikePost", "id=" + id, function (res) {
+                    if (res == "ok") {
+                        $("#spanlike").html("已收藏");
+                    }
+                })
+            }
+           
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+    <link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+    <script src="~/plug/kindeditor/kindeditor-min.js"></script>
+    <script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/datetimepicker.js"></script>
+    <script>
+        $(function () {
+            $('#fromTime').focus(function () {
+                $('#fromTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd HH:mm:ss"))' });
+            });
+            $('#toTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+        })
+    </script>
+</head>
+<body>
+    <input class="kzinput" name="fromTime" id="fromTime" type="text" />
+    <input class="kzinput" name="toTime" id="toTime" type="text" />
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "后台管理";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">二级密码</h3>
+    <div class="content">
+        <form id="pwdform">
+            <div>
+                <div class="form-group">
+                    <input type="password" id="oldsecpwd" name="oldsecpwd" class="form-control" value="" placeholder="原二级密码">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="secpwd" name="secpwd" class="form-control" value="" placeholder="新二级密码">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="resecpwd" name="resecpwd" class="form-control" value="" placeholder="确认二级密码">
+                </div>
+                <div class="form-group">
+                    <span style="color:red">每个管理员账号的二级密码是独立的（初始二级密码和登陆密码一致）</span>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="savepwd()" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </form>
+       
+
+
+    </div>
+</div>
+<script>
+    function savepwd()
+    {
+        var oldsecpwd = $("#oldsecpwd").val();
+        if(oldsecpwd=="")
+        {
+            alert('原二级密码不能为空');
+            return false;
+        }
+        if($("#secpwd").val()=="")
+        {
+            alert('二级密码不能为空');
+            return false;
+        }
+        if ($("#resecpwd").val() != $("#secpwd").val()) {
+            alert('两次密码输入不一致');
+            return false;
+        }
+        var data = $("#pwdform").serialize();
+        $.post("/admin/admin/SecondPwdPost", data, function (res) {
+            alert(res);
+        })
+    }
+</script>

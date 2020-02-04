@@ -1,0 +1,98 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzmemberBT memberPaddingTop">
+        <div class="container">
+            当前位置:
+            <a class="kzmemberBTLi" href="/member/index">会员中心</a>
+            <a class="kzmemberBTLi" href="#this">修改密码</a>
+        </div>
+    </section>
+
+    <!--渠道代理列表-->
+    <section class="kzagentList kzsetFormList">
+        <div class="container">
+            <div class="kzagentInner">
+                <div class="kzheader">修改密码</div>
+
+                <div class="kzsetFormInner clearfix">
+                    <div class="kzinputBox">
+                        <span class="kzLabel">旧密码:</span>
+                        <input type="password" placeholder="请输入旧密码" id="Opwd" name="Opwd" value="" />
+                    </div>
+                    <div class="kzinputBox">
+                        <span class="kzLabel">新密码:</span>
+                        <input placeholder="请输入新密码" type="password" id="pwd" name="pwd" value="" />
+                    </div>
+                    <div class="kzinputBox">
+                        <span class="kzLabel">确认密码:</span>
+                        <input placeholder="请再次输入新密码" type="password" id="repwd" name="repwd" value="" />
+                    </div>
+
+                    <a class="kzsaveBtn" onclick="domod()" href="javascript:;">保存修改</a>
+                    <a class="kzbackBtn" href="/member/index">返回</a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+    <script>
+        function domod()
+        {
+            var Opwd = $("#Opwd").val();
+            var pwd = $("#pwd").val();
+            var repwd = $("#repwd").val();
+            if(Opwd=="")
+            {
+                alert('请输入原密码');
+                return;
+            }
+            if (pwd == "") {
+                alert('请输入新密码');
+                return;
+            }
+            if (pwd != repwd) {
+                alert('两次密码输入不一致');
+                return;
+            }
+            $.post("/Member/ModPwdPost", "Opwd=" + Opwd + "&pwd=" + pwd, function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+    </script>
+</body>
+
+</html>

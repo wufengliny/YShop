@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "后台管理";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">视频列表</h3>
+    <div class="content">
+        <input  type="hidden" name="menuid" id="menuid" value="@Request.QueryString["menuid"]"/>
+        <input type="hidden" name="pid" id="pid" value="@Request.QueryString["pid"]" />
+
+        <form action="/admin/AMHVedio/index" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">类型:</label>
+                    <select class="btn btn-default dropdown-toggle" id="Category" name="Category">
+                        <option value="自拍">自拍</option>
+                        <option value="亚洲">亚洲</option>
+                        <option value="动漫">动漫</option>
+                        <option value="剧情">剧情</option>
+                        <option value="欧美">欧美</option>
+                    </select>
+                    <script>
+                        $("#Category").val('@ViewBag.Category');
+                    </script>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ID" class="form-control" value="@Request.QueryString["ID"]" placeholder="ID">
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="Name" class="form-control" value="@Request.QueryString["Name"]" placeholder="名称...">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        名称
+                    </th>
+                    <th>
+                        类型
+                    </th>
+                    <th>
+                        时长
+                    </th>
+                    <th>
+                        封面
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                            List<Yax.Model.AMH_Vedio> list = ViewBag.list;
+                            if (list != null && list.Count > 0)
+                            {
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @list[i].ID
+                                </td>
+                                <td style="max-width:450px;">
+                                    @list[i].Name
+                                </td>
+                                <td>
+                                    @list[i].Category
+                                </td>
+                                <td>
+                                    @list[i].VedioLong
+                                </td>
+                                <td>
+                                    @{ 
+                                        string cover = list[i].Cover;
+                                        if(list[i].FromSite!="sys")
+                                        {
+                                            cover = ViewBag.fileurl + cover;
+                                        }
+                                    }
+                                <img src="@cover" style="max-width:100px;" />   
+                                </td>
+                                <td>
+                                    @list[i].AddTime
+                                </td>
+                                <td>
+                                    <a class="btn btn-warning btn-xs" onclick="PlayVedio(@list[i].ID)" title="">播放</a>
+                                   
+                                  
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td colspan="8">aa</td>
+                        </tr>
+                }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+<script>
+    function PlayVedio(id)
+    {
+        var menuid=$("#menuid").val();
+        var pid=$("#pid").val();
+        location.href='/admin/AMHVedio/PlayVedio?id='+id+"&menuid="+menuid+"&pid="+pid;
+       //$loadModal('/admin/AMHVedio/PlayVedio?id='+id);
+    }
+    function create()
+    {
+        $loadModal('/admin/AMHVedio/AddVedio');
+    }
+    function edit(id)
+    {
+        $loadModal('/admin/AMHVedio/AddVedio?id='+id);
+    }
+    function deladmin(id)
+    {
+        if(confirm("确定要删除？")){
+            $.post("/admin/admin/deladmin?id="+id,"",function(res){
+                alert(res);
+                location.reload();
+            })
+        }
+
+    }
+</script>

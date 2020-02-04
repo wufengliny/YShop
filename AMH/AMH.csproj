@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B3BFCB5-8718-43F2-81FE-DDD4AA821EFA}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AMH</RootNamespace>
+    <AssemblyName>AMH</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.30506.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.30506.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.30506.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\ValidateCodeController.cs" />
+    <Compile Include="Filters\ErrorFilter.cs" />
+    <Compile Include="Filters\MemActionAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\kaysitecss.css" />
+    <Content Include="Content\css\kingzhu-old0503.css" />
+    <Content Include="Content\css\kingzhu.css" />
+    <Content Include="Content\css\swiper,animate,scroll.min.css" />
+    <Content Include="Content\images\pic_loading.gif" />
+    <Content Include="Content\images\public\alipayIcon.png" />
+    <Content Include="Content\images\public\aside.jpg" />
+    <Content Include="Content\images\public\asideBG.jpg" />
+    <Content Include="Content\images\public\closeredbtn.png" />
+    <Content Include="Content\images\public\kzicon.png" />
+    <Content Include="Content\images\public\loginBg.jpg" />
+    <Content Include="Content\images\public\logo.png" />
+    <Content Include="Content\images\public\m01.jpg" />
+    <Content Include="Content\images\public\m02.jpg" />
+    <Content Include="Content\images\public\m03.jpg" />
+    <Content Include="Content\images\public\m04.jpg" />
+    <Content Include="Content\images\public\m05.jpg" />
+    <Content Include="Content\images\public\m06.jpg" />
+    <Content Include="Content\images\public\m07.jpg" />
+    <Content Include="Content\images\public\m08.jpg" />
+    <Content Include="Content\images\public\m09.jpg" />
+    <Content Include="Content\images\public\membericon.png" />
+    <Content Include="Content\images\public\mid-circle.png" />
+    <Content Include="Content\images\public\navbar.png" />
+    <Content Include="Content\images\public\ok.png" />
+    <Content Include="Content\images\public\openredbtn.png" />
+    <Content Include="Content\images\public\redbg.png" />
+    <Content Include="Content\images\public\redbottombg.png" />
+    <Content Include="Content\images\public\redcoin.png" />
+    <Content Include="Content\images\public\redcoins.png" />
+    <Content Include="Content\images\public\redgoto.png" />
+    <Content Include="Content\images\public\redseal.png" />
+    <Content Include="Content\images\public\redtopbg.png" />
+    <Content Include="Content\images\public\SecKillIcon.png" />
+    <Content Include="Content\images\public\small-circle.png" />
+    <Content Include="Content\images\public\weixincode.jpg" />
+    <Content Include="Content\images\public\wxpayIcon.png" />
+    <Content Include="Content\images\temp\about01.jpg" />
+    <Content Include="Content\images\temp\about02.jpg" />
+    <Content Include="Content\images\temp\acd01.jpg" />
+    <Content Include="Content\images\temp\acgz01.jpg" />
+    <Content Include="Content\images\temp\active01.jpg" />
+    <Content Include="Content\images\temp\acxz01.jpg" />
+    <Content Include="Content\images\temp\ad01.jpg" />
+    <Content Include="Content\images\temp\banner\01.jpg" />
+    <Content Include="Content\images\temp\indexli01.jpg" />
+    <Content Include="Content\images\temp\myorder.jpg" />
+    <Content Include="Content\images\temp\news1.jpg" />
+    <Content Include="Content\images\temp\newstemp.jpg" />
+    <Content Include="Content\images\temp\o1.jpg" />
+    <Content Include="Content\images\temp\qr.jpg" />
+    <Content Include="Content\images\temp\share.jpg" />
+    <Content Include="Content\images\temp\vccode.jpg" />
+    <Content Include="Content\images\temp\weixin.jpg" />
+    <Content Include="Content\js\jquery-1.7.1.js" />
+    <Content Include="Content\js\jquery-2.2.4.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\kingzhu.js" />
+    <Content Include="Content\js\kingzhu2.js" />
+    <Content Include="Content\js\layer,wow,scroll.js" />
+    <Content Include="Content\js\skin\default\icon-ext.png" />
+    <Content Include="Content\js\skin\default\icon.png" />
+    <Content Include="Content\js\skin\default\layer.css" />
+    <Content Include="Content\js\skin\default\loading-0.gif" />
+    <Content Include="Content\js\skin\default\loading-1.gif" />
+    <Content Include="Content\js\skin\default\loading-2.gif" />
+    <Content Include="Content\js\swiper.jquery.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.swf" />
+    <Content Include="Content\Player\ckplayer\ckplayer.xml" />
+    <Content Include="Content\Player\ckplayer\language.xml" />
+    <Content Include="Content\Player\ckplayer\style.xml" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yax.BLL\Yax.BLL.csproj">
+      <Project>{a26fa0b3-7986-421e-9246-2d6070ba4c01}</Project>
+      <Name>Yax.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Common\Yax.Common.csproj">
+      <Project>{5162d766-2771-4802-8f4e-9216e82742a1}</Project>
+      <Name>Yax.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Model\Yax.Model.csproj">
+      <Project>{eff8e1c1-e927-497d-a9f3-1cd437b9e115}</Project>
+      <Name>Yax.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\PartV\Footer.cshtml" />
+    <Content Include="Views\PartV\FooterJC.cshtml" />
+    <Content Include="Views\PartV\HeadJC.cshtml" />
+    <Content Include="Views\PartV\LeftNav.cshtml" />
+    <Content Include="Views\PartV\MemberTop.cshtml" />
+    <Content Include="Views\PartV\Nav.cshtml" />
+    <Content Include="Views\PartV\PhoneNav.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\base.scss" />
+    <Content Include="Content\css\chwconfig.scss" />
+    <Content Include="Content\css\kingzhu-old0503.css.map" />
+    <Content Include="Content\css\kingzhu-old0503.scss" />
+    <Content Include="Content\css\kingzhu.css.map" />
+    <Content Include="Content\css\kingzhu.scss" />
+    <Content Include="Content\css\kzconfig.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\MHView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Reg.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Member\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Member\MyLike.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\FreeVedio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\VIPVedio.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\AMH.pubxml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>36559</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12517/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

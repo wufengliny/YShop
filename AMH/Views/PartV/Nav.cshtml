@@ -1,0 +1,63 @@
+﻿<header class="header">
+    <div class="container">
+        <div class="span2 col-md-12">
+            <div class="logo">
+                <a href="/" title="返回首页">
+                    <img src="/content/images/public/logo.png" alt="天巫LOGO">
+                </a>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="mobileMenuBtn"><span class="span1"></span><span class="span2"></span><span class="span3"></span></div>
+            <div class="mobileMenuBtn_shad"></div>
+            <div class="header_menu">
+                <ul id="menu">
+                    <li>
+                        <a href="/" title="首页" >首页</a>
+                    </li>
+                    <li>
+                        <a href="/home/VIPVedio" title="VIP视频">VIP视频</a>
+                    </li>
+                    <li>
+                        <a href="/home/FreeVedio" title="免费视频">免费视频</a>
+                    </li>
+                
+                    @{
+                        if (new Yax.BLL.QuickData.CurrentUserMV().ID > 0)
+                        {
+                            <li>
+                                <a href="/member/index" title="首页" >会员中心</a>
+                            </li>
+                      
+                        }
+                        else
+                        {
+                            <li class="nav-last-li">
+                                <a href="/login/login" title="" >登录</a>
+                            </li>
+                        }
+                    }
+             
+                
+                </ul>
+            </div>
+        </div>
+        <div class="span2">
+            @{
+                if (new Yax.BLL.QuickData.CurrentUserMV().ID == 0)
+                {
+                    <div class="login">
+                        <a href="/login/login" title="登录">登录</a>
+                    </div>
+                }
+                else
+                {
+                    <div class="login">
+                        <a href="/login/loginout" title="登录">退出</a>
+                    </div>
+                }
+            }
+            
+        </div>
+    </div>
+</header>

@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">财务收款账号</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td style="width:150px">
+                        收款银行名称
+                    </td>
+                    <td colspan="5"><input class="form-control" name="BankName" id="BankName" type="text" value="@ViewBag.BankName" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        收款银行户名
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="CardOwner" id="CardOwner"
+                               placeholder="" type="text" value="@ViewBag.CardOwner" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        收款银行账号
+                    </td>
+                    <td colspan="5">
+                        <input class="form-control" name="CardNO" id="CardNO"
+                               placeholder="" type="text" value="@ViewBag.CardNO" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    input {
+        width: 400%;
+        max-width: 100%;
+    }
+
+    input, select, textarea {
+        max-width: 100%;
+    }
+</style>
+
+<link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+<script src="~/plug/kindeditor/kindeditor-min.js"></script>
+<script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+
+
+
+
+
+<script type="text/javascript">
+    function dosub() {
+        //alert($("#Content").val());
+        //return;
+        var data = $("#_ModalForm").serialize();
+        $.post("/admin/BankCard/BankCardPost", data, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "DoSendGood";
+}
+
+<form action="/admin/Orders/DoSendGood" method="post" class="form-horizontal" id="_ModalForm">
+
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <input type="hidden" name="OrderNO" value="@Request.QueryString["OrderNO"]" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">发货</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">物流名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.WuliuName " id="WuliuName" name="WuliuName" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group" style="display:none">
+                        <label class="col-sm-3 control-label">类型</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="Typew2" id="Typew2" onchange="">
+                                @*<option value="0">==请选择==</option>*@
+                                <option value="1">前台</option>
+                                <option value="2">后台</option>
+                                <option value="3">会员中心</option>
+                                <option value="4">代理</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">物流单号</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.WuliuNo" id="WuliuNo" name="WuliuNo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+<script src="~/Content/js/jquery.validate.min.js"></script>
+<script src="~/Content/js/jquery.validate.unobtrusive.js"></script>
+<script src="~/Content/js/admin/site.js"></script>
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub()
+    {
+        if ($("#WuliuName").val() == "")
+        {
+            $("#WuliuName").focus();
+            alert('物流名称不能为空');
+            return;
+        }
+        if ($("#WuliuNo").val() == "") {
+            $("#WuliuNo").focus();
+            alert('物流单号不能为空');
+            return;
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/orders/DoSendGoodPost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+
+
+
+</script>

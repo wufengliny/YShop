@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "订单审核";
+    Layout = null;
+}
+<form class="form-horizontal">
+    <input type="hidden" value="@Request.QueryString["id"]" id="orderid" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog" style="width:820px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">订单审核</h4>
+                </div>
+            @{ 
+                System.Data.DataRow dr = ViewBag.dr;
+            }
+                <div class="modal-body">
+                    <table class="table table-striped table-bordered table-hover">
+                        <tr class="tr-fir">
+                            <td class="td-tit tar" style="width:10%">游艇名称</td>
+                            <td style="width:20%">
+                                @dr["Name"]
+                            </td>
+                            <td class="td-tit tar" style="width:10%">会员账号</td>
+                            <td style="width:20%">@dr["Account"]</td>
+                        </tr>
+                        <tr class="tr-sec">
+                            <td class="td-tit tar">开始时间</td>
+                            <td>@dr["BeginTime"]</td>
+                            <td class="td-tit tar">结束时间</td>
+                            <td>@dr["EndTime"]</td>
+                        </tr>
+                        <tr class="tr-fir">
+                            <td class="td-tit tar">人数</td>
+                            <td >@dr["PeopleNum"]</td>
+                            <td class="td-tit tar">申请时间</td>
+                            <td>@dr["AddTime"]</td>
+                        </tr>
+                        <tr class="tr-sec">
+                            <td class="td-tit tar">姓名</td>
+                            <td class="wordbreak">@dr["RealName"]</td>
+                            <td class="td-tit tar">手机</td>
+                            <td class="wordbreak">@dr["Phone"]</td>
+                        </tr>
+                        <tr class="tr-fir">
+                            <td class="td-tit tar">客户备注</td>
+                            <td colspan="3" class="wordbreak">@dr["Memo"]</td>
+                        </tr>
+                        <tr class="tr-fir">
+                            <td class="td-tit tar">审核</td>
+                            <td colspan="3" class="wordbreak">
+                                <select class="btn btn-default dropdown-toggle" id="subState" name="subState">
+                                    <option value="待审核">待审核</option>
+                                    <option value="已审核">审核通过</option>
+                                    <option value="已取消">取消预定</option>
+                                </select>
+                                <script>
+                                 $("#subState").val('@dr["State"]');
+                                </script>
+                            </td>
+                        </tr>
+                        <tr class="tr-fir">
+                            <td colspan="4" style="text-align:center" class="wordbreak">
+                                <a class="btn btn-success btn-xs" href="#this" onclick="subshenhe()" >提交</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</form>
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+
+    function subshenhe()
+    {
+        var orderid = $("#orderid").val();
+        var state = $("#subState").val();
+        $.post("/admin/ChwBoat/ModOrderStatePost", "id=" + orderid + "&state=" + state, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

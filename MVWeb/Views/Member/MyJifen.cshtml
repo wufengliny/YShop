@@ -1,0 +1,186 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+    <section class="kzmemberBT memberPaddingTop">
+        <div class="container">
+            当前位置:
+            <a class="kzmemberBTLi" href="/member/index">会员中心</a>
+            <a class="kzmemberBTLi" href="#this">流水</a>
+        </div>
+    </section>
+    @{ 
+        string tp = Request.QueryString["tp"];
+        string tPname = "积分明细";
+        if(tp=="dq")
+        {
+            tPname = "点券明细";
+        }
+    }
+    <!--渠道统计-->
+    <section class="kzchannelWrap">
+        <div class="container">
+            <div class="kzchannelInner clearfix">
+                <a href="/member/MyJifen" >
+                    <div class="span6  @(string.IsNullOrEmpty(tp)?"activedd":"")">
+                        <div class="kzchannelLi">
+                            <span class="kzcount">@ViewBag.JIFen <i></i></span>
+                            <p class="kzTips">我的积分</p>
+                        </div>
+                    </div>
+                </a>
+               <a href="/member/MyJifen?tp=dq">
+                   <div class="span6 @(tp=="dq"?"activedd":"")">
+                       <div class="kzchannelLi kzchannelLi2">
+                           <span class="kzcount">@ViewBag.DianQuan <i></i></span>
+                           <p class="kzTips">我的点券</p>
+                       </div>
+                   </div>
+               </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!--渠道代理列表-->
+    <section class="kzagentList">
+        <div class="container">
+            <div class="kzagentInner">
+                <div class="kzheader">@tPname @(ViewBag.TotalCount)条数据 </div>
+                <table id="userTable">
+                    <tr>
+                        <th class="kzNumber">ID</th>
+                        <th class="kzSettlementPrice">变动</th>
+                        <th class="kzStatu">备注</th>
+                        <th class="kzStore">时间</th>
+                    </tr>
+                    @{
+                        if (string.IsNullOrEmpty(tp))
+                        {
+                            List<Yax.Model.JiFenDetail> list = ViewBag.list;
+                            if (list != null && list.Count > 0)
+                            {
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                                    <tr>
+                                        <td data-th="">@(i + 1) </td>
+                                        <td data-th="">
+                                        @{
+                                            if(list[i].PreJiFen>list[i].AfterJIfen)
+                                            {
+                                               <span>-</span><span>@list[i].Jifen</span>
+                                            }
+                                            else
+                                            {
+                                                <span>+</span><span>@list[i].Jifen</span>
+                                            }
+                                        }
+                                            
+                                        </td>
+                                        <td data-th="">@list[i].Memo</td>
+                                        <td data-th="">@list[i].AddTime.ToString("yyyy-MM-dd")</td>
+                                    </tr>
+                                }
+                            }
+                        }
+                        if (tp == "dq")
+                        {
+                            List<Yax.Model.DianQuanDetail> list = ViewBag.list;
+                            if (list != null && list.Count > 0)
+                            {
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                                    <tr>
+                                        <td data-th="">@(i + 1) </td>
+                                        <td data-th="">
+                                            @{
+                                                if (list[i].PreJiFen > list[i].AfterJIfen)
+                                                {
+                                                    <span>-</span><span>@list[i].Jifen</span>
+                                                }
+                                                else
+                                                {
+                                                    <span>+</span><span>@list[i].Jifen</span>
+                                                }
+
+                                            }
+                                        </td>
+                                        <td data-th="">@list[i].Memo</td>
+                                        <td data-th="">@list[i].AddTime.ToString("yyyy-MM-dd")</td>
+                                    </tr>
+                                }
+                            }
+                        }
+                    }
+                </table>
+            </div>
+            @{
+                if (ViewBag.TotalPage > 1)
+                {
+                    <div class="kzmemberMoreBox">
+                        <a class="kzmore" onclick="GetMore()" id="btnMore" href="#this">查看更多</a>
+                    </div>
+                }
+            }
+           
+        </div>
+        <input type="hidden" name="PIndex" id="PIndex" value="1" />
+        <input type="hidden" name="tp"  id="tp" value="@Request.QueryString["tp"]"/>
+    </section>
+
+    <style>
+        .activedd{
+            background-color:#ffd800;
+        }
+    </style>
+    <!--移动端页脚-->
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+
+    <script>
+        function GetMore() {
+            $("#btnMore").hide();
+            var PIndex = parseInt($("#PIndex").val());
+            var tp = $("#tp").val();
+            PIndex = PIndex + 1;
+            $.post("/member/MyJifenAjax", "PIndex=" + PIndex + "&tp="+tp, function (res) {
+                if (res == "no") {
+                    $("#btnMore").html("加载完毕");
+                    $("#btnMore").show();
+                    $("#btnMore").attr("onclick", "");
+                }
+                else {
+                    $("#userTable tr").last().after(res);
+                    $("#btnMore").show();
+                    $("#PIndex").val(PIndex);
+                }
+
+            })
+        }
+    </script>
+</body>
+</html>

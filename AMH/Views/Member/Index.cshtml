@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天污影视">
+    <meta name="description" content="天污影视" />
+    <title>天污影视</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzMemberNewLinkWrap">
+        <div class="container clearfix">
+            <div class="kzMemberNewLinkInner">
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-meOrder" href="/member/MyLike">
+                        <h5>我的收藏</h5>
+                        <span>我收藏的作品</span>
+                    </a>
+                </div>
+                <div class="span3 col-xm-4">
+                    <a class="kzMemberLinkLi kzMemberLinkLi-meOrder" href="/member/MyYuDing">
+                        <h5>充值VIP</h5>
+                        <span>前去升级</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+</body>
+</html>

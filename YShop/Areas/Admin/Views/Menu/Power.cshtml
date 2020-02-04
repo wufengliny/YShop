@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "权限分配";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/KayJs/kay.js"></script>
+@model Dictionary<string, Yax.Common.DataModelHelper.AdminMenu>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">权限分配-@ViewBag.Name</h3>
+    <div class="content">
+        <form id="formpower">
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th width="30px">
+                            <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=MenuID]" data-toggle="checkall">
+                        </th>
+                        <th>
+                            一级菜单
+                        </th>
+                        <th>
+                            二级菜单
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        List<Yax.Model.Power> listpower= (List<Yax.Model.Power>)ViewBag.listpower;
+                        if (Model != null && Model.Count > 0)
+                        {
+                            foreach (var item in Model)
+                            {
+                                string strfirst = "";
+                                Yax.Model.Power m1= listpower.Where(p => p.MenuID == item.Key).FirstOrDefault();
+                                if(m1!=null)
+                                {
+                                    strfirst = "checked=\"checked\"";
+                                }
+                                <tr>
+                                    <td width="30px"><input type="checkbox" @strfirst onclick="kaycheckAll(this, 'childm@(item.Key)')" class="parent@(item.Key)" name="MenuID" value="@item.Key"></td>
+                                    <td>@item.Value.Title</td>
+                                    <td>
+                                        @{
+                                            foreach (var child in item.Value.ItemList)
+                                            {
+                                                string strsencond = "";
+                                                Yax.Model.Power m2 = listpower.Where(p => p.MenuID == child.Key).FirstOrDefault();
+                                                if (m2 != null)
+                                                {
+                                                    strsencond = "checked=\"checked\"";
+                                                }
+                                                <label>
+                                                    <input type="checkbox" @strsencond name="MenuID" onclick="KayCheckParent(this, 'parent@(item.Key)','childm@(item.Key)')" class="childm@(item.Key)" value="@child.Key">
+                                                    @child.Value.Title
+                                                </label>
+                            }
+                        }
+                                    </td>
+                                </tr>
+                                                }
+                                            }
+                    }
+                </tbody>
+            </table>
+
+            <div style="margin-left:30%">
+                <div class="form-group" style="display:inline-block">
+                    <input type="password" id="secpwd" name="secpwd" class="form-control" value="" placeholder="请输入二级密码">
+                </div>
+                <div class="form-group" style="display:inline-block">
+                    <button type="button" onclick="savepower()" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+            <input  type="hidden" name="KGroup" value="@Request.QueryString["id"]"/>
+        </form>
+    </div>
+</div>
+
+<script>
+    function savepower()
+    {
+        var secpwd = $("#secpwd").val();
+        if(secpwd=="")
+        {
+            alert("请输入二级密码");
+            return false;
+        }
+        var data = $("#formpower").serialize();
+        $.post("/admin/menu/PowerPost", data, function (res) {
+            alert(res);
+        })
+    }
+</script>

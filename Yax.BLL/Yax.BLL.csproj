@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A26FA0B3-7986-421E-9246-2D6070BA4C01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yax.BLL</RootNamespace>
+    <AssemblyName>Yax.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\admin_2019_cp\admin\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Admin.cs" />
+    <Compile Include="AdminGroup.cs" />
+    <Compile Include="AMH_Vedio.cs" />
+    <Compile Include="Article.cs" />
+    <Compile Include="ArticleType.cs" />
+    <Compile Include="BankCard.cs" />
+    <Compile Include="BCommon.cs" />
+    <Compile Include="Catagory.cs" />
+    <Compile Include="Chat_msg.cs" />
+    <Compile Include="Chw_Boat.cs" />
+    <Compile Include="Chw_Order.cs" />
+    <Compile Include="Comment.cs" />
+    <Compile Include="CompanyBankCard.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="CurrentMember.cs" />
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="DianQuanDetail.cs" />
+    <Compile Include="FriendLink.cs" />
+    <Compile Include="GoodsUrl.cs" />
+    <Compile Include="Img_Type.cs" />
+    <Compile Include="JieKuan.cs" />
+    <Compile Include="JiFenDetail.cs" />
+    <Compile Include="L_Data.cs" />
+    <Compile Include="L_DataType.cs" />
+    <Compile Include="MoneyDetail.cs" />
+    <Compile Include="MsgConfig.cs" />
+    <Compile Include="M_Chapter.cs" />
+    <Compile Include="M_ManHua.cs" />
+    <Compile Include="M_Pic.cs" />
+    <Compile Include="M_RegUserCode.cs" />
+    <Compile Include="OrderItem.cs" />
+    <Compile Include="OtherData\PayConfig.cs" />
+    <Compile Include="OtherData\ZFBModel.cs" />
+    <Compile Include="PayCard.cs" />
+    <Compile Include="PhoneMsg.cs" />
+    <Compile Include="Power.cs" />
+    <Compile Include="QiYeQuickInfo.cs" />
+    <Compile Include="QiYe_LiuYan.cs" />
+    <Compile Include="QiYe_Product.cs" />
+    <Compile Include="QiYe_ProductType.cs" />
+    <Compile Include="QuickData\CurrentUserPay.cs" />
+    <Compile Include="QuickData\CurrentUserMV.cs" />
+    <Compile Include="QuickData\CurrentUserPayAgent.cs" />
+    <Compile Include="ShopGood.cs" />
+    <Compile Include="ShopOrder.cs" />
+    <Compile Include="S_Menu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TiXian.cs" />
+    <Compile Include="TPay_Agent.cs" />
+    <Compile Include="Tpay_Order.cs" />
+    <Compile Include="Tpay_TiXian.cs" />
+    <Compile Include="TPay_User.cs" />
+    <Compile Include="TPay_WXConfig.cs" />
+    <Compile Include="TPay_ZFBConfig.cs" />
+    <Compile Include="UserLike.cs" />
+    <Compile Include="UserLoginIP.cs" />
+    <Compile Include="WebTool.cs" />
+    <Compile Include="Web_Img.cs" />
+    <Compile Include="Y_User.cs" />
+    <Compile Include="ZY_Log.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yax.Common\Yax.Common.csproj">
+      <Project>{5162d766-2771-4802-8f4e-9216e82742a1}</Project>
+      <Name>Yax.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Dal\Yax.Dal.csproj">
+      <Project>{a323784a-1390-40bd-abc1-68157a715c30}</Project>
+      <Name>Yax.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.Model\Yax.Model.csproj">
+      <Project>{eff8e1c1-e927-497d-a9f3-1cd437b9e115}</Project>
+      <Name>Yax.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yax.SqlHelper\Yax.SqlHelper.csproj">
+      <Project>{638517f8-d7bd-44f6-b7c0-a02f967960d3}</Project>
+      <Name>Yax.SqlHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

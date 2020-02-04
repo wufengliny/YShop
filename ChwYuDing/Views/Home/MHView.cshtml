@@ -1,0 +1,127 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="游艇预定">
+    <meta name="description" content="游艇预定" />
+    <title>游艇预定</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body class="kzactiveBody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+
+    <!--public aside bar-->
+    @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
+
+    <!--面包屑导航-->
+    <section class="kzcurrentNavBox wow fadeInDown">
+        <div class="container">
+            您的位置:
+            <p class="kzcurrentNavList">
+                <a href="/">首页</a>
+                <a href="#this">游艇预定</a>
+            </p>
+        </div>
+    </section>
+    <!--详情头部-->
+    <section class="kzACHeaderWrap">
+        <div class="container">
+            <div class="kzACHeaderInner clearfix">
+                <div class="span6 col-sm-12">
+                    <div class="swiper-container kzACDBanner-container wow fadeInLeft">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="@ViewBag.Cover" alt="" />
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="span6 col-sm-12">
+                    <div class="kzbuyTicketForm wow fadeInRight">
+                        <h5>@ViewBag.Name</h5>
+                        <div class="kzSecKillBox">
+                            负责人：@ViewBag.ContactMan
+                            <div class="kzSeckillTime">
+                               联系电话：@ViewBag.ContantPhone
+                            </div>
+                        </div>
+                        <div class="kzbuyPriceBar">
+                            最多：@ViewBag.MaxNum 人
+                        </div>
+                        <form class="kzbuyForm">
+                            <label>
+                                <span class="kzticketLabel">@ViewBag.PriceMemo</span>
+                            </label>
+                            <label>
+                                <span class="kzticketLabel">@ViewBag.Memo</span>
+                            </label>
+                            <label>
+                                <span class="kzticketLabel"></span>
+                            </label>
+                            <label>
+                                <span class="kzticketLabel"></span>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--进度-->
+ 
+
+    <!--详情内容-->
+    <section class="kzACContentWrap">
+        <div class="container">
+            <div class="kzACContentInner">
+                <div class="kzACLinkBar wow fadeIn">
+                    <a class="active" href="#kzACContentDetail">详情</a>
+                </div>
+                <div class="kzACContentBox">
+                    <div class="kzACContentDetailBox kzACContentDetailBox1 wow fadeInUp">
+                        <h5 class="kzACContentTitle" id="kzACContentDetail">活动详情</h5>
+                        @Html.Raw(ViewBag.Introduce)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <section class="kzMoblieDetailNav">
+        <div class="container full clearfix">
+            <div class="span6">
+                <div class="span6">
+                    <a href="/" class="kzDetailNav kzDetailNav-2">首页</a>
+                </div>
+            </div>
+            <div class="span6">
+                <a href="/member/YuDIng?id=@Request.QueryString["id"]" class="kzDetailNav kzDetailNav-3 kzDetailNav-3-1">我要预定</a>
+            </div>
+        </div>
+    </section>
+
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+</body>
+
+</html>

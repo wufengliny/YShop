@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+<form action="/admin/admin/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">修改密码</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">原密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" value="" id="txtname" name="txtname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">新密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" value="" id="pwd" name="pwd" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">确认新密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" value="" id="repwd" name="repwd" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
+</form>
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        if ($("#txtname").val() == "") {
+            $("#txtname").focus();
+            alert('原密码不能为空');
+            return;
+        }
+        if ($("#pwd").val() == "") {
+            $("#pwd").focus();
+            alert('新密码不能为空');
+            return;
+        }
+        if ($("#repwd").val() == "") {
+            $("#repwd").focus();
+            alert('确认密码不能为空');
+            return;
+        }
+        if ($("#repwd").val() != $("#pwd").val()) {
+            $("#repwd").focus();
+            alert('密码和确认密码不一致');
+            return;
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/admin/ModPwdPost", datamenu, function (res) {
+            alert(res);
+            if (res == "修改成功")
+            {
+                location.reload();
+            }
+        })
+    }
+</script>

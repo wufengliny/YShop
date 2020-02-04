@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">菜单分配</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">菜单类型</label>
+                        <div class="col-sm-9">
+                           <select class="form-control" name="MenuGroupID" id="MenuGroupID" onchange="loadPname()">
+                               @{
+                                   List<Yax.Model.S_MenuGroup> listop = (List<Yax.Model.S_MenuGroup>)ViewBag.listop;
+                                   if (listop != null && listop.Count > 0)
+                                   {
+                                       for (int i = 0; i < listop.Count; i++)
+                                       {
+                                           <option value="@listop[i].ID">@listop[i].GroupName</option>
+                                       }
+                                   }
+                               }
+                           </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">菜单名称</label>
+                        <div class="col-sm-9">
+                            <input type="text" readonly="readonly" value="@Request.QueryString["name"]" id="txtname" name="txtname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">菜单级数</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" onchange="loadinfo()" name="jishu" id="jishu">
+                                <option value="1">一级菜单</option>
+                                <option value="2">二级菜单</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group" id="fuiddiv" style="display:none">
+                        <label class="col-sm-3 control-label">父级菜单</label>
+                        <div class="col-sm-4">
+                            <select class="form-control"  name="fuid" id="fuid">
+                                @ViewBag.firstPname
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">排序</label>
+                        <div class="col-sm-9">
+                            <input type="number" value="1" id="sort" name="sort" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.memo" id="Memo" name="Memo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    $(function () {
+        loadPname();
+    })
+    function dosub()
+    {
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/menu/AddMenuGoPost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+
+    function loadPname()
+    {
+        var mgid = $("#MenuGroupID").val();
+        $.post("/admin/menu/GetPNames?MenuGroupID=" + mgid, "", function (res) {
+            $("#fuid").html(res);
+        });
+    }
+
+
+    function loadinfo()
+    {
+        var jiIndex = $("#jishu").val();
+        if(jiIndex=="1")
+        {
+            $("#fuiddiv").hide();
+        }
+        else if(jiIndex=="2")
+        {
+            $("#fuiddiv").show();
+        }
+    }
+
+
+</script>

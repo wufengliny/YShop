@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>管理员登录</title>
+    <script src="~/Areas/Admin/Content/Login/js/jquery-1.4.2.min.js"></script>
+    <style>
+        /* =========================登录页样式.开始======================= */
+        .login-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -160px;
+            margin-left: -245px;
+            width: 490px;
+            text-align: left;
+        }
+
+        .login-icon {
+            float: left;
+            width: 96px;
+            height: 96px;
+            text-indent: -9999px;
+            background: url(~/Areas/Admin/Content/Login/images/login_logo.png) no-repeat;
+        }
+
+            .login-icon > h4 {
+                margin-top: 4px;
+                color: #fff;
+                font-size: 17px;
+                font-weight: 200;
+                line-height: 34px;
+                opacity: 0.95;
+            }
+
+                .login-icon > h4 small {
+                    color: inherit;
+                    display: block;
+                    font-size: inherit;
+                    font-weight: 700;
+                }
+
+        .login-form {
+            float: left;
+            margin-left: 30px;
+            padding: 20px 25px 25px 25px;
+            width: 410px;
+            background: rgb(144,192,254);
+            border-radius: 6px;
+            text-align: center;
+            -webkit-box-shadow: 2px 2px 3px #aaa;
+            -moz-box-shadow: 2px 2px 3px #aaa;
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');
+        
+        }
+
+            .login-form h1 {
+                display: block;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #DFDFDF;
+                text-align: left;
+                height: 40px;
+                line-height: 30px;
+                color: #304b65;
+                font-size: 21px;
+                font-weight: 300;
+                font-family: 'Microsoft YaHei';
+                text-align: center;
+            }
+
+        .control-group {
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .login-field {
+            display: inline-block;
+            padding: 11px 0 11px 10px;
+            width: 296px;
+            height: 20px;
+            line-height: 20px;
+            color: #ACB6C0;
+            font-size: 17px;
+            background: #fff;
+            border: 1px solid #E5E5E5;
+            border-radius: 6px 6px 6px 6px;
+            margin-bottom: 10px;
+            vertical-align: middle;
+        }
+
+            .login-field:focus {
+                border: 1px solid #BBD5EA;
+            }
+
+        .placeholder {
+            color: #999;
+        }
+
+        .login-field-icon {
+            position: absolute;
+            display: block;
+            top: 14px;
+            right: 13px;
+            width: 16px;
+            height: 20px;
+            cursor: pointer;
+            background: url(/Areas/Admin/Content/Login/images/skin_icons.png) no-repeat;
+        }
+
+            .login-field-icon.user {
+                background-position: -1px -137px;
+            }
+
+            .login-field-icon.pwd {
+                background-position: -28px -137px;
+            }
+
+        .btn-login {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 0;
+            width: 75%;
+            color: #fff;
+            border: 2px solid #ECEFF1;
+            border-radius: 6px 6px 6px 6px;
+            background: #33B5E5;
+            font-size: 16.5px;
+            text-decoration: none;
+            cursor: pointer;
+            *border: 0;
+        }
+
+        .login-tips {
+            display: block;
+            margin: 15px auto 0 auto;
+            height: 14px;
+        }
+
+            .login-tips i {
+                display: inline-block;
+                margin-right: 5px;
+                width: 14px;
+                height: 14px;
+                background: url(/Areas/Admin/Content/Login/images/skin_icons.png) -56px -140px no-repeat;
+                text-indent: -9999px;
+                vertical-align: middle;
+            }
+
+            .login-tips b {
+                display: inline-block;
+                height: 14px;
+                line-height: 14px;
+                font-size: 12px;
+                font-weight: normal;
+                color: red;
+                vertical-align: middle;
+            }
+
+        .login-screen .arrow {
+            position: absolute;
+            display: block;
+            left: 116px;
+            top: 30px;
+            width: 11px;
+            height: 22px;
+            text-indent: -9999px;
+            background: url(/Areas/Admin/Content/Login/images/skin_icons.png) -80px -356px no-repeat;
+        }
+    </style>
+</head>
+
+<body style="background: url('/Areas/Admin/Content/Login/images/bg.jpg') repeat;">
+    <form name="form1" method="post" id="form1">
+        <div class="login-screen">
+            <div class="login-form">
+                <h1>管理员登录</h1>
+                <div class="control-group">
+                    <input name="txtName" type="text" id="txtName" class="login-field" placeholder="用户名" title="用户名" />
+                    <label class="login-field-icon user" for="txtName"></label>
+                </div>
+                <div class="control-group">
+                    <input name="txtPwd" type="password" id="txtPwd" class="login-field" placeholder="密码" title="密码" />
+                    <label class="login-field-icon pwd" for="txtPwd"></label>
+                </div>
+                <div style="text-align: center;">
+                    <input type="submit" name="btnSubmit" onclick="return subf()" value="登 录" id="btnSubmit" class="btn-login" />
+                </div>
+                <span class="login-tips"><i></i><b id="msgtip"></b></span>
+            </div>
+        </div>
+    </form>
+
+    <script>
+    var jq = jQuery.noConflict();
+    function subf() {
+        if (document.getElementById("txtName").value == "") {
+            document.getElementById("txtName").focus();
+            return false;
+        }
+        if (document.getElementById("txtPwd").value == "") {
+            document.getElementById("txtPwd").focus();
+            return false;
+        }
+        var data = jq("#form1").serialize();
+        jq.get("/admin/Login/chkL", data, function (res) {
+            switch (res.statu) {
+                case "0":
+                    window.location.href = res.nextUrl;
+                    break;
+                default:
+                    jq("#msgtip").text(res.data);
+                    break;
+
+            }
+        }, "json");
+        return false;
+    }
+    </script>
+</body>
+</html>

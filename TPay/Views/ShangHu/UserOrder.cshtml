@@ -1,0 +1,187 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/js/ChangeData.js"></script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">订单记录</h3>
+    <div class="content">
+        <form action="/ShangHu/UserOrder" id="from12" class="form-inline" method="get">
+            <div>
+
+                <label class="control-label">时间:</label>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="BGTime" name="BGTime" value="@ViewBag.BGTime" placeholder="开始时间" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="EndTime" name="EndTime" value="@ViewBag.EndTime" placeholder="结束时间" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" name="OrderNum" value="@Request.QueryString["OrderNum"]" placeholder="商户订单号" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" name="out_trade_no" value="@Request.QueryString["out_trade_no"]" placeholder="平台订单号" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" name="Trade_no" value="@Request.QueryString["Trade_no"]" placeholder="流水号" />
+                </div>
+         
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input class="btn  btn-default" onclick="changeDate(1, 'from12', 'BGTime', 'EndTime')" value="今日" type="button" />
+                <input class="btn  btn-default" onclick="changeDate(2, 'from12', 'BGTime', 'EndTime')" value="昨日" type="button" />
+                <input class="btn  btn-default" onclick="changeDate(3, 'from12', 'BGTime', 'EndTime')" value="本周" type="button" />
+                <input class="btn  btn-default" onclick="changeDate(4, 'from12', 'BGTime', 'EndTime')" value="上周" type="button" />
+                <input class="btn  btn-default" onclick="changeDate(5, 'from12', 'BGTime', 'EndTime')" value="本月" type="button" />
+                <input class="btn  btn-default" onclick="changeDate(6, 'from12', 'BGTime', 'EndTime')" value="上月" type="button" />
+                <input type="hidden" id="menuid" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" id="pid" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        商户
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                    <th>
+                        商户订单号
+                    </th>
+                    <th>
+                        平台订单号
+                    </th>
+                    <th>
+                        流水号
+                    </th>
+                    <th>
+                        支付方式
+                    </th>
+                    <th>
+                        支付时间
+                    </th>
+                    <th>
+                        响应
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                            List<Yax.Model.Tpay_Order> list = ViewBag.list;
+                            if (list != null && list.Count > 0)
+                            {
+                                for (int i = 0; i < list.Count; i++)
+                                {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @list[i].ID
+                                </td>
+                                <td>
+                                    @list[i].Account
+                                </td>
+                                <td>
+                                   @list[i].Price
+                                </td>
+                                <td>
+                                    @list[i].OrderNum
+                                </td>
+                                <td>
+                                    @list[i].out_trade_no
+                                </td>
+                                <td>
+                                    @list[i].Trade_no
+                                </td>
+                                <td>
+                                    @list[i].PayWay
+                                </td>
+                                <td>
+                                    @list[i].PayTime
+                                </td>
+                                <td>
+                                    @{ 
+                                        if(list[i].ISDeal==1)
+                                        {
+                                            <span>已响应</span>
+                                        }
+                                        else
+                                        {
+                                            <span>未响应</span>
+                                        }
+                                    }
+                                </td>
+                                <td>
+                                    @{
+                                        if (list[i].ISDeal == 1)
+                                        {
+
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                        <a class="btn btn-success btn-xs" onclick="edit(@list[i].ID)" title="发送">发送</a>
+                                    }
+                                  
+                                </td>
+                            </tr>
+                        }
+                }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+
+
+
+<script>
+    $(function () {
+        $('#BGTime').focus(function () {
+            $('#BGTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#BGTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD 00:00:00' });
+
+        $('#EndTime').focus(function () {
+            $('#EndTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 23:59:59"))' });
+        });
+        $('#EndTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+    })
+    function create() {
+        $loadModal('/admin/LData/LDataAdd');
+    };
+
+    function edit(id) {
+        $.post("/ShangHu/UserOrderSend?id="+id, "", function (res) {
+            if(res=="ok")
+            {
+                location.reload();
+            }
+            else {
+                alert(res);
+            }
+        })
+    };
+</script>
+

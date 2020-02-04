@@ -1,0 +1,281 @@
+﻿@{
+    ViewBag.Title = "AddGoods";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="/Areas/Admin/Content/js/ajaxfileupload.js"></script>
+<script type="text/javascript">
+    function ajaxFileUpload() {
+        $.ajaxFileUpload
+        (
+            {
+                url: '/admin/home/AjaxPic', //用于文件上传的服务器端请求地址
+                secureuri: false, //一般设置为false
+                fileElementId: 'upmg', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data)  //服务器成功响应处理函数
+                {
+                    if (data.statu == "1") {
+                        $("#erimg").attr("src", data.msg);
+                        $("#Cover").val(data.msg);
+                    }
+                    else {
+                        alert(data.msg)
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            }
+        )
+        return false;
+    }
+</script>
+<div class="col-sm-9 col-sm-offset-3 col-md-11 col-md-offset-1 main">
+    <h3 class="page-header">商品</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td>
+                        名称
+                    </td>
+                    <td colspan="3"><input class="form-control" name="name" id="name" type="text" value="@ViewBag.Name" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        SEO关键字
+                    </td>
+                    <td colspan="3"><input class="form-control" name="SearchName" id="SearchName"
+       placeholder="会员可以通过关键字搜索到该商品，各关键字之间用逗号隔开" type="text" value="@ViewBag.SearchName" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        SEO描述
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="memo" id="memo"
+                               placeholder="" type="text" value="@ViewBag.memo" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>商品号</td>
+                    <td>
+                        <input class="form-control" name="GoodNO" type="text" value="@ViewBag.GoodNO" />
+                    </td>
+                    <td>
+                       颜色
+                    </td>
+                    <td>
+                        <input class="form-control" name="Color" id="Color" type="text" value="@ViewBag.Color" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>尺寸</td>
+                    <td>
+                        <input class="form-control" name="Size" type="text" value="@ViewBag.Size" />
+                    </td>
+                    <td>
+                   地区
+                    </td>
+                    <td>
+                        <input class="form-control" name="Source" type="text" value="@ViewBag.Source" />
+                    </td>
+                </tr>
+                
+
+                <tr>
+                    <td>原价</td>
+                    <td>
+                        <input class="form-control" placeholder="原始价格" name="Price" type="number" value="@ViewBag.Price" />
+                    </td>
+                    <td>
+                        售价
+                    </td>
+                    <td>
+                        <input class="form-control" name="SalePrice" placeholder="成交价格" type="number" value="@ViewBag.SalePrice" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>分类</td>
+                    <td>
+                        <select class="form-control" id="pcateid" name="pcateid" onchange="getson()">
+                            <option value="">==请选择==</option>
+                            @Html.Raw(ViewBag.pstr)
+                        </select>
+                    </td>
+                    <td>
+                        子类
+                    </td>
+                    <td>
+                        @{
+                            string sonstyle = "display:none;";
+                            if (ViewBag.hasson > 0)
+                            {
+                                sonstyle = "display:block;";
+                            }
+                        }
+                        <select class="form-control" id="sonid" name="sonid" style="@sonstyle">
+                            @Html.Raw(ViewBag.son)
+                        </select>
+                        <script>
+                            $("#pcateid").val('@ViewBag.pcateid');
+                            $("#sonid").val('@ViewBag.sonid');
+                        </script>
+                    </td>
+                    
+                </tr>
+
+
+                <tr>
+                    <td>积分</td>
+                    <td>
+                        <input class="form-control" name="JiFen" placeholder="用户购买该商品赠送的积分数" type="text" value="@ViewBag.JiFen" />
+                    </td>
+                    <td>
+                        其它
+                    </td>
+                    <td>
+                        @{
+                            string strtop = ViewBag.IsTop == 1 ? "checked=\"checked\"" : "";
+                            string strIsRecomand = ViewBag.IsRecomand == 1 ? "checked=\"checked\"" : "";
+                            string strIsHot = ViewBag.IsHot == 1 ? "checked=\"checked\"" : "";
+                            string strIsNew = ViewBag.IsNew == 1 ? "checked=\"checked\"" : "";
+                            string strIsDown = ViewBag.IsDown == 1 ? "checked=\"checked\"" : "";
+                        }
+                        置顶:<input type="checkbox" name="IsTop" @strtop  style="width:10px;" value="1" />
+                        推荐:<input type="checkbox" name="IsRecomand" @strIsRecomand style="width:10px;" value="1" />
+                        热销:<input type="checkbox" name="IsHot" @strIsHot style="width:10px;" value="1" />
+                        最新:<input type="checkbox" name="IsNew" @strIsNew style="width:10px;" value="1" />
+                        下架:<input type="checkbox" name="IsDown" @strIsDown style="width:10px;" value="1" />
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>邮费</td>
+                    <td>
+                        <input class="form-control" name="PostFee" placeholder="" type="number" value="@ViewBag.PostFee" />
+                    </td>
+                    <td>
+                        库存
+                    </td>
+                    <td>
+                        <input class="form-control" name="StockNum" placeholder="" type="number" value="@ViewBag.StockNum" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>详细</td>
+                    <td colspan="3">
+                        <textarea id="Content" name="Content">@ViewBag.content</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>封面图片</td>
+                    <td colspan="3">
+                        <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+                        <input type="file" onchange="ajaxFileUpload()" name="upmg" id="upmg" />
+                        <input type="hidden" value="@ViewBag.Cover" name="Cover" id="Cover" />
+
+                        <img style="width: 85px; height: 85px;" id="erimg" src="@ViewBag.Cover">
+                        <div class="photodel" onclick="delImg()" ></div>
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub()"  class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    input {
+    width:400%;
+    max-width:100%
+    }
+</style>
+
+<link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+<script src="~/plug/kindeditor/kindeditor-min.js"></script>
+<script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+ 
+
+    <script type="text/javascript">
+        var editor1 = KindEditor.create('#Content', {
+            items: [
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'multiimage',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', 'fullscreen'
+            ],
+            allowFileManager: true,                                            //是否可以浏览上传文件
+            afterBlur: function(){this.sync();},
+            allowUpload: true,                                                     //是否可以上传
+            fileManagerJson: '',      //浏览文件方法
+            uploadJson: '/admin/FileUP/UploadImage',                    //上传文件方法  //注意这两
+            width: "100%",
+           
+            height: "300px"
+        });
+    </script>
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+
+
+    <script type="text/javascript">
+        function dosub()
+        {
+            
+            if ($("#name").val() == "") {
+                alert("名称不能为空！");
+                return;
+            }
+            if ($("#pcateid").val() == "")
+            {
+                alert("请选择分类！");
+                return;
+            }
+            var data = $("#_ModalForm").serialize();
+            $.post("/admin/shop/AddGoodsPost", data, function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+
+        function getson()
+        {
+            $.post("/admin/shop/GetSon?parid=" + $("#pcateid").val(), "", function (res) {
+                if (res == "") {
+                    $("#sonid").hide();
+                    $("#sonid").empty();
+                }
+                else {
+                    $("#sonid").show();
+                    $("#sonid").empty();
+                    $("#sonid").append(res);
+                }
+            });
+        }
+
+        function delImg()
+        {
+            if (confirm("确定要删除图片吗？"))
+            {
+                var path = $("#erimg").attr("src");
+                if (path == "") {
+
+                }
+                else {
+                    $.post("/admin/shop/DelImg", "path=" + path, function (res) {
+                        $("#erimg").attr("src", "");
+                    })
+                }
+            }
+      
+        }
+    </script>

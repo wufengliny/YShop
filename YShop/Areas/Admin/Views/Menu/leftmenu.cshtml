@@ -1,0 +1,36 @@
+﻿
+<ul class="nav nav-sidebar">
+    @{
+        Dictionary<string, Yax.Common.DataModelHelper.AdminMenuChild> itemlist = (Dictionary<string, Yax.Common.DataModelHelper.AdminMenuChild>)Model;
+        string strurl = "";
+        string stractive = "";
+        if (itemlist != null && itemlist.Count > 0)
+        {
+            foreach (KeyValuePair<string, Yax.Common.DataModelHelper.AdminMenuChild> item in itemlist)
+            {
+                stractive = "";
+                if (item.Value.Link.ToString().Contains("?"))
+                {
+                    strurl = item.Value.Link + "&menuid=" + item.Value.ID + "&pid=" + Request.QueryString["pid"];
+                }
+                else
+                {
+                    strurl = item.Value.Link + "?menuid=" + item.Value.ID + "&pid=" + Request.QueryString["pid"];
+                }
+                if (Request.QueryString["menuid"] == item.Value.ID)
+                {
+                    stractive = "active";
+                }
+                <li class="@stractive">
+                    <a href="@strurl"   class="list-group-item">
+                        <span class="@item.Value.Icon">&nbsp;</span>@item.Value.Title 
+                    </a>
+                </li>
+            }
+            
+        }
+    }
+   
+
+
+</ul>

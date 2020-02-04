@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="天巫漫画">
+    <meta name="description" content="天巫漫画" />
+    <title>天巫漫画</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body>
+    <!--public header-->
+  @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+
+    <!--public aside bar-->
+    @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
+
+    <!--新闻详情-->
+    <section class="kzcontentWrap kzcontentNewsDWrap wow fadeInUp">
+        <div class="container">
+            <div class="kzcontentInner">
+                <div class="kzcontentPanel">
+                    <h4 class="kznewsTitle">
+                     @ViewBag.msg
+                    </h4>
+                    <div class="kznewsBtn" style="text-align:center;display:none">
+                        <a href="#this" class="kzprev">登陆</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+</body>
+
+</html>

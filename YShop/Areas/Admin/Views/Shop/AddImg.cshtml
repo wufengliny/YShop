@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Content/js/ajaxfileupload.js"></script>
+<script type="text/javascript">
+    function ajaxFileUpload() {
+        $.ajaxFileUpload
+        (
+            {
+                url: '/admin/home/AjaxPic', //用于文件上传的服务器端请求地址
+                secureuri: false, //一般设置为false
+                fileElementId: 'upmg', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data)  //服务器成功响应处理函数
+                {
+                    if (data.statu == "1") {
+                        $("#erimg").attr("src", data.msg);
+                        $("#Cover").val(data.msg);
+                    }
+                    else {
+                        alert(data.msg)
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            }
+        )
+        return false;
+    }
+</script>
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">图片</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">图片</label>
+                        <div class="col-sm-9">
+                            <input type="hidden" name="gid" value="@Request.QueryString["gid"]" />
+                            <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+                            <input type="file" onchange="ajaxFileUpload()" name="upmg" id="upmg" />
+                            <input type="hidden" value="@ViewBag.Cover" name="Cover" id="Cover" />
+                            <img src="@ViewBag.Cover" id="erimg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub()
+    {
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/shop/AddimgPost", datamenu, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

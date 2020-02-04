@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "MenuGoList";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">@Request.QueryString["GroupName"]</h3>
+    <div class="content">
+        <form action="/admin/menu/MenuGoList" class="form-inline" method="get">
+            <input type="hidden" name="MenuGroupID" value="@Request.QueryString["MenuGroupID"]" />
+            <div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" name="Name" class="form-control" value="@Request.QueryString["Name"]" placeholder="菜单名称...">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+ 
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        菜单名称
+                    </th>
+                    <th>
+                        菜单URL
+                    </th>
+                    <th>
+                       PID
+                    </th>
+                    <th>
+                        备注
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    System.Data.DataTable dt = (System.Data.DataTable)Model;
+                    if (Model != null && dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @dt.Rows[i]["sgoid"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Name"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Href"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["ParentID"]
+                                </td>
+                                <td>
+                                    @dt.Rows[i]["Memo"]
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-xs" onclick="del(@dt.Rows[i]["sgoid"])" title="删除">删除</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+
+<script>
+
+    function edit(id) {
+        $loadModal('/admin/menu/Create?id=' + id);
+    };
+
+    function fenp(id, name) {
+        $loadModal('/admin/menu/MenuFenPei?id=' + id + "&name=" + name);
+    };
+    function del(id) {
+        if(confirm('确定要删除'))
+        {
+            $.post("/admin/menu/DelMenuGo?id=" + id, "", function (res) {
+                alert(res);
+                window.location.reload();
+            })
+        }
+    }
+
+
+</script>

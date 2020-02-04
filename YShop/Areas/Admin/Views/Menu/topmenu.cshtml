@@ -1,0 +1,47 @@
+﻿
+
+<div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">导航</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="@(new Yax.BLL.Config().GetModelBy_key("adminzhuye").Value)" style="font-size:22px">后台管理-@(new Yax.BLL.CurrentUser().Name)</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+           
+            @{
+                Dictionary<string, Yax.Common.DataModelHelper.AdminMenu> menulist = (Dictionary<string, Yax.Common.DataModelHelper.AdminMenu>)Model;
+                if (menulist != null && menulist.Count > 0)
+                {
+                    string strurl = "";
+                    foreach (KeyValuePair<string, Yax.Common.DataModelHelper.AdminMenu> item in menulist)
+                    {
+                        strurl = item.Value.Link;
+                        if (strurl.Contains("?"))
+                        {
+                            strurl = strurl + "&pid=" + item.Key;
+                        }
+                        else
+                        {
+                            strurl = strurl + "?pid=" + item.Key;
+                        }
+                        <li id="menu@(item.Key)"><a class=""  href="@strurl">@item.Value.Title</a></li>
+                    }
+                
+                }
+            }
+            <li><a title="修改密码" href="#this" onclick="ResetAdminPass()">修改密码</a></li>
+            <li><a href="/admin/login/LoginOut">退出</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function ResetAdminPass() {
+        $loadModal('/admin/admin/ModPwd');
+    }
+</script>

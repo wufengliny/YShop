@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "PhoneMsg";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.PhoneMsg>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">短信记录</h3>
+    <div class="content">
+        <form action="/admin/Config/phonemsg" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone" name="phone" value="@Request.QueryString["phone"]" placeholder="手机号" />
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        手机
+                    </th>
+                    <th>
+                        短信内容
+                    </th>
+                    <th>
+                        时间
+                    </th>
+
+                    <th>
+                        备注
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Phone
+                                </td>
+                                <td>
+                                    @Model[i].Msg
+                                </td>
+                                <td>
+                                    @Model[i].AddTime
+                                </td>
+                                <td>
+                                    @Model[i].Memo
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+<script>
+    function create() {
+        $loadModal('/admin/Config/ImgAdd?ImgType=@Request.QueryString["ImgType"]');
+    }
+
+    function edit(id) {
+        $loadModal('/admin/Config/ImgAdd?id=' + id + '&ImgType=@Request.QueryString["ImgType"]');
+    }
+    function del(id, name) {
+        if (confirm("确定要恢复？")) {
+            $.post("/admin/Config/delImg?id=" + id + "&name=" + name + "&enable=1", "", function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+    }
+</script>
+

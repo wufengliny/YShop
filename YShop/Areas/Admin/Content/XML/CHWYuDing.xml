@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Menu>
+  <Module Title="设置"  ID="001" Link="/admin/home/index?menuid=001_m1"  Mark="xitongzhuye1" >
+    <Item ID="001_m1" Title="系统主页" Link="/admin/home/index" Mark="xitongzhuye1" Icon="glyphicon glyphicon-home" ></Item>
+    <Item ID="001_m5" Title="网站设置" Link="/admin/Config/SysConfig?gname=YTingConfig" Mark="changguishezhi4" Icon="glyphicon glyphicon-wrench"></Item>
+  </Module>
+  <Module Title="安全中心"  ID="002" Link="/admin/config/log?menuid=002_m1" Mark="Log7" >
+    <Item ID="002_m1" Title="日志" Link="/admin/config/log" Mark="Log7" Icon="glyphicon glyphicon-fire"></Item>
+    <Item ID="002_m2" Title="权限组" Link="/admin/admin/AdminGroup" Mark="power8"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m3" Title="管理员列表" Link="/admin/admin/index" Mark="adminlist9"  Icon="glyphicon glyphicon-th"></Item>
+    <Item ID="002_m4" Title="二级密码" Link="/admin/admin/SecondPwd" Mark="secondpwd10"  Icon="glyphicon glyphicon-adjust"></Item>
+  </Module>
+  <Module Title="游艇预定管理"  ID="003" Link="/admin/member/IndexYT?menuid=003_m1" Mark="Memberlist11" >
+    <Item ID="003_m1" Title="普通会员" Link="/admin/member/IndexYT" Mark="Memberlist11" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m2" Title="超级会员" Link="/admin/member/IndexYT?UserType=超级" Mark="Memberlist11" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m3" Title="我的游艇" Link="/admin/ChwBoat/MyBoat" Mark="MyBoat61" Icon="glyphicon glyphicon-user"></Item>
+    <Item ID="003_m4" Title="预定管理" Link="/admin/ChwBoat/BoatOrder" Mark="BoatOrder61" Icon="glyphicon glyphicon-user"></Item>
+  </Module>
+  <Module Title="文章列表"  ID="004" Link="/admin/Article/index?menuid=004_m2" Mark="wenzhang15">
+    <Item ID="004_m2" Title="文章列表" Link="/admin/Article/index" Mark="wenzhang15" Icon="glyphicon glyphicon-list-alt"></Item>
+    <Item ID="004_m1" Title="文章分类" Link="/admin/Article/Category" Mark="wenzhangfenlei16" Icon="glyphicon glyphicon-tower"></Item>
+  </Module>
+  <Module Title="开发"  ID="005" Link="/admin/menu/NowHT?menuid=005_m1"  Mark="dangqianht17">
+    <Item ID="005_m1" Title="当前后台" Link="/admin/menu/NowHT"  Mark="dangqianht17" Icon="glyphicon glyphicon-tree-conifer"></Item>
+    <Item ID="005_m2" Title="本地数据类型" Link="/admin/LData/LDataType"  Mark="Ldatatype18" Icon="glyphicon glyphicon-star"></Item>
+    <Item ID="005_m3" Title="本地数据" Link="/admin/LData/Index"  Mark="LData19" Icon="glyphicon glyphicon-glass"></Item>
+  </Module>
+</Menu>

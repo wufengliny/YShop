@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>F:\publish\Yshop</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/AMH.dll">
+      <publishTime>11/08/2019 14:26:37</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>11/08/2019 14:26:44</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>11/08/2019 14:26:44</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/02/2017 11:58:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>02/02/2017 11:58:51</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/02/2017 11:58:48</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>02/02/2017 11:58:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/02/2017 11:58:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>02/02/2017 11:58:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>02/02/2017 11:58:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/02/2017 11:58:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/02/2017 11:58:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/02/2017 11:58:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>02/02/2017 11:58:50</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>02/02/2017 11:58:50</publishTime>
+    </File>
+    <File Include="bin/ThoughtWorks.QRCode.dll">
+      <publishTime>05/16/2018 23:33:05</publishTime>
+    </File>
+    <File Include="bin/Yax.BLL.dll">
+      <publishTime>11/08/2019 14:02:25</publishTime>
+    </File>
+    <File Include="bin/Yax.Common.dll">
+      <publishTime>11/08/2019 14:02:23</publishTime>
+    </File>
+    <File Include="bin/Yax.Dal.dll">
+      <publishTime>11/08/2019 14:02:24</publishTime>
+    </File>
+    <File Include="bin/Yax.Model.dll">
+      <publishTime>11/08/2019 14:02:23</publishTime>
+    </File>
+    <File Include="bin/Yax.SqlHelper.dll">
+      <publishTime>11/08/2019 14:02:24</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Net.Http.Formatting.resources.dll">
+      <publishTime>05/10/2013 14:59:26</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Helpers.resources.dll">
+      <publishTime>07/09/2013 14:43:24</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.resources.dll">
+      <publishTime>07/09/2013 14:38:54</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Http.WebHost.resources.dll">
+      <publishTime>07/09/2013 14:40:34</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>07/09/2013 14:33:40</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/09/2013 14:34:22</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/09/2013 14:43:24</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/09/2013 14:43:24</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/09/2013 14:43:24</publishTime>
+    </File>
+    <File Include="Content/css/base.scss">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/chwconfig.scss">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kaysitecss.css">
+      <publishTime>09/18/2019 20:28:38</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.css">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.css.map">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu-old0503.scss">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.css">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.css.map">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kingzhu.scss">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/kzconfig.scss">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/css/swiper,animate,scroll.min.css">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/pic_loading.gif">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/alipayIcon.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/aside.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/asideBG.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/closeredbtn.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/kzicon.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/loginBg.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/logo.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/m01.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/m02.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/m03.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/m04.jpg">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/images/public/m05.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/m06.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/m07.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/m08.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/m09.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/membericon.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/mid-circle.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/navbar.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/ok.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/openredbtn.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redbg.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redbottombg.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redcoin.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redcoins.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redgoto.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redseal.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/redtopbg.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/SecKillIcon.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/small-circle.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/weixincode.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/public/wxpayIcon.png">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/about01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/about02.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/acd01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/acgz01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/active01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/acxz01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/ad01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/banner/01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/indexli01.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/myorder.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/news1.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/newstemp.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/o1.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/qr.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/share.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/vccode.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/images/temp/weixin.jpg">
+      <publishTime>09/11/2019 15:11:03</publishTime>
+    </File>
+    <File Include="Content/js/jquery-1.7.1.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/jquery-2.2.4.min.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/jquery.min.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/kingzhu.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/kingzhu2.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/layer,wow,scroll.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/icon-ext.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/icon.png">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/layer.css">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-0.gif">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-1.gif">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/skin/default/loading-2.gif">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/js/swiper.jquery.min.js">
+      <publishTime>09/11/2019 15:11:02</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/ckplayer.js">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/ckplayer.min.js">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/ckplayer.swf">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/ckplayer.xml">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/language.xml">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="Content/Player/ckplayer/style.xml">
+      <publishTime>09/12/2019 00:26:17</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/10/2019 14:27:10</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>11/08/2019 14:26:40</publishTime>
+    </File>
+    <File Include="Views/Home/FreeVedio.cshtml">
+      <publishTime>09/18/2019 20:29:49</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>09/11/2019 17:27:52</publishTime>
+    </File>
+    <File Include="Views/Home/MHView.cshtml">
+      <publishTime>09/18/2019 18:18:46</publishTime>
+    </File>
+    <File Include="Views/Home/VIPVedio.cshtml">
+      <publishTime>09/18/2019 20:29:22</publishTime>
+    </File>
+    <File Include="Views/Login/Error.cshtml">
+      <publishTime>09/15/2019 17:16:28</publishTime>
+    </File>
+    <File Include="Views/Login/Login.cshtml">
+      <publishTime>09/12/2019 10:47:33</publishTime>
+    </File>
+    <File Include="Views/Login/Reg.cshtml">
+      <publishTime>09/12/2019 11:48:44</publishTime>
+    </File>
+    <File Include="Views/Member/Index.cshtml">
+      <publishTime>09/18/2019 18:22:20</publishTime>
+    </File>
+    <File Include="Views/Member/MyLike.cshtml">
+      <publishTime>09/18/2019 20:29:15</publishTime>
+    </File>
+    <File Include="Views/PartV/Footer.cshtml">
+      <publishTime>09/11/2019 15:07:55</publishTime>
+    </File>
+    <File Include="Views/PartV/FooterJC.cshtml">
+      <publishTime>09/18/2019 20:29:08</publishTime>
+    </File>
+    <File Include="Views/PartV/HeadJC.cshtml">
+      <publishTime>09/11/2019 15:07:55</publishTime>
+    </File>
+    <File Include="Views/PartV/LeftNav.cshtml">
+      <publishTime>09/18/2019 01:29:00</publishTime>
+    </File>
+    <File Include="Views/PartV/MemberTop.cshtml">
+      <publishTime>09/11/2019 15:07:55</publishTime>
+    </File>
+    <File Include="Views/PartV/Nav.cshtml">
+      <publishTime>09/18/2019 19:46:51</publishTime>
+    </File>
+    <File Include="Views/PartV/PhoneNav.cshtml">
+      <publishTime>09/11/2019 15:07:55</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>09/10/2019 14:27:08</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/08/2019 14:26:37</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

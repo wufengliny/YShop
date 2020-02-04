@@ -1,0 +1,325 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+    <style>
+        /*----------------------------------------------
+           DASHBOARD STYLES
+        ------------------------------------------------*/
+        .page-header {
+            padding-bottom: 9px;
+            margin: 10px 0 20px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .panel-left {
+            width: 90px;
+            height: 90px;
+            background: #1CC09F;
+            border: 2px solid white;
+            border-radius: 100%;
+            overflow: hidden;
+            margin: 14px;
+        }
+
+            .panel-left .fa-5x {
+                font-size: 4em;
+                color: rgba(255, 255, 255, 0.35);
+                padding: 22px 0;
+                margin-bottom: 30px;
+            }
+
+        .panel-right {
+            width: 60%;
+            height: 124px;
+            background: transparent;
+            margin-bottom: 0;
+            color: #2B2E33;
+            background-color: #fff;
+        }
+
+            .panel-right h3 {
+                font-size: 27px;
+                color: #8A8A8A;
+            }
+
+        .panel-back {
+            background-color: #fff;
+        }
+
+        .panel-default {
+            border-color: #ECECEC;
+        }
+
+            .panel-default > .panel-heading {
+                color: #000;
+                border-color: #FFF;
+                font-weight: bold;
+                background: #FFFFFF;
+                font-size: 16px;
+            }
+
+        .panel-heading {
+            padding: 15px 15px 0px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .jumbotron, .well {
+            background: #fff;
+        }
+
+        .noti-box {
+            min-height: 100px;
+            padding: 20px;
+        }
+
+            .noti-box .icon-box {
+                display: block;
+                float: left;
+                margin: 0 15px 10px 0;
+                width: 70px;
+                height: 70px;
+                line-height: 75px;
+                vertical-align: middle;
+                text-align: center;
+                font-size: 40px;
+            }
+
+        .text-box p {
+            margin: 0 0 3px;
+        }
+
+        .main-text {
+            font-size: 25px;
+            font-weight: 600;
+        }
+
+        .set-icon {
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+        }
+
+        .panel-primary {
+            display: inline-block;
+            margin-bottom: 30px;
+            width: 100%;
+            border-color: transparent;
+        }
+
+        .green {
+            background-color: #1CC09F;
+            color: #fff;
+        }
+
+        .blue {
+            background-color: #63A3DF;
+            color: #fff;
+        }
+
+        .red {
+            background-color: #FB5651;
+            color: #fff;
+        }
+
+        .brown {
+            background-color: #E6A548;
+            color: #fff;
+        }
+
+        .back-footer-red {
+            background-color: #F0433D;
+            color: #fff;
+            border-top: 0px solid #fff;
+        }
+
+        .icon-box-right {
+            display: block;
+            float: right;
+            margin: 0 15px 10px 0;
+            width: 70px;
+            height: 70px;
+            line-height: 75px;
+            vertical-align: middle;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .main-temp-back {
+            background: #8702A8;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+            .main-temp-back .text-temp {
+                font-size: 40px;
+            }
+
+        .back-dash {
+            padding: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            background-color: #2EA7EB;
+            color: #fff;
+        }
+
+            .back-dash p {
+                padding-top: 16px;
+                font-size: 13px;
+                color: #fff;
+                line-height: 25px;
+                text-align: justify;
+            }
+
+        .color-bottom-txt {
+            color: #000;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        /*CHAT PANEL*/
+        /*Charts*/
+    </style>
+
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>当前管理员</th>
+            <th>上次登录</th>
+            <th>上次登录IP</th>
+            <th>登录次数</th>
+        </tr>
+        <tr>
+            <td>@(new Yax.BLL.CurrentUser().Name)</td>
+            <td>@(new Yax.BLL.CurrentUser().Lastlogintime)</td>
+            <td>@(new Yax.BLL.CurrentUser().LastLoginIP)</td>
+            <td>@(new Yax.BLL.CurrentUser().LoginCount)</td>
+        </tr>
+    </table>
+
+
+    <div id="page-inner" style="display:none">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-primary text-center no-boder bg-color-green green">
+                    <div class="panel-left pull-left green">
+                        <i class="fa fa-user-plus fa-5x"></i>
+
+                    </div>
+                    <div class="panel-right pull-right">
+                        <h3>1</h3>
+                        <strong> 今日新增会员</strong>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-primary text-center no-boder bg-color-blue blue">
+                    <div class="panel-left pull-left blue">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+
+                    <div class="panel-right pull-right">
+                        <h3>1</h3>
+                        <strong> 当前在线会员</strong>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-primary text-center no-boder bg-color-red red">
+                    <div class="panel-left pull-left red">
+                        <i class="fa fa-rmb fa-5x"></i>
+
+                    </div>
+                    <div class="panel-right pull-right">
+                        <h3>100 </h3>
+                        <strong> 今日存款总额 </strong>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="panel panel-primary text-center no-boder bg-color-brown brown">
+                    <div class="panel-left pull-left brown">
+                        <i class="fa  fa-usd fa-5x"></i>
+
+                    </div>
+                    <div class="panel-right pull-right">
+                        <h3>100 </h3>
+                        <strong>今日取款总额</strong>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="padding-top:8px;padding-bottom:8px;">
+                    平台文章 
+                </div>
+                <ul class="list-group">
+                    @{
+                        System.Data.DataTable dt_a = (System.Data.DataTable)ViewBag.list_article;
+                        if (dt_a != null && dt_a.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt_a.Rows.Count; i++)
+                            {
+                                <li class="list-group-item">
+                                    @dt_a.Rows[i]["Name"] 
+                                    <span class="pull-right label label-info" title="">
+                                        @dt_a.Rows[i]["AtName"]
+                                    </span>
+                                </li>
+                            }
+                        }
+                    }
+
+                    @*<li class="list-group-item">
+                        <label class="control-label"> 平台文章平台文章平台文章平台文章平台文章平台文章平台文章平台文章</label>
+                        </li>*@
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-6 right">
+            <div class="panel panel-primary">
+                <div class="panel-heading" style="padding-top:8px;padding-bottom:8px;">日志</div>
+                <ul class="list-group">
+                    @{
+                        List<Yax.Model.ZY_Log> model_log = (List<Yax.Model.ZY_Log>)ViewBag.list_log;
+                        if (model_log != null && model_log.Count > 0)
+                        {
+                            for (int i = 0; i < model_log.Count; i++)
+                            {
+                                <li class="list-group-item">
+                                    @(Yax.Common.Utils.GetSubstring(model_log[i].Message, 25, "......"))
+                                    <span class="pull-right label label-info" title="">
+                                        @model_log[i].Addtime.ToShortDateString()
+                                    </span>
+                                </li>
+                            }
+                        }
+                    }
+
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

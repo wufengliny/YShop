@@ -1,0 +1,3 @@
+连接不上数据库： errmsg:ConnectionString 属性尚未初始化。----Url：http://localhost:801/admin/home/index?menuid=001_m1&pid=001时间：2019-10-17 04:25:08
+连接不上数据库： errmsg:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 不能访问网络位置。有关网络排除故障的信息，请参阅 Windows 帮助。)----Url：http://localhost:801/admin/LData/LDataType?menuid=005_m2&pid=005时间：2019-10-17 06:43:00
+连接不上数据库： errmsg:在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: TCP Provider, error: 0 - 不能访问网络位置。有关网络排除故障的信息，请参阅 Windows 帮助。)----Url：http://localhost:801/admin/menu/NowHT?menuid=005_m1&pid=005时间：2019-10-17 06:43:00

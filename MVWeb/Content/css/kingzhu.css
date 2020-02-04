@@ -1,0 +1,3657 @@
+@charset "UTF-8";
+/**
+ * 出海玩 配置
+ */
+/*reset*/
+* {
+  -webkit-tap-highlight-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  -webkit-appearance: none; }
+
+html {
+  font-size: 625%; }
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 468.75%; } }
+@media only screen and (max-width: 479px) {
+  html {
+    /*font-size: 312.5%;*/
+    font-size: 375%; } }
+body {
+  padding-top: 72px;
+  background-color: #f2f3f5;
+  font-family: "微软雅黑", "Microsoft Yahei", "Arial";
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  overflow-x: hidden; }
+
+img {
+  border: none;
+  vertical-align: middle;
+  max-width: 100%; }
+
+a {
+  text-decoration: none;
+  color: #333;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out; }
+
+input,
+textarea,
+select,
+button {
+  outline: none;
+  vertical-align: middle;
+  font-size: inherit;
+  font-family: inherit; }
+
+textarea {
+  resize: none;
+  overflow-y: auto; }
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button {
+  cursor: pointer;
+  -webkit-appearance: none; }
+
+hr {
+  height: 0;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  margin: 0;
+  color: #ddd; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0; }
+
+ul,
+ol,
+li {
+  list-style: none;
+  -webkit-padding-start: 0; }
+
+dt,
+dd {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+/*栅格系统*/
+.col-lg-1,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12 {
+  float: left; }
+
+.col-lg-12 {
+  width: 100%; }
+
+.col-lg-11 {
+  width: 91.66666667%; }
+
+.col-lg-10 {
+  width: 83.33333333%; }
+
+.col-lg-9 {
+  width: 75%; }
+
+.col-lg-8 {
+  width: 66.66666667%; }
+
+.col-lg-7 {
+  width: 58.33333333%; }
+
+.col-lg-6 {
+  width: 50%; }
+
+.col-lg-5 {
+  width: 41.66666667%; }
+
+.col-lg-4 {
+  width: 33.33333333%; }
+
+.col-lg-3 {
+  width: 25%; }
+
+.col-lg-2 {
+  width: 16.66666667%; }
+
+.col-lg-1 {
+  width: 8.33333333%; }
+
+.span1,
+.span2,
+.span3,
+.span4,
+.span5,
+.span6,
+.span7,
+.span8,
+.span9,
+.span10,
+.span11,
+.span12 {
+  float: left; }
+
+.span12 {
+  width: 100%; }
+
+.span11 {
+  width: 91.66666667%; }
+
+.span10 {
+  width: 83.33333333%; }
+
+.span9 {
+  width: 75%; }
+
+.span8 {
+  width: 66.66666667%; }
+
+.span7 {
+  width: 58.33333333%; }
+
+.span6 {
+  width: 50%; }
+
+.span5 {
+  width: 41.66666667%; }
+
+.span4 {
+  width: 33.33333333%; }
+
+.span3 {
+  width: 25%; }
+
+.span2 {
+  width: 16.66666667%; }
+
+.span1 {
+  width: 8.33333333%; }
+
+@media screen and (max-width: 1300px) {
+  .col-bg-4 {
+    float: left;
+    width: 33.33333333%; } }
+@media screen and (max-width: 1199px) {
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    float: left; }
+
+  .col-md-12 {
+    width: 100%; }
+
+  .col-md-11 {
+    width: 91.66666667%; }
+
+  .col-md-10 {
+    width: 83.33333333%; }
+
+  .col-md-9 {
+    width: 75%; }
+
+  .col-md-8 {
+    width: 66.66666667%; }
+
+  .col-md-7 {
+    width: 58.33333333%; }
+
+  .col-md-6 {
+    width: 50%; }
+
+  .col-md-5 {
+    width: 41.66666667%; }
+
+  .col-md-4 {
+    width: 33.33333333%; }
+
+  .col-md-3 {
+    width: 25%; }
+
+  .col-md-2 {
+    width: 16.66666667%; }
+
+  .col-md-1 {
+    width: 8.33333333%; } }
+@media screen and (max-width: 960px) {
+  .col-xm-1,
+  .col-xm-2,
+  .col-xm-3,
+  .col-xm-4,
+  .col-xm-5,
+  .col-xm-6,
+  .col-xm-7,
+  .col-xm-8,
+  .col-xm-9,
+  .col-xm-10,
+  .col-xm-11,
+  .col-xm-12 {
+    float: left; }
+
+  .col-xm-12 {
+    width: 100%; }
+
+  .col-xm-11 {
+    width: 91.66666667%; }
+
+  .col-xm-10 {
+    width: 83.33333333%; }
+
+  .col-xm-9 {
+    width: 75%; }
+
+  .col-xm-8 {
+    width: 66.66666667%; }
+
+  .col-xm-7 {
+    width: 58.33333333%; }
+
+  .col-xm-6 {
+    width: 50%; }
+
+  .col-xm-5 {
+    width: 41.66666667%; }
+
+  .col-xm-4 {
+    width: 33.33333333%; }
+
+  .col-xm-3 {
+    width: 25%; }
+
+  .col-xm-2 {
+    width: 16.66666667%; }
+
+  .col-xm-1 {
+    width: 8.33333333%; } }
+@media screen and (max-width: 767px) {
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    float: left; }
+
+  .col-sm-12 {
+    width: 100%; }
+
+  .col-sm-11 {
+    width: 91.66666667%; }
+
+  .col-sm-10 {
+    width: 83.33333333%; }
+
+  .col-sm-9 {
+    width: 75%; }
+
+  .col-sm-8 {
+    width: 66.66666667%; }
+
+  .col-sm-7 {
+    width: 58.33333333%; }
+
+  .col-sm-6 {
+    width: 50%; }
+
+  .col-sm-5 {
+    width: 41.66666667%; }
+
+  .col-sm-4 {
+    width: 33.33333333%; }
+
+  .col-sm-3 {
+    width: 25%; }
+
+  .col-sm-2 {
+    width: 16.66666667%; }
+
+  .col-sm-1 {
+    width: 8.33333333%; } }
+@media screen and (max-width: 479px) {
+  .col-xs-1,
+  .col-xs-2,
+  .col-xs-3,
+  .col-xs-4,
+  .col-xs-5,
+  .col-xs-6,
+  .col-xs-7,
+  .col-xs-8,
+  .col-xs-9,
+  .col-xs-10,
+  .col-xs-11,
+  .col-xs-12 {
+    float: left; }
+
+  .col-xs-12 {
+    width: 100%; }
+
+  .col-xs-11 {
+    width: 91.66666667%; }
+
+  .col-xs-10 {
+    width: 83.33333333%; }
+
+  .col-xs-9 {
+    width: 75%; }
+
+  .col-xs-8 {
+    width: 66.66666667%; }
+
+  .col-xs-7 {
+    width: 58.33333333%; }
+
+  .col-xs-6 {
+    width: 50%; }
+
+  .col-xs-5 {
+    width: 41.66666667%; }
+
+  .col-xs-4 {
+    width: 33.33333333%; }
+
+  .col-xs-3 {
+    width: 25%; }
+
+  .col-xs-2 {
+    width: 16.66666667%; }
+
+  .col-xs-1 {
+    width: 8.33333333%; } }
+.clearfix:before {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  overflow: hidden; }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  overflow: hidden; }
+
+.hidden {
+  visibility: hidden; }
+
+.visible {
+  visibility: visible; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+.container {
+  width: 96%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto; }
+
+.rowFluid {
+  clear: both; }
+
+.rowFluid:before,
+.rowFluid:after,
+.column:before,
+.column:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  font-size: 0;
+  visibility: hidden;
+  overflow: hidden; }
+
+/* 在线联系 */
+#online {
+  position: fixed;
+  bottom: 126px !important;
+  right: -40px;
+  z-index: 1000;
+  width: 32px;
+  height: 32px;
+  background: #dd9e09;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 0;
+  box-sizing: border-box; }
+
+#online i {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 3px 7px; }
+
+#online i img {
+  max-width: 100%; }
+
+#online:hover {
+  background: #333; }
+
+#online_lx {
+  width: 180px;
+  height: auto;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 5px 9px rgba(4, 0, 0, 0.17);
+  position: fixed;
+  right: 12px;
+  bottom: 126px !important;
+  z-index: 99999;
+  box-sizing: border-box; }
+
+#olx_head {
+  padding: 20px;
+  line-height: 16px;
+  height: 16px;
+  background: #00C0FF;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 14px; }
+
+#online_close {
+  display: block;
+  float: right;
+  width: 15px;
+  height: 15px;
+  cursor: pointer; }
+
+#online_close img {
+  max-width: 100%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s; }
+
+#online_close img:hover {
+  -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+  -webkit-transform: rotate(180deg); }
+
+#olx_qq li a {
+  padding: 12px 40px;
+  height: 18px;
+  line-height: 18px;
+  background: #fff;
+  color: #353434;
+  display: block;
+  border-bottom: #f5f5f5 1px solid;
+  -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+  color: #888; }
+
+#olx_qq li a:hover {
+  background: #f5f5f5;
+  text-indent: 10px; }
+
+#olx_qq li i {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 10px; }
+
+#olx_qq li i img {
+  max-width: 100%; }
+
+#olx_tel {
+  padding: 15px 10px; }
+
+#olx_tel div {
+  color: #434343;
+  line-height: 24px;
+  height: 24px;
+  margin: 0 25px 0 8px; }
+
+#olx_tel div i {
+  width: 20px;
+  height: 25px;
+  float: left;
+  margin-right: 2px; }
+
+#olx_tel div i img {
+  max-width: 100%;
+  max-height: 100%; }
+
+#olx_tel p {
+  line-height: 30px;
+  color: #888;
+  text-align: center;
+  padding-top: 10px; }
+
+@media only screen and (max-width: 1199px) {
+  #online {
+    opacity: 1;
+    right: 12px; }
+
+  #online_lx {
+    display: none;
+    right: -200px; } }
+@media only screen and (max-width: 767px) {
+  .share_box {
+    width: 400px;
+    margin-left: -200px;
+    margin-top: -100px; }
+
+  .share_box .share_ico {
+    -ms-transform: scale(0.8);
+        transform: scale(0.8);
+    -webkit-transform: scale(0.8); } }
+@media only screen and (max-width: 479px) {
+  .share_box {
+    width: 360px;
+    margin-left: -180px; }
+
+  .share_box .share_ico {
+    -ms-transform: scale(0.75);
+        transform: scale(0.75);
+    -webkit-transform: scale(0.75); } }
+.header {
+  height: 72px;
+  line-height: 72px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 111;
+  box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.4);
+  /*background-color: #257dff;*/
+  background-color: #262F3E;
+  transition: 0.4s all;
+  -webkit-transition: 0.4s all; }
+
+.header .logo {
+  margin-left: 10px; }
+
+.header .header_menu ul {
+  text-align: center;
+  font-size: 0; }
+
+.header .header_menu ul li {
+  display: inline-block;
+  font-size: 14px; }
+
+.header .header_menu ul li a {
+  display: block;
+  padding: 0 25px;
+  color: #fff;
+  opacity: 0.7;
+  filter: alpha(opacity=70); }
+
+.header .header_menu ul li a:hover,
+.header .header_menu ul li a.active {
+  /*background-color: #ff9100;*/
+  /*background-color:#ffcb05;*/
+  background-color: #13171e;
+  opacity: 1;
+  filter: alpha(opacity=100); }
+
+.header .login {
+  float: right;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px 50px 0 0;
+  height: 36px;
+  line-height: 36px;
+  font-size: 12px; }
+
+.header .login span {
+  color: #fff; }
+
+.header .header_avatar {
+  width: 30px;
+  border-radius: 50%;
+  height: 30px;
+  overflow: hidden;
+  display: block;
+  float: left;
+  margin-top: 3px;
+  margin-left: 5px; }
+
+.header .header_avatar img {
+  display: block;
+  max-width: 100%; }
+
+.header .login a {
+  padding: 0 10px 0 10px;
+  color: #fff; }
+
+.header .md-show {
+  display: none; }
+
+.header_scroll {
+  /*background: #257dff;*/
+  background: #262F3E;
+  transition: 0.4s all;
+  -webkit-transition: 0.4s all; }
+
+.header .mobileMenuBtn {
+  position: fixed;
+  right: 20px;
+  top: 18px;
+  width: 32px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 100;
+  display: none;
+  transition: 0.4s all;
+  -webkit-transition: 0.4s all; }
+
+@media screen and (max-width: 1199px) {
+  .header .mobileMenuBtn {
+    display: block; }
+
+  .header .header_menu ul li {
+    display: block; }
+
+  .header .header_menu ul li a {
+    padding: 12px 0; }
+
+  .header .header_menu ul li a:hover,
+  .header .header_menu ul li a.active {
+    border-top: solid 2px transparent; } }
+.header .mobileMenuBtn.active {
+  right: 220px; }
+
+.header .mobileMenuBtn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 8px;
+  transition: 0.3s all;
+  -webkit-transition: 0.3s all; }
+
+.header .mobileMenuBtn span:last-child {
+  margin: 0; }
+
+.header .mobileMenuBtn span:first-child,
+.header .mobileMenuBtn span:last-child {
+  -ms-transform-origin: 100% 50%;
+      transform-origin: 100% 50%;
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform: rotate(0);
+      transform: rotate(0);
+  -webkit-transform: rotate(0); }
+
+.header .mobileMenuBtn.active span:first-child {
+  -ms-transform: rotate(-43deg);
+      transform: rotate(-43deg);
+  -webkit-transform: rotate(-43deg); }
+
+.header .mobileMenuBtn.active span:last-child {
+  -ms-transform: rotate(43deg);
+      transform: rotate(43deg);
+  -webkit-transform: rotate(43deg); }
+
+.header .mobileMenuBtn span:nth-child(2) {
+  -ms-transform: translateX(0);
+      transform: translateX(0);
+  -webkit-transform: translateX(0); }
+
+.header .mobileMenuBtn.active span:nth-child(2) {
+  -ms-transform: translateX(80px);
+      transform: translateX(80px);
+  -webkit-transform: translateX(80px);
+  opacity: 0; }
+
+.asideBar {
+  position: fixed;
+  z-index: 100;
+  width: 40px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 72px 4px 0;
+  box-sizing: border-box;
+  background: url(../images/public/aside.jpg) no-repeat;
+  background-size: cover; }
+
+.asideBar .kzquickLi {
+  display: block;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff; }
+
+.asideBar .kzquickLi:last-child {
+  border-bottom: none; }
+
+.asideBar .kzquickLi:before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  background: url(../images/public/kzicon.png) no-repeat;
+  background-position: -5px -9px; }
+
+.asideBar .kzquickLiConsult:before {
+  background-position: -4px -56px; }
+
+.asideBar .kzquickLiHelp:before {
+  background-position: -4px -106px; }
+
+.kzquickGotop {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  height: 40px;
+  background: url(../images/public/kzicon.png) no-repeat;
+  background-position: 8px -190px; }
+
+@media only screen and (max-width: 1199px) {
+  .asideBar {
+    display: none; } }
+.header .header_menu ul .nav-last-li {
+  display: none; }
+
+.header .header_menu ul .nav-last-li a:hover,
+.header .header_menu ul .nav-last-li a.active {
+  background: none; }
+
+@media screen and (max-width: 1199px) {
+  .header .header_menu ul li:last-child {
+    display: block;
+    line-height: 40px;
+    border-bottom: 1px solid #13171e; }
+
+  .header .header_menu ul li:last-child a {
+    display: inline;
+    padding: 0 20px;
+    border: none; }
+
+  .header .header_menu ul li:last-child span {
+    color: #fff;
+    filter: alpha(opacity=20);
+    opacity: 0.8; }
+
+  .header .header_menu ul li:last-child a:hover {
+    border: none; } }
+@media screen and (max-width: 1446px) {
+  .header .header_menu ul li a {
+    padding: 0px 12px; } }
+@media screen and (max-width: 1199px) {
+  .header {
+    height: 60px;
+    line-height: 60px; }
+
+  .header .login {
+    display: none; }
+
+  .header .mobileMenuBtn_shad {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all; }
+
+  .header .mobileMenuBtn_shad.active {
+    height: 100%; }
+
+  .header .header_menu {
+    width: 200px;
+    /*background: rgba(49, 152, 242, .8);*/
+    background: rgba(38, 47, 62, 0.78);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    right: -200px;
+    transition: 0.6s all;
+    -webkit-transition: 0.6s all; }
+
+  .header .header_menu.active {
+    right: 0; }
+
+  .header .header_menu ul li {
+    display: block; }
+
+  .header .header_menu ul li a {
+    padding: 0;
+    border: none;
+    border-bottom: solid 1px #13171e;
+    line-height: normal;
+    padding: 12px 0; }
+
+  .header .header_menu ul li a:hover,
+  .header .header_menu ul li a.active {
+    border: none;
+    border-bottom: solid 1px #13171e;
+    opacity: 1;
+    filter: alpha(opacity=100); }
+
+  .header .md-show {
+    display: block; }
+
+  .header .mobileMenuBtn {
+    display: block; } }
+@media screen and (max-width: 767px) {
+  .header {
+    height: 54px;
+    line-height: 54px; }
+
+  .header .logo img {
+    max-height: 30px; }
+
+  .header .mobileMenuBtn {
+    width: 28px; }
+
+  .header .mobileMenuBtn span {
+    height: 2px;
+    margin-bottom: 6px; }
+
+  .header .mobileMenuBtn span:first-child, .header .mobileMenuBtn span:last-child {
+    -ms-transform-origin: 93% 50%;
+        transform-origin: 93% 50%;
+    -webkit-transform-origin: 93% 50%; } }
+.full {
+  width: 100%;
+  max-width: 100%; }
+
+/*footer*/
+footer {
+  background-color: #fff; }
+
+.kzfooterLinkBox {
+  padding: 30px 0 40px;
+  margin-left: -10px; }
+
+.kzfooterLinkBox .kzfooterLi {
+  margin-left: 10px; }
+
+.kzfooterLinkBox .kzfooterLiTitle {
+  position: relative;
+  line-height: 28px;
+  margin: 10px 0;
+  color: #666;
+  font-size: 18px; }
+
+.kzfooterLinkBox .kzfooterLiTitle:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 19px;
+  vertical-align: middle;
+  background: url(../images/public/kzicon.png) no-repeat;
+  background-position: -7px -150px; }
+
+.kzfooterLinkBox .kzfooterLiNav ul {
+  padding-left: 12px; }
+
+.kzfooterLinkBox .kzfooterLiNav li {
+  display: inline-block;
+  padding: 5px 10px; }
+
+.kzfooterLinkBox .kzfooterLiNav a {
+  font-size: 14px;
+  color: #666; }
+
+.kzfooterLinkBox .kzfooterLiNav a:hover {
+  color: #333; }
+
+.kzfooterLinkBox .kzfooterLiFriend ul {
+  margin-left: 20px; }
+
+.kzfooterLinkBox .kzfooterLiFriend li {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0; }
+
+.kzfooterLinkBox .kzfooterLiFriend a {
+  color: #666; }
+
+.kzfooterLinkBox .kzfooterLiFriend a:hover {
+  color: #333; }
+
+.kzfooterLinkBox .kzfooterLiLink ul {
+  margin-left: 20px; }
+
+.kzfooterLinkBox .kzfooterLiLink li {
+  margin-bottom: 6px; }
+
+.kzfooterLinkBox .kzfooterLiLink,
+.kzfooterLinkBox .kzfooterLiLink a {
+  color: #666; }
+
+.kzfooterLinkBox .kzfooterLiLink {
+  margin-bottom: 20px; }
+
+.kzfooterCopy {
+  padding: 12px 0;
+  text-align: center;
+  color: #fff;
+  /*background-color: #257dff;*/
+  background-color: #262F3E; }
+
+.kzimageWx {
+  text-align: center; }
+
+.kzactiveBody {
+  padding-bottom: 50px; }
+
+@media screen and (max-width: 1199px) {
+  body {
+    padding-top: 60px
+    /*padding-bottom: 60px;*/ } }
+@media screen and (max-width: 960px) {
+  .kzfooterLinkBox {
+    display: none; } }
+/*
+ * 特定手机样式
+ */
+@media screen and (max-width: 767px) {
+  .header, .memberheader {
+    /*display: none;*/ }
+
+  body {
+    padding-top: 0;
+    padding-bottom: 50px; }
+
+  .nWX {
+    padding-top: 54px; }
+
+  .nWX .header, .nWX .memberheader {
+    display: block; }
+
+  .WX .header, .WX .memberheader {
+    position: relative; }
+
+  .WX .header .mobileMenuBtn {
+    position: absolute; }
+
+  footer {
+    display: none; } }
+.kzmoblieFooter {
+  display: none;
+  position: fixed;
+  z-index: 110;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: -1px 0 6px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: #fff; }
+
+@media screen and (max-width: 767px) {
+  .kzmoblieFooter {
+    display: block; } }
+.kzmoblieFooter a {
+  display: block;
+  line-height: normal;
+  color: #666; }
+
+.kzmoblieFooter a:before {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 35px;
+  height: 32px;
+  background: url(../images/public/kzicon.png) no-repeat;
+  background-position: -110px -68px; }
+
+.kzmoblieFooter a.active:before,
+.kzmoblieFooter a:hover:before {
+  background-position: -110px -8px; }
+
+.kzmoblieFooter a.kzmoblieFind:before {
+  background-position: -170px -68px; }
+
+.kzmoblieFooter a.kzmoblieFind.active:before,
+.kzmoblieFooter a.kzmoblieFind:hover:before {
+  background-position: -170px -8px; }
+
+.kzmoblieFooter a.kzmoblieConsult:before {
+  background-position: -223px -68px; }
+
+.kzmoblieFooter a.kzmoblieConsult.active:before,
+.kzmoblieFooter a.kzmoblieConsult:hover:before {
+  background-position: -223px -8px; }
+
+.kzmoblieFooter a.kzmoblieMe:before {
+  background-position: -274px -67px; }
+
+.kzmoblieFooter a.kzmoblieMe.active:before,
+.kzmoblieFooter a.kzmoblieMe:hover:before {
+  background-position: -274px -8px; }
+
+::-webkit-input-placeholder {
+  color: #999; }
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"] {
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  border-radius: 0; }
+
+.memberheader {
+  height: 72px;
+  line-height: 72px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 11;
+  text-align: center;
+  box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.4);
+  /*background-color: #257dff;*/
+  background-color: #262F3E; }
+
+.memberheader .logo {
+  display: inline-block;
+  float: left; }
+
+.memberheader .kzwelcomeUser {
+  display: inline-block;
+  color: #fff; }
+
+.memberheader .kzQuitLogined {
+  float: right;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 30px;
+  line-height: normal;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.2); }
+
+@media screen and (max-width: 1199px) {
+  .memberheader {
+    height: 60px;
+    line-height: 60px; }
+
+  .memberheader .kzQuitLogined {
+    margin-top: 12px; } }
+@media screen and (max-width: 767px) {
+  .memberheader {
+    text-align: left;
+    height: 54px;
+    line-height: 54px; }
+
+  .memberheader .logo {
+    float: none; }
+
+  .memberheader .logo img {
+    max-height: 32px; }
+
+  .memberheader .kzwelcomeUser {
+    display: none; }
+
+  .memberheader .kzQuitLogined {
+    margin-top: 13px;
+    padding: 6px 14px; } }
+/*
+ * 首页 导航
+ */
+.kzMoblieIndexNav, .kzMoblieDetailNav {
+  display: none;
+  position: fixed;
+  z-index: 110;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: -1px 0 6px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  background-color: #fff; }
+
+.kzMoblieDetailNav {
+  display: block; }
+
+.kzMoblieIndexNav .kzIndexNav, .kzMoblieDetailNav .kzDetailNav {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 17px;
+  text-align: center;
+  padding-top: 30px;
+  height: 20px;
+  background-image: url(../images/public/navbar.png);
+  background-repeat: no-repeat;
+  background-size: 24px 600px;
+  background-position: center -250px;
+  -webkit-transition: all 0s;
+          transition: all 0s; }
+
+.kzMoblieIndexNav .kzIndexNav:hover, .kzMoblieIndexNav .kzIndexNav.active, .kzMoblieDetailNav .kzDetailNav:hover, .kzMoblieDetailNav .kzDetailNav.active {
+  background-position: center 0;
+  color: #288BE9; }
+
+.kzMoblieIndexNav .kzIndexNav-2 {
+  background-position: center -400px; }
+
+.kzMoblieIndexNav .kzIndexNav-2:hover, .kzMoblieIndexNav .kzIndexNav-2.active {
+  background-position: center -150px; }
+
+.kzMoblieIndexNav .span6:not(:first-child) a {
+  border-left: 1px solid #f2f3f5; }
+
+.kzMoblieDetailNav .kzDetailNav-1 {
+  background-position: center -450px; }
+
+.kzMoblieDetailNav .kzDetailNav-1:hover, .kzMoblieDetailNav .kzDetailNav-1.active {
+  background-position: center -200px; }
+
+.kzMoblieDetailNav .kzDetailNav-3 {
+  background-position: center -350px;
+  background-color: #ffcb05; }
+
+.kzMoblieDetailNav .kzDetailNav-3:hover, .kzMoblieDetailNav .kzDetailNav-3.active {
+  background-position: center -100px;
+  background-color: #fccb12; }
+
+.kzMoblieDetailNav .kzDetailNav-3-1 {
+  padding-top: 0;
+  height: 50px;
+  line-height: 50px;
+  background-image: none; }
+
+.kzMoblieMemberNav .kzDetailNav-3 {
+  background-position: center -400px; }
+
+.kzMoblieDetailNav .kzDetailNav-3:hover, .kzMoblieDetailNav .kzDetailNav-3.active {
+  background-position: center -150px; }
+
+@media screen and (max-width: 767px) {
+  .kzMoblieIndexNav, .kzMoblieDetailNav {
+    display: block; } }
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc; }
+
+::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc; }
+
+/** 首页*/
+.kzindexBanner .swiper-slide,
+.kzACDBanner-container .swiper-slide {
+  height: 400px; }
+  .kzindexBanner .swiper-slide a,
+  .kzACDBanner-container .swiper-slide a {
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+.kzindexBanner .swiper-pagination-bullet-active,
+.kzACDBanner-container .swiper-pagination-bullet-active {
+  background-color: #3b9ff2; }
+.kzindexBanner .swiper-pagination-bullets,
+.kzACDBanner-container .swiper-pagination-bullets {
+  bottom: 60px; }
+@media only screen and (max-width: 960px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 300px; } }
+@media only screen and (max-width: 767px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 250px; } }
+@media only screen and (max-width: 476px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 194px; }
+  .kzindexBanner .swiper-pagination-bullets,
+  .kzACDBanner-container .swiper-pagination-bullets {
+    bottom: 10px; } }
+
+.kzindexQL .kzinnerQL {
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); }
+  .kzindexQL .kzinnerQL li {
+    float: left;
+    width: 20%;
+    height: 120px;
+    padding: 20px 0 10px;
+    box-sizing: border-box;
+    text-align: center; }
+    .kzindexQL .kzinnerQL li a {
+      display: block;
+      color: #666;
+      font-size: 16px; }
+      .kzindexQL .kzinnerQL li a:before {
+        content: "";
+        display: block;
+        margin: 0 auto 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #ffa726 url(../images/public/kzicon.png) no-repeat;
+        background-position: -51px -67px;
+        background-size: 1650%; }
+      .kzindexQL .kzinnerQL li a:hover {
+        color: #333; }
+  .kzindexQL .kzinnerQL .kzhourRoom a:before {
+    background-color: #9ccc65;
+    background-position: -50px -137px; }
+  .kzindexQL .kzinnerQL .kzattractions a:before {
+    background-color: #26c6da;
+    background-position: -48px -192px; }
+  .kzindexQL .kzinnerQL .kzPT a:before {
+    background-color: #f06292;
+    background-position: -49px -252px; }
+  .kzindexQL .kzinnerQL .kzentertainment a:before {
+    background-color: #ba68c8;
+    background-position: -49px -307px; }
+@media only screen and (max-width: 476px) {
+  .kzindexQL .container {
+    width: 100%; }
+  .kzindexQL .kzinnerQL {
+    margin-top: 0; } }
+
+.kzlistWrap {
+  position: relative; }
+  .kzlistWrap .kztitleBox {
+    position: relative;
+    z-index: 103;
+    height: 48px;
+    line-height: 48px;
+    overflow: hidden;
+    color: #fff;
+    background-color: #F69246; }
+    .kzlistWrap .kztitleBox h5 {
+      font-size: 16px; }
+      .kzlistWrap .kztitleBox h5:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: 0 3px 0 10px;
+        vertical-align: middle;
+        background: url(../images/public/kzicon.png) no-repeat;
+        background-position: -44px -14px; }
+      .kzlistWrap .kztitleBox h5 span {
+        font-size: 12px;
+        opacity: .8; }
+    .kzlistWrap .kztitleBox .kzmore {
+      margin-top: -50px;
+      float: right;
+      color: #fff; }
+      .kzlistWrap .kztitleBox .kzmore:after {
+        content: "";
+        display: inline-block;
+        margin: 0 20px 0 5px;
+        border: 5px solid transparent;
+        border-left-color: #fff; }
+  .kzlistWrap .kzactivitiesList {
+    position: relative;
+    z-index: 103;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff; }
+    .kzlistWrap .kzactivitiesList .kzlistLi {
+      display: block;
+      margin: 0 0 20px 20px;
+      box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2); }
+      .kzlistWrap .kzactivitiesList .kzlistLi:hover {
+        box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.3); }
+    .kzlistWrap .kzactivitiesList .kzimage img {
+      width: 100%; }
+    .kzlistWrap .kzactivitiesList .kzbrief {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      padding: 10px;
+      height: 60px;
+      box-sizing: border-box;
+      overflow: hidden;
+      color: #333;
+      line-height: 24px;
+      -webkit-transition: all .3s;
+              transition: all .3s; }
+    .kzlistWrap .kzactivitiesList .kzlistLi:hover .kzbrief {
+      color: #F69246; }
+    .kzlistWrap .kzactivitiesList .kzprice {
+      margin: 6px 5px;
+      padding-bottom: 10px;
+      box-sizing: border-box;
+      color: #333; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzcurrentPrice {
+        font-size: 16px;
+        color: #ffcb05; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzoldPrice {
+        margin: 0 3px 0 6px;
+        font-size: 14px;
+        color: #999;
+        text-decoration: line-through; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzdiscuz {
+        float: right;
+        color: #ff8700; }
+  @media only screen and (max-width: 476px) {
+    .kzlistWrap .kzactivitiesList .kzprice .kzoldPrice {
+      display: block; } }
+
+.kzlistNewWrap,
+.kzlistPriceWrap {
+  margin-top: -50px; }
+  .kzlistNewWrap .kzprice,
+  .kzlistPriceWrap .kzprice {
+    position: relative; }
+  .kzlistNewWrap .kzLeft,
+  .kzlistPriceWrap .kzLeft {
+    margin-right: 120px; }
+  .kzlistNewWrap .kzRight,
+  .kzlistPriceWrap .kzRight {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right; }
+    .kzlistNewWrap .kzRight img,
+    .kzlistPriceWrap .kzRight img {
+      width: 126px; }
+  .kzlistNewWrap .kzDFSLabel,
+  .kzlistPriceWrap .kzDFSLabel {
+    margin: 1px 0; }
+  .kzlistNewWrap .kzDFSTime,
+  .kzlistPriceWrap .kzDFSTime {
+    padding: 0 6px;
+    color: #fff;
+    background: #fe2639; }
+  .kzlistNewWrap .kzoldPrice,
+  .kzlistPriceWrap .kzoldPrice {
+    display: block;
+    margin: 0 !important;
+    text-decoration: none !important; }
+  @media only screen and (min-width: 767px) and (max-width: 1130px) {
+    .kzlistNewWrap .kzprice,
+    .kzlistPriceWrap .kzprice {
+      height: 99px; }
+    .kzlistNewWrap .kzLeft,
+    .kzlistPriceWrap .kzLeft {
+      margin-right: 0; }
+    .kzlistNewWrap .kzRight,
+    .kzlistPriceWrap .kzRight {
+      position: relative;
+      text-align: left; } }
+  @media only screen and (max-width: 600px) {
+    .kzlistNewWrap .kzprice,
+    .kzlistPriceWrap .kzprice {
+      height: 99px; }
+    .kzlistNewWrap .kztitleBox,
+    .kzlistPriceWrap .kztitleBox {
+      display: none; }
+    .kzlistNewWrap .kzLeft,
+    .kzlistPriceWrap .kzLeft {
+      margin-right: 0; }
+    .kzlistNewWrap .kzRight,
+    .kzlistPriceWrap .kzRight {
+      position: relative;
+      text-align: left;
+      height: 44px; } }
+  @media only screen and (max-width: 478px) {
+    .kzlistNewWrap,
+    .kzlistPriceWrap {
+      margin-top: -10px; } }
+
+.kzlistPriceWrap {
+  margin-top: 0 !important; }
+
+.kzlistrestaurantWrap .kztitleBox {
+  background-color: #ffa726; }
+  .kzlistrestaurantWrap .kztitleBox h5:before {
+    background-position: -44px -57px; }
+
+.kzlistHourroomWrap .kztitleBox {
+  background-color: #9ccc65; }
+  .kzlistHourroomWrap .kztitleBox h5:before {
+    background-position: -44px -107px; }
+
+.kzlistScenicspotWrap .kztitleBox {
+  background-color: #26c6da; }
+  .kzlistScenicspotWrap .kztitleBox h5:before {
+    background-position: -44px -148px; }
+
+.kzlistPCtravelWrap .kztitleBox {
+  background-color: #f06292; }
+  .kzlistPCtravelWrap .kztitleBox h5:before {
+    background-position: -44px -192px; }
+
+.kzlistentertainmentWrap .kztitleBox {
+  background-color: #ba68c8; }
+  .kzlistentertainmentWrap .kztitleBox h5:before {
+    background-position: -44px -233px; }
+
+.kzlistABWrap .kztitleBox h5:before {
+  background-position: -44px -274px; }
+.kzlistABWrap .kzabBreifBox {
+  margin: 20px 20px; }
+.kzlistABWrap .kzimage {
+  padding: 0 20px 20px; }
+.kzlistABWrap .kzbriefTitle {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666; }
+.kzlistABWrap .kzbriefContent {
+  text-indent: 24px;
+  line-height: 23px;
+  color: #999;
+  font-size: 12px; }
+@media only screen and (max-width: 767px) {
+  .kzlistABWrap .kzactivitiesList {
+    padding-right: 0; } }
+
+.kzlistNewsWrap .kztitleBox h5:before {
+  background-position: -44px -314px; }
+.kzlistNewsWrap .kzactivitiesList .kzlistLi:hover .kzbrief:after {
+  width: 100%; }
+.kzlistNewsWrap .kzactivitiesList .kzbrief {
+  position: relative;
+  padding: 10px;
+  line-height: 23px;
+  color: #999; }
+  .kzlistNewsWrap .kzactivitiesList .kzbrief:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #288BE9;
+    -webkit-transition: all .3s;
+            transition: all .3s; }
+.kzlistNewsWrap .kzliTitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 10px;
+  line-height: 24px;
+  color: #666; }
+.kzlistNewsWrap .kztime {
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 12px; }
+@media only screen and (max-width: 767px) {
+  .kzlistNewsWrap .kzbrief,
+  .kzlistNewsWrap .kztime {
+    display: none !important; } }
+
+.kzcooperation {
+  margin: 20px 0; }
+  @media only screen and (max-width: 476px) {
+    .kzcooperation {
+      display: none; } }
+
+.kzcooperation-container {
+  padding: 0 30px;
+  box-sizing: border-box;
+  background-color: #fff; }
+  .kzcooperation-container a {
+    display: block;
+    outline: 1px solid #efefef; }
+    .kzcooperation-container a img {
+      width: 100%; }
+  .kzcooperation-container .swiper-button-next {
+    right: 3px; }
+  .kzcooperation-container .swiper-button-prev {
+    left: 3px; }
+  .kzcooperation-container .swiper-button-next,
+  .kzcooperation-container .swiper-button-prev {
+    background-size: 16px 44px; }
+
+.kzcontentTitle {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  background-color: #F69246; }
+  .kzcontentTitle h5 {
+    font-size: 16px; }
+    .kzcontentTitle h5 span {
+      font-size: 12px;
+      opacity: .8; }
+    .kzcontentTitle h5:before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 0 3px 0 10px;
+      vertical-align: middle;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -44px -274px; }
+
+.kzcontentWrap {
+  margin: 20px 0; }
+  .kzcontentWrap .kzcontentPanel {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+    .kzcontentWrap .kzcontentPanel h6 {
+      line-height: 50px;
+      border-bottom: 1px dotted #ddd;
+      font-size: 16px;
+      color: #333; }
+    .kzcontentWrap .kzcontentPanel .kzcontentBox {
+      padding: 20px;
+      line-height: 24px;
+      font-size: 12px;
+      color: #999;
+      box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2); }
+      .kzcontentWrap .kzcontentPanel .kzcontentBox .kzimage {
+        display: block;
+        min-height: 1px;
+        box-sizing: border-box; }
+        .kzcontentWrap .kzcontentPanel .kzcontentBox .kzimage img {
+          display: block; }
+
+.kzcontentABUsWrap .kzcontentPanel .kzcontentBox {
+  box-shadow: none;
+  text-indent: 24px; }
+  .kzcontentABUsWrap .kzcontentPanel .kzcontentBox .kzimage {
+    padding-right: 20px;
+    margin-bottom: 20px; }
+@media only screen and (max-width: 767px) {
+  .kzcontentABUsWrap .kzcontentPanel .kzcontentBox .kzimage {
+    padding-right: 0; } }
+
+.kzcontentCPWrap .kzcontentBox a {
+  display: block;
+  outline: 1px solid #efefef; }
+
+.kzcontentNewsWrap .kzcontentTitle h5:before {
+  background-position: -44px -314px; }
+.kzcontentNewsWrap .kzcontentPanel {
+  padding: 0;
+  overflow: hidden; }
+.kzcontentNewsWrap .kzcontentBox {
+  display: block; }
+  .kzcontentNewsWrap .kzcontentBox .kzimage img {
+    width: 100%; }
+  .kzcontentNewsWrap .kzcontentBox .kzcontent {
+    margin-left: 20px; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent h7 {
+      position: relative;
+      font-size: 16px;
+      color: #767676;
+      -webkit-transition: all .3s;
+              transition: all .3s; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent h7:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: -10px;
+        display: inline-block;
+        margin: 0 20px 0 5px;
+        border: 5px solid transparent;
+        border-left-color: transparent;
+        -webkit-transition: all .3s;
+                transition: all .3s; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzcount {
+      float: right;
+      font-size: 12px; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzcount span {
+        color: #f00; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzpublishTime {
+      margin-bottom: 15px;
+      font-size: 12px;
+      color: #ccc; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif {
+      position: relative;
+      color: #999; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        background-color: #F69246; }
+    @media only screen and (max-width: 767px) {
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif {
+        display: none; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzpublishTime {
+        margin-bottom: 0; } }
+  .kzcontentNewsWrap .kzcontentBox:hover .kzcontent h7 {
+    padding-left: 15px;
+    color: #F69246; }
+    .kzcontentNewsWrap .kzcontentBox:hover .kzcontent h7:before {
+      left: 0;
+      border-left-color: #F69246; }
+  .kzcontentNewsWrap .kzcontentBox:hover .kzcontent .kzbreif:after {
+    width: 100%; }
+@media only screen and (max-width: 467px) {
+  .kzcontentNewsWrap .kzcontentBox .kzimage {
+    margin-bottom: 15px; }
+  .kzcontentNewsWrap .kzcontentBox .kzcontent {
+    margin-left: 0; } }
+
+.kzmoreBox {
+  margin: 20px 0 40px;
+  text-align: center; }
+  .kzmoreBox .kzmore {
+    display: inline-block;
+    padding: 10px 80px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    color: #999;
+    -webkit-transition: all .3s;
+            transition: all .3s; }
+    .kzmoreBox .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+.kzmoreBox2 {
+  margin: 20px 0 40px;
+  text-align: center; }
+  .kzmoreBox2 .kzmore {
+    display: block;
+    padding: 10px 80px;
+    font-size: 12px;
+    color: #999;
+    background-color: #fff;
+    -webkit-transition: all .3s;
+            transition: all .3s; }
+    .kzmoreBox2 .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+/** 新闻详情**/
+.kzcontentNewsDWrap .kznewsTitle {
+  margin: 24px 0;
+  font-size: 18px;
+  color: #666;
+  text-align: center; }
+.kzcontentNewsDWrap .kznewsDinfBox {
+  margin: 20px 0;
+  border-top: 1px dotted #ddd;
+  border-bottom: 1px dotted #ddd;
+  line-height: 32px;
+  font-size: 12px;
+  color: #999;
+  text-align: center; }
+  .kzcontentNewsDWrap .kznewsDinfBox span {
+    display: inline-block; }
+.kzcontentNewsDWrap .kznewsDContentBox {
+  padding: 10px; }
+.kzcontentNewsDWrap .kznewsBtn {
+  padding: 20px 0;
+  overflow: hidden; }
+  .kzcontentNewsDWrap .kznewsBtn a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #F69246; }
+    .kzcontentNewsDWrap .kznewsBtn a:hover {
+      background-color: #f47515; }
+  .kzcontentNewsDWrap .kznewsBtn .kznext {
+    float: right; }
+
+.kzACQL .kzinnerQL {
+  margin: 20px 0; }
+
+.kzACSortOneWrap {
+  margin: 20px 0; }
+  @media only screen and (max-width: 767px) {
+    .kzACSortOneWrap .kzBox .kzACLabel {
+      display: none; } }
+
+.kzBox {
+  margin-bottom: 1px;
+  font-size: 12px;
+  background-color: #fff; }
+  .kzBox .kzACLabel {
+    display: inline-block;
+    width: 94px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #F69246; }
+  .kzBox .kzList {
+    display: inline-block; }
+    .kzBox .kzList li {
+      display: inline-block;
+      line-height: 40px; }
+      .kzBox .kzList li a {
+        display: block;
+        padding: 0 15px;
+        color: #666; }
+      .kzBox .kzList li.active a, .kzBox .kzList li:hover a {
+        color: #ffcb05; }
+
+/** 活动详情页**/
+.kzcurrentNavBox {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #666; }
+  .kzcurrentNavBox .kzcurrentNavList {
+    display: inline-block; }
+    .kzcurrentNavBox .kzcurrentNavList a {
+      color: #666; }
+      .kzcurrentNavBox .kzcurrentNavList a:not(:last-child) {
+        color: #ffcb05; }
+        .kzcurrentNavBox .kzcurrentNavList a:not(:last-child):after {
+          content: ">";
+          margin: 0 3px; }
+      .kzcurrentNavBox .kzcurrentNavList a:hover {
+        color: #ffcb05; }
+
+.kzACHeaderWrap {
+  margin: 10px 0 14px; }
+  .kzACHeaderWrap .kzACHeaderInner {
+    padding: 14px 20px 24px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzACHeaderWrap .kzACDBanner-container {
+    margin-right: 28px; }
+    .kzACHeaderWrap .kzACDBanner-container .swiper-slide {
+      height: auto; }
+    .kzACHeaderWrap .kzACDBanner-container .swiper-pagination-bullets {
+      bottom: 14px; }
+    .kzACHeaderWrap .kzACDBanner-container img {
+      width: 100%; }
+  .kzACHeaderWrap .kzbuyTicketForm h5 {
+    font-size: 18px;
+    color: #333; }
+  .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox {
+    position: relative;
+    margin-top: 14px;
+    overflow: hidden;
+    padding: 4px;
+    padding-left: 45px;
+    color: #fff;
+    background-color: #dd2446; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 24px;
+      width: 20px;
+      height: 20px;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -504px -22px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox .kzSeckillTime {
+      float: right; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox i {
+      font-style: normal;
+      color: #000; }
+    @media only screen and (max-width: 476px) {
+      .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox {
+        padding-left: 30px; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox:before {
+          left: 8px; } }
+  .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+    margin: 14px 0 10px;
+    font-size: 14px;
+    color: #333; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+      margin-right: 2px;
+      font-size: 30px;
+      color: #ffcb05; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice i {
+        font-size: 20px;
+        font-style: normal; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+      margin-left: 16px;
+      text-decoration: line-through;
+      color: #999; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+      margin-top: 16px;
+      float: right;
+      color: #666; }
+  .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm {
+    border: 1px solid #ededed; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm label {
+      display: block;
+      padding: 0 10px;
+      line-height: 36px;
+      overflow: hidden; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketLabel {
+      display: inline-block;
+      color: #333; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight {
+      float: right; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzpriceOne {
+        display: inline-block;
+        margin-right: 24px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum span {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          border: 1px solid #ededed;
+          vertical-align: middle;
+          cursor: pointer;
+          font-size: 14px;
+          -webkit-transition: all .3s;
+                  transition: all .3s; }
+          .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum span:hover {
+            color: #fff;
+            background-color: #ffcb05; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum input {
+          width: 50px;
+          height: 24px;
+          text-align: center;
+          outline: none;
+          border: 1px solid #ededed;
+          font-size: 14px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf {
+      padding: 6px 10px;
+      border-top: 1px solid #ededed; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf input {
+        height: 30px;
+        line-height: 30px;
+        width: 200px;
+        border: 1px solid #ededed;
+        text-indent: 10px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf span {
+        display: inline-block;
+        margin-left: 24px; }
+  @media only screen and (max-width: 960px) {
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+      margin: 10px 0 6px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+        font-size: 24px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+        margin-left: 10px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+        margin-top: 10px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight {
+      float: none; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm label {
+      margin-bottom: 6px;
+      line-height: 28px; } }
+  @media only screen and (max-width: 767px) {
+    .kzACHeaderWrap .kzACDBanner-container {
+      margin-right: 0; }
+    .kzACHeaderWrap .kzbuyTicketForm {
+      margin-top: 10px; } }
+  @media only screen and (max-width: 479px) {
+    .kzACHeaderWrap .kzACHeaderInner {
+      padding: 14px 10px 24px; }
+    .kzACHeaderWrap .kzbuyTicketForm h5 {
+      font-size: 16px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+      margin: 6px 0 4px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+        font-size: 18px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+        margin-left: 6px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+        margin-top: 6px; } }
+
+.kzProgressWrap .kzProgressBox {
+  position: relative;
+  padding: 8px 30px;
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzProgressWrap .kzProgressBox span {
+    color: #e01222; }
+  @media only screen and (max-width: 479px) {
+    .kzProgressWrap .kzProgressBox {
+      padding: 8px 20px; } }
+.kzProgressWrap .kzProgressBar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 180px;
+  padding-right: 30px;
+  box-sizing: border-box; }
+  .kzProgressWrap .kzProgressBar .kzProgressShow {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    top: 18px;
+    background-color: #b8b8b8; }
+    .kzProgressWrap .kzProgressBar .kzProgressShow p {
+      position: absolute;
+      height: 2px;
+      width: 30%;
+      left: 0;
+      top: 0;
+      background-color: #e01222; }
+  @media only screen and (max-width: 479px) {
+    .kzProgressWrap .kzProgressBar {
+      padding-left: 160px;
+      padding-right: 20px; } }
+
+.kzACContentWrap {
+  margin: 20px 0; }
+  .kzACContentWrap .kzACContentInner {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzACContentWrap .kzACLinkBar {
+    margin-bottom: 1px;
+    font-size: 0;
+    background-color: #fff; }
+    .kzACContentWrap .kzACLinkBar a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-right: 1px solid #f2f3f4;
+      font-size: 14px; }
+      .kzACContentWrap .kzACLinkBar a.active, .kzACContentWrap .kzACLinkBar a:hover {
+        color: #fff;
+        background-color: #288BE9; }
+  .kzACContentWrap .kzACContentBox .kzACContentTitle {
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: #288BE9;
+    border-bottom: 1px dotted #ddd; }
+  .kzACContentWrap .kzACContentBox .kzACContentDetailBox {
+    position: relative;
+    margin-bottom: 1px;
+    padding: 14px 28px 30px;
+    background-color: #fff; }
+  .kzACContentWrap .kzbuyTicketBox {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 102;
+    text-align: center;
+    background-color: #F69246; }
+    .kzACContentWrap .kzbuyTicketBox a {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 6px 36px;
+      color: #fff;
+      background-color: #ffcb05; }
+      .kzACContentWrap .kzbuyTicketBox a:hover {
+        background-color: #c38129; }
+  @media only screen and (max-width: 479px) {
+    .kzACContentWrap .kzbuyTicketBox a {
+      margin: 14px 0; } }
+
+.kzloginWrap {
+  position: relative;
+  min-height: 100vh;
+  background-color: #288BE9; }
+  .kzloginWrap .kzloginInner {
+    position: absolute;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background-color: #fff; }
+  .kzloginWrap .kzloginTitle {
+    padding: 20px;
+    text-align: center; }
+    .kzloginWrap .kzloginTitle h3 {
+      position: relative;
+      font-size: 20px;
+      color: #666;
+      z-index: 1; }
+      .kzloginWrap .kzloginTitle h3:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 30px;
+        background-color: #fff;
+        z-index: -1; }
+      .kzloginWrap .kzloginTitle h3:after {
+        content: "";
+        position: absolute;
+        top: 49%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #efefef;
+        z-index: -2; }
+    .kzloginWrap .kzloginTitle h4 {
+      font-size: 12px;
+      color: #ccc; }
+  .kzloginWrap .kzloginTypebar {
+    text-align: center;
+    border-top: 1px solid #efefef;
+    overflow: hidden; }
+    .kzloginWrap .kzloginTypebar a {
+      float: left;
+      width: 50%;
+      line-height: 50px;
+      font-size: 16px;
+      color: #999;
+      background-color: #efefef; }
+      .kzloginWrap .kzloginTypebar a.active, .kzloginWrap .kzloginTypebar a:hover {
+        color: #ffcb05;
+        background-color: #fff; }
+  .kzloginWrap .kzVCLoginBox {
+    display: none; }
+  .kzloginWrap .kzpwLoginBox {
+    padding: 20px; }
+    .kzloginWrap .kzpwLoginBox .kzloginLi {
+      position: relative;
+      margin-bottom: 24px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi input {
+        width: 100%;
+        outline: none;
+        border: 1px solid #ddd;
+        line-height: 38px;
+        text-indent: 50px;
+        border-radius: 2px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border-right: 1px solid #ddd;
+        background: url(../images/public/kzicon.png) no-repeat;
+        background-position: -314px -13px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi .kzerrorTips {
+        position: absolute;
+        left: 0;
+        bottom: -18px;
+        color: #f00;
+        font-size: 12px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzpasswordLi i {
+        background-position: -358px -13px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi i {
+        background-position: -406px -15px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi input {
+        width: calc(100% - 156px); }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi .kzgetVC {
+        float: right;
+        width: 138px;
+        height: 40px;
+        border-radius: 2px;
+        overflow: hidden; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi i {
+        background-position: -447px -14px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi input {
+        width: calc(100% - 156px); }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg {
+        float: right;
+        width: 138px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 2px;
+        overflow: hidden;
+        color: #fff;
+        background-color: #288BE9; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg:hover {
+          background-color: #d24512; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg.active {
+          cursor: no-drop;
+          background-color: #ccc; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi {
+        color: #666; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi input {
+          position: relative;
+          width: 16px;
+          height: 16px;
+          margin-right: 5px; }
+          .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi input:checked:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            opacity: 1;
+            background: url(../images/public/kzicon.png) no-repeat;
+            background-position: -5px -246px; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi a {
+          color: #666; }
+          .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi a:hover {
+            color: #333; }
+    .kzloginWrap .kzpwLoginBox .kzsubmitBox .kzloginSubBtn {
+      margin-bottom: 10px;
+      width: 100%;
+      border: none;
+      outline: none;
+      line-height: 50px;
+      font-size: 16px;
+      border-radius: 2px;
+      color: #fff;
+      background-color: #FFCA08;
+      -webkit-transition: all .3s;
+              transition: all .3s; }
+      .kzloginWrap .kzpwLoginBox .kzsubmitBox .kzloginSubBtn:hover {
+        background-color: #d4a700; }
+  .kzloginWrap .kzLoginOterBox {
+    position: relative;
+    border-top: 1px solid #ddd;
+    line-height: 50px;
+    text-align: center;
+    overflow: hidden; }
+    .kzloginWrap .kzLoginOterBox:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 1px;
+      background-color: #ddd; }
+    .kzloginWrap .kzLoginOterBox a {
+      float: left;
+      width: 50%;
+      color: #999; }
+      .kzloginWrap .kzLoginOterBox a:hover {
+        color: #ffcb05; }
+  .kzloginWrap.kzLoginWhiteModel {
+    background-color: #fff; }
+    .kzloginWrap.kzLoginWhiteModel .kzloginTitle h4 {
+      display: none; }
+    .kzloginWrap.kzLoginWhiteModel .kzLoginOterBox {
+      border-top: none; }
+      .kzloginWrap.kzLoginWhiteModel .kzLoginOterBox:after {
+        width: 0; }
+  .kzloginWrap.kzLoginModel .kzloginInner {
+    top: 260px;
+    -webkit-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); }
+  .kzloginWrap.kzLoginModel:before {
+    content: "";
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    height: 192px;
+    background: url(../images/public/loginBg.jpg) center;
+    background-size: cover; }
+  .kzloginWrap.kzLoginModel .kzloginTitle {
+    display: none; }
+  .kzloginWrap.kzLoginModel .kzLoginOterBox {
+    border-top: none; }
+  .kzloginWrap.kzLoginModel .kzloginTypebar {
+    border-top: none; }
+  .kzloginWrap.kzLoginModel .kzLoginOterBox:after {
+    display: none; }
+  @media only screen and (max-width: 479px) {
+    .kzloginWrap .kzloginInner {
+      width: 98%; }
+    .kzloginWrap.kzLoginModel .kzloginInner {
+      top: auto;
+      bottom: 30px;
+      -webkit-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+              transform: translate(-50%, 0);
+      width: 100%; }
+    .kzloginWrap.kzLoginModel .kzloginTypebar a:first-child {
+      float: right; } }
+  .kzloginWrap.kzBindLoginModel .kzloginTitle {
+    display: block; }
+
+.kzregWrap .kzpwLoginBox {
+  padding-top: 0; }
+
+.kzcontentMemberWrap .kzcontentTitle h5:before {
+  display: none; }
+
+.memberbody {
+  padding-bottom: 50px; }
+
+.kzmemberLinkWrap {
+  padding-top: 20px; }
+  .kzmemberLinkWrap .kzmemberLinkInner {
+    margin-left: -10px; }
+  .kzmemberLinkWrap .kzmemberLinkLi {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    text-align: center; }
+    .kzmemberLinkWrap .kzmemberLinkLi img {
+      -webkit-transition: all .3s;
+              transition: all .3s; }
+    .kzmemberLinkWrap .kzmemberLinkLi:hover img {
+      -webkit-transform: scale(1.02);
+          -ms-transform: scale(1.02);
+              transform: scale(1.02); }
+  @media only screen and (max-width: 767px) {
+    .kzmemberLinkWrap .kzmemberLinkLi {
+      margin-bottom: 10px; } }
+
+.kzmemberBT {
+  color: #666;
+  padding: 15px 0;
+  background-color: #fff; }
+  .kzmemberBT .kzmemberBTLi {
+    position: relative;
+    color: #666; }
+    .kzmemberBT .kzmemberBTLi:not(:last-of-type):after {
+      content: ">";
+      display: inline-block;
+      padding: 0 6px; }
+    .kzmemberBT .kzmemberBTLi:last-of-type {
+      color: #ffcb05; }
+  .kzmemberBT .kzmembersearchBox {
+    float: right;
+    top: -5px;
+    position: relative; }
+    .kzmemberBT .kzmembersearchBox:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      z-index: 1;
+      top: 5px;
+      left: 6px;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -3px -282px; }
+    .kzmemberBT .kzmembersearchBox input[type="search"] {
+      text-indent: 2rem;
+      width: 286px;
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid #ddd;
+      border-radius: 3px; }
+    .kzmemberBT .kzmembersearchBox .kzsearchBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 32px;
+      height: 32px;
+      width: 70px;
+      text-align: center;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      color: #fff;
+      background: #288BE9; }
+      .kzmemberBT .kzmembersearchBox .kzsearchBtn:hover {
+        background-color: #1571c9; }
+
+@media screen and (max-width: 767px) {
+  .memberPaddingTop {
+    margin-top: 0;
+    padding-top: 24px; }
+
+  .kzmembersearchBox {
+    top: 0 !important;
+    margin-top: 8px;
+    float: none !important; }
+    .kzmembersearchBox input[type="search"] {
+      width: 100% !important; } }
+.kzSPQL .kzinnerQL {
+  margin-top: 16px; }
+
+.kzSPWrap .kzheader {
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: #F69246; }
+.kzSPWrap .kzSPBox {
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+.kzSPWrap table {
+  width: 100%;
+  border-collapse: collapse; }
+.kzSPWrap caption {
+  padding: 15px 0 20px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px dotted #ddd;
+  color: #333; }
+.kzSPWrap tr {
+  background-color: #fafafa; }
+.kzSPWrap td {
+  padding: 10px 0;
+  min-width: 60px;
+  border-bottom: 4px solid #fff; }
+.kzSPWrap .kztableHeader th {
+  padding: 10px 0;
+  text-align: left;
+  font-weight: 100;
+  color: #999; }
+.kzSPWrap .kzshareBox {
+  margin: 15px 0 10px;
+  text-align: right; }
+  .kzSPWrap .kzshareBox .kzshareBtn {
+    padding: 6px 20px;
+    color: #fff;
+    background-color: #ffcb05; }
+    .kzSPWrap .kzshareBox .kzshareBtn:hover {
+      background-color: #d1a600; }
+
+.kzmemberMoreBox {
+  margin: 20px 0;
+  line-height: 36px;
+  text-align: center;
+  background-color: #fff; }
+  .kzmemberMoreBox .kzmore {
+    display: block;
+    font-size: 12px;
+    color: #999; }
+    .kzmemberMoreBox .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+/** 分享样式*/
+.kzshareWrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3); }
+  .kzshareWrap .kzshareInner {
+    position: absolute;
+    max-width: 400px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+  .kzshareWrap .kzshareBtnNow {
+    display: block;
+    margin-top: 20px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #ffcb05; }
+    .kzshareWrap .kzshareBtnNow:hover {
+      background-color: #d1a600; }
+  @media only screen and (max-width: 767px) {
+    .kzshareWrap .kzshareInner {
+      position: absolute;
+      max-width: 80%;
+      top: 10%;
+      left: 10%;
+      -webkit-transform: translate(0, 0);
+          -ms-transform: translate(0, 0);
+              transform: translate(0, 0); } }
+
+/** 渠道统计*/
+.kzchannelWrap .kzchannelInner {
+  margin: 20px 0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff; }
+.kzchannelWrap .kzchannelLi {
+  color: #ff6766;
+  padding: 60px 0;
+  text-align: center; }
+.kzchannelWrap .kzcount {
+  font-size: 24px; }
+  .kzchannelWrap .kzcount i {
+    font-size: 14px;
+    font-style: normal; }
+.kzchannelWrap .kzTips {
+  font-size: 16px;
+  color: #666; }
+.kzchannelWrap .kzchannelLi2 {
+  color: #ff6801;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee; }
+.kzchannelWrap .kzchannelLi3 {
+  color: #3498c8; }
+.kzchannelWrap .kzWCBtn {
+  display: inline-block;
+  width: 114px;
+  height: 28px;
+  margin-top: 14px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #eee;
+  color: #999;
+  font-size: 12px; }
+  .kzchannelWrap .kzWCBtn:hover {
+    color: #fff;
+    background-color: #ffcb05; }
+.kzchannelWrap .kzBtn {
+  display: inline-block;
+  width: 116px;
+  line-height: 30px;
+  margin-top: 12px;
+  border: 1px solid #efefef;
+  font-size: 12px;
+  color: #999; }
+  .kzchannelWrap .kzBtn:hover {
+    color: #fff;
+    background-color: #ffcb05; }
+@media screen and (max-width: 476px) {
+  .kzchannelWrap .kzchannelLi {
+    padding: 30px 0; }
+  .kzchannelWrap .kzcount {
+    font-size: 18px; }
+  .kzchannelWrap .kzTips {
+    font-size: 14px; } }
+
+/** 渠道列表*/
+.kzagentList .kzheader {
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: #F69246; }
+.kzagentList .kzagentInner {
+  margin: 20px 0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff; }
+  .kzagentList .kzagentInner table {
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 14px; }
+    .kzagentList .kzagentInner table th {
+      padding: 6px 1px;
+      font-weight: normal;
+      color: #999; }
+    .kzagentList .kzagentInner table tr {
+      background-color: #fafafa; }
+    .kzagentList .kzagentInner table td {
+      padding: 6px 1px;
+      border-bottom: 4px solid #fff;
+      color: #666; }
+  .kzagentList .kzagentInner .kzdetailBtn {
+    display: inline-block;
+    padding: 4px 20px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    color: #999; }
+    .kzagentList .kzagentInner .kzdetailBtn:hover {
+      color: #fff;
+      background-color: #ffcb05; }
+  .kzagentList .kzagentInner .kzleft {
+    width: 115px;
+    text-align: right; }
+  .kzagentList .kzagentInner .kzright {
+    text-align: left;
+    padding: 10px 14px;
+    box-sizing: border-box; }
+    .kzagentList .kzagentInner .kzright input[type='text'],
+    .kzagentList .kzagentInner .kzright input[type='password'] {
+      width: 100%;
+      line-height: 34px;
+      text-indent: 10px;
+      border: 1px solid #efefef; }
+    .kzagentList .kzagentInner .kzright .kzyellowPrice {
+      font-size: 16px;
+      color: #ffcb05; }
+    .kzagentList .kzagentInner .kzright label {
+      margin-right: 30px; }
+    @media screen and (max-width: 476px) {
+      .kzagentList .kzagentInner .kzright label {
+        margin-right: 8px; } }
+    .kzagentList .kzagentInner .kzright input[type='radio'] {
+      position: relative;
+      vertical-align: middle;
+      margin-right: 8px; }
+      .kzagentList .kzagentInner .kzright input[type='radio']:checked:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ffcb05; }
+.kzagentList .kzpayLI {
+  box-shadow: 0 1px 0 0 #efefef, 0 -1px 0 0 #efefef; }
+.kzagentList .kzorder {
+  min-width: 40px; }
+.kzagentList .kzorderAll {
+  min-width: 50px; }
+.kzagentList .kzCut {
+  min-width: 50px; }
+.kzagentList .KzSalesman {
+  min-width: 50px; }
+.kzagentList .KzIncome {
+  min-width: 50px; }
+.kzagentList .kzsaleType {
+  min-width: 60px; }
+.kzagentList .kzActive {
+  min-width: 60px; }
+.kzagentList .kzSettlementPrice {
+  min-width: 40px; }
+.kzagentList .KzCount {
+  min-width: 30px; }
+.kzagentList .KzPrice {
+  min-width: 30px; }
+.kzagentList .kzStatu {
+  min-width: 40px; }
+.kzagentList .kzDate {
+  min-width: 40px; }
+.kzagentList .kzOperator {
+  min-width: 40px; }
+.kzagentList .kzOperator {
+  min-width: 40px; }
+.kzagentList .kzStore {
+  min-width: 40px; }
+.kzagentList .kzsubBtn {
+  display: block;
+  margin: 0 12px;
+  text-align: center;
+  color: #fff;
+  line-height: 34px;
+  background-color: #ffcb05; }
+  .kzagentList .kzsubBtn:hover {
+    background-color: #fe8100; }
+.kzagentList .kzVCLI .kzright input[type='text'] {
+  margin-bottom: 6px;
+  margin-right: 10px;
+  width: 160px; }
+.kzagentList .kzVCLI .kzright a {
+  display: inline-block;
+  width: 138px;
+  line-height: 34px;
+  text-align: center;
+  vertical-align: top;
+  color: #fff;
+  background-color: #288BE9; }
+  .kzagentList .kzVCLI .kzright a:hover {
+    background-color: #1571c9; }
+.kzagentList .kzACTips td {
+  padding: 15px 0 10px !important;
+  text-align: center;
+  color: #6f6f6f; }
+  .kzagentList .kzACTips td span {
+    color: #fe0505; }
+.kzagentList .kzBackBtn {
+  display: block;
+  margin: 0 12px;
+  text-align: center;
+  color: #fff;
+  line-height: 34px;
+  background-color: #ccc; }
+  .kzagentList .kzBackBtn:hover {
+    background-color: #b3b3b3; }
+.kzagentList .kzStatuTd {
+  color: #fa0b0b !important; }
+
+/** 我的订单*/
+.kzmyOrderList .kzheader {
+  margin: 20px 0; }
+.kzmyOrderList .kzheaderOrder {
+  padding: 0 10px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #F69246; }
+  .kzmyOrderList .kzheaderOrder span {
+    display: inline-block;
+    margin-right: 14px; }
+  .kzmyOrderList .kzheaderOrder .kzorderTime {
+    float: right; }
+.kzmyOrderList .kzagentInner table {
+  text-align: left; }
+  .kzmyOrderList .kzagentInner table tr {
+    background-color: #fafafa; }
+    .kzmyOrderList .kzagentInner table tr td {
+      padding: 10px;
+      border-bottom: 6px solid #fff;
+      color: #333; }
+.kzmyOrderList .kzagentInner .kzorderImage {
+  width: 170px;
+  box-sizing: border-box; }
+.kzmyOrderList .kzorderBar {
+  padding: 0 10px 10px 10px;
+  font-size: 12px; }
+  .kzmyOrderList .kzorderBar span {
+    display: inline-block;
+    margin-right: 20px; }
+  .kzmyOrderList .kzorderBar .kzCodeBtn {
+    float: right;
+    display: inline-block;
+    padding: 8px 20px;
+    color: #fff;
+    background-color: #ffcb05; }
+    .kzmyOrderList .kzorderBar .kzCodeBtn:hover {
+      background-color: #fe8100; }
+@media screen and (max-width: 767px) {
+  .kzmyOrderList .kzagentInner .kzorderImage {
+    width: auto;
+    max-width: 110px;
+    min-width: 90px; }
+  .kzmyOrderList .kzagentInner table tr td {
+    padding: 6px;
+    border-bottom: 1px solid #fff; } }
+@media screen and (max-width: 476px) {
+  .kzmyOrderList .kzheaderOrder {
+    font-size: 12px; }
+    .kzmyOrderList .kzheaderOrder span {
+      margin-right: 10px; } }
+
+/** 我的二维码*/
+.kzQRList {
+  padding: 10px;
+  margin-left: -10px;
+  text-align: center; }
+  .kzQRList .kzQRLi {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #efefef;
+    color: #333; }
+    .kzQRList .kzQRLi h6 {
+      margin: 15px 0; }
+    .kzQRList .kzQRLi .kzQRCount {
+      margin: 8px 0; }
+    .kzQRList .kzQRLi .kzQRStatu {
+      margin: 10px 0; }
+  .kzQRList .activated .kzQRStatu {
+    color: #ffcb05; }
+
+/** 财务中心*/
+.kzredPacketList .kzRPInner {
+  padding: 20px;
+  margin-left: -20px; }
+.kzredPacketList .kzRPLi {
+  padding: 12px 12px 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color: #ff5252; }
+.kzredPacketList .kzlineTop {
+  position: relative;
+  border-bottom: 1px dotted #fff;
+  color: #fff; }
+  .kzredPacketList .kzlineTop:before, .kzredPacketList .kzlineTop:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    left: -20px;
+    bottom: -7px;
+    border-radius: 50%;
+    background-color: #fff; }
+  .kzredPacketList .kzlineTop:after {
+    left: initial;
+    right: -20px; }
+.kzredPacketList .kzPriceBox {
+  display: inline-block;
+  padding: 0 26px;
+  font-size: 48px;
+  vertical-align: super; }
+  .kzredPacketList .kzPriceBox i {
+    vertical-align: super;
+    font-size: 22px;
+    font-style: normal; }
+.kzredPacketList .kzUseTimeBox {
+  display: inline-block; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 24px; }
+.kzredPacketList .kzRPStatus {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 128px;
+  margin-top: 16px;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ffcb05; }
+.kzredPacketList .kzRPUsed {
+  padding: 12px 0;
+  font-size: 12px; }
+.kzredPacketList .hadUsed {
+  background-color: #ccc; }
+  .kzredPacketList .hadUsed .kzRPStatus {
+    background-color: #aaa; }
+  .kzredPacketList .hadUsed .kzRPUsed {
+    color: #999; }
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  .kzredPacketList .kzPriceBox {
+    padding: 0 16px;
+    font-size: 38px; }
+    .kzredPacketList .kzPriceBox i {
+      font-size: 18px; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 20px; }
+  .kzredPacketList .kzRPStatus {
+    width: 98px; } }
+@media screen and (max-width: 767px) {
+  .kzredPacketList .kzRPInner {
+    padding: 10px; }
+  .kzredPacketList .kzRPLi {
+    margin-bottom: 10px; }
+  .kzredPacketList .kzPriceBox {
+    padding: 0 6px;
+    font-size: 28px; }
+    .kzredPacketList .kzPriceBox i {
+      font-size: 14px; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 16px; }
+  .kzredPacketList .kzUseTimeBox p {
+    font-size: 12px; }
+  .kzredPacketList .kzRPStatus {
+    width: 78px;
+    margin-top: 8px;
+    line-height: 24px;
+    font-size: 12px; } }
+
+.kzrechargeList .kzrechargeInner {
+  padding: 20px; }
+.kzrechargeList .kzrechargeAccount {
+  margin-bottom: 20px;
+  line-height: 34px; }
+  .kzrechargeList .kzrechargeAccount span {
+    display: inline-block;
+    width: 80px; }
+  .kzrechargeList .kzrechargeAccount input {
+    width: calc(100% - 90px);
+    line-height: 36px;
+    text-indent: 10px;
+    border: 1px solid #efefef; }
+.kzrechargeList .kzrechargeType {
+  margin-bottom: 20px;
+  line-height: 60px; }
+  .kzrechargeList .kzrechargeType span {
+    display: inline-block;
+    width: 80px; }
+  .kzrechargeList .kzrechargeType a {
+    margin-right: 20px;
+    vertical-align: middle; }
+.kzrechargeList .kzrechargeBtn,
+.kzrechargeList .kzcancelBtn {
+  display: block;
+  margin-bottom: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  background-color: #ffcb05; }
+  .kzrechargeList .kzrechargeBtn:hover,
+  .kzrechargeList .kzcancelBtn:hover {
+    background-color: #e5b600; }
+.kzrechargeList .kzcancelBtn {
+  background-color: #ccc; }
+  .kzrechargeList .kzcancelBtn:hover {
+    background-color: #bdbdbd; }
+@media screen and (max-width: 767px) {
+  .kzrechargeList .kzrechargeInner {
+    padding: 10px; }
+  .kzrechargeList .kzrechargeAccount,
+  .kzrechargeList .kzrechargeType {
+    margin-bottom: 10px; }
+  .kzrechargeList .kzrechargeType a {
+    margin-right: 10px; }
+  .kzrechargeList .kzrechargeBtn,
+  .kzrechargeList .kzcancelBtn {
+    margin-bottom: 10px; }
+  .kzrechargeList .wxpay {
+    display: block;
+    margin-top: 10px;
+    margin-left: 83px; } }
+
+/** 设置*/
+.kzsetList .kzsetTips {
+  margin: 70px 0;
+  color: #666; }
+.kzsetList .kzsetInner {
+  padding: 20px;
+  text-align: center; }
+.kzsetList .kzsetBtn {
+  display: block;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ffcb05; }
+  .kzsetList .kzsetBtn:hover {
+    background-color: #dbae00; }
+
+/** 修改密码*/
+.kzsetFormList .kzsetFormInner {
+  padding: 20px; }
+.kzsetFormList .kzinputBox {
+  line-height: 36px;
+  margin-bottom: 20px; }
+  .kzsetFormList .kzinputBox .kzLabel {
+    display: inline-block;
+    width: 80px;
+    padding-right: 6px;
+    box-sizing: border-box;
+    text-align: right;
+    color: #666; }
+  .kzsetFormList .kzinputBox input {
+    display: inline-block;
+    width: calc(100% - 90px);
+    text-indent: 10px;
+    height: 34px;
+    border: 1px solid #efefef; }
+.kzsetFormList .kzsaveBtn,
+.kzsetFormList .kzbackBtn {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ffcb05; }
+  .kzsetFormList .kzsaveBtn:hover,
+  .kzsetFormList .kzbackBtn:hover {
+    background-color: #dbae00; }
+.kzsetFormList .kzbackBtn {
+  background-color: #ccc; }
+  .kzsetFormList .kzbackBtn:hover {
+    background-color: #b8b8b8; }
+.kzsetFormList .kzsubReview {
+  margin-bottom: 50px; }
+.kzsetFormList .kzagentApplyInner {
+  background: initial;
+  box-shadow: none;
+  font-size: 12px; }
+  .kzsetFormList .kzagentApplyInner .kzagentApplyTip {
+    padding: 20px 20px 0; }
+  .kzsetFormList .kzagentApplyInner span {
+    color: #ffcb05; }
+
+/** 订单支付详情*/
+.kzorderDetailList .kzorderDetailInner {
+  padding: 20px; }
+.kzorderDetailList .kzorderTitle {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 16px;
+  color: #333; }
+.kzorderDetailList table {
+  text-align: left !important;
+  padding-bottom: 0 !important; }
+.kzorderDetailList .kzorderNumber {
+  color: #333 !important; }
+.kzorderDetailList .kznumber {
+  width: 80px; }
+.kzorderDetailList .kzLeft {
+  width: 90px;
+  color: #333 !important;
+  text-align: right;
+  padding-right: 5px; }
+.kzorderDetailList .active img {
+  outline: 1px solid #ffcb05; }
+.kzorderDetailList .alipayBtn {
+  display: inline-block;
+  margin-bottom: 10px; }
+.kzorderDetailList .kzpayNum {
+  margin-bottom: 50px;
+  padding-left: 20px;
+  line-height: 50px;
+  height: 50px;
+  color: #333;
+  background-color: #fff; }
+  .kzorderDetailList .kzpayNum span {
+    color: #f00;
+    font-size: 24px; }
+  .kzorderDetailList .kzpayNum a {
+    float: right;
+    width: 190px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ffcb05; }
+    .kzorderDetailList .kzpayNum a:hover {
+      background-color: #dbae00; }
+@media screen and (max-width: 476px) {
+  .kzorderDetailList .kzpayNum {
+    margin-bottom: 30px;
+    padding-left: 10px; }
+    .kzorderDetailList .kzpayNum span {
+      font-size: 18px; }
+    .kzorderDetailList .kzpayNum a {
+      width: 160px;
+      font-size: 14px; } }
+
+/** 扫码支付*/
+.kzonlinePayList .kzonlinePayInner {
+  padding: 0 20px 10px;
+  text-align: center;
+  color: #666; }
+  .kzonlinePayList .kzonlinePayInner p {
+    padding: 15px 0; }
+  .kzonlinePayList .kzonlinePayInner .kzonlineBox {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef; }
+    .kzonlinePayList .kzonlinePayInner .kzonlineBox p:first-child {
+      padding-bottom: 0px; }
+.kzonlinePayList .kzotherPay,
+.kzonlinePayList .kzmodifyOrder {
+  display: block;
+  margin: 10px 0;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ffcb05; }
+  .kzonlinePayList .kzotherPay:hover,
+  .kzonlinePayList .kzmodifyOrder:hover {
+    background-color: #dbae00; }
+.kzonlinePayList .kzmodifyOrder {
+  background-color: #ccc; }
+  .kzonlinePayList .kzmodifyOrder:hover {
+    background-color: #b8b8b8; }
+
+/** 支付完成*/
+.kzpayOverList .kzpayOverInner {
+  text-align: center;
+  padding: 140px 20px; }
+.kzpayOverList .kzpayOkBox {
+  margin: 30px 0;
+  line-height: 28px;
+  color: #333; }
+.kzpayOverList .kzcountDown {
+  font-size: 12px;
+  color: #666; }
+  .kzpayOverList .kzcountDown span {
+    margin-left: 40px; }
+    .kzpayOverList .kzcountDown span i {
+      font-style: normal; }
+.kzpayOverList .kzturnBtn {
+  display: inline-block;
+  margin: 20px auto;
+  line-height: 32px;
+  width: 130px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  color: #666; }
+  .kzpayOverList .kzturnBtn:hover {
+    color: #fff;
+    background-color: #ccc; }
+@media screen and (max-width: 476px) {
+  .kzpayOverList .kzpayOverInner {
+    padding: 72px 10px; } }
+
+.kzRedListBox {
+  max-width: 1200px; }
+
+/** 红包*/
+.kzRedWrap {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all .3s;
+          transition: all .3s; }
+  .kzRedWrap.active {
+    height: 100%; }
+    .kzRedWrap.active .kzRedBox {
+      display: block; }
+    .kzRedWrap.active .kzCloseRed {
+      display: block; }
+  .kzRedWrap.kzRedOpen .kzRedBox {
+    height: 5.48rem;
+    background: url(../images/public/redbottombg.png) no-repeat;
+    background-size: cover; }
+    .kzRedWrap.kzRedOpen .kzRedBox:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1.7rem;
+      top: 0;
+      z-index: 1;
+      background: url(../images/public/redcoins.png) no-repeat;
+      background-size: cover; }
+    .kzRedWrap.kzRedOpen .kzRedBox:before {
+      z-index: 2;
+      background: url(../images/public/redtopbg.png) no-repeat;
+      background-size: contain;
+      background-position: 0px .34rem; }
+  .kzRedWrap.kzRedOpen .kzCoin,
+  .kzRedWrap.kzRedOpen .kzGetRedTip,
+  .kzRedWrap.kzRedOpen .kzOpenRed {
+    display: none; }
+  .kzRedWrap.kzRedOpen .kzRedTips,
+  .kzRedWrap.kzRedOpen .kzRedRule,
+  .kzRedWrap.kzRedOpen .kzRedNumber,
+  .kzRedWrap.kzRedOpen .kzRedTips2,
+  .kzRedWrap.kzRedOpen .kzGotoRed {
+    display: block; }
+  .kzRedWrap.kzRedOpen .kzCloseRed {
+    margin-top: 3.25rem; }
+  .kzRedWrap .kzRedTips {
+    display: none;
+    position: relative;
+    margin-top: 1.8rem;
+    z-index: 3;
+    text-align: center;
+    font-size: .24rem;
+    color: #FFE98D; }
+  .kzRedWrap .kzRedNumber {
+    display: none;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: .5rem;
+    color: #FFE98D; }
+    .kzRedWrap .kzRedNumber i {
+      font-style: normal;
+      font-size: .24rem; }
+  .kzRedWrap .kzRedTips2 {
+    display: none;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: .16rem;
+    color: #8C1010; }
+  .kzRedWrap .kzGotoRed {
+    display: none;
+    position: relative;
+    z-index: 3;
+    width: 2.3rem;
+    height: .6rem;
+    margin: .2rem auto;
+    background: url(../images/public/redgoto.png) no-repeat;
+    background-size: contain; }
+  .kzRedWrap .kzRedRule {
+    display: none;
+    position: relative;
+    z-index: 3;
+    padding: .1rem .3rem;
+    width: 3rem;
+    box-sizing: border-box;
+    margin: .3rem auto;
+    border-radius: .05rem;
+    color: #8C1010;
+    font-size: .14rem;
+    background: rgba(255, 255, 255, 0.15);
+    list-style: disc; }
+    .kzRedWrap .kzRedRule li {
+      list-style: disc; }
+    .kzRedWrap .kzRedRule p {
+      text-align: center; }
+  @media only screen and (max-width: 479px) {
+    .kzRedWrap .kzRedRule {
+      width: 3.4rem;
+      margin: .2rem auto;
+      padding: .1rem 0rem .1rem .3rem;
+      font-size: .1rem; } }
+  .kzRedWrap .kzRedBox {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3.8rem;
+    height: 5.14rem;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    background: url(../images/public/redbg.png) no-repeat;
+    background-size: cover; }
+    .kzRedWrap .kzRedBox:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/public/redseal.png) no-repeat;
+      background-size: cover; }
+  .kzRedWrap .kzCoin {
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    left: 50%;
+    top: .7rem;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(../images/public/redcoin.png) no-repeat;
+    background-size: cover; }
+  .kzRedWrap .kzGetRedTip {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: .3rem;
+    color: #FFE98D; }
+  .kzRedWrap .kzOpenRed {
+    position: absolute;
+    width: 2.3rem;
+    height: .6rem;
+    bottom: .8rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background: url(../images/public/openredbtn.png) no-repeat;
+    background-size: contain; }
+  .kzRedWrap .kzCloseRed {
+    display: none;
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    margin-top: 3.1rem;
+    background: url(../images/public/closeredbtn.png) no-repeat;
+    background-size: cover; }
+
+@media only screen and (max-width: 476px) {
+  .kzACContentWrap .kzbuyTicketBox {
+    bottom: 50px; } }
+/** 商户中心*/
+.tbBCBackIndex {
+  position: fixed;
+  top: 70%;
+  left: 50%;
+  margin-left: 660px;
+  padding-top: 4px;
+  z-index: 102;
+  box-sizing: border-box; }
+  .tbBCBackIndex a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding-top: 7px;
+    line-height: 18px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
+    background-color: #288BE9; }
+    .tbBCBackIndex a:hover {
+      background-color: #1571c9; }
+  @media only screen and (max-width: 1300px) {
+    .tbBCBackIndex {
+      left: inherit;
+      right: 15px; } }
+
+.kzBCIndexWrap {
+  padding-bottom: 40px; }
+  .kzBCIndexWrap .kzBCIndexHeaderInner {
+    margin: 18px 0;
+    padding: 70px 0;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1); }
+    .kzBCIndexWrap .kzBCIndexHeaderInner .span6 {
+      text-align: center; }
+    .kzBCIndexWrap .kzBCIndexHeaderInner a {
+      display: inline-block;
+      height: 80px;
+      line-height: 80px;
+      padding: 0 80px;
+      font-size: 24px;
+      box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+      color: #000;
+      background-color: #f2f3f4; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a:hover {
+        color: #fff;
+        background-color: #ff6801; }
+  .kzBCIndexWrap .kzBCTip {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #333; }
+  .kzBCIndexWrap .kzBCIndexLiInner {
+    margin-left: -6px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      display: block;
+      margin-left: 6px;
+      margin-bottom: 6px;
+      height: 170px;
+      padding: 60px 0;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 20px;
+      color: #151513;
+      background-color: #fff;
+      box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1); }
+      .kzBCIndexWrap .kzBCIndexLiInner a:hover {
+        color: #fff;
+        background-color: #ff6801; }
+        .kzBCIndexWrap .kzBCIndexLiInner a:hover i {
+          color: #fff; }
+    .kzBCIndexWrap .kzBCIndexLiInner i {
+      display: block;
+      font-size: 14px;
+      font-style: normal;
+      color: #999; }
+  @media only screen and (max-width: 767px) {
+    .kzBCIndexWrap .kzBCIndexHeaderInner {
+      padding: 50px 0; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a {
+        padding: 0 50px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      height: 150px;
+      padding: 50px 0; } }
+  @media only screen and (max-width: 476px) {
+    .kzBCIndexWrap {
+      padding-bottom: 20px; }
+    .kzBCIndexWrap .kzBCIndexHeaderInner {
+      padding: 40px 0; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a {
+        padding: 0 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      padding: 50px 0;
+      font-size: 18px; }
+    .kzBCIndexWrap .kzBCIndexLiInner i {
+      font-size: 12px; } }
+
+.kzBusinessVRWrap .kzBusinessVRInner {
+  padding: 12px 70px;
+  box-sizing: border-box; }
+  .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable {
+    border-collapse: collapse; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable td,
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable th {
+      border-collapse: collapse;
+      border: 1px solid #d6d5d5 !important;
+      color: #201f1f; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable th {
+      font-size: 16px; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable td {
+      padding-left: 10px;
+      text-align: left; }
+.kzBusinessVRWrap .kzBusinessVRBtnBox {
+  padding: 20px 0 40px;
+  text-align: center; }
+  .kzBusinessVRWrap .kzBusinessVRBtnBox a {
+    display: inline-block;
+    width: 358px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background-color: #a1a1a1; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a:hover {
+      background-color: #888888; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a.kzBusinessVRVC {
+      color: #fc0101;
+      background-color: #ffcb05; }
+      .kzBusinessVRWrap .kzBusinessVRBtnBox a.kzBusinessVRVC:hover {
+        background-color: #ebba00; }
+.kzBusinessVRWrap .kzBusinessVROk,
+.kzBusinessVRWrap .kzBusinessVRFail {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 24px;
+  color: #090202; }
+  .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips,
+  .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+    position: relative;
+    display: inline-block;
+    width: 560px;
+    padding-left: 100px;
+    text-align: left;
+    box-sizing: border-box; }
+    .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips:before,
+    .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: -18px;
+      width: 70px;
+      height: 70px;
+      background: url(../images/public/kzicon.png);
+      background-position: 2px -386px; }
+.kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+  color: #f90101; }
+  .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips:before {
+    top: 0;
+    background-position: 2px -514px; }
+.kzBusinessVRWrap .kzBusinessVRClose {
+  margin-top: 10px;
+  text-align: center; }
+  .kzBusinessVRWrap .kzBusinessVRClose a {
+    display: inline-block;
+    width: 560px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ffcb05; }
+    .kzBusinessVRWrap .kzBusinessVRClose a:hover {
+      background-color: #d1a600; }
+@media only screen and (max-width: 769px) {
+  .kzBusinessVRWrap .kzBusinessVRInner {
+    padding: 10px; }
+  .kzBusinessVRWrap .kzBusinessVRBtnBox {
+    padding: 10px 0 30px; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a {
+      width: 158px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px; }
+  .kzBusinessVRWrap .kzBusinessVROk,
+  .kzBusinessVRWrap .kzBusinessVRFail {
+    font-size: 18px; }
+    .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips,
+    .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+      width: auto; }
+  .kzBusinessVRWrap .kzBusinessVRClose a {
+    width: 98%; } }
+
+.kzMemberNewLinkWrap {
+  margin-top: 24px; }
+  .kzMemberNewLinkWrap .kzMemberNewLinkInner {
+    margin-left: -5px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi {
+      position: relative;
+      display: block;
+      padding-top: 120px;
+      margin-left: 5px;
+      margin-bottom: 10px;
+      height: 274px;
+      box-sizing: border-box;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1); }
+      .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi:hover {
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2); }
+      .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi:before {
+        content: "";
+        position: absolute;
+        width: 74px;
+        height: 74px;
+        top: 44px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        background: url(../images/public/membericon.png) no-repeat;
+        background-position: 0 0; }
+      .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi h5 {
+        font-size: 20px;
+        color: #343434; }
+      .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi span {
+        font-size: 16px;
+        color: #9c9c9c; }
+      @media only screen and (max-width: 769px) {
+        .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi {
+          padding-top: 100px;
+          height: 200px; }
+          .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi:before {
+            top: 26px; }
+          .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi h5 {
+            font-size: 18px; }
+          .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi span {
+            font-size: 14px; } }
+      @media only screen and (max-width: 476px) {
+        .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi {
+          padding-top: 88px;
+          height: 170px; }
+          .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi:before {
+            top: 16px; }
+          .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi h5 {
+            font-size: 16px; } }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-team:before {
+      background-position: -150px 0; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-shareOrder:before {
+      background-position: -290px 0; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-meOrder:before {
+      background-position: -451px 0; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-meUser:before {
+      background-position: 0 -127px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-nomination:before {
+      background-position: -150px -127px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-meIncome:before {
+      background-position: -290px -127px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-finance:before {
+      background-position: -451px -127px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-withdraw:before {
+      background-position: 0 -271px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-set:before {
+      background-position: -150px -271px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-QR:before {
+      background-position: -290px -271px; }
+    .kzMemberNewLinkWrap .kzMemberNewLinkInner .kzMemberLinkLi-guide:before {
+      background-position: -451px -271px; }
+
+.kzlistGoodCouponsWrap .kzCouponsLi {
+  display: block;
+  position: relative;
+  height: 145px;
+  border: 1px solid #f2f2f2;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04) !important; }
+.kzlistGoodCouponsWrap .kzCouponsLeft {
+  position: absolute; }
+  .kzlistGoodCouponsWrap .kzCouponsLeft .kzImage {
+    width: 104px;
+    height: 104px;
+    margin: 20px;
+    border: 1px solid #f1f2f6;
+    -webkit-transition: all .2s ease-in-out, opacity 1s;
+            transition: all .2s ease-in-out, opacity 1s; }
+.kzlistGoodCouponsWrap .kzCouponsLi:hover .kzCouponsLeft .kzImage {
+  -webkit-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+          transform: translateX(5px); }
+.kzlistGoodCouponsWrap .kzContent {
+  height: 145px;
+  margin: 0 65px 0 146px;
+  padding: 10px 0 15px;
+  box-sizing: border-box; }
+  .kzlistGoodCouponsWrap .kzContent .kzDesc {
+    height: 36px;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    cursor: default;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; }
+.kzlistGoodCouponsWrap .kzprogress {
+  font-size: 12px; }
+  .kzlistGoodCouponsWrap .kzprogress .txt {
+    float: left;
+    margin-right: 5px;
+    color: #666; }
+.kzlistGoodCouponsWrap .kzTop em {
+  display: inline-block;
+  font: 400 18px arial;
+  vertical-align: top;
+  margin: 3px 3px 0 0; }
+.kzlistGoodCouponsWrap .kzTop .price {
+  display: inline-block;
+  color: #f23030;
+  font: 400 34px arial;
+  vertical-align: top; }
+.kzlistGoodCouponsWrap .kzTop .label {
+  display: inline-block;
+  font-size: 12px;
+  margin: 12px 0 0 10px;
+  vertical-align: top;
+  padding: 0 5px;
+  color: #f23030;
+  background: #fff4ec; }
+.kzlistGoodCouponsWrap .kzOTools {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 52px;
+  height: 145px;
+  background-color: #d0d0d0;
+  background-image: -webkit-linear-gradient(top, #d0d0d0 0, #c7c7c7 100%);
+  background-image: linear-gradient(to bottom, #d0d0d0 0, #c7c7c7 100%); }
+  .kzlistGoodCouponsWrap .kzOTools .kzTips {
+    position: relative;
+    display: block;
+    width: 52px;
+    padding: 25px 0 0 16px;
+    box-sizing: border-box;
+    letter-spacing: 8px;
+    font-size: 16px;
+    writing-mode: vertical-lr;
+    color: #fff; }
+    .kzlistGoodCouponsWrap .kzOTools .kzTips:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 0;
+      left: -9px;
+      overflow: hidden;
+      background: url(../images/public/mid-circle.png) no-repeat;
+      background-position: 0 -9px; }
+  .kzlistGoodCouponsWrap .kzOTools:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 9px;
+    bottom: 0;
+    left: -9px;
+    overflow: hidden;
+    background: url(../images/public/mid-circle.png) no-repeat; }
+  .kzlistGoodCouponsWrap .kzOTools:after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: -1px;
+    display: block;
+    width: 3px;
+    height: 100%;
+    background: url(../images/public/small-circle.png) top left repeat-y; }
+.kzlistGoodCouponsWrap .active .kzOTools {
+  background-color: #fb0f3a;
+  background-image: -webkit-linear-gradient(top, #fb0f3a 0, #f02353 100%);
+  background-image: linear-gradient(to bottom, #fb0f3a 0, #f02353 100%); }
+.kzlistGoodCouponsWrap .active .kzProgressWrap {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  width: calc(100% - 61px); }
+.kzlistGoodCouponsWrap .active .kzProgressBg {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 9px;
+  border-radius: 5px;
+  background: #eee; }
+.kzlistGoodCouponsWrap .active .KzProgress {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 8px;
+  border-radius: 5px;
+  background: #ffb2b2; }
+@media only screen and (max-width: 900px) and (min-width: 767px) {
+  .kzlistGoodCouponsWrap .kzCouponsLeft .kzImage {
+    margin: 20px 10px; }
+  .kzlistGoodCouponsWrap .kzContent {
+    margin: 0 58px 0 126px; }
+  .kzlistGoodCouponsWrap .kzTop {
+    margin-bottom: 10px; }
+    .kzlistGoodCouponsWrap .kzTop em {
+      font: 400 14px arial; }
+    .kzlistGoodCouponsWrap .kzTop .price {
+      font: 400 23px arial; } }
+@media only screen and (max-width: 480px) {
+  .kzlistGoodCouponsWrap .kzCouponsLeft .kzImage {
+    margin: 20px 10px; }
+  .kzlistGoodCouponsWrap .kzContent {
+    margin: 0 58px 0 126px; }
+  .kzlistGoodCouponsWrap .kzTop {
+    margin-bottom: 10px; }
+    .kzlistGoodCouponsWrap .kzTop em {
+      font: 400 14px arial; }
+    .kzlistGoodCouponsWrap .kzTop .price {
+      font: 400 23px arial; } }
+@media only screen and (max-width: 400px) {
+  .kzlistGoodCouponsWrap .kzCouponsLeft .kzImage {
+    margin: 20px 6px; }
+  .kzlistGoodCouponsWrap .kzContent {
+    margin: 0 46px 0 118px; }
+  .kzlistGoodCouponsWrap .kzTop {
+    margin-bottom: 10px; }
+    .kzlistGoodCouponsWrap .kzTop .label {
+      margin: 12px 0 0 6px; }
+  .kzlistGoodCouponsWrap .kzOTools {
+    width: 40px; }
+    .kzlistGoodCouponsWrap .kzOTools .kzTips {
+      padding: 25px 0 0 10px; } }
+
+/*# sourceMappingURL=kingzhu.css.map */

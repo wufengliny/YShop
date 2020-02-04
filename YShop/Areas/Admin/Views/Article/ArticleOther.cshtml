@@ -1,0 +1,172 @@
+﻿@{
+    ViewBag.Title = "文章";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Content/js/ajaxfileupload.js"></script>
+<script type="text/javascript">
+    function ajaxFileUpload() {
+        $.ajaxFileUpload
+        (
+            {
+                url: '/admin/home/AjaxPic', //用于文件上传的服务器端请求地址
+                secureuri: false, //一般设置为false
+                fileElementId: 'upmg', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data)  //服务器成功响应处理函数
+                {
+                    if (data.statu == "1") {
+                        $("#erimg").attr("src", data.msg);
+                        $("#Cover").val(data.msg);
+                    }
+                    else {
+                        alert(data.msg)
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            }
+        )
+        return false;
+    }
+</script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">@ViewBag.Name</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td>
+                        名称
+                    </td>
+                    <td colspan="3"><input class="form-control" name="name" id="name" type="text" value="@ViewBag.Name" /></td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        标识
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Mark" id="Mark"
+                               placeholder="标识文章的字符串，可以为空" type="text" value="@ViewBag.Mark" />
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        作者
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Autho" id="Autho"
+                               placeholder="" type="text" value="@ViewBag.Autho" />
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        Seo关键字
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="SeoKeywords" id="SeoKeywords"
+                               placeholder="" type="text" value="@ViewBag.SeoKeywords" />
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        Seo描述
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="SeoDescription" id="SeoDescription"
+                               placeholder="" type="text" value="@ViewBag.SeoDescription" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>详细</td>
+                    <td colspan="3">
+                        <textarea id="Content" name="Content">@ViewBag.Detail</textarea>
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>封面图片</td>
+                    <td colspan="3">
+                        <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+                        <input type="file" onchange="ajaxFileUpload()" name="upmg" id="upmg" />
+                        <input type="hidden" value="@ViewBag.Cover" name="Cover" id="Cover" />
+                        <img src="@ViewBag.Cover" id="erimg" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        添加时间
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="AddTime" id="AddTime" style="width:200px;"
+                               placeholder="" type="text" value="@ViewBag.AddTime" />
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>
+                        删除之前图片
+                    </td>
+                    <td colspan="3" style="text-align:left">
+                        <input type="checkbox" class="form-control" value="123" style="width:100px;" name="isDelPic" id="isDelPic" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    input {
+        width: 100%;
+        max-width: 100%;
+    }
+    input, select, textarea {
+        max-width: 100%;
+    }
+</style>
+
+<link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+<script src="~/plug/kindeditor/kindeditor-min.js"></script>
+<script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+
+
+<script type="text/javascript">
+    var editor1 = KindEditor.create('#Content', {
+        items: [
+       'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+       'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+       'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+       'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'multiimage',
+       'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'link', 'unlink',
+       'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', 'fullscreen'
+        ],
+        allowFileManager: true,                                            //是否可以浏览上传文件
+        afterBlur: function () { this.sync(); },
+        allowUpload: true,                                                     //是否可以上传
+        fileManagerJson: '',      //浏览文件方法
+        uploadJson: '/FileUP/UploadImage',                    //上传文件方法  //注意这两
+        width: "100%",
+
+        height: "300px"
+    });
+</script>
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+
+
+<script type="text/javascript">
+    function dosub() {
+        //alert($("#Content").val());
+        //return;
+        var data = $("#_ModalForm").serialize();
+        $.post("/admin/Article/AddArticlePost", data, function (res) {
+            alert(res);
+            location.reload();
+        })
+    }
+</script>

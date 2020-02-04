@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "TiXianList";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
+}
+
+<script src="~/Content/js/ChangeData.js"></script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">提现记录</h3>
+    <div class="content">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                    <th>
+                        提现账户
+                    </th>
+                    <th>
+                        提现时间
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        备注说明
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    List<Yax.Model.Tpay_TiXian> list = ViewBag.list;
+                    if (list != null && list.Count > 0)
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @(i + 1)
+                                </td>
+                                <td>
+                                    @list[i].Money
+                                </td>
+                                <td>
+                                    @list[i].AccountInfo
+                                </td>
+                                <td>
+                                    @list[i].AddTime
+                                </td>
+                                <td>
+                                    @{
+                                        if (list[i].State == 1)
+                                        {
+                                            <span>待审核</span>
+                                        }
+                                        if (list[i].State == 2)
+                                        {
+                                            <span>审核不通过</span>
+                                        }
+                                        if (list[i].State == 3)
+                                        {
+                                            <span>已出款</span>
+                                        }
+                                    }
+                                </td>
+
+
+                                <td>
+                                    @list[i].Memo
+                                </td>
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+
+
+
+<script>
+</script>

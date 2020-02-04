@@ -1,0 +1,210 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.ShopOrder>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">订单列表</h3>
+    <div class="content">
+        <form action="/admin/Orders/index" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" name="OrderNO" class="form-control" value="@Request.QueryString["OrderNO"]" placeholder="订单号">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" style="margin-left: 5px;">状态:</label>
+                    <select class="btn btn-default dropdown-toggle" id="Statu" name="Statu">
+                        <option value="">==请选择==</option>
+                        <option value="0">待付款</option>
+                        <option value="1">待发货</option>
+                        <option value="1">待收货</option>
+                        <option value="3">交易完成</option>
+                    </select>
+                    <script>
+                        $("#Statu").val('@Request.QueryString["Statu"]');
+                    </script>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Uname" class="form-control" value="@Request.QueryString["Uname"]" placeholder="会员账号">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ftime" name="ftime" value="@Request.QueryString["ftime"]" placeholder="下单时间" />
+                </div>
+                <div class="form-group">
+                    ~
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="ttime" name="ttime" value="@Request.QueryString["ttime"]" placeholder="下单时间" />
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+
+
+
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        订单号
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        备注
+                    </th>
+                    <th>
+                        物流
+                    </th>
+                    <th>
+                        支付方式
+                    </th>
+                    <th>
+                        订单总额
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].OrderNO
+                                </td>
+                                <td>
+                                    @if (Model[i].Statu == 0)
+                                    {
+                                        <span>待付款</span>
+                                    }
+                                    else if (Model[i].Statu == 1)
+                                    {
+                                        <span>待发货</span>
+                                    }
+                                    else if (Model[i].Statu == 2)
+                                    {
+                                        <span>待收货</span>
+                                    }
+                                    else if (Model[i].Statu == 3)
+                                    {
+                                        <span>交易完成</span>
+                                    }
+                                </td>
+                                <td>
+                                    下单时间:@Model[i].AddTime <br />
+                                    @{
+                            if (Model[i].PayTime > DateTime.Now.AddYears(-50))
+                            {
+                                <span> 支付时间:@Model[i].PayTime <br /></span>
+                            }
+                                    }
+                                    @{
+                            if (Model[i].SendTime > DateTime.Now.AddYears(-50))
+                            {
+                                <span> 发货时间:@Model[i].SendTime <br /></span>
+                            }
+                                    }
+                                    @{
+                            if (Model[i].TakeOverTime > DateTime.Now.AddYears(-50))
+                            {
+                                <span> 收货时间:@Model[i].TakeOverTime <br /></span>
+                            }
+                                    }
+
+                                </td>
+                                <td>
+                                    @Model[i].OrderMemo
+                                </td>
+                  
+                                <td>
+                                    @Model[i].WuliuName  <br />
+                                    @Model[i].WuliuNo
+                                </td>
+                                <td>
+                                    @Model[i].Pname
+                                </td>
+                                <td>
+                                    @Model[i].PayPrice
+                                </td>
+                                <td>
+                                    @if (Model[i].Statu == 1 || Model[i].Statu == 2)
+                                    {
+                                        string fastr = "发货";
+                                        if (Model[i].Statu == 2)
+                                        {
+                                            fastr = "已发货";
+                                        }
+                                        <a class="btn btn-success btn-xs" onclick="dosendgood(@Model[i].ID,'@Model[i].OrderNO')">@fastr</a>
+                                    }
+                                    <a class="btn btn-danger btn-xs" onclick="delorder(@Model[i].ID,'@Model[i].OrderNO')" title="删除">删除</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+
+    </div>
+</div>
+
+<script>
+
+    $(function () {
+        $('#ftime').focus(function () {
+            $('#ftime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#ftime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD 00:00:00' });
+
+        $('#ttime').focus(function () {
+            $('#ttime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+        });
+        $('#ttime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+    })
+    function dosendgood(id,OrderNO)
+    {
+        $loadModal('/admin/Orders/DoSendGood?id=' + id + "&OrderNO=" + OrderNO);
+    }
+    function edit(id)
+    {
+        $loadModal('/admin/admin/AddAdmin?id=' + id);
+    }
+    function delorder(id, OrderNO)
+    {
+        if(confirm("确定要删除？")){
+            $.post("/admin/Orders/delorder?id=" + id + "&OrderNO=" + OrderNO, "", function (res) {
+                alert(res);
+                location.reload();
+            })
+        }
+
+    }
+</script>

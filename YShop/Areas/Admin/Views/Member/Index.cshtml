@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.Y_User>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">会员列表</h3>
+    <div class="content">
+
+        <div class="btn-toolbar" >
+            <div class="btn-group" role="group">
+                <button type="button" onclick="create()" class="btn btn-primary">
+                <span class="glyphicon glyphicon-plus"></span> 添加</button>
+            </div>
+        </div>
+
+        <form action="/admin/member/index" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="phone" name="phone" value="@Request.QueryString["phone"]" placeholder="手机号" />
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        用户名
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        注册时间
+                    </th>
+                    <th>
+                        认证
+                    </th>
+                    <th>
+                        登录次数
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Phone
+                                </td>
+                                <td>
+                                    @{
+                            if (Model[i].Effect == 1)
+                            {
+                                <span>允许登陆</span>
+                            }
+                            else
+                            {
+                                <span>禁止登陆</span>
+                            }
+                                    }
+                                </td>
+                                <td>
+                                    @*上次登录：@Model[i].LastLoginTime <br />*@
+                                    @Model[i].AddTime
+                                </td>
+                                <td>
+                                   @(Yax.Common.JieKuanHelper.JD.GetRzStateName(Model[i].RZState)) 
+                                </td>
+                                <td>
+                                    @Model[i].LoginCount
+                                </td>
+                                <td>
+                                    @Model[i].Money
+                                </td>
+                                <td>
+                                    @{ if (Model[i].Effect == 1)
+                                     {
+                                        <a class="btn btn-danger btn-xs" onclick="deladmin(@Model[i].ID,2,'禁止登陆')">禁止登陆</a>
+                                     }
+                                     else
+                                     {
+                                        <a class="btn btn-info btn-xs" onclick="deladmin(@Model[i].ID,1,'恢复正常')">恢复正常</a>
+                                     }
+                                    }
+
+                                    <a class="btn btn-success btn-xs" onclick="ModPwd('@Model[i].Phone')" title="修改密码">修改密码</a>
+                                    <a class="btn btn-default btn-xs" onclick="modinfo(@Model[i].ID)" title="查看资料">查看资料</a>
+                                    <a class="btn btn-info btn-xs" onclick="membershenhe(@Model[i].ID)" title="会员审核">会员审核</a>
+                                    <a class="btn btn-default btn-xs" onclick="chongzhi(@Model[i].ID)" title="会员充值">会员充值</a>
+                                    <a class="btn btn-danger btn-xs" onclick="deladmin(@Model[i].ID,0,'删除')" title="删除">删除</a>
+                                   
+                                </td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+<script>
+    function create()
+    {
+        $loadModal('/admin/member/AddMember');
+    }
+    function ModPwd(phone)
+    {
+        $loadModal('/admin/member/ModPwd?phone=' + phone);
+    }
+    function modinfo(id)
+    {
+        $loadModal('/admin/member/ModInfo?id=' + id);
+    }
+    function membershenhe(id)
+    {
+        $loadModal('/admin/member/ShenHe?id=' + id);
+    }
+    function deladmin(id,effect,name)
+    {
+        if(confirm("确定要"+name+"？")){
+            $.post("/admin/member/delmember?id="+id+"&effect="+effect,"",function(res){
+                alert(res);
+                location.reload();
+            })
+        }
+
+    }
+
+    function shoujian(id)
+    {
+        $loadModal('/admin/member/ShoujianAddress?id='+id);
+    }
+
+
+    function chongzhi(id)
+    {
+        $loadModal('/admin/member/ChongZhi?id=' + id);
+    }
+</script>

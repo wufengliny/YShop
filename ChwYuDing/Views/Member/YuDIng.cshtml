@@ -1,0 +1,163 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="游艇预定">
+    <meta name="description" content="游艇预定" />
+    <title>游艇预定</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+
+
+
+</head>
+
+<body class="memberbody">
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/MemberTop.cshtml");}
+
+    <section class="kzmemberBT memberPaddingTop">
+        <div class="container">
+            当前位置:
+            <a class="kzmemberBTLi" href="/member/index">会员中心</a>
+            <a class="kzmemberBTLi" href="#this">预定</a>
+        </div>
+    </section>
+    <form id="subform">
+        <input  type="hidden" name="id" value="@Request.QueryString["id"]"/>
+        <section class="kzagentList">
+            <div class="container">
+                <div class="kzagentInner">
+                    <div class="kzheader">我要预定： @ViewBag.Name</div>
+                    <table>
+                        <tr>
+                            <td class="kzleft">您的姓名：</td>
+                            <td class="kzright">
+                                <input class="kzinput" name="RealName" id="RealName" value="@ViewBag.RealName" type="text" placeholder="请输入您的姓名" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">联系电话：</td>
+                            <td class="kzright">
+                                <input class="kzinput" name="Phone" id="Phone" value="@ViewBag.Phone" type="text" placeholder="请输入您的联系电话" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">人数：</td>
+                            <td class="kzright">
+                                <input class="kzinput" name="PeopleNum" id="PeopleNum" type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">租用日期开始：</td>
+                            <td class="kzright">
+                                <input class="kzinput" name="BeginTime" onchange="getEeddate()" onClick="WdatePicker({ dateFmt: 'yyyy年MM月dd日 HH时mm分' })" id="BeginTime" type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">租多久（小时）：</td>
+                            <td class="kzright">
+                                <input class="kzinput" onchange="getEeddate()" name="zuHour" id="zuHour" type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">租用日期结束：</td>
+                            <td class="kzright">
+                                <input class="kzinput" style="background-color:#d5cdcd" readonly="readonly" name="timeend" id="timeend" type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="kzleft">其他要求：</td>
+                            <td class="kzright">
+                                <textarea class="kzinput" name="" style="width:100%;height:80px;"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <a class="kzsubBtn" onclick="subinfo()" href="#this">提交</a>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+
+                <div class="kzagentInner">
+                    <div class="kzheader">已被预定的游艇日期</div>
+                    <table>
+                        <tr>
+                            <th>序号</th>
+                            <th>开始时间</th>
+                            <th>结束时间</th>
+                        </tr>
+                        @{
+                            System.Data.DataTable dt = ViewBag.dt;
+                            if (dt.Rows.Count > 0)
+                            {
+                                for (int i = 0; i < dt.Rows.Count; i++)
+                                {
+                                    <tr>
+                                        <td>@(i+1)</td>
+                                        <td>@(dt.Rows[i]["BeginTime"])</td>
+                                        <td>@(dt.Rows[i]["EndTime"])</td>
+                                    </tr>
+                                }
+                            }
+                        }
+          
+               
+                    </table>
+
+                </div>
+            </div>
+        </section>
+    </form>
+    <!--渠道代理列表-->
+    
+
+    <!--移动端页脚-->
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+
+
+    <script src="~/plug/My97DatePicker/WdatePicker.js"></script>
+    <script>
+        function getEeddate()
+        {
+            var BeginTime = $("#BeginTime").val();
+            var zuHour = $("#zuHour").val();
+            $.post("/Member/GetEndDate", "BeginTime=" + BeginTime + "&zuHour=" + zuHour, function (res) {
+                $("#timeend").val(res);
+            })
+        }
+        function subinfo()
+        {
+            var data = $("#subform").serialize();
+            $.post("/Member/YuDIngPost", data, function (res) {
+                if(res=="ok")
+                {
+                    location.href = '/Member/myyuding';
+                }
+                else
+                {
+                    alert(res);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

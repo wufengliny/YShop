@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model List<Yax.Model.JiFenDetail>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">积分明细</h3>
+    <div class="content">
+
+        <form action="/admin/member/JifenDetail" class="form-inline" method="get">
+            <div>
+        
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Account" name="Account" value="@Request.QueryString["Account"]" placeholder="账号" />
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        账号
+                    </th>
+                    <th>
+                        变化前
+                    </th>
+                    <th>
+                        变动
+                    </th>
+                    <th>
+                        变化后
+                    </th>
+                    <th>
+                        备注
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                 
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    if (Model != null && Model.Count > 0)
+                    {
+
+
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @Model[i].ID
+                                </td>
+                                <td>
+                                    @Model[i].Account
+                                </td>
+                                <td>
+                                    @Model[i].PreJiFen
+                                </td>
+                                <td>
+                                   @Model[i].Jifen
+                                </td>
+                                <td>
+                                    @Model[i].AfterJIfen
+                                </td>
+                                <td>
+                                    @Model[i].Memo
+                                </td>
+                                <td>
+                                    @Model[i].AddTime
+                                </td>
+                           
+                              
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+<script>
+   
+</script>

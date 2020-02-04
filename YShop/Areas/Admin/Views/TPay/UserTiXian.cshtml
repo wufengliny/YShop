@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "UserTiXian";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Content/js/ChangeData.js"></script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">商户提现</h3>
+    <div class="content">
+        <form action="/admin/TPay/UserTiXian" class="form-inline" method="get">
+            <div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="Account" name="Account" value="@Request.QueryString["Account"]" placeholder="商户号" />
+                </div>
+                <div class="form-group">
+                    <select name="State" class="form-control">
+                        <option value="">全部</option>
+                        <option @(Request.QueryString["State"] == "1" ? "selected=selected" : "") value="1">待审核</option>
+                        <option @(Request.QueryString["State"] == "2" ? "selected=selected" : "") value="2">审核不通过</option>
+                        <option @(Request.QueryString["State"] == "3" ? "selected=selected" : "") value="3">已出款</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+                <input type="hidden" name="pid" value="@Request.QueryString["pid"]" />
+            </div>
+            <br>
+        </form>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th width="30px" style="display:none">
+                        <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=ID]" data-toggle="checkall">
+                    </th>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        商户号
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                    <th>
+                        提现账户
+                    </th>
+                    <th>
+                        提现时间
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        备注说明
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    List<Yax.Model.Tpay_TiXian> list = ViewBag.list;
+                    if (list != null && list.Count > 0)
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            <tr>
+                                <td width="30px" style="display:none"><input type="checkbox" name="ID" value="1267"></td>
+                                <td>
+                                    @(i + 1)
+                                </td>
+                                <td>
+                                    @list[i].UAccount
+                                </td>
+                                <td>
+                                    @list[i].Money
+                                </td>
+                                <td>
+                                    @list[i].AccountInfo
+                                </td>
+                                <td>
+                                    @list[i].AddTime
+                                </td>
+                                <td>
+                                    @{
+                                        if (list[i].State == 1)
+                                        {
+                                            <span>待审核</span>
+                                        }
+                                        if (list[i].State == 2)
+                                        {
+                                            <span>审核不通过</span>
+                                        }
+                                        if (list[i].State == 3)
+                                        {
+                                            <span>已出款</span>
+                                        }
+                                    }
+                                </td>
+
+
+                                <td>
+                                    @list[i].Memo
+                                </td>
+                                <td>
+                                    @{
+                                        if (list[i].State == 1)
+                                        {
+                                            <a class="btn btn-success btn-xs" onclick="ModState(@list[i].ID)" title="审核">审核</a>
+
+                                        }
+                                    }
+                                </td>
+                            </tr>
+                                            }
+                                        }
+                }
+            </tbody>
+        </table>
+        @Html.Raw(ViewBag.PageStr)
+    </div>
+</div>
+
+
+
+
+<script>
+    function ModState(id) {
+        $loadModal('/admin/Tpay/UserTiXianState?id=' + id);
+    }
+</script>

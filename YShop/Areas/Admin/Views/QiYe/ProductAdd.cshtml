@@ -1,0 +1,233 @@
+﻿@{
+    ViewBag.Title = "产品";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Areas/Admin/Content/js/ajaxfileupload.js"></script>
+<script type="text/javascript">
+    function ajaxFileUpload() {
+        $.ajaxFileUpload
+        (
+            {
+                url: '/admin/home/AjaxPic', //用于文件上传的服务器端请求地址
+                secureuri: false, //一般设置为false
+                fileElementId: 'upmg', //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data)  //服务器成功响应处理函数
+                {
+                    if (data.statu == "1") {
+                        $("#erimg").attr("src", data.msg);
+                        $("#Cover").val(data.msg);
+                    }
+                    else {
+                        alert(data.msg)
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            }
+        )
+        return false;
+    }
+
+
+
+    $(function () {
+        $('#AddTime').focus(function () {
+            $('#AddTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd HH:mm:ss"))' });
+        });
+        $('#AddTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+    })
+</script>
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">添加/修改（产品）</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td>
+                        名称
+                    </td>
+                    <td colspan="3"><input class="form-control" name="name" id="name" type="text" value="@ViewBag.Name" /></td>
+                </tr>
+                <tr>
+                    <td>
+                        Seo关键字
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Seokeyword" id="Seokeyword"
+                               placeholder="" type="text" value="@ViewBag.Seokeyword" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Seo描述
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="SeoDescription" id="SeoDescription"
+                               placeholder="" type="text" value="@ViewBag.SeoDescription" />
+                    </td>
+                </tr>
+     
+                <tr>
+                    <td>类型</td>
+                    <td>
+                        <select class="form-control" id="ProductTypeID" name="ProductTypeID" >
+                            @Html.Raw(ViewBag.sbtype)
+                        </select>
+                    </td>
+                    <td>
+                        添加时间
+                    </td>
+                    <td>
+                        <input class="form-control" name="AddTime" id="AddTime"
+                               placeholder="" type="text" value="@ViewBag.AddTime" />
+                    </td>
+                   
+                </tr>
+                <tr >
+                    <td>
+                        点击数
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Hits" id="Hits"
+                               placeholder="" type="number" value="@ViewBag.Hits" />
+                    </td>
+                </tr>
+                <tr >
+                    <td>
+                        链接地址
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="ProductNO" id="ProductNO"
+                               placeholder="" type="text" value="@ViewBag.ProductNO" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        简介
+                    </td>
+                    <td colspan="3">
+                        <textarea class="form-control" rows="6" name="Introduce" id="Introduce">@ViewBag.Introduce</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        其他
+                    </td>
+                    <td colspan="3">
+                        @{
+                            string strIsIndex = ViewBag.IsIndex == 1 ? "checked=\"checked\"" : "";
+                        }
+
+                        <input type="checkbox" name="IsIndex" @strIsIndex style="width:10px;" value="1" />首页
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>详细</td>
+                    <td colspan="3">
+                        <textarea id="Content" name="Content">@ViewBag.Detail</textarea>
+                    </td>
+                </tr>
+             
+                <tr >
+                    <td>封面图片</td>
+                    <td colspan="3">
+                        <input type="file"  onchange="ajaxFileUpload()" name="upmg" id="upmg" />
+                        <input type="hidden" value="@ViewBag.Cover" name="Cover" id="Cover" />
+                        <img src="@ViewBag.Cover" style="max-width:500px" id="erimg" /> 
+                        <button type="button" onclick="doDelImg()" class="btn btn-primary">删除</button>
+                        <span style="color:red">建议大小：550*375</span>
+                    
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+            </div>
+            <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+        </form>
+    </div>
+</div>
+
+<style>
+    input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    input, select, textarea {
+        max-width: 100%;
+    }
+</style>
+
+<link href="~/plug/kindeditor/themes/default/default.css" rel="stylesheet" />
+<link href="~/plug/kindeditor/plugins/code/prettify.css" rel="stylesheet" />
+<script src="~/plug/kindeditor/kindeditor-min.js"></script>
+<script src="~/plug/kindeditor/lang/zh_CN.js"></script>
+
+
+<script type="text/javascript">
+    var editor1 = KindEditor.create('#Content', {
+        items: [
+       'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+       'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+       'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+       'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'multiimage',
+       'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'link', 'unlink',
+       'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', 'fullscreen'
+        ],
+        allowFileManager: true,                                            //是否可以浏览上传文件
+        afterBlur: function () { this.sync(); },
+        allowUpload: true,                                                     //是否可以上传
+        fileManagerJson: '',      //浏览文件方法
+        uploadJson: '/admin/FileUP/UploadImage',                    //上传文件方法  //注意这两
+        width: "100%",
+
+        height: "300px"
+    });
+</script>
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+
+
+<script type="text/javascript">
+
+    function dosub() {
+        var name = $("#name").val();
+        if (name == "")
+        {
+            $("#name").focus();
+            alert('名称不能为空');
+            return false;
+
+        }
+        //alert($("#Content").val());
+        //return;
+        var data = $("#_ModalForm").serialize();
+        $.post("/admin/qiye/ProtectAddPost", data, function (res) {
+            alert(res);
+            location.href = '/admin/qiye/Product?menuid=@(Request.QueryString["menuid"])&pid=@Request.QueryString["pid"]';
+            //location.reload();
+        })
+    }
+
+    function doDelImg()
+    {
+        var igurl = $("#erimg").attr("src");
+        $.post("/admin/qiye/ProductCoverImgDel" , "img=" + igurl, function (res) {
+            alert(res);
+            $("#erimg").attr("src","")
+        })
+    }
+
+
+
+
+</script>
+
+
