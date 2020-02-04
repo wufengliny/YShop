@@ -58,6 +58,12 @@
     <Compile Include="Collect37.Designer.cs">
       <DependentUpon>Collect37.cs</DependentUpon>
     </Compile>
+    <Compile Include="Collect37Img.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Collect37Img.Designer.cs">
+      <DependentUpon>Collect37Img.cs</DependentUpon>
+    </Compile>
     <Compile Include="CollectHtmlPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Collect37.resx">
       <DependentUpon>Collect37.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Collect37Img.resx">
+      <DependentUpon>Collect37Img.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CollectHtmlPage.resx">
       <DependentUpon>CollectHtmlPage.cs</DependentUpon>
