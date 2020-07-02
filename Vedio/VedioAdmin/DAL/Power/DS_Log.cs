@@ -289,14 +289,6 @@ namespace DAL
             return SQLHelper.ExecuteReaderObject<MS_LogSys>(CommandType.Text, str, param);
         }
         #endregion
-
-
-       
-       
-        public IList<MS_Log> Testlog(string strWhere)
-        {
-            string str = " select top 10 * from S_Log where "+strWhere;
-            return SQLHelper.ExecuteReaderList<MS_Log>(CommandType.Text,str);
-        }
+ 
     }
 }

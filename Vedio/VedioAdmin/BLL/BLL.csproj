@@ -31,8 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComEnum">
+      <HintPath>..\DLL\ComEnum.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcPager">
+      <HintPath>..\DLL\MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurrentOperator\CurrentAdmin.cs" />
+    <Compile Include="CurrentOperator\CurrentUser.cs" />
     <Compile Include="Power\BS_Admin.cs" />
     <Compile Include="Power\BS_AdminGroup.cs" />
     <Compile Include="Power\BS_Config.cs" />

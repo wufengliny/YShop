@@ -1,5 +1,4 @@
 ﻿using ComEnum;
-
 using DAL;
 using Entity;
 using System;
@@ -161,9 +160,6 @@ namespace BLL
       
         
      
-        public IList<MS_Log> Testlog(string strWhere)
-        {
-            return dal.Testlog(strWhere);
-        }
+   
     }
 }
