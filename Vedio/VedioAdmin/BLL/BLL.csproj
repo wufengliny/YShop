@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{26CE212F-C3CA-4331-8C5D-04F3CBAD1FBE}</ProjectGuid>
+    <ProjectGuid>{C2DD5803-F245-4BFE-851E-614438656D8A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entity</RootNamespace>
-    <AssemblyName>Entity</AssemblyName>
+    <RootNamespace>BLL</RootNamespace>
+    <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -39,20 +39,28 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UCommon">
+      <HintPath>..\DLL\UCommon.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModelView\S_AdminViewModels.cs" />
-    <Compile Include="Power\MS_Admin.cs" />
-    <Compile Include="Power\MS_AdminGroup.cs" />
-    <Compile Include="Power\MS_Config.cs" />
-    <Compile Include="Power\MS_LogError.cs" />
-    <Compile Include="Power\MS_LogLogin.cs" />
-    <Compile Include="Power\MS_LogOperate.cs" />
-    <Compile Include="Power\MS_LogSys.cs" />
-    <Compile Include="Power\MS_Menus.cs" />
-    <Compile Include="Power\MS_Power.cs" />
+    <Compile Include="Power\BS_Admin.cs" />
+    <Compile Include="Power\BS_AdminGroup.cs" />
+    <Compile Include="Power\BS_Config.cs" />
+    <Compile Include="Power\BS_Log.cs" />
+    <Compile Include="Power\BS_Menus.cs" />
+    <Compile Include="Power\BS_Power.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{0e575c23-8b19-4111-a0a1-7eb2b80aef13}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{26ce212f-c3ca-4331-8c5d-04f3cbad1fbe}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
