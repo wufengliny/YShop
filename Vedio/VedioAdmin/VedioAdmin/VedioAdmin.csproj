@@ -266,7 +266,6 @@
     <Content Include="Views\Menu\vssver2.scc" />
     <Content Include="Views\Power\Index.cshtml" />
     <Content Include="Views\Power\vssver2.scc" />
-    <Content Include="Views\Shared\vssver2.scc" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <None Include="Web.Debug.config">
