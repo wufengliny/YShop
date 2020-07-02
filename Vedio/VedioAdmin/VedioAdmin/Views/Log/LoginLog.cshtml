@@ -1,0 +1,113 @@
+﻿@model PagedList<Entity.MS_LogLogin>
+
+@{
+    ViewBag.Title = "系统-日志";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="content">
+        <form action="/log/loginlog/@ViewBag.OperatorType" class="form-inline">
+            <input type="hidden" name="menupid" value="@Request.QueryString["menupid"]" />
+            <input type="hidden" name="menuid" value="@Request.QueryString["menuid"]" />
+            <div>
+                <div class="form-group">
+                    日期：<input type="text" class="form-control" name="BeginTime" id="BeginTime" placeholder="开始时间..." value="@Request.QueryString["BeginTime"]" />至
+                    <input type="text" class="form-control" name="EndTime" id="EndTime" placeholder="结束时间..." value="@Request.QueryString["EndTime"]" />
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Memo" class="form-control" placeholder="模糊查询" value="@Request.QueryString["Memo"]" />
+                </div>
+                <div class="form-group">
+                    状态
+                    <select name="Statu" id="Statu" class="form-control" style=" width:108px;">
+                        <option value="">全部</option>
+                        <option @(Request.QueryString["Statu"] == "1" ? "selected=selected" : "") value="1">登录成功</option>
+                        <option @(Request.QueryString["Statu"] == "2" ? "selected=selected" : "") value="2">登录失败</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="UserName" class="form-control" placeholder="请输入账号" name="UserName" value="@Request.QueryString["UserName"]" />
+                        <span class="input-group-btn" title="搜索">
+                            <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br />
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        账号
+                    </th>
+                    <th>
+                        IP
+                    </th>
+                    <th>
+                        状态
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        备注
+                    </th>
+
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="@(Model.IndexOf(item) % 2 == 0 ? "tr-fir" : "tr-sec")">
+                        <td>
+                            @item.ID
+                        </td>
+                        <td>
+                            @item.UserName
+                        </td>
+                        <td>
+                            @item.IP
+                        </td>
+                        <td>
+                            @(item.Statu == 1 ? "成功" : "失败")
+                        </td>
+                        <td>
+                            @item.AddTime
+
+                        </td>
+                        <td title="@item.Memo">
+                            @item.Memo
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-xs" onclick="details(@item.ID)" title="详细">详细</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.Count > 0)
+        {
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pi", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class=\"active\"><span>{0}</span></li>", FirstPageText = "首页", NextPageText = "»", PrevPageText = "上一页", LastPageText = "尾页", ContainerTagName = "ul", AutoHide = false }, new { @class = "pagination" })
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#BeginTime').focus(function () {
+                $('#BeginTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
+            });
+            $('#EndTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss' });
+        })
+        function details(id) {
+            $loadModal('/log/LoginLogDetail/@(ViewBag.OperatorType)?logid=' + id);
+        }
+    </script>
+}
+

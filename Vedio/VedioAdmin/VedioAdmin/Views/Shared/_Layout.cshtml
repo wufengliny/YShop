@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -总后台</title>
+    @Styles.Render("~/css/css.css")
+    <script src="~/js/modernizr.js"></script>
+    @*<script src="/js/jquery.js"></script>*@
+</head>
+<body>
+
+    @{
+        IEnumerable<MS_Menus> listNav;
+        IEnumerable<MS_Menus> listLeft;
+        IEnumerable<MS_Menus> Tabs;
+        int menupid = UCommon.UUtils.GetQueryInt("menupid");
+        int menuid = UCommon.UUtils.GetQueryInt("menuid");
+        new BLL.BS_Menus().GetMenusShow(out listNav, out listLeft, out Tabs);
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/Home/main">后台管理</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @foreach (var item in listNav)
+                        {
+                            if (!string.IsNullOrEmpty(item.URL))
+                            {
+                                <li id="menu@(item.ID)"><a class="" href="@(item.URL+"?menupid="+item.ID)">@item.Name</a></li>
+                            }
+
+                        }
+                        <li><a title="修改密码" onclick="ResetAdminPass()"><span class="glyphicon glyphicon-user"></span>@(new CurrentUser().Account)</a></li>
+                        <li><a href="/admin/SignOut">退出</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    }
+    <div class="container-fluid">
+
+        <div>
+            @{
+                if (UCommon.UUtils.GetQueryInt("menupid") == 0)
+                {
+
+                }
+                else
+                {
+                    <div id="sitebar-nav" class="col-sm-3 col-md-2 sidebar">
+                        <ul class="nav nav-sidebar">
+                            @{
+                                foreach (var item in listLeft)
+                                {
+
+                                    string leftActive = "";
+                                    if ((item.URL.ToLower() == Request.Url.AbsolutePath.ToLower()) || item.ID == menuid)
+                                    {
+                                        leftActive = "active";
+                                    }
+                                    if (!string.IsNullOrEmpty(item.URL))
+                                    {
+                                        <li class="@leftActive">
+                                            <a href="@(item.URL+"?menupid="+menupid+"&menuid="+item.ID)" class="list-group-item">
+                                                <span class="@item.Icon"></span>&nbsp; &nbsp;@item.Name
+                                            </a>
+                                        </li>
+                                    }
+
+                                }
+                            }
+                        </ul>
+                    </div>
+                }
+            }
+            @{
+                if (UCommon.UUtils.GetQueryInt("menupid") == 0)
+                {
+                    <div style="margin-top:100px;"></div>
+                }
+                else
+                {
+                    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                        <div class="tabBox">
+                            <ul class="nav nav-tabs">
+                                @{
+                                    foreach (var item in Tabs)
+                                    {
+                                        string tabactive = "";
+                                        if ((item.URL.ToLower() == Request.Url.AbsolutePath.ToLower()) || Request.QueryString["menutabid"] == item.ID.ToString())
+                                        {
+                                            tabactive = "active";
+                                        }
+                                        <li role="presentation" class="@(tabactive)">
+                                            <a href="@item.URL?menupid=@(menupid)&menuid=@(menuid)&menutabid=@(item.ID)">@item.Name</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+
+
+
+            @RenderBody()
+        </div>
+    </div>
+    
+
+    <input type="hidden" id="menupid_Laout" value="@Request.QueryString["menupid"]" />
+    <input type="hidden" id="menuid_Laout" value="@Request.QueryString["menuid"]" />
+    <script src="/js/jquery.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/datetimepicker.js"></script>
+    <script src="/js/KayJS/Comjs.js"></script>
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    <div id="modal-container"></div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //导航栏样式绑定
+            var type = parseInt($("#urlinfo").val()) - 1;
+            $('.nav-sidebar li:eq(' + type + ')').addClass("active");
+            //
+            $(window).scroll(function () {
+                $('#wait-bg').css({ top: $(document).scrollTop() });
+            });
+        });
+        function showWaitdiv() {
+            $("body").css("overflow", "hidden");
+            $('#wait-pic').css({ top: "50%", left: "45%" });
+            document.getElementById("wait-bg").style.display = "block";
+        }
+        function hideWaitdiv() {
+            $("body").css("overflow", "auto");
+            document.getElementById("wait-bg").style.display = 'none';
+        }
+   
+        function ResetAdminPass() {
+            $loadModal('/admin/ModPwd');
+        }
+
+    </script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

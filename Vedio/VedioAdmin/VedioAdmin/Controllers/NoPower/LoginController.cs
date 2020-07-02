@@ -8,7 +8,7 @@ using System.Web.Security;
 using UCommon;
 using UCommon.ComNames;
 
-namespace Master.Controllers
+namespace VedioAdmin.Controllers
 {
     public class LoginController : Controller
     {

@@ -1,0 +1,273 @@
+﻿@model IList<Entity.MS_Menus>
+@{
+    ViewBag.Title = "权限分配";
+}
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main"  style="padding-top:0px;">
+    <h3 class="page-header" >权限分配-@ViewBag.admingroupName</h3>
+    <div class="content">
+        <form id="formpower">
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th width="30px">
+                            <input id="checkall" type="checkbox" data-toolbar=".btn-toolbar" data-target="[name=MenuID]" data-toggle="checkall">
+                        </th>
+                        <th>
+                            一级菜单
+                        </th>
+                        <th>
+                            二级菜单(左侧菜单)
+                        </th>
+                        <th>
+                            Tab菜单(标签菜单)
+                        </th>
+                        <th>
+                            按钮
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var first_menulist = Model.Where(p => p.ParentID == 0);
+                        IList<MS_Power> Powerlist=ViewBag.Powerlist;
+                        foreach (var first in first_menulist)
+                        {
+
+                            <tr>
+                                <td width="30px"><input type="checkbox" class="classp@(first.ID)" onclick="first_chk(this,'@first.ID')"></td>
+                                <td><span onclick="showhide(@first.ID,this)" class="glyphicon glyphicon-chevron-down"></span>  @first.Name</td>
+                                <td colspan="3"></td>
+                            </tr>
+                            var left_menulist = Model.Where(x => x.ParentID == first.ID);
+                            foreach (var left in left_menulist)
+                            {
+
+                                <tr itempid="@first.ID">
+                                    <td width="30px"></td>
+                                    <td style="width:143px;">|________________</td>
+                                    <td><input type="checkbox" onclick="left_chk(this, '@left.ID','@first.ID')" class="class@(first.ID) classp@(left.ID)"> @left.Name</td>
+                                    <td colspan="2"></td>
+                                </tr>
+                                var tab_menulist = Model.Where(x => x.ParentID == left.ID);
+                                foreach (var tab in tab_menulist)
+                                {
+                                    var btn_menulist = Model.Where(x => x.ParentID == tab.ID);
+                                    var IsTabChk = "";
+                                    if(Powerlist.Any(p=>p.MenuID==tab.ID))
+                                    {
+                                        IsTabChk = "checked=checked";
+                                    }
+                                    <tr itempid="@first.ID">
+                                        <td width="30px"></td>
+                                        <td></td>
+                                        <td style="width:143px;">|________________</td>
+                                        <td><input type="checkbox"  @IsTabChk onclick="tab_click(this, '@tab.ID','@left.ID','@first.ID')" class="class@(first.ID) class@(left.ID) classp@(tab.ID)" name="MenuID" value="@tab.ID">@tab.Name</td>
+                                        <td>
+                                            @{
+                                                foreach (var btn in btn_menulist)
+                                                {
+                                                    var IsBtnChk = "";
+                                                    if (Powerlist.Any(x => x.MenuID == btn.ID))
+                                                    {
+                                                        IsBtnChk = "checked=checked";
+                                                    }
+                                                    <input type="checkbox" @IsBtnChk onclick="btn_click(this,'@tab.ID','@left.ID','@first.ID')" class="class@(first.ID) class@(left.ID) class@(tab.ID) " name="MenuID" value="@btn.ID"><span>@btn.Name</span>
+                                                }
+                                            }
+
+
+                                        </td>
+                                    </tr>
+                                }
+
+                            }
+                        }
+                    }
+                </tbody>
+            </table>
+
+            <div style="margin-left:45%">
+                <div class="form-group" style="display:none">
+                    <input type="password" id="secpwd" name="secpwd" class="form-control" value="" placeholder="请输入二级密码">
+                </div>
+                <div class="form-group" style="display:inline-block">
+                    <button type="button" onclick="savepower()" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+            <input type="hidden" name="admingroupid" value="@Request.QueryString["admingroupid"]" />
+        </form>
+    </div>
+</div>
+
+<script>
+    //根据子节点的选中情况 判断父节点是否选中
+    window.onload = function () {
+        var chks = $("input[type='checkbox']:checked");
+        var classALl = "";
+        $(chks).each(function () {
+            var classstr = $(this).attr("class");
+            var classs = classstr.split(' ');
+            classs.forEach(function (x, index, a) {
+                if (classALl.indexOf(','+x) >= 0) {
+
+                }
+                if (x.indexOf('classp') >= 0)
+                {
+
+                }
+                else {
+                     classALl += ","+x;
+                }
+            })
+        })
+        var arr = classALl.split(',');
+        arr.forEach(function (x, index, a) {
+            if (x != '') {//class
+                var t = x.substring(0, 5) + 'p' + x.substring(5);
+                $("."+t).prop("checked", "checked");
+            }
+        })
+
+     
+        
+    }
+
+    function savepower() {
+        var data = $("#formpower").serialize();
+        $.post("/Power/PowerPost", data, function (res) {
+            alert(res);
+        })
+    }
+
+   function showhide(id, thisobj) {
+                var classVal = $(thisobj).attr("class");
+                if (classVal == "glyphicon glyphicon-chevron-right") {
+                    $("[itempid='" + id + "']").show();
+                    $(thisobj).attr("class","glyphicon glyphicon-chevron-down");
+                }
+                else if (classVal == "glyphicon glyphicon-chevron-down") {
+                    $("[itempid='" + id + "']").hide();
+                    $(thisobj).attr("class","glyphicon glyphicon-chevron-right");
+                }
+                
+    }
+    //firstid 当前选中对象的ID　　
+    function first_chk(obj,firstid) {
+        if ($(obj).prop("checked")) {
+             $(".class" + firstid).prop("checked", "checked")
+        }
+        else {
+            $(".class" + firstid).prop("checked", "");
+        }
+    }
+    //secondid 当前选中对象的ID  parentid 父级ID
+    function left_chk(obj, leftid, firstid) {
+        var ishavechek = false;
+        if ($(obj).prop("checked")) {
+            $(".class" + leftid).prop("checked", "checked");
+            $(".classp" + firstid).prop("checked", "checked");
+        }
+        else {
+            $(".class" + leftid).prop("checked", "");
+            //查找父级ID的子节点　　如果一个都没有选择　则父级也取消选择
+            $(".class" + firstid).each(function () {
+                if ($(this).prop("checked")) {
+                    ishavechek = true;
+                }
+            })
+            if (ishavechek) {
+                $(".classp" + firstid).prop("checked");
+            }
+            else {
+                  $(".classp" + firstid).prop("checked", "");
+            }
+        }
+    }
+
+    function tab_click(obj, tabid, leftid,firstid) {
+        var ishavechek_left = false;
+         var ishavechek_first = false;
+        if ($(obj).prop("checked")) {
+            //$(".class" + tabid).prop("checked", "checked");  //
+            $(".classp" + leftid).prop("checked", "checked");
+             $(".classp" + firstid).prop("checked", "checked");
+        }
+        else {
+            $(".class" + tabid).prop("checked", "");
+            $(".class" + leftid).each(function () {
+                if ($(this).prop("checked")) {
+                    ishavechek_left = true;
+                }
+            });
+                if (ishavechek_left) {
+                $(".classp" + leftid).prop("checked");
+            }
+            else {
+                  $(".classp" + leftid).prop("checked", "");
+            }
+             $(".class" + firstid).each(function () {
+                if ($(this).prop("checked")) {
+                    ishavechek_first = true;
+                }
+             });
+            if (ishavechek_left) {
+                $(".classp" + firstid).prop("checked");
+            }
+            else {
+                  $(".classp" + firstid).prop("checked", "");
+            }
+        }
+       
+    }
+
+    function btn_click(obj, tabid, leftid, firstid) {
+        var ishavechek_tab = false;
+             var ishavechek_left = false;
+         var ishavechek_first = false;
+        if ($(obj).prop("checked")) {
+            $(".classp" + tabid).prop("checked", "checked");
+            $(".classp" + leftid).prop("checked", "checked");
+            $(".classp" + firstid).prop("checked", "checked");
+        }
+        else {
+            $(".class" + tabid).each(function () {
+                if ($(this).prop("checked")) {
+                    ishavechek_tab = true;
+                }
+            });
+            // if (ishavechek_tab) {
+            //    $(".classp" + tabid).prop("checked");
+            //}
+            //else {
+            //      $(".classp" + tabid).prop("checked", "");
+            //}
+            //$(".class" + leftid).each(function () {
+            //    if ($(this).prop("checked")) {
+            //        ishavechek_left = true;
+            //    }
+            //});
+            //if (ishavechek_left) {
+            //    $(".classp" + leftid).prop("checked");
+            //}
+            //else {
+            //    $(".classp" + leftid).prop("checked", "");
+            //}
+            //$(".class" + firstid).each(function () {
+            //    if ($(this).prop("checked")) {
+            //        ishavechek_first = true;
+            //    }
+            //});
+            //if (ishavechek_first) {
+            //    $(".classp" + firstid).prop("checked");
+            //}
+            //else {
+            //    $(".classp" + firstid).prop("checked", "");
+            //}
+        }
+    }
+
+    
+
+
+</script>

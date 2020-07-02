@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Master.Controllers
+namespace VedioAdmin.Controllers
 {
     /// <summary>
     /// 错误 无权限 跳转到此处 

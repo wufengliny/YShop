@@ -1,0 +1,144 @@
+﻿@model Entity.MS_Menu
+
+@{
+    ViewBag.Title = "系统-添加菜单";
+    Layout = null;
+}
+    <form method="post" class="form-horizontal" id="_ModalForm">
+        <div id="Edit-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                        <h4 class="modal-title">添加菜单</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="error-panel"></div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">菜单名称</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" id="Name" name="Name" class="form-control" />
+                            </div>
+                        </div>
+                        @if (ViewBag.menuType == "tab页" || ViewBag.menuType == "按钮")
+                        {
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">标识</label>
+                                <div class="col-sm-9">
+                                    <input type="text" value="" placeholder="权限标识（唯一）" id="Mark" name="Mark" class="form-control" />
+                                </div>
+                            </div>
+                        }
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">父级菜单</label>
+                            <div class="col-sm-9">
+                                <select onchange="changemenutype()" class="form-control" name="ParentID" id="ParentID">
+                                    <option value="0">==请选择==</option>
+                                    @{
+                                        Dictionary<int, string> dirFatherMenu = ViewBag.dirFatherMenu;
+                                        foreach (var dir in dirFatherMenu)
+                                        {
+                                            <option @(Request.QueryString["pid"] == dir.Key.ToString() ? "selected=selected" : "") value="@dir.Key">@dir.Value</option>
+                                        }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        @if (ViewBag.menuType == "tab页")
+                        {
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">链接地址</label>
+                                <div class="col-sm-9">
+                                    <input type="text" value="" id="URL" name="URL" class="form-control" />
+                                </div>
+                            </div>
+                        }
+                        @if (ViewBag.menuType == "左侧菜单")
+                        {
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">图标</label>
+                                <div class="col-sm-9">
+                                    <input type="text" value="" id="Icon" name="Icon" class="form-control" />
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">打开方式</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="Target" id="Target">
+                                    <option value="_self">当前窗口</option>
+                                    <option value="_blank">新窗口</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">菜单类型</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="@ViewBag.menuType" readonly="readonly" id="MenuType" name="MenuType" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">排序</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" id="Sort" name="Sort" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备注</label>
+                            <div class="col-sm-9">
+                                <input type="text" value="" id="Memo" name="Memo" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        </div>
+    </form>
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+     function dosub() {
+        if ($("#Name").val() == "") {
+            $("#Name").focus();
+            alert('菜单名称不能为空');
+            return;
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/menu/Create", datamenu, function (res) {
+            if (res == "操作成功")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(res);
+            }
+
+        })
+    }
+
+
+    function changemenutype() {
+        var name = $("#ParentID option:selected").text();
+        var strs = name.split('-');
+        if (name.indexOf("请")>=0) {
+            $("#MenuType").val("Nav导航");
+        }
+        else if (strs.length == 1) {
+              $("#MenuType").val("左侧菜单");
+        }
+         else if (strs.length == 2) {
+              $("#MenuType").val("tab页");
+        }
+             else if (strs.length == 3) {
+              $("#MenuType").val("按钮");
+        }
+    }
+</script>

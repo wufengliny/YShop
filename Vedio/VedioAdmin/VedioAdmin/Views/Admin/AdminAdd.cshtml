@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "后台管理";
+    Layout = null;
+}
+<form action="/admin/menu/create" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+
+    @{
+        string isReadOnly = "";
+        string pwdPlaceholder = "";
+        if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+        {
+            isReadOnly = "readonly=\"readonly\"";
+            pwdPlaceholder = "放空不修改";
+        }
+
+    }
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">管理员</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">用户名</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.Name" id="txtname" name="txtname" @isReadOnly class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">密码</label>
+                        <div class="col-sm-9">
+                            <input type="password" value="" id="pwd" name="pwd" placeholder="@pwdPlaceholder" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">真实姓名</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.realName" id="realName" name="realName" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">权限组</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="groupa" id="groupa">
+                                <option value="0">==请选择==</option>
+                                @{ 
+                                    System.Data.DataTable dt = ViewBag.admingroup;
+                                    for(int i=0;i<dt.Rows.Count;i++)
+                                    {
+                                        <option value="@dt.Rows[i]["ID"]">@dt.Rows[i]["Name"]</option>
+                                    }
+                                }
+                               
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">电话</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.phone" id="phone" name="phone" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">备注</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@ViewBag.memo" id="memo" name="memo" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+</form>
+
+
+
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        if ($("#txtname").val() == "") {
+            $("#txtname").focus();
+            alert('用户名名称不能为空');
+            return;
+        }
+        var pwdplace = $("#pwd").attr("placeholder");
+        if (pwdplace == "") {
+            if ($("#pwd").val() == "") {
+                $("#pwd").focus();
+                alert('密码不能为空');
+                return;
+            }
+        }
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/admin/AdminAddPost", datamenu, function (res) {
+            alert(res);
+            if (res == "操作成功")
+            {
+                location.reload();
+            }
+            else
+            {
+                alert(res);
+            }
+
+        })
+    }
+</script>

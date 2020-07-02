@@ -1,0 +1,84 @@
+﻿@model PagedList<MS_AdminGroup>
+@{
+    ViewBag.Title = "系统-管理组";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="btn-toolbar">
+        <div class="btn-group" role="group">
+            <button type="button" onclick="create()" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+        </div>
+    </div>
+    <div class="content">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>备注</th>
+                    <th>时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Count > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr class="@(Model.IndexOf(item) % 2 == 0 ? "tr-fir" : "tr-sec")">
+                            <td>@item.ID</td>
+                            <td>@item.Name
+                                @{
+                                    if (item.ID == 1)
+                                    {
+                                        <span style="color:red"> (所有权限)</span>
+                                    }
+                                }
+                            </td>
+                            <td>@item.Memo</td>
+                            <td title="@item.AddTime">@item.AddTime.ToString("yyyy-MM-dd")</td>
+                            <td>
+                                @{
+                                    if (item.ID > 1)
+                                    {
+                                        <a class="btn btn-success btn-xs" onclick="edit(@item.ID)" title="编辑">编辑</a>
+                                        <a class="btn btn-info btn-xs" onclick="btnGotoPage('/power/index?admingroupid=@item.ID&menutabid=@Request.QueryString["menutabid"]')"  title="权限">权限</a>
+                                        <a class="btn btn-danger btn-xs" onclick="Delete(@item.ID,'@item.Name')" title="删除">删除</a>
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="10" align="center">暂时没有数据！</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        @if (Model.Count > 0)
+        {
+            @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pi", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class=\"active\"><span>{0}</span></li>", FirstPageText = "首页", NextPageText = "»", PrevPageText = "上一页", LastPageText = "尾页", ContainerTagName = "ul", AutoHide = false }, new { @class = "pagination" })
+        }
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        function create() {
+            $loadModal('/admin/AdminGroupAdd');
+        }
+        function edit(id) {
+            $loadModal('/admin/AdminGroupEdit/?id=' + id );
+        };
+        function Delete(id, account) {
+            if (confirm('确定删除管理员：' + account + '?')) {
+                $.post('/admin/AdminGroupDelPost/' + id, function (data) {
+                    alert(data);
+                    location.reload();
+                });
+            }
+        }
+    </script>
+}
