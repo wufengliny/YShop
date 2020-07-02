@@ -77,6 +77,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\DLL\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -127,6 +130,18 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="js\ajaxfileupload.js" />
+    <Content Include="js\all.JS" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\dataTables.bootstrap.js" />
+    <Content Include="js\datetimepicker.js" />
+    <Content Include="js\jquery.dataTables.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\KayJS\Comjs.js" />
+    <Content Include="js\modernizr.js" />
+    <Content Include="js\popover.js" />
+    <Content Include="js\summernote.js" />
+    <Content Include="js\switch.js" />
     <Content Include="Scripts\ace-elements.min.js" />
     <Content Include="Scripts\ace-extra.min.js" />
     <Content Include="Scripts\ace.min.js" />
@@ -158,6 +173,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\vssver2.scc" />
+    <Content Include="js\vssver2.scc" />
+    <Content Include="js\zh_CN.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -191,6 +208,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />

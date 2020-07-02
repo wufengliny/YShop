@@ -13,6 +13,7 @@ namespace VedioAdmin.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            
             return Content("系统繁忙");
         }
         public ActionResult Main()
