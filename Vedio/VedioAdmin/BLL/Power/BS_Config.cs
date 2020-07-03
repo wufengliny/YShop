@@ -28,7 +28,10 @@ namespace BLL
         {
             return dal.UpdateByID(id, val,memo);
         }
-
+        public int Add(MS_Config model)
+        {
+            return dal.Add(model);
+        }
 
 
 

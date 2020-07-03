@@ -99,7 +99,12 @@ namespace BLL
             model.UserName = UserName;
             return dal.ErrorLogAdd(model);
         }
-
+        /// <summary>
+        /// 1结算日志 2 返水日志 3 彩票采集   4平台游戏下注记录采集 10其他
+        /// </summary>
+        /// <param name="LogType"></param>
+        /// <param name="Memo"></param>
+        /// <returns></returns>
         public int SysLogAdd(int LogType,string Memo)
         {
             MS_LogSys model = new MS_LogSys();

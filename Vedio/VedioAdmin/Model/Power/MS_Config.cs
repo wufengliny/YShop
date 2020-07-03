@@ -63,5 +63,7 @@ namespace Entity
         /// </summary>		
         public string Memo { get; set; }
 
+        public int Sort { get; set; }
+
     }
 }

@@ -35,7 +35,7 @@ namespace VedioAdmin.Filters
             bool HasPower = false;
             object objid = null;
             var actionKeys = filterContext.ActionParameters;
-            actionKeys.TryGetValue("id",out objid);
+            actionKeys.TryGetValue("id",out objid);  // eg: /home/main/2    程序标识处只需：[Power("loginlog",OpenTypeEnum.Page,true)] 数据库Mark记录 loginlog-2
             string Mark_id = string.Empty;
             if(objid==null)
             {

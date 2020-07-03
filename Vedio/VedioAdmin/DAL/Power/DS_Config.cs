@@ -42,8 +42,44 @@ namespace DAL
             parameters[2].Value = val;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, str, parameters);
         }
-       
-    
+        public int Add(MS_Config model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("INSERT INTO S_Config(");
+            strSql.Append("[key],Name,[Value],[Group],CanEdit,CanDelete,AddUser,AddTime,LastModifyUser,LastModifyTime,Enable,Memo,[sort])");
+            strSql.Append(" VALUES (");
+            strSql.Append("@key,@Name,@Value,@Group,@CanEdit,@CanDelete,@AddUser,@AddTime,@LastModifyUser,@LastModifyTime,@Enable,@Memo,@sort)");
+            SqlParameter[] parameters = {
+                    new SqlParameter("@key", SqlDbType.VarChar,100),
+                    new SqlParameter("@Name", SqlDbType.VarChar,1000),
+                    new SqlParameter("@Value", SqlDbType.VarChar,5000),
+                    new SqlParameter("@Group", SqlDbType.VarChar,500),
+                    new SqlParameter("@CanEdit", SqlDbType.Int,4),
+                    new SqlParameter("@CanDelete", SqlDbType.Int,4),
+                    new SqlParameter("@AddUser", SqlDbType.Int,4),
+                    new SqlParameter("@AddTime", SqlDbType.DateTime,8),
+                    new SqlParameter("@LastModifyUser", SqlDbType.Int,4),
+                    new SqlParameter("@LastModifyTime", SqlDbType.DateTime,8),
+                    new SqlParameter("@Enable", SqlDbType.Int,4),
+                    new SqlParameter("@Memo", SqlDbType.VarChar,5000),
+                    new SqlParameter("@sort", SqlDbType.Int,4)};
+            parameters[0].Value = model.key;
+            parameters[1].Value = model.Name;
+            parameters[2].Value = model.Value;
+            parameters[3].Value = model.Group;
+            parameters[4].Value = model.CanEdit;
+            parameters[5].Value = model.CanDelete;
+            parameters[6].Value = model.AddUser;
+            parameters[7].Value = model.AddTime;
+            parameters[8].Value = model.LastModifyUser;
+            parameters[9].Value = model.LastModifyTime;
+            parameters[10].Value = model.Enable;
+            parameters[11].Value = model.Memo;
+            parameters[12].Value = model.Sort;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+
+        }
+
 
         /// <summary>
         /// kay

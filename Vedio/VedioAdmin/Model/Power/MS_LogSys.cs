@@ -15,7 +15,7 @@ namespace Entity
         /// </summary>
         public int ID { get; set; }
         /// <summary>
-        /// 1结算日志 2 返水日志 3 彩票采集   4平台游戏下注记录采集
+        /// 1结算日志 2 返水日志 3 彩票采集   4平台游戏下注记录采集 10其他
         /// </summary>
         public int LogType { get; set; }
         /// <summary>
