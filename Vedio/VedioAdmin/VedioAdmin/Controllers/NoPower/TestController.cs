@@ -13,5 +13,9 @@ namespace VedioAdmin.Controllers
         {
             return Content("ManageCenter");
         }
+        public ActionResult Test()
+        {
+            return View();
+        }
     }
 }
