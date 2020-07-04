@@ -4,13 +4,12 @@
     Layout = null;
 }
 <form action="" method="post" class="form-horizontal" id="_ModalForm">
-    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
     <div id="Edit-modal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
-                    <h4 class="modal-title">添加权限组</h4>
+                    <h4 class="modal-title">添加标签</h4>
                 </div>
                 <div class="modal-body">
                     <div class="error-panel"></div>
@@ -18,12 +17,6 @@
                         <label class="col-sm-3 control-label">名称</label>
                         <div class="col-sm-9">
                             <input type="text" value="" id="name" name="name" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-3 control-label">备注</label>
-                        <div class="col-sm-9">
-                            <input type="text" value="" id="memo" name="memo" class="form-control" />
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -42,9 +35,12 @@
     $('#Edit-modal').modal('show');
     function dosub() {
         var datamenu = $("#_ModalForm").serialize();
-        $.post("/admin/AdminGroupAddPost", datamenu, function (res) {
+        $.post("/Vedios/TagsAdd", datamenu, function (res) {
             alert(res);
-            location.reload();
+            if (res == "操作成功") {
+                location.reload();
+            }
+            
         })
     }
 </script>

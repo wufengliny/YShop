@@ -221,6 +221,7 @@
     <Compile Include="Controllers\Power\LogController.cs" />
     <Compile Include="Controllers\Power\MenuController.cs" />
     <Compile Include="Controllers\Power\PowerController.cs" />
+    <Compile Include="Controllers\VediosController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\IsAuditorFilter.cs" />
     <Compile Include="Filters\PowerAttribute.cs" />
@@ -274,6 +275,12 @@
     <Content Include="Views\Config\configlist.cshtml" />
     <Content Include="Views\Config\ConfigEdit.cshtml" />
     <Content Include="Views\Config\ConfigAdd.cshtml" />
+    <Content Include="Views\Vedios\Tags.cshtml" />
+    <Content Include="Views\Vedios\TagsAdd.cshtml" />
+    <Content Include="Views\Vedios\Index.cshtml" />
+    <Content Include="Views\Vedios\Serious.cshtml" />
+    <Content Include="Views\Vedios\SeriousAdd.cshtml" />
+    <Content Include="Views\Vedios\SeriousEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
