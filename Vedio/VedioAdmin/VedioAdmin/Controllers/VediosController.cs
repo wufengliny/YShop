@@ -14,10 +14,70 @@ namespace VedioAdmin.Controllers
     {
         // GET: Vedios
         [Power("Vedios", ComEnum.OpenTypeEnum.Page, true)]
-        public ActionResult Index()
+        public ActionResult Index(string Name="",string Category="",string Tag="",int SeriousID=0,string fromTime="",string endTime="",int pi=1)
+        {
+            string strWhere = " where  cv.Enable=1 ";
+            if (!string.IsNullOrEmpty(Name))
+            {
+                strWhere += " and cv.Name like'%" + Name + "%'";
+            }
+            if (!string.IsNullOrEmpty(Category))
+            {
+                strWhere += " and cv.Category='" + Category + "'";
+            }
+            if (!string.IsNullOrEmpty(Tag))
+            {
+                strWhere += " and cv.Tag like'%" + Tag + "%'";
+            }
+            if (SeriousID > 0)
+            {
+                strWhere += " and cv.SeriousID=" + SeriousID;
+            }
+            if(!string.IsNullOrEmpty(fromTime))
+            {
+                strWhere += " and cv.AddTime>'"+fromTime+"'";
+            }
+            if (!string.IsNullOrEmpty(endTime))
+            {
+                strWhere += " and cv.AddTime<'" + endTime + "'";
+            }
+            var list = new BC_Vedios().Pager(pi,20,strWhere, " [Sort] asc,AddTime desc ");
+            ViewBag.tags = new BC_Tags().List();
+            ViewBag.serious = new BC_Serious().List();
+            return View(list);
+        }
+
+        [HttpGet]
+        [Power("VediosAdd", ComEnum.OpenTypeEnum.Dialog)]
+        public ActionResult Add()
         {
             return View();
         }
+        [HttpPost]
+        [Power("VediosAdd", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult Add(string name)
+        {
+            return View();
+        }
+        [HttpGet]
+        [Power("VediosEdit", ComEnum.OpenTypeEnum.Dialog)]
+        public ActionResult Edit()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Power("VediosEdit", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult Edit(string name)
+        {
+            return View();
+        }
+
+        [Power("VediosDelete", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult Delete(string name)
+        {
+            return View();
+        }
+
 
 
         #region 系列

@@ -119,5 +119,11 @@ namespace Entity
         /// </summary>
         public int FreeDownNum { get; set; }
         #endregion Model
+
+
+        #region 外表扩展
+        public string SeriousName { get; set; } 
+        #endregion
+
     }
 }

@@ -19,6 +19,10 @@ namespace BLL
             PagedList<MC_Serious> pl = new PagedList<MC_Serious>((List<MC_Serious>)list[1], pageIndex, pageSize, int.Parse(list[0].ToString()));
             return pl;
         }
+        public IList<MC_Serious> List()
+        {
+            return dal.List();
+        }
         public MC_Serious GetModelByID(int ID)
         {
             return dal.GetModelByID(ID);

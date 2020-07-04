@@ -25,6 +25,13 @@ namespace DAL
             };
             return AspNetPagerList.PagerLsit<MC_Tags>(modelp);
         }
+        public IList<MC_Tags> List()
+        {
+            string str = " select * from C_Tags order by Sort ";
+            return  SQLHelper.ExecuteReaderList<MC_Tags>(CommandType.Text,str);
+        }
+
+
         public MC_Tags GetModelByID(int ID)
         {
             string str = "select * from C_Tags where ID=@ID";

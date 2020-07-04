@@ -25,6 +25,11 @@ namespace DAL
             };
             return AspNetPagerList.PagerLsit<MC_Serious>(modelp);
         }
+        public IList<MC_Serious> List()
+        {
+            string str = " select * from C_Serious order by Sort ";
+            return SQLHelper.ExecuteReaderList<MC_Serious>(CommandType.Text, str);
+        }
         public MC_Serious GetModelByID(int ID)
         {
             string str = "select * from C_Serious where ID=@ID";
