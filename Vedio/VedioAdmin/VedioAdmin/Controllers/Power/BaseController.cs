@@ -8,11 +8,11 @@ using Entity;
 using System.Text;
 using System.Data;
 using ComEnum;
-
+using VedioAdmin.Filters;
 
 namespace VedioAdmin.Controllers
 {
-
+    
     public class BaseController : Controller
     {
         public static BS_Log bll_log = new BS_Log();

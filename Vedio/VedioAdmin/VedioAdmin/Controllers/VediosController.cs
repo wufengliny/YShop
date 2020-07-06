@@ -10,6 +10,7 @@ using Webdiyer.WebControls.Mvc;
 
 namespace VedioAdmin.Controllers
 {
+    [IsAuditorFilter]
     public class VediosController : BaseController
     {
         // GET: Vedios
@@ -51,6 +52,9 @@ namespace VedioAdmin.Controllers
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Dialog)]
         public ActionResult Add()
         {
+            ViewBag.tags = new BC_Tags().List();
+            ViewBag.serious = new BC_Serious().List();
+            ViewBag.Category = "国产";
             return View();
         }
         [HttpPost]

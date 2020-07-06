@@ -9,6 +9,7 @@ using VedioAdmin.Filters;
 
 namespace VedioAdmin.Controllers
 {
+    [IsAuditorFilter]
     public class ConfigController : BaseController
     {
         BS_Config bconfig = new BS_Config();

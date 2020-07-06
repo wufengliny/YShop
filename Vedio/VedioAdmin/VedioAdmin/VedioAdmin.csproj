@@ -65,6 +65,10 @@
     <Reference Include="MvcPager">
       <HintPath>..\DLL\MvcPager.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Owin">
       <HintPath>..\DLL\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -118,6 +122,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\js\ajaxfileupload.js" />
+    <Content Include="Content\js\jquery-1.7.1.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\kingzhu.js" />
+    <Content Include="Content\js\kingzhu2.js" />
+    <Content Include="Content\js\layer,wow,scroll.js" />
+    <Content Include="Content\js\skin\default\icon-ext.png" />
+    <Content Include="Content\js\skin\default\icon.png" />
+    <Content Include="Content\js\skin\default\layer.css" />
+    <Content Include="Content\js\skin\default\loading-0.gif" />
+    <Content Include="Content\js\skin\default\loading-1.gif" />
+    <Content Include="Content\js\skin\default\loading-2.gif" />
+    <Content Include="Content\js\swiper.jquery.min.js" />
     <Content Include="Content\LoginResource\bj.jpg" />
     <Content Include="Content\LoginResource\bootstrap.min.css" />
     <Content Include="Content\LoginResource\font-awesome.min.css" />
@@ -212,6 +229,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ConfigController.cs" />
+    <Compile Include="Controllers\FileUPController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NoPower\ErrorController.cs" />
     <Compile Include="Controllers\NoPower\LoginController.cs" />
@@ -281,6 +299,7 @@
     <Content Include="Views\Vedios\Serious.cshtml" />
     <Content Include="Views\Vedios\SeriousAdd.cshtml" />
     <Content Include="Views\Vedios\SeriousEdit.cshtml" />
+    <Content Include="Views\Vedios\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -291,6 +310,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\FileUP\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
