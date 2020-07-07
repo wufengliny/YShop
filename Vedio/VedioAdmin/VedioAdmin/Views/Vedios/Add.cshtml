@@ -125,13 +125,13 @@
                         <label class="col-sm-2 control-label">系列</label>
                         <div class="col-sm-10">
                             <input type="text" style="width:200px;display:inline" onblur="changeSe()" value="" id="Seriousname" name="Seriousname" class="form-control" />
-                            <select class="form-control dropdown-toggle"  style="width:200px;display:inline" id="SID" name="SID" onchange="Se()" >
+                            <select class="form-control dropdown-toggle" style="width:200px;display:inline" id="SID" name="SID" onchange="Se()">
                                 <option value="">请选择</option>
                                 @{
                                     IList<MC_Serious> serious = ViewBag.serious;
                                     foreach (var item in serious)
                                     {
-                                        <option   value="@item.Name">@item.Name</option>
+                                        <option value="@item.Name">@item.Name</option>
                                     }
                                 }
                             </select>
@@ -155,6 +155,12 @@
                         <label class="col-sm-2 control-label">排序</label>
                         <div class="col-sm-10">
                             <input type="number" value="@ViewBag.Sort" id="Sort" name="Sort" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">价格</label>
+                        <div class="col-sm-10">
+                            <input type="number" value="" id="Price" name="Price" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -211,10 +217,22 @@
     function changeSe() {
         var name = $("#Seriousname").val();  //SeriousID
         //$("#SID option[value='" + name + "']").attr("selected", true);
+        $("#SID option").removeProp("selected");
         var obj = $("#SID").find("option[value='" + name + "']");
-        alert(obj);
-        //$("#SID option:contains('" + name + "')").attr("selected", true);
-        //$("#SID").val(name); 
+        if (obj.length > 0) {
+            obj.prop("selected", true);
+        }
+        else {
+            var objcontain = $("#SID option:contains('" + name + "')");
+            if (objcontain.length > 0) {
+                objcontain.prop("selected", true);
+            }
+            else {
+                $("#SID").val("");
+                 $("#Seriousname").val(""); 
+            }
+        }
+        
     }
     function Se() {
         var val = $("#SID").find("option:selected").val();
