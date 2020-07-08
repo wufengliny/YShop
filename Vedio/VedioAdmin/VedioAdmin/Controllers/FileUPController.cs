@@ -20,7 +20,7 @@ namespace VedioAdmin.Controllers
             int roo = UCommon.UUtils.GetQueryInt("roo");
             if (roo == 1)
             {
-                RootDir = "/VedioCover/AMH/";
+                RootDir = "/UpLoadFiles/Images/";
             }
             HttpFileCollectionBase files = Request.Files;
             if (files.Count > 0)
@@ -64,7 +64,7 @@ namespace VedioAdmin.Controllers
             int roo = UCommon.UUtils.GetQueryInt("roo");
             if (roo == 1)
             {
-                RootDir = "/VedioFile/AMH/";
+                RootDir = "/UpLoadFiles/Vedio/";
             }
             HttpFileCollectionBase files = Request.Files;
             if (files.Count > 0)
@@ -101,5 +101,21 @@ namespace VedioAdmin.Controllers
             }
         }
 
+
+
+        public ActionResult AjaxNetImg()
+        {
+            try
+            {
+                string url = UCommon.UUtils.GetQurryString("url");
+                string str = UCommon.UHTTPHelper.SaveRemotPicWeb(url, "/UpLoadFiles/VedioCover/");
+                return Content(str);
+            }
+            catch (Exception e)
+            {
+                return Content("下载失败：" + e.Message);
+            }
+
+        }
     }
 }

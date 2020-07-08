@@ -50,25 +50,91 @@ namespace VedioAdmin.Controllers
 
         [HttpGet]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Dialog)]
-        public ActionResult Add()
+        public ActionResult Add(int ID=0)
         {
+
             ViewBag.tags = new BC_Tags().List();
             ViewBag.serious = new BC_Serious().List();
-            ViewBag.Category = "国产";
-            return View();
+            MC_Vedios model = new MC_Vedios();
+            if(ID>0)
+            {
+                model = new BC_Vedios().GetModelByID(ID);
+            }
+            else
+            {
+                model.Category = "国产";
+                model.Price = 0;
+                model.Tag = "";
+            }
+            return View(model);
         }
         [HttpPost]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Add(string name)
+        public ActionResult Add(string txtName,string CategoryA,string Url,string VedioLong="",int Sort=100000,decimal Price=0,string Cover="",string tags="", string Seriousname="")
         {
-            return View();
+     
+            MC_Vedios model = new MC_Vedios();
+            model.Name = txtName;
+            model.Tag = tags;
+            model.VedioLong = VedioLong;
+            model.Category = CategoryA;
+            model.PreUrl = new BS_Config().GetModelByKey("vediourl").Value;//
+            model.Url = Url;
+            model.Cover = Cover;
+            model.Sort = new BC_Vedios().GetMaxSort(); //
+            if(Price<0)
+            {
+                Price = 0;
+            }
+            model.Price = Price;
+            if (string.IsNullOrEmpty(Seriousname))
+            {
+                model.SeriousName = "";
+                model.SeriousID = 0;
+            }
+            else
+            {
+                var seriousModel = new BC_Serious().GetModelByName(Seriousname);
+                if(seriousModel!=null)
+                {
+                    model.SeriousName = Seriousname;
+                    model.SeriousID = seriousModel.ID;
+                }
+                else
+                {
+                    model.SeriousName = "";
+                    model.SeriousID = 0;
+                }
+            }
+            //
+            model.Actor = "";
+            model.AddTime = DateTime.Now;
+            model.Enable = 1;
+            model.FreeDownNum = 0;
+            model.FreePartUrl = "";
+            model.FromCoverUrl = "";
+            model.FromPageUrl = "";
+            model.FromSite = "sys";
+            model.FromVedioUrl = "";
+            model.Goods = 0;
+            model.Hits = 0;
+            model.Introduce = "";
+            model.Likes = 0;
+            model.Memo = "";
+            model.SinglePayDownLoadNum = 0;
+            model.VIPDownNum = 0;
+            int res= new BC_Vedios().Add(model);
+            if(res>0)
+            {
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
         }
-        [HttpGet]
-        [Power("VediosEdit", ComEnum.OpenTypeEnum.Dialog)]
-        public ActionResult Edit()
-        {
-            return View();
-        }
+
+
         [HttpPost]
         [Power("VediosEdit", ComEnum.OpenTypeEnum.Ajax)]
         public ActionResult Edit(string name)

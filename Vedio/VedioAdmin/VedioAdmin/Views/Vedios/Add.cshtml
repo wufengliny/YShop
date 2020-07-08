@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MC_Vedios
+@{
     ViewBag.Title = "Create";
     Layout = null;
 }
@@ -64,21 +65,23 @@
         audioElement.addEventListener("loadedmetadata", function (_event) {
             duration = audioElement.duration;
             var timesec = parseInt(duration);
-            if (timesec < 60)
-            {
-                $("#VedioLong").val(timesec+"秒");
+            if (timesec < 60) {
+                $("#VedioLong").val(timesec + "秒");
             }
-            else if (timesec<3600)
-            {
+            else if (timesec < 3600) {
 
-                $("#VedioLong").val(parseInt(timesec / 60) + "分" + timesec % 60 + "秒");
+                $("#VedioLong").val(parseInt(timesec / 60) + "分" + timesec % 60 + "秒"); 
+            }
+            else {
+                //3723秒
+                $("#VedioLong").val(parseInt(timesec / 3600) + "时" + parseInt((timesec % 3600)/60) + "分");
             }
 
         });
     }
 </script>
 <form action="/admin/config/AddFriendLink" method="post" class="form-horizontal" id="_ModalForm">
-    <input type="hidden" name="id" value="@Request.QueryString["id"]" />
+    <input type="hidden" name="ID" id="ID" value="@Model.ID" />
     <div id="Edit-modal" class="modal fade">
         <div class="modal-dialog" style="width:800px;">
             <div class="modal-content">
@@ -91,7 +94,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">名称</label>
                         <div class="col-sm-10">
-                            <input type="text" value="@ViewBag.Name" id="Name" name="Name" class="form-control" />
+                            <input type="text" value="@Model.Name" id="txtName" name="txtName" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -105,18 +108,27 @@
                                 <option value="欧美">欧美</option>
                             </select>
                             <script>
-                                $("#CategoryA").val('@ViewBag.Category');
+                                $("#CategoryA").val('@Model.Category');
                             </script>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">标签</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10 tagbtns">
                             @{
                                 IList<MC_Tags> tags = ViewBag.tags;
+                                string txtTag = "," + Model.Tag + ",";
                                 foreach (var item in tags)
                                 {
-                                    <input class="btn  btn-default" onclick="changetag(this)" value="@item.Name" type="button" />
+                                    if (txtTag.Contains("," + item.Name + ","))
+                                    {
+                                        <input class="btn  btn-info" onclick="changetag(this)" value="@item.Name" type="button" />
+                                    }
+                                    else
+                                    {
+                                        <input class="btn  btn-default" onclick="changetag(this)" value="@item.Name" type="button" />
+                                    }
+
                                 }
                             }
                         </div>
@@ -124,50 +136,54 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">系列</label>
                         <div class="col-sm-10">
-                            <input type="text" style="width:200px;display:inline" onblur="changeSe()" value="" id="Seriousname" name="Seriousname" class="form-control" />
+                            <input type="text" style="width:200px;display:inline" onblur="changeSe()" value="@Model.SeriousName" id="Seriousname" name="Seriousname" class="form-control" />
                             <select class="form-control dropdown-toggle" style="width:200px;display:inline" id="SID" name="SID" onchange="Se()">
                                 <option value="">请选择</option>
                                 @{
                                     IList<MC_Serious> serious = ViewBag.serious;
                                     foreach (var item in serious)
                                     {
-                                        <option value="@item.Name">@item.Name</option>
+                                        <option @(Model.SeriousName == item.Name ? "selected" : "") value="@item.Name">@item.Name</option>
                                     }
                                 }
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">地址</label>
-                        <div class="col-sm-10">
-                            <input type="text" value="@ViewBag.Url" placeholder="播放地址" id="Url" name="Url" class="form-control" />
-                            <img src="~/Content/Images/load_img.gif" id="loadimg" style="display:none" />
-                            <input type="file" onchange="ajaxFileUpload('upv', 'Url','')" name="upv" id="upv" />
-                        </div>
-                    </div>
+                    @{
+                        if (Model.ID > 0)
+                        {
+
+                        }
+                        else
+                        {
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">地址</label>
+                                <div class="col-sm-10">
+                                    <input type="text" value="@Model.Url" placeholder="播放地址" id="Url" name="Url" class="form-control" />
+                                    <img src="~/Content/Images/main-wait.gif" id="loadimg" style="display:none" />
+                                    <input type="file" onchange="ajaxFileUpload('upv', 'Url','')" name="upv" id="upv" />
+                                </div>
+                            </div>
+                        }
+                    }
+
                     <div class="form-group">
                         <label class="col-sm-2 control-label">时长</label>
                         <div class="col-sm-10">
-                            <input type="text" value="@ViewBag.VedioLong" id="VedioLong" name="VedioLong" class="form-control" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">排序</label>
-                        <div class="col-sm-10">
-                            <input type="number" value="@ViewBag.Sort" id="Sort" name="Sort" class="form-control" />
+                            <input type="text" value="@Model.VedioLong" id="VedioLong" name="VedioLong" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">价格</label>
                         <div class="col-sm-10">
-                            <input type="number" value="" id="Price" name="Price" class="form-control" />
+                            <input type="number" value="@Model.Price" id="Price" name="Price" class="form-control" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">封面</label>
                         <div class="col-sm-10">
                             @{
-                                string cover = ViewBag.Cover;
+                                string cover = Model.Cover;
                                 if (ViewBag.FromSite != "sys" && !string.IsNullOrEmpty(cover))
                                 {
                                     cover = ViewBag.fileurl + cover;
@@ -182,7 +198,7 @@
                                     <br />
                                 }
                             }
-                            <input type="hidden" value="@ViewBag.Cover" name="Cover" id="Cover" />
+                            <input type="hidden" value="@Model.Cover" name="Cover" id="Cover" />
                             <img src="@cover" style="max-width:400px;" id="erimg" />
                         </div>
                     </div>
@@ -198,7 +214,7 @@
 </form>
 <style>
     input, select, textarea {
-        max-width: 400px;
+        max-width: 500px;
     }
 </style>
 
@@ -245,7 +261,6 @@
         var bischecked = $('#chknet').is(':checked');
         if(bischecked)
         {
-            btndown
             $("#netimgurl").show();
             $("#btndown").show();
             $("#upmg").hide();
@@ -261,7 +276,7 @@
     function dodown()
     {
         var url = $("#netimgurl").val();
-        $.post("/admin/home/AjaxNetImg?url="+url, "", function (res) {
+        $.post("/FileUP/AjaxNetImg?url="+url, "", function (res) {
             if(res.indexOf("失败")>0)
             {
                 alert(res);
@@ -275,15 +290,33 @@
     }
 
     function dosub() {
-        if ($("#Name").val() == "") {
-            $("#Name").focus();
+        if ($("#txtName").val() == "") {
+            $("#txtName").focus();
             alert('名称不能为空');
             return;
         }
+        var tagbtns = $(".tagbtns  .btn-info");
+        var tags = "";
+        for (var i = 0; i < tagbtns.length; i++) {
+            if (i == 0) {
+                tags = $(tagbtns[i]).val();
+            }
+            else {
+                 tags +=","+ $(tagbtns[i]).val();
+            }
+        }
         var datamenu = $("#_ModalForm").serialize();
-        $.post("/admin/AMHVedio/AddVedioPost", datamenu, function (res) {
+        var ID = $("#ID").val();
+        var suburl = "/Vedios/Add";
+        if (ID > 0) {
+            suburl = "/Vedios/Edit";
+        }
+        $.post(suburl, datamenu + "&tags=" + tags, function (res) {
             alert(res);
-            location.reload();
+            if (res = "操作成功") {
+                 location.reload();
+            }
+           
         })
     }
 </script>

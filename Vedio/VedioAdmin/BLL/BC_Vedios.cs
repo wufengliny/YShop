@@ -18,5 +18,26 @@ namespace BLL
             PagedList<MC_Vedios> pl = new PagedList<MC_Vedios>((List<MC_Vedios>)list[1], pageIndex, pageSize, int.Parse(list[0].ToString()));
             return pl;
         }
+        public int Add(MC_Vedios model)
+        {
+            return dal.Add(model);
+        }
+        public MC_Vedios GetModelByID(int ID)
+        {
+            return dal.GetModelByID(ID);
+        }
+        public int GetMaxSort()
+        {
+            MC_Vedios model = dal.GetMaxSort();
+            if(model==null)
+            {
+                return 100000;
+            }
+            else
+            {
+                return model.Sort;
+            }
+        }
+
     }
 }
