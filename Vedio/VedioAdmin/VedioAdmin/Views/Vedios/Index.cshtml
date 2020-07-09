@@ -154,10 +154,10 @@
             }
         </div>
     </div>
-
-
+    
 @section scripts{
     <script type="text/javascript">
+       
         $(function () {
             $('#fromTime').focus(function () {
                 $('#fromTime').datetimepicker({ language: 'zh-cn', format: 'YYYY-MM-DD HH:mm:ss', defaultDate: '@(DateTime.Now.ToString("yyy-MM-dd 00:00:00"))' });
@@ -172,7 +172,7 @@
             $loadModal('/Vedios/Add?id=' + id);
         }
         function doplay(id) {
-              $loadModal('/Vedios/Play?ID=' + id);
+           $loadModal('/Vedios/Play?ID=' + id);
         }
 
 

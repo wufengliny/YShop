@@ -124,29 +124,9 @@
     <div id="modal-container"></div>
 
     <script type="text/javascript">
-        $(document).ready(function () {
-            //导航栏样式绑定
-            var type = parseInt($("#urlinfo").val()) - 1;
-            $('.nav-sidebar li:eq(' + type + ')').addClass("active");
-            //
-            $(window).scroll(function () {
-                $('#wait-bg').css({ top: $(document).scrollTop() });
-            });
-        });
-        function showWaitdiv() {
-            $("body").css("overflow", "hidden");
-            $('#wait-pic').css({ top: "50%", left: "45%" });
-            document.getElementById("wait-bg").style.display = "block";
-        }
-        function hideWaitdiv() {
-            $("body").css("overflow", "auto");
-            document.getElementById("wait-bg").style.display = 'none';
-        }
-   
         function ResetAdminPass() {
             $loadModal('/admin/ModPwd');
         }
-
     </script>
 
     @RenderSection("scripts", required: false)
