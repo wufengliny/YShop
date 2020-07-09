@@ -4,21 +4,19 @@
     Layout = null;
 }
 
-<div id="Edit-modal" class="modal fade" >
+<div id="Edit-modal" class="modal fade">
     <input type="hidden" value="" id="ddcc" />
     <div class="modal-dialog" style="width:700px;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
                 <h4 class="modal-title">@Model.Name</h4>
-                <div id="ppp"></div>
             </div>
-            <div class="modal-body" >
-                <div id="videock" >
+            <div class="modal-body">
+                <div id="videock">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
@@ -29,15 +27,11 @@
 <script>
     $('#Edit-modal').modal('show');
     $(function () {
-       var p = document.getElementById("ppp");
-        p.scrollTop = 500;
+       
     })
-
 </script>
 
 <script src="~/Content/Player/ckplayer/ckplayer.js?ss=5"></script>
-
-
 
 <script type="text/javascript">
     var videoObject = {
@@ -390,5 +384,6 @@
     }
     var zoom = 1;
 </script>
+
 
 
