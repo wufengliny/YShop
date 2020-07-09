@@ -143,6 +143,12 @@
     <Content Include="Content\LoginResource\jquery-1.10.2.min.js" />
     <Content Include="Content\LoginResource\orange-blue.css" />
     <Content Include="Content\LoginResource\validateCode.bmp" />
+    <Content Include="Content\Player\ckplayer\ckplayer.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.swf" />
+    <Content Include="Content\Player\ckplayer\ckplayer.xml" />
+    <Content Include="Content\Player\ckplayer\language.xml" />
+    <Content Include="Content\Player\ckplayer\style.xml" />
     <Content Include="css\bootstrap-responsiv.css" />
     <Content Include="css\css.css" />
     <Content Include="css\dataTables.bootstra.css" />
@@ -302,6 +308,8 @@
     <Content Include="Views\Vedios\SeriousAdd.cshtml" />
     <Content Include="Views\Vedios\SeriousEdit.cshtml" />
     <Content Include="Views\Vedios\Add.cshtml" />
+    <Content Include="Views\Vedios\VedioRecycle.cshtml" />
+    <Content Include="Views\Vedios\Play.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -124,7 +124,7 @@
                                 @item.Name
                             </td>
                             <td>
-                                @item.Cover
+                             <img src="@(ViewBag.picurl+item.Cover)" style="width:100px;" />   
                             </td>
                             <td>
                                 @(item.Category)
@@ -140,8 +140,9 @@
                                 @item.AddTime
                             </td>
                             <td>
+                                <a class="btn btn-info btn-xs" onclick="doplay(@item.ID)">播放</a>
                                 <a class="btn btn-success btn-xs" onclick="edit(@item.ID)">编辑</a>
-                                <a class="btn btn-info btn-xs" onclick="details(@item.ID)" title="详细">详细</a>
+                                <a class="btn btn-danger btn-xs" onclick="Dodelete(@item.ID)">删除</a>
                             </td>
                         </tr>
                     }
@@ -170,6 +171,10 @@
         function edit(id) {
             $loadModal('/Vedios/Add?id=' + id);
         }
+        function doplay(id) {
+              $loadModal('/Vedios/Play?ID=' + id);
+        }
+
 
         function changetag(tag) {
             var tagval = $("#Tag").val();
@@ -206,6 +211,19 @@
                 $("#btnshowhide").val("隐藏标签系列筛选");
                 $("#btnshowhide").attr("class","btn  btn-warning");
             }
+        }
+
+        function Dodelete(id)
+        {
+            if (confirm("确定要删除？")) {
+                $.post("/Vedios/Delete", "ID=" + id, function (res) {
+                 alert(res);
+                if (res == "操作成功") {
+                    location.reload();
+                }
+            })
+            }
+            
         }
     </script>
 }

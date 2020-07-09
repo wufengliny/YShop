@@ -137,5 +137,31 @@ namespace DAL
             string str = "select top 1 * from C_Vedios order by Sort Desc";
             return SQLHelper.ExecuteReaderObject<MC_Vedios>(CommandType.Text, str);
         }
+        /// <summary>
+        /// 软删除 或还原 进回收站
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public int UpdateEnable(int ID, int Enable)
+        {
+            string str = " update C_Vedios set Enable="+Enable+" where ID=@ID";
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
+        }
+        /// <summary>
+        /// 硬删除  无法恢复
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public int DeleteHard(int ID)
+        {
+            string str = " Delete from C_Vedios where Enable=0 and  ID=@ID";
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
+        }
+
+
     }
 }

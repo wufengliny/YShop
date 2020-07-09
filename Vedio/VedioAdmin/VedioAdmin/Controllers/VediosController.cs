@@ -14,8 +14,9 @@ namespace VedioAdmin.Controllers
     public class VediosController : BaseController
     {
         // GET: Vedios
+        #region 视频
         [Power("Vedios", ComEnum.OpenTypeEnum.Page, true)]
-        public ActionResult Index(string Name="",string Category="",string Tag="",int SeriousID=0,string fromTime="",string endTime="",int pi=1)
+        public ActionResult Index(string Name = "", string Category = "", string Tag = "", int SeriousID = 0, string fromTime = "", string endTime = "", int pi = 1)
         {
             string strWhere = " where  cv.Enable=1 ";
             if (!string.IsNullOrEmpty(Name))
@@ -34,31 +35,33 @@ namespace VedioAdmin.Controllers
             {
                 strWhere += " and cv.SeriousID=" + SeriousID;
             }
-            if(!string.IsNullOrEmpty(fromTime))
+            if (!string.IsNullOrEmpty(fromTime))
             {
-                strWhere += " and cv.AddTime>'"+fromTime+"'";
+                strWhere += " and cv.AddTime>'" + fromTime + "'";
             }
             if (!string.IsNullOrEmpty(endTime))
             {
                 strWhere += " and cv.AddTime<'" + endTime + "'";
             }
-            var list = new BC_Vedios().Pager(pi,20,strWhere, " [Sort] asc,AddTime desc ");
+            var list = new BC_Vedios().Pager(pi, 20, strWhere, " [Sort] asc,AddTime desc ");
             ViewBag.tags = new BC_Tags().List();
             ViewBag.serious = new BC_Serious().List();
+            ViewBag.picurl = new BS_Config().GetModelByKeyFromCache("picurl").Value;
             return View(list);
         }
 
         [HttpGet]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Dialog)]
-        public ActionResult Add(int ID=0)
+        public ActionResult Add(int ID = 0)
         {
 
             ViewBag.tags = new BC_Tags().List();
             ViewBag.serious = new BC_Serious().List();
             MC_Vedios model = new MC_Vedios();
-            if(ID>0)
+            if (ID > 0)
             {
                 model = new BC_Vedios().GetModelByID(ID);
+                ViewBag.picurl = new BS_Config().GetModelByKeyFromCache("picurl").Value;
             }
             else
             {
@@ -70,9 +73,9 @@ namespace VedioAdmin.Controllers
         }
         [HttpPost]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Add(string txtName,string CategoryA,string Url,string VedioLong="",decimal Price=0,string Cover="",string tags="", string Seriousname="")
+        public ActionResult Add(string txtName, string CategoryA, string Url, string VedioLong = "", decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "")
         {
-     
+
             MC_Vedios model = new MC_Vedios();
             model.Name = txtName;
             model.Tag = tags;
@@ -82,7 +85,7 @@ namespace VedioAdmin.Controllers
             model.Url = Url;
             model.Cover = Cover;
             model.Sort = new BC_Vedios().GetMaxSort(); //
-            if(Price<0)
+            if (Price < 0)
             {
                 Price = 0;
             }
@@ -94,7 +97,7 @@ namespace VedioAdmin.Controllers
             else
             {
                 var seriousModel = new BC_Serious().GetModelByName(Seriousname);
-                if(seriousModel!=null)
+                if (seriousModel != null)
                 {
                     model.SeriousID = seriousModel.ID;
                 }
@@ -120,8 +123,8 @@ namespace VedioAdmin.Controllers
             model.Memo = "";
             model.SinglePayDownLoadNum = 0;
             model.VIPDownNum = 0;
-            int res= new BC_Vedios().Add(model);
-            if(res>0)
+            int res = new BC_Vedios().Add(model);
+            if (res > 0)
             {
                 return Content("操作成功");
             }
@@ -134,7 +137,7 @@ namespace VedioAdmin.Controllers
 
         [HttpPost]
         [Power("VediosEdit", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Edit(string txtName,int ID, string CategoryA, decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "")
+        public ActionResult Edit(string txtName, int ID, string CategoryA, decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "")
         {
             MC_Vedios model = new MC_Vedios();
             model.Name = txtName;
@@ -175,11 +178,75 @@ namespace VedioAdmin.Controllers
         }
 
         [Power("VediosDelete", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Delete(string name)
+        public ActionResult Delete(int ID)
         {
-            return View();
+            int res = new BC_Vedios().UpdateEnable(ID, 0);
+            if (res > 0)
+            {
+                OperateLogAdd("删除视频ID:" + ID, false);
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("删除失败");
+            }
         }
 
+        /// <summary>
+        /// 回收站
+        /// </summary>
+        /// <returns></returns>
+        [Power("VediosRecycle", ComEnum.OpenTypeEnum.Page, true)]
+        public ActionResult VedioRecycle(int pi = 1)
+        {
+            string strWhere = " where  cv.Enable=0";
+            var list = new BC_Vedios().Pager(pi, 20, strWhere, " [Sort] asc,AddTime desc ");
+            return View(list);
+        }
+        [Power("VediosRecycleBack", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult RecycleBack(int ID)
+        {
+            int res = new BC_Vedios().UpdateEnable(ID, 1);
+            if (res > 0)
+            {
+                OperateLogAdd("还原视频ID:" + ID, false);
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("还原失败");
+            }
+        }
+        [Power("VediosRecycleDelete", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult RecycleDelete(int ID)
+        {
+            int res = new BC_Vedios().DeleteHard(ID);
+            //后期优化》 删除视频文件  封面图片  
+            if (res > 0)
+            {
+                OperateLogAdd("回收站删除视频ID:" + ID, false);
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("回收站删除视频失败");
+            }
+        }
+
+
+        /// <summary>
+        /// 视频播放
+        /// </summary>
+        /// <returns></returns>
+        [Power("VediosPlay", ComEnum.OpenTypeEnum.Page)]
+        public ActionResult Play(int ID)
+        {
+            MC_Vedios model = new BC_Vedios().GetModelByID(ID);
+            return View(model);
+        }
+
+
+        #endregion
 
 
         #region 系列

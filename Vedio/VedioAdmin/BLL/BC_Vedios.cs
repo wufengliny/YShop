@@ -30,6 +30,7 @@ namespace BLL
         {
             return dal.GetModelByID(ID);
         }
+      
         public int GetMaxSort()
         {
             MC_Vedios model = dal.GetMaxSort();
@@ -42,6 +43,27 @@ namespace BLL
                 return model.Sort;
             }
         }
+        /// <summary>
+        /// 软删除 或还原 进回收站
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public int UpdateEnable(int ID, int Enable)
+        {
+            return dal.UpdateEnable(ID,Enable);
+        }
+        /// <summary>
+        /// 硬删除  无法恢复
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public int DeleteHard(int ID)
+        {
+            return dal.DeleteHard(ID);
+        }
+
+
+
 
     }
 }

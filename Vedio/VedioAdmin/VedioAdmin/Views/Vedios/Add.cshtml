@@ -183,24 +183,13 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">封面</label>
                         <div class="col-sm-10">
-                            @{
-                                string cover = Model.Cover;
-                                if (ViewBag.FromSite != "sys" && !string.IsNullOrEmpty(cover))
-                                {
-                                    cover = ViewBag.fileurl + cover;
-                                }
-                                int id = UCommon.UUtils.GetQueryInt("id");
-                                if (id == 0 || ViewBag.FromSite == "sys")
-                                {
-                                    <input type="file" onchange="ajaxFileUpload('upmg', 'Cover', 'erimg')" name="upmg" id="upmg" />
-                                    <input type="text" style="display:none" placeholder="远程图片地址" value="" id="netimgurl" class="form-control" />
-                                    <input onchange="donetdow()" id="chknet" type="checkbox" /> <label for="chknet">从网络上下载图片</label>
-                                    <button type="button" style="display:none" id="btndown" onclick="dodown()" class="btn btn-primary">下载</button>
-                                    <br />
-                                }
-                            }
+                            <input type="file" onchange="ajaxFileUpload('upmg', 'Cover', 'erimg')" name="upmg" id="upmg" />
+                            <input type="text" style="display:none" placeholder="远程图片地址" value="" id="netimgurl" class="form-control" />
+                            <input onchange="donetdow()" id="chknet" type="checkbox" /> <label for="chknet">从网络上下载图片</label>
+                            <button type="button" style="display:none" id="btndown" onclick="dodown()" class="btn btn-primary">下载</button>
+                            <br />
                             <input type="hidden" value="@Model.Cover" name="Cover" id="Cover" />
-                            <img src="@cover" style="max-width:400px;" id="erimg" />
+                            <img src="@(ViewBag.picurl+Model.Cover)" style="max-width:400px;" id="erimg" />
                         </div>
                     </div>
                     <div class="modal-footer">
