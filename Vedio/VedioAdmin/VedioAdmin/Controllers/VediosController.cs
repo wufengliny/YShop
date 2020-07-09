@@ -70,7 +70,7 @@ namespace VedioAdmin.Controllers
         }
         [HttpPost]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Add(string txtName,string CategoryA,string Url,string VedioLong="",int Sort=100000,decimal Price=0,string Cover="",string tags="", string Seriousname="")
+        public ActionResult Add(string txtName,string CategoryA,string Url,string VedioLong="",decimal Price=0,string Cover="",string tags="", string Seriousname="")
         {
      
             MC_Vedios model = new MC_Vedios();
@@ -89,7 +89,6 @@ namespace VedioAdmin.Controllers
             model.Price = Price;
             if (string.IsNullOrEmpty(Seriousname))
             {
-                model.SeriousName = "";
                 model.SeriousID = 0;
             }
             else
@@ -97,12 +96,10 @@ namespace VedioAdmin.Controllers
                 var seriousModel = new BC_Serious().GetModelByName(Seriousname);
                 if(seriousModel!=null)
                 {
-                    model.SeriousName = Seriousname;
                     model.SeriousID = seriousModel.ID;
                 }
                 else
                 {
-                    model.SeriousName = "";
                     model.SeriousID = 0;
                 }
             }
@@ -137,9 +134,44 @@ namespace VedioAdmin.Controllers
 
         [HttpPost]
         [Power("VediosEdit", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Edit(string name)
+        public ActionResult Edit(string txtName,int ID, string CategoryA, decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "")
         {
-            return View();
+            MC_Vedios model = new MC_Vedios();
+            model.Name = txtName;
+            model.Category = CategoryA;
+            model.Cover = Cover;
+            model.Tag = tags;
+            if (Price < 0)
+            {
+                Price = 0;
+            }
+            model.Price = Price;
+            if (string.IsNullOrEmpty(Seriousname))
+            {
+                model.SeriousID = 0;
+            }
+            else
+            {
+                var seriousModel = new BC_Serious().GetModelByName(Seriousname);
+                if (seriousModel != null)
+                {
+                    model.SeriousID = seriousModel.ID;
+                }
+                else
+                {
+                    model.SeriousID = 0;
+                }
+            }
+            model.ID = ID;
+            int res = new BC_Vedios().Update(model);
+            if (res > 0)
+            {
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
         }
 
         [Power("VediosDelete", ComEnum.OpenTypeEnum.Ajax)]

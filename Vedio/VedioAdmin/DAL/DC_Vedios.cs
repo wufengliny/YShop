@@ -93,6 +93,37 @@ namespace DAL
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
 
+
+        public int Update(MC_Vedios model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE C_Vedios SET ");
+            strSql.Append("Name=@Name,");
+            strSql.Append("Cover=@Cover,");
+            strSql.Append("Tag=@Tag,");
+            strSql.Append("Category=@Category,");
+            strSql.Append("SeriousID=@SeriousID,");
+            strSql.Append("Price=@Price");
+            strSql.Append(" WHERE ID=@ID");
+            SqlParameter[] parameters = {
+                new SqlParameter("@ID", SqlDbType.Int,4),
+               new SqlParameter("@Name", SqlDbType.NVarChar,500),
+               new SqlParameter("@Cover", SqlDbType.NVarChar,500),
+               new SqlParameter("@Tag", SqlDbType.NVarChar,500),
+               new SqlParameter("@Category", SqlDbType.NVarChar,100),
+               new SqlParameter("@SeriousID", SqlDbType.Int,4),
+               new SqlParameter("@Price", SqlDbType.Decimal,9),
+               };
+            parameters[0].Value = model.ID;
+            parameters[1].Value = model.Name;
+            parameters[2].Value = model.Cover;
+            parameters[3].Value = model.Tag;
+            parameters[4].Value = model.Category;
+            parameters[5].Value = model.SeriousID;
+            parameters[6].Value = model.Price;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+        }
+
         public MC_Vedios GetModelByID(int ID)
         {
             string str = " select cv.*,cs.Name SeriousName from C_Vedios cv  ";

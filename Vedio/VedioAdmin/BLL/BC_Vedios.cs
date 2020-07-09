@@ -22,6 +22,10 @@ namespace BLL
         {
             return dal.Add(model);
         }
+        public int Update(MC_Vedios model)
+        {
+            return dal.Update(model);
+        }
         public MC_Vedios GetModelByID(int ID)
         {
             return dal.GetModelByID(ID);
