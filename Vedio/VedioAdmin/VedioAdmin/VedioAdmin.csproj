@@ -310,6 +310,7 @@
     <Content Include="Views\Vedios\Add.cshtml" />
     <Content Include="Views\Vedios\VedioRecycle.cshtml" />
     <Content Include="Views\Vedios\Play.cshtml" />
+    <Content Include="Views\Vedios\PriceSet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

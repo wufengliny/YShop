@@ -118,6 +118,11 @@ namespace Entity
         /// 
         /// </summary>
         public int FreeDownNum { get; set; }
+
+        /// <summary>
+        /// 0:不置顶 1：置顶
+        /// </summary>
+        public int IsTop { set; get; }
         #endregion Model
 
 

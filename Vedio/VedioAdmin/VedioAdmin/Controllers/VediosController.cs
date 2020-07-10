@@ -16,7 +16,7 @@ namespace VedioAdmin.Controllers
         // GET: Vedios
         #region 视频
         [Power("Vedios", ComEnum.OpenTypeEnum.Page, true)]
-        public ActionResult Index(string Name = "", string Category = "", string Tag = "", int SeriousID = 0, string fromTime = "", string endTime = "", int pi = 1)
+        public ActionResult Index(string Name = "", string Category = "", string Tag = "", int SeriousID = 0, string fromTime = "", string endTime = "",int Pricetype=0,int SortType=0, int pi = 1)
         {
             string strWhere = " where  cv.Enable=1 ";
             if (!string.IsNullOrEmpty(Name))
@@ -43,7 +43,49 @@ namespace VedioAdmin.Controllers
             {
                 strWhere += " and cv.AddTime<'" + endTime + "'";
             }
-            var list = new BC_Vedios().Pager(pi, 20, strWhere, " [Sort] asc,AddTime desc ");
+            if (Pricetype > 0)
+            {
+                if(Pricetype==1)
+                {
+                    strWhere += " and cv.Price=0";
+                }
+                else
+                {
+                    strWhere += " and cv.Price>0";
+                }
+            }
+            string SortStr = string.Empty;
+            switch(SortType)
+            {
+                case 0:
+                    SortStr = " [IsTop] Desc,[Sort] desc";
+                    break;
+                case 1:
+                    SortStr = " AddTime desc";
+                    break;
+                case 2:
+                    SortStr = " AddTime asc";
+                    break;
+                case 3:
+                    SortStr = " Price Desc";
+                    break;
+                case 4:
+                    SortStr = " Price asc";
+                    break;
+                case 5:
+                    SortStr = " Hits Desc";
+                    break;
+                case 6:
+                    SortStr = " Hits asc";
+                    break;
+                case 7:
+                    SortStr = " Likes desc";
+                    break;
+                case 8:
+                    SortStr = " Likes asc";
+                    break;
+            }
+            var list = new BC_Vedios().Pager(pi, 20, strWhere, SortStr);
             ViewBag.tags = new BC_Tags().List();
             ViewBag.serious = new BC_Serious().List();
             ViewBag.picurl = new BS_Config().GetModelByKeyFromCache("picurl").Value;
@@ -123,6 +165,7 @@ namespace VedioAdmin.Controllers
             model.Memo = "";
             model.SinglePayDownLoadNum = 0;
             model.VIPDownNum = 0;
+            model.IsTop=0;
             int res = new BC_Vedios().Add(model);
             if (res > 0)
             {
@@ -244,8 +287,53 @@ namespace VedioAdmin.Controllers
             MC_Vedios model = new BC_Vedios().GetModelByID(ID);
             return View(model);
         }
-
-
+        /// <summary>
+        /// 设置价格
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Power("VediosPriceSet", ComEnum.OpenTypeEnum.Dialog)]
+        public ActionResult PriceSet(int ID)
+        {
+            MC_Vedios model = new BC_Vedios().GetModelByID(ID);
+            return View(model);
+        }
+        [HttpPost]
+        [Power("VediosPriceSet", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult PriceSet(int ID,Decimal txtPrice=0)
+        {
+            if(txtPrice<0)
+            {
+                txtPrice = 0;
+            }
+            int res= new BC_Vedios().UpdatePrice(ID,txtPrice);
+            if (res > 0)
+            {
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
+        }
+        [Power("VediosSetTop", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult SetTop(int ID,int topval)
+        {
+            if(topval!=0)
+            {
+                topval = 1;
+            }
+            int res = new BC_Vedios().UpdateTop(ID, topval);
+            if (res > 0)
+            {
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
+            
+        }
         #endregion
 
 

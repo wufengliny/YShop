@@ -77,6 +77,28 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        价格
+                        <select name="Pricetype" id="Pricetype" class="form-control" style=" width:108px;">
+                            <option value="">请选择</option>
+                            <option @(Request.QueryString["Pricetype"] == "1" ? "selected=selected" : "") value="1">免费</option>
+                            <option @(Request.QueryString["Pricetype"] == "2" ? "selected=selected" : "") value="2">付费</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        排序
+                        <select name="SortType" id="SortType" class="form-control" style=" width:150px;">
+                            <option @(Request.QueryString["SortType"] == "7" ? "selected=selected" : "") value="0">前端排序</option>
+                            <option @(Request.QueryString["SortType"] == "1" ? "selected=selected" : "") value="1">添加时间：降序</option>
+                            <option @(Request.QueryString["SortType"] == "2" ? "selected=selected" : "") value="2">添加时间：升序</option>
+                            <option @(Request.QueryString["SortType"] == "3" ? "selected=selected" : "") value="3">价格：降序</option>
+                            <option @(Request.QueryString["SortType"] == "4" ? "selected=selected" : "") value="4">价格：升序</option>
+                            <option @(Request.QueryString["SortType"] == "5" ? "selected=selected" : "") value="5">访问量：降序</option>
+                            <option @(Request.QueryString["SortType"] == "6" ? "selected=selected" : "") value="6">访问量：升序</option>
+                            <option @(Request.QueryString["SortType"] == "7" ? "selected=selected" : "") value="7">收藏量：降序</option>
+                            <option @(Request.QueryString["SortType"] == "8" ? "selected=selected" : "") value="8">收藏量：升序</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-btn" title="搜索">
                                 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span></button>
@@ -142,6 +164,17 @@
                             <td>
                                 <a class="btn btn-info btn-xs" onclick="doplay(@item.ID)">播放</a>
                                 <a class="btn btn-success btn-xs" onclick="edit(@item.ID)">编辑</a>
+                                <a class="btn btn-warning btn-xs" onclick="setprice(@item.ID)">价格</a>
+                                @{
+                                    if (item.IsTop == 0)
+                                    {
+                                        <a class="btn btn-default btn-xs" onclick="setTop(@item.ID,1)">置顶</a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-info btn-xs" onclick="setTop(@item.ID,0)">取消置顶</a>
+                                    }
+                                }
                                 <a class="btn btn-danger btn-xs" onclick="Dodelete(@item.ID)">删除</a>
                             </td>
                         </tr>
@@ -174,7 +207,9 @@
         function doplay(id) {
            $loadModal('/Vedios/Play?ID=' + id);
         }
-
+        function setprice(id) {
+           $loadModal('/Vedios/PriceSet?ID=' + id);
+        }
 
         function changetag(tag) {
             var tagval = $("#Tag").val();
@@ -224,6 +259,16 @@
             })
             }
             
+        }
+        function setTop(id, val) {
+            $.post("/Vedios/SetTop", "ID=" + id + "&topval=" + val, function (res) {
+                if (res == "操作成功") {
+                    location.reload();
+                }
+                else {
+                    alert(res);
+                }
+            })
         }
     </script>
 }

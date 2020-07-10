@@ -61,8 +61,14 @@ namespace BLL
         {
             return dal.DeleteHard(ID);
         }
-
-
+        public int UpdatePrice(int ID, decimal price)
+        {
+            return dal.UpdatePrice(ID,price);
+        }
+        public int UpdateTop(int ID, int istop)
+        {
+            return dal.UpdateTop(ID,istop);
+        }
 
 
     }

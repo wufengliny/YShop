@@ -13,7 +13,7 @@ namespace DAL
 {
     public class DC_Vedios
     {
-        string Fiels = "ID,Name,Cover,Tag,Category,SeriousID,Price,PreUrl,Url,VedioLong,Hits,Likes,Goods,Introduce,AddTime,Enable,Actor,Sort,FromVedioUrl,FromPageUrl,FromSite,FromCoverUrl,Memo,FreePartUrl,SinglePayDownLoadNum,VIPDownNum,FreeDownNum";
+        string Fiels = "ID,Name,Cover,Tag,Category,SeriousID,Price,PreUrl,Url,VedioLong,Hits,Likes,Goods,Introduce,AddTime,Enable,Actor,Sort,FromVedioUrl,FromPageUrl,FromSite,FromCoverUrl,Memo,FreePartUrl,SinglePayDownLoadNum,VIPDownNum,FreeDownNum,IsTop";
         public List<object> Pager(int pageIndex,int pageSize,string strWhere,string strOrder)
         {
             string str = " select cv.*,cs.Name SeriousName from C_Vedios cv  ";
@@ -34,9 +34,9 @@ namespace DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("INSERT INTO C_Vedios(");
-            strSql.Append("Name,Cover,Tag,Category,SeriousID,Price,PreUrl,Url,VedioLong,Hits,Likes,Goods,Introduce,AddTime,Enable,Actor,Sort,FromVedioUrl,FromPageUrl,FromSite,FromCoverUrl,Memo,FreePartUrl,SinglePayDownLoadNum,VIPDownNum,FreeDownNum)");
+            strSql.Append("Name,Cover,Tag,Category,SeriousID,Price,PreUrl,Url,VedioLong,Hits,Likes,Goods,Introduce,AddTime,Enable,Actor,Sort,FromVedioUrl,FromPageUrl,FromSite,FromCoverUrl,Memo,FreePartUrl,SinglePayDownLoadNum,VIPDownNum,FreeDownNum,IsTop)");
             strSql.Append(" VALUES (");
-            strSql.Append("@Name,@Cover,@Tag,@Category,@SeriousID,@Price,@PreUrl,@Url,@VedioLong,@Hits,@Likes,@Goods,@Introduce,@AddTime,@Enable,@Actor,@Sort,@FromVedioUrl,@FromPageUrl,@FromSite,@FromCoverUrl,@Memo,@FreePartUrl,@SinglePayDownLoadNum,@VIPDownNum,@FreeDownNum)");
+            strSql.Append("@Name,@Cover,@Tag,@Category,@SeriousID,@Price,@PreUrl,@Url,@VedioLong,@Hits,@Likes,@Goods,@Introduce,@AddTime,@Enable,@Actor,@Sort,@FromVedioUrl,@FromPageUrl,@FromSite,@FromCoverUrl,@Memo,@FreePartUrl,@SinglePayDownLoadNum,@VIPDownNum,@FreeDownNum.@IsTop)");
             SqlParameter[] parameters = {
                     new SqlParameter("@Name", SqlDbType.NVarChar,500),
                     new SqlParameter("@Cover", SqlDbType.NVarChar,500),
@@ -63,7 +63,9 @@ namespace DAL
                     new SqlParameter("@FreePartUrl", SqlDbType.NVarChar,500),
                     new SqlParameter("@SinglePayDownLoadNum", SqlDbType.Int,4),
                     new SqlParameter("@VIPDownNum", SqlDbType.Int,4),
-                    new SqlParameter("@FreeDownNum", SqlDbType.Int,4)};
+                    new SqlParameter("@FreeDownNum", SqlDbType.Int,4),
+                    new SqlParameter("@IsTop", SqlDbType.Int,4)
+            };
             parameters[0].Value = model.Name;
             parameters[1].Value = model.Cover;
             parameters[2].Value = model.Tag;
@@ -90,6 +92,7 @@ namespace DAL
             parameters[23].Value = model.SinglePayDownLoadNum;
             parameters[24].Value = model.VIPDownNum;
             parameters[25].Value = model.FreeDownNum;
+            parameters[26].Value = model.IsTop;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
 
@@ -123,6 +126,11 @@ namespace DAL
             parameters[6].Value = model.Price;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
+
+       
+
+
+
 
         public MC_Vedios GetModelByID(int ID)
         {
@@ -161,7 +169,34 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
         }
-
+        public int UpdatePrice(int ID, decimal price)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE C_Vedios SET ");
+            strSql.Append("Price=@Price");
+            strSql.Append(" WHERE ID=@ID");
+            SqlParameter[] parameters = {
+                new SqlParameter("@ID", SqlDbType.Int,4),
+               new SqlParameter("@Price", SqlDbType.Decimal,9),
+               };
+            parameters[0].Value = ID;
+            parameters[1].Value = price;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+        }
+        public int UpdateTop(int ID, int  istop)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE C_Vedios SET ");
+            strSql.Append("IsTop=@IsTop");
+            strSql.Append(" WHERE ID=@ID");
+            SqlParameter[] parameters = {
+                new SqlParameter("@ID", SqlDbType.Int,4),
+               new SqlParameter("@IsTop", SqlDbType.Int,4),
+               };
+            parameters[0].Value = ID;
+            parameters[1].Value = istop;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+        }
 
     }
 }

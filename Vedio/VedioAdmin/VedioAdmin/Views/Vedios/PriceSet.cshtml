@@ -1,0 +1,47 @@
+﻿@model MC_Vedios
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+<form action="" method="post" class="form-horizontal" id="_ModalForm">
+    <input type="hidden" name="ID" value="@Model.ID" />
+    <div id="Edit-modal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title">配置价格</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="error-panel"></div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">价格</label>
+                        <div class="col-sm-9">
+                            <input type="number" value="@Model.Price" id="txtPrice" name="txtPrice" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" onclick="dosub()" class="btn btn-primary">提交</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+    </div>
+</form>
+
+
+
+<script type="text/javascript">
+    $('#Edit-modal').modal('show');
+    function dosub() {
+        var datamenu = $("#_ModalForm").serialize();
+        $.post("/Vedios/PriceSet", datamenu, function (res) {
+            alert(res);
+            if (res == "操作成功") {
+                 location.reload();
+            }
+           
+        })
+    }
+</script>
