@@ -247,6 +247,7 @@
     <Compile Include="Controllers\Power\LogController.cs" />
     <Compile Include="Controllers\Power\MenuController.cs" />
     <Compile Include="Controllers\Power\PowerController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VediosController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\IsAuditorFilter.cs" />
@@ -311,6 +312,10 @@
     <Content Include="Views\Vedios\VedioRecycle.cshtml" />
     <Content Include="Views\Vedios\Play.cshtml" />
     <Content Include="Views\Vedios\PriceSet.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Add.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\VIPLoad.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

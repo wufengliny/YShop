@@ -47,6 +47,7 @@
     <Compile Include="DC_Serious.cs" />
     <Compile Include="DC_Tags.cs" />
     <Compile Include="DC_Vedios.cs" />
+    <Compile Include="DS_User.cs" />
     <Compile Include="Power\DS_Admin.cs" />
     <Compile Include="Power\DS_AdminGroup.cs" />
     <Compile Include="Power\DS_Config.cs" />
