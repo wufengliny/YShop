@@ -92,6 +92,10 @@ namespace VedioAdmin.Controllers
             return View(list);
         }
 
+
+
+
+
         [HttpGet]
         [Power("VediosAdd", ComEnum.OpenTypeEnum.Dialog)]
         public ActionResult Add(int ID = 0)

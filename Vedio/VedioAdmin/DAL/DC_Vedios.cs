@@ -36,7 +36,7 @@ namespace DAL
             strSql.Append("INSERT INTO C_Vedios(");
             strSql.Append("Name,Cover,Tag,Category,SeriousID,Price,PreUrl,Url,VedioLong,Hits,Likes,Goods,Introduce,AddTime,Enable,Actor,Sort,FromVedioUrl,FromPageUrl,FromSite,FromCoverUrl,Memo,FreePartUrl,SinglePayDownLoadNum,VIPDownNum,FreeDownNum,IsTop)");
             strSql.Append(" VALUES (");
-            strSql.Append("@Name,@Cover,@Tag,@Category,@SeriousID,@Price,@PreUrl,@Url,@VedioLong,@Hits,@Likes,@Goods,@Introduce,@AddTime,@Enable,@Actor,@Sort,@FromVedioUrl,@FromPageUrl,@FromSite,@FromCoverUrl,@Memo,@FreePartUrl,@SinglePayDownLoadNum,@VIPDownNum,@FreeDownNum.@IsTop)");
+            strSql.Append("@Name,@Cover,@Tag,@Category,@SeriousID,@Price,@PreUrl,@Url,@VedioLong,@Hits,@Likes,@Goods,@Introduce,@AddTime,@Enable,@Actor,@Sort,@FromVedioUrl,@FromPageUrl,@FromSite,@FromCoverUrl,@Memo,@FreePartUrl,@SinglePayDownLoadNum,@VIPDownNum,@FreeDownNum,@IsTop)");
             SqlParameter[] parameters = {
                     new SqlParameter("@Name", SqlDbType.NVarChar,500),
                     new SqlParameter("@Cover", SqlDbType.NVarChar,500),
@@ -140,6 +140,14 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteReaderObject<MC_Vedios>(CommandType.Text, str, param);
         }
+        public MC_Vedios GetModelByUrl(string Url)
+        {
+            string str = " select * from C_Vedios where Url=@Url ";
+            SqlParameter param = new SqlParameter("@Url", SqlDbType.NVarChar, 500);
+            param.Value = Url;
+            return SQLHelper.ExecuteReaderObject<MC_Vedios>(CommandType.Text, str, param);
+        }
+
         public MC_Vedios GetMaxSort()
         {
             string str = "select top 1 * from C_Vedios order by Sort Desc";

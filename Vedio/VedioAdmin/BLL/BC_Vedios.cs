@@ -30,7 +30,10 @@ namespace BLL
         {
             return dal.GetModelByID(ID);
         }
-      
+        public MC_Vedios GetModelByUrl(string Url)
+        {
+            return dal.GetModelByUrl(Url);
+        }
         public int GetMaxSort()
         {
             MC_Vedios model = dal.GetMaxSort();
