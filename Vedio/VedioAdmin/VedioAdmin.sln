@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VedioCollect", "VedioCollec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{298446ED-EDD3-4D39-B556-3C090BDF22DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMaker", "CodeMaker\CodeMaker.csproj", "{87E6D9F0-AAF0-471C-B734-CAB453A11291}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{298446ED-EDD3-4D39-B556-3C090BDF22DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{298446ED-EDD3-4D39-B556-3C090BDF22DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{298446ED-EDD3-4D39-B556-3C090BDF22DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E6D9F0-AAF0-471C-B734-CAB453A11291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E6D9F0-AAF0-471C-B734-CAB453A11291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E6D9F0-AAF0-471C-B734-CAB453A11291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E6D9F0-AAF0-471C-B734-CAB453A11291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
