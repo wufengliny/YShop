@@ -1,0 +1,39 @@
+USE [maxlaw]
+GO
+/****** 对象:  StoredProcedure [dbo].[GetList]    脚本日期: 12/10/2012 13:53:33 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create PROCEDURE  [dbo].[GetList]
+@top int,---------前几条
+@fldName  nvarchar(4000) = '*'  ,  ----要显示的字段列表
+@tblName nvarchar(1000),        ----要显示的表或多个表的连接，必须参数
+@strWhere  nvarchar(4000) = null ,   ----查询条件,不需where
+@fldSort  nvarchar(4000) = null   ----排序字段列表或条件
+as
+
+Declare @sqlTmp nvarchar(4000)        ----存放动态生成的SQL语句
+
+set @sqlTmp = 'select '
+
+if @top>0 
+begin
+	set @sqlTmp=@sqlTmp+' top '+str(@top)
+end 
+
+	set @sqlTmp=@sqlTmp+@fldName+' from '+@tblName
+
+if @strWhere<>''
+begin
+	set @sqlTmp=@sqlTmp+' where '+@strWhere
+end
+
+if @fldSort <>''
+begin
+	set @sqlTmp=@sqlTmp+' order by '+@fldSort
+end
+
+
+exec  sp_executesql @sqlTmp
+

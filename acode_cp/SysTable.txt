@@ -1,0 +1,50 @@
+USE [maxlaw]
+GO
+/****** 对象:  StoredProcedure [dbo].[SysTable]    脚本日期: 12/10/2014 13:53:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[SysTable] 
+@tablename varchar(100)
+as
+
+
+
+SELECT 
+(case when a.colorder=1 then d.name else '' end) N'表名', 
+a.colorder N'字段序号', 
+a.name N'column_name', 
+(case when COLUMNPROPERTY( a.id,a.name,'IsIdentity')=1 then '√'else '' end) N'标识', 
+(case when (SELECT count(*) 
+FROM sysobjects 
+WHERE (name in 
+(SELECT name 
+FROM sysindexes 
+WHERE (id = a.id) AND (indid in 
+(SELECT indid 
+FROM sysindexkeys 
+WHERE (id = a.id) AND (colid in 
+(SELECT colid 
+FROM syscolumns 
+WHERE (id = a.id) AND (name = a.name))))))) AND 
+(xtype = 'PK'))>0 then '√' else '' end) N'主键', 
+b.name N'data_type', 
+a.length N'占用字节数', 
+COLUMNPROPERTY(a.id,a.name,'PRECISION') as N'长度', 
+isnull(COLUMNPROPERTY(a.id,a.name,'Scale'),0) as N'小数位数', 
+(case when a.isnullable=1 then '√'else '' end) N'允许空', 
+isnull(e.text,'') N'默认值',
+isnull(g.[value],'') AS N'description' 
+--into ##tx 
+
+FROM syscolumns a left join systypes b 
+on a.xtype=b.xusertype 
+inner join sysobjects d 
+on a.id=d.id and d.xtype='U' and d.name<>'dtproperties' and d.name=@tablename
+left join syscomments e 
+on a.cdefault=e.id 
+left join sys.extended_properties   g 
+on a.id=g.major_id AND a.colid = g.minor_id 
+order by object_name(a.id),a.colorder 
