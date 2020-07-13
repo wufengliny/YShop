@@ -1,0 +1,2117 @@
+@charset "UTF-8";
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #ccc; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc; }
+
+::-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #ccc; }
+
+.orangeColor {
+  color: #ff9100; }
+
+             /*
+* 首页
+*/
+.kzindexBanner .swiper-slide,
+.kzACDBanner-container .swiper-slide {
+  height: 400px; }
+  .kzindexBanner .swiper-slide a,
+  .kzACDBanner-container .swiper-slide a {
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; }
+.kzindexBanner .swiper-pagination-bullet-active,
+.kzACDBanner-container .swiper-pagination-bullet-active {
+  background-color: #3b9ff2; }
+.kzindexBanner .swiper-pagination-bullets,
+.kzACDBanner-container .swiper-pagination-bullets {
+  bottom: 60px; }
+@media only screen and (max-width: 960px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 300px; } }
+@media only screen and (max-width: 767px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 250px; } }
+@media only screen and (max-width: 476px) {
+  .kzindexBanner .swiper-slide,
+  .kzACDBanner-container .swiper-slide {
+    height: 194px; }
+  .kzindexBanner .swiper-pagination-bullets,
+  .kzACDBanner-container .swiper-pagination-bullets {
+    bottom: 10px; } }
+
+.kzindexQL .kzinnerQL {
+  position: relative;
+  margin-top: -50px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); }
+  .kzindexQL .kzinnerQL li {
+    float: left;
+    width: 20%;
+    height: 120px;
+    padding: 20px 0 10px;
+    box-sizing: border-box;
+    text-align: center; }
+    .kzindexQL .kzinnerQL li a {
+      display: block;
+      color: #666;
+      font-size: 16px; }
+      .kzindexQL .kzinnerQL li a:before {
+        content: "";
+        display: block;
+        margin: 0 auto 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #ffa726 url(../images/public/kzicon.png) no-repeat;
+        background-position: -51px -67px;
+        background-size: 1650%; }
+      .kzindexQL .kzinnerQL li a:hover {
+        color: #333; }
+  .kzindexQL .kzinnerQL .kzhourRoom a:before {
+    background-color: #9ccc65;
+    background-position: -50px -137px; }
+  .kzindexQL .kzinnerQL .kzattractions a:before {
+    background-color: #26c6da;
+    background-position: -48px -192px; }
+  .kzindexQL .kzinnerQL .kzPT a:before {
+    background-color: #f06292;
+    background-position: -49px -252px; }
+  .kzindexQL .kzinnerQL .kzentertainment a:before {
+    background-color: #ba68c8;
+    background-position: -49px -307px; }
+@media only screen and (max-width: 476px) {
+  .kzindexQL .container {
+    width: 100%; }
+  .kzindexQL .kzinnerQL {
+    margin-top: 0; } }
+
+.kzlistWrap {
+  position: relative; }
+  .kzlistWrap .kztitleBox {
+    height: 48px;
+    line-height: 48px;
+    overflow: hidden;
+    color: #fff;
+    background-color: #257dff; }
+    .kzlistWrap .kztitleBox h5 {
+      font-size: 16px; }
+      .kzlistWrap .kztitleBox h5:before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: 0 3px 0 10px;
+        vertical-align: middle;
+        background: url(../images/public/kzicon.png) no-repeat;
+        background-position: -44px -14px; }
+      .kzlistWrap .kztitleBox h5 span {
+        font-size: 12px;
+        opacity: .8; }
+    .kzlistWrap .kztitleBox .kzmore {
+      margin-top: -50px;
+      float: right;
+      color: #fff; }
+      .kzlistWrap .kztitleBox .kzmore:after {
+        content: "";
+        display: inline-block;
+        margin: 0 20px 0 5px;
+        border: 5px solid transparent;
+        border-left-color: #fff; }
+  .kzlistWrap .kzactivitiesList {
+    position: relative;
+    z-index: 103;
+    padding-right: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fff; }
+    .kzlistWrap .kzactivitiesList .kzlistLi {
+      display: block;
+      margin: 0 0 20px 20px;
+      box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2); }
+      .kzlistWrap .kzactivitiesList .kzlistLi:hover {
+        box-shadow: 0 1px 10px 0px rgba(0, 0, 0, 0.3); }
+    .kzlistWrap .kzactivitiesList .kzimage img {
+      width: 100%; }
+    .kzlistWrap .kzactivitiesList .kzbrief {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      padding: 10px;
+      max-height: 82px;
+      box-sizing: border-box;
+      overflow: hidden;
+      color: #333;
+      line-height: 24px;
+      transition: all .3s; }
+    .kzlistWrap .kzactivitiesList .kzlistLi:hover .kzbrief {
+      color: #257dff; }
+    .kzlistWrap .kzactivitiesList .kzprice {
+      margin: 6px 10px;
+      padding-bottom: 10px;
+      color: #333; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzcurrentPrice {
+        font-size: 16px;
+        color: #ff8600; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzoldPrice {
+        margin: 0 3px 0 6px;
+        font-size: 14px;
+        color: #999;
+        text-decoration: line-through; }
+      .kzlistWrap .kzactivitiesList .kzprice .kzdiscuz {
+        float: right;
+        color: #ff8700; }
+  @media only screen and (max-width: 476px) {
+    .kzlistWrap .kzactivitiesList .kzprice .kzoldPrice {
+      display: block; } }
+
+.kzlistNewWrap {
+  margin-top: -50px; }
+  .kzlistNewWrap .kzprice {
+    position: relative; }
+  .kzlistNewWrap .kzLeft {
+    margin-right: 120px; }
+  .kzlistNewWrap .kzRight {
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right; }
+  .kzlistNewWrap .kzDFSLabel {
+    margin: 1px 0; }
+  .kzlistNewWrap .kzDFSTime {
+    padding: 0 8px;
+    color: #fff;
+    background: #fe2639; }
+  .kzlistNewWrap .kzoldPrice {
+    display: block;
+    margin: 0 !important;
+    text-decoration: none !important; }
+  @media only screen and (min-width: 767px) and (max-width: 1130px) {
+    .kzlistNewWrap .kzLeft {
+      margin-right: 0; }
+    .kzlistNewWrap .kzRight {
+      position: relative;
+      text-align: left; } }
+  @media only screen and (max-width: 600px) {
+    .kzlistNewWrap .kzLeft {
+      margin-right: 0; }
+    .kzlistNewWrap .kzRight {
+      position: relative;
+      text-align: left; } }
+  @media only screen and (max-width: 478px) {
+    .kzlistNewWrap {
+      margin-top: 0; } }
+
+.kzlistrestaurantWrap .kztitleBox {
+  background-color: #ffa726; }
+  .kzlistrestaurantWrap .kztitleBox h5:before {
+    background-position: -44px -57px; }
+
+.kzlistHourroomWrap .kztitleBox {
+  background-color: #9ccc65; }
+  .kzlistHourroomWrap .kztitleBox h5:before {
+    background-position: -44px -107px; }
+
+.kzlistScenicspotWrap .kztitleBox {
+  background-color: #26c6da; }
+  .kzlistScenicspotWrap .kztitleBox h5:before {
+    background-position: -44px -148px; }
+
+.kzlistPCtravelWrap .kztitleBox {
+  background-color: #f06292; }
+  .kzlistPCtravelWrap .kztitleBox h5:before {
+    background-position: -44px -192px; }
+
+.kzlistentertainmentWrap .kztitleBox {
+  background-color: #ba68c8; }
+  .kzlistentertainmentWrap .kztitleBox h5:before {
+    background-position: -44px -233px; }
+
+.kzlistABWrap .kztitleBox h5:before {
+  background-position: -44px -274px; }
+.kzlistABWrap .kzabBreifBox {
+  margin: 20px 20px; }
+.kzlistABWrap .kzimage {
+  padding: 0 20px 20px; }
+.kzlistABWrap .kzbriefTitle {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #666; }
+.kzlistABWrap .kzbriefContent {
+  text-indent: 24px;
+  line-height: 23px;
+  color: #999;
+  font-size: 12px; }
+@media only screen and (max-width: 767px) {
+  .kzlistABWrap .kzactivitiesList {
+    padding-right: 0; } }
+
+.kzlistNewsWrap .kztitleBox h5:before {
+  background-position: -44px -314px; }
+.kzlistNewsWrap .kzactivitiesList .kzlistLi:hover .kzbrief:after {
+  width: 100%; }
+.kzlistNewsWrap .kzactivitiesList .kzbrief {
+  position: relative;
+  padding: 10px;
+  line-height: 23px;
+  color: #999; }
+  .kzlistNewsWrap .kzactivitiesList .kzbrief:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #257dff;
+    transition: all .3s; }
+.kzlistNewsWrap .kzliTitle {
+  padding: 10px;
+  font-size: 16px;
+  line-height: 24px;
+  color: #666; }
+.kzlistNewsWrap .kztime {
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 12px; }
+@media only screen and (max-width: 767px) {
+  .kzlistNewsWrap .kzbrief,
+  .kzlistNewsWrap .kztime {
+    display: none !important; } }
+
+.kzcooperation {
+  margin: 20px 0; }
+
+.kzcooperation-container {
+  padding: 0 30px;
+  box-sizing: border-box;
+  background-color: #fff; }
+  .kzcooperation-container a {
+    display: block;
+    outline: 1px solid #efefef; }
+    .kzcooperation-container a img {
+      width: 100%; }
+  .kzcooperation-container .swiper-button-next {
+    right: 3px; }
+  .kzcooperation-container .swiper-button-prev {
+    left: 3px; }
+  .kzcooperation-container .swiper-button-next,
+  .kzcooperation-container .swiper-button-prev {
+    background-size: 16px 44px; }
+
+.kzcontentTitle {
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  color: #fff;
+  background-color: #257dff; }
+  .kzcontentTitle h5 {
+    font-size: 16px; }
+    .kzcontentTitle h5 span {
+      font-size: 12px;
+      opacity: .8; }
+    .kzcontentTitle h5:before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin: 0 3px 0 10px;
+      vertical-align: middle;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -44px -274px; }
+
+.kzcontentWrap {
+  margin: 20px 0; }
+  .kzcontentWrap .kzcontentPanel {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+    .kzcontentWrap .kzcontentPanel h6 {
+      line-height: 50px;
+      border-bottom: 1px dotted #ddd;
+      font-size: 16px;
+      color: #333; }
+    .kzcontentWrap .kzcontentPanel .kzcontentBox {
+      padding: 20px;
+      line-height: 24px;
+      font-size: 12px;
+      color: #999;
+      box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2); }
+      .kzcontentWrap .kzcontentPanel .kzcontentBox .kzimage {
+        display: block;
+        min-height: 1px;
+        box-sizing: border-box; }
+        .kzcontentWrap .kzcontentPanel .kzcontentBox .kzimage img {
+          display: block; }
+
+.kzcontentABUsWrap .kzcontentPanel .kzcontentBox {
+  box-shadow: none;
+  text-indent: 24px; }
+  .kzcontentABUsWrap .kzcontentPanel .kzcontentBox .kzimage {
+    padding-right: 20px;
+    margin-bottom: 20px; }
+@media only screen and (max-width: 767px) {
+  .kzcontentABUsWrap .kzcontentPanel .kzcontentBox .kzimage {
+    padding-right: 0; } }
+
+.kzcontentCPWrap .kzcontentBox a {
+  display: block;
+  outline: 1px solid #efefef; }
+
+.kzcontentNewsWrap .kzcontentTitle h5:before {
+  background-position: -44px -314px; }
+.kzcontentNewsWrap .kzcontentPanel {
+  padding: 0;
+  overflow: hidden; }
+.kzcontentNewsWrap .kzcontentBox {
+  display: block; }
+  .kzcontentNewsWrap .kzcontentBox .kzimage img {
+    width: 100%; }
+  .kzcontentNewsWrap .kzcontentBox .kzcontent {
+    margin-left: 20px; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent h7 {
+      position: relative;
+      font-size: 16px;
+      color: #767676;
+      transition: all .3s; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent h7:before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: -10px;
+        display: inline-block;
+        margin: 0 20px 0 5px;
+        border: 5px solid transparent;
+        border-left-color: transparent;
+        transition: all .3s; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzcount {
+      float: right;
+      font-size: 12px; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzcount span {
+        color: #f00; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzpublishTime {
+      margin-bottom: 15px;
+      font-size: 12px;
+      color: #ccc; }
+    .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif {
+      position: relative;
+      color: #999; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif:after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        transition: all .3s;
+        background-color: #257dff; }
+    @media only screen and (max-width: 767px) {
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzbreif {
+        display: none; }
+      .kzcontentNewsWrap .kzcontentBox .kzcontent .kzpublishTime {
+        margin-bottom: 0; } }
+  .kzcontentNewsWrap .kzcontentBox:hover .kzcontent h7 {
+    padding-left: 15px;
+    color: #257dff; }
+    .kzcontentNewsWrap .kzcontentBox:hover .kzcontent h7:before {
+      left: 0;
+      border-left-color: #257dff; }
+  .kzcontentNewsWrap .kzcontentBox:hover .kzcontent .kzbreif:after {
+    width: 100%; }
+@media only screen and (max-width: 467px) {
+  .kzcontentNewsWrap .kzcontentBox .kzimage {
+    margin-bottom: 15px; }
+  .kzcontentNewsWrap .kzcontentBox .kzcontent {
+    margin-left: 0; } }
+
+.kzmoreBox {
+  margin: 20px 0 40px;
+  text-align: center; }
+  .kzmoreBox .kzmore {
+    display: inline-block;
+    padding: 10px 80px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    color: #999;
+    transition: all .3s; }
+    .kzmoreBox .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+.kzmoreBox2 {
+  margin: 20px 0 40px;
+  text-align: center; }
+  .kzmoreBox2 .kzmore {
+    display: block;
+    padding: 10px 80px;
+    font-size: 12px;
+    color: #999;
+    background-color: #fff;
+    transition: all .3s; }
+    .kzmoreBox2 .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+             /*
+* 新闻详情
+*/
+.kzcontentNewsDWrap .kznewsTitle {
+  margin: 24px 0;
+  font-size: 18px;
+  color: #666;
+  text-align: center; }
+.kzcontentNewsDWrap .kznewsDinfBox {
+  margin: 20px 0;
+  border-top: 1px dotted #ddd;
+  border-bottom: 1px dotted #ddd;
+  line-height: 32px;
+  font-size: 12px;
+  color: #999;
+  text-align: center; }
+  .kzcontentNewsDWrap .kznewsDinfBox span {
+    display: inline-block; }
+.kzcontentNewsDWrap .kznewsDContentBox {
+  padding: 10px; }
+.kzcontentNewsDWrap .kznewsBtn {
+  padding: 20px 0;
+  overflow: hidden; }
+  .kzcontentNewsDWrap .kznewsBtn a {
+    display: inline-block;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #257dff; }
+    .kzcontentNewsDWrap .kznewsBtn a:hover {
+      background-color: #1f5fbe; }
+  .kzcontentNewsDWrap .kznewsBtn .kznext {
+    float: right; }
+
+.kzACQL .kzinnerQL {
+  margin: 20px 0; }
+
+.kzACSortOneWrap {
+  margin: 20px 0; }
+
+.kzBox {
+  margin-bottom: 1px;
+  font-size: 12px;
+  background-color: #fff; }
+  .kzBox .kzACLabel {
+    display: inline-block;
+    width: 94px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    background-color: #257dff; }
+  .kzBox .kzList {
+    display: inline-block; }
+    .kzBox .kzList li {
+      display: inline-block;
+      line-height: 40px; }
+      .kzBox .kzList li a {
+        display: block;
+        padding: 0 15px;
+        color: #666; }
+      .kzBox .kzList li.active a, .kzBox .kzList li:hover a {
+        color: #ff9100; }
+
+             /*
+* 活动详情页
+*/
+.kzcurrentNavBox {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #666; }
+  .kzcurrentNavBox .kzcurrentNavList {
+    display: inline-block; }
+    .kzcurrentNavBox .kzcurrentNavList a {
+      color: #666; }
+      .kzcurrentNavBox .kzcurrentNavList a:not(:last-child) {
+        color: #ff9100; }
+        .kzcurrentNavBox .kzcurrentNavList a:not(:last-child):after {
+          content: ">";
+          margin: 0 3px; }
+      .kzcurrentNavBox .kzcurrentNavList a:hover {
+        color: #ff9100; }
+
+.kzACHeaderWrap {
+  margin: 10px 0 14px; }
+  .kzACHeaderWrap .kzACHeaderInner {
+    padding: 14px 20px 24px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzACHeaderWrap .kzACDBanner-container {
+    margin-right: 28px; }
+    .kzACHeaderWrap .kzACDBanner-container .swiper-slide {
+      height: auto; }
+    .kzACHeaderWrap .kzACDBanner-container .swiper-pagination-bullets {
+      bottom: 14px; }
+    .kzACHeaderWrap .kzACDBanner-container img {
+      width: 100%; }
+  .kzACHeaderWrap .kzbuyTicketForm h5 {
+    font-size: 18px;
+    color: #333; }
+  .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox {
+    position: relative;
+    margin-top: 14px;
+    overflow: hidden;
+    padding: 4px;
+    padding-left: 45px;
+    color: #fff;
+    background-color: #dd2446; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 24px;
+      width: 20px;
+      height: 20px;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -504px -22px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox .kzSeckillTime {
+      float: right; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox i {
+      font-style: normal;
+      color: #000; }
+    @media only screen and (max-width: 476px) {
+      .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox {
+        padding-left: 30px; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzSecKillBox:before {
+          left: 8px; } }
+  .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+    margin: 14px 0 10px;
+    font-size: 14px;
+    color: #333; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+      margin-right: 2px;
+      font-size: 30px;
+      color: #ff9100; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice i {
+        font-size: 20px;
+        font-style: normal; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+      margin-left: 16px;
+      text-decoration: line-through;
+      color: #999; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+      margin-top: 16px;
+      float: right;
+      color: #666; }
+  .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm {
+    border: 1px solid #ededed; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm label {
+      display: block;
+      padding: 0 10px;
+      line-height: 36px;
+      overflow: hidden; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketLabel {
+      display: inline-block;
+      color: #333; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight {
+      float: right; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzpriceOne {
+        display: inline-block;
+        margin-right: 24px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 0; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum span {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          border: 1px solid #ededed;
+          vertical-align: middle;
+          cursor: pointer;
+          font-size: 14px;
+          transition: all .3s; }
+          .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum span:hover {
+            color: #fff;
+            background-color: #ff9100; }
+        .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight .kzbuyTicketNum input {
+          width: 50px;
+          height: 24px;
+          text-align: center;
+          outline: none;
+          border: 1px solid #ededed;
+          font-size: 14px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf {
+      padding: 6px 10px;
+      border-top: 1px solid #ededed; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf input {
+        height: 30px;
+        line-height: 30px;
+        width: 200px;
+        border: 1px solid #ededed;
+        text-indent: 10px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzbuyTicketInf span {
+        display: inline-block;
+        margin-left: 24px; }
+  @media only screen and (max-width: 960px) {
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+      margin: 10px 0 6px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+        font-size: 24px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+        margin-left: 10px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+        margin-top: 10px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm .kzticketRight {
+      float: none; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyForm label {
+      margin-bottom: 6px;
+      line-height: 28px; } }
+  @media only screen and (max-width: 767px) {
+    .kzACHeaderWrap .kzACDBanner-container {
+      margin-right: 0; }
+    .kzACHeaderWrap .kzbuyTicketForm {
+      margin-top: 10px; } }
+  @media only screen and (max-width: 479px) {
+    .kzACHeaderWrap .kzACHeaderInner {
+      padding: 14px 10px 24px; }
+    .kzACHeaderWrap .kzbuyTicketForm h5 {
+      font-size: 16px; }
+    .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar {
+      margin: 6px 0 4px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzcurrentPrice {
+        font-size: 18px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzoldPrice {
+        margin-left: 6px; }
+      .kzACHeaderWrap .kzbuyTicketForm .kzbuyPriceBar .kzclickCount {
+        margin-top: 6px; } }
+
+.kzProgressWrap .kzProgressBox {
+  position: relative;
+  padding: 8px 30px;
+  color: #000;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzProgressWrap .kzProgressBox span {
+    color: #e01222; }
+  @media only screen and (max-width: 479px) {
+    .kzProgressWrap .kzProgressBox {
+      padding: 8px 20px; } }
+.kzProgressWrap .kzProgressBar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-left: 180px;
+  padding-right: 30px;
+  box-sizing: border-box; }
+  .kzProgressWrap .kzProgressBar .kzProgressShow {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    top: 18px;
+    background-color: #b8b8b8; }
+    .kzProgressWrap .kzProgressBar .kzProgressShow p {
+      position: absolute;
+      height: 2px;
+      width: 30%;
+      left: 0;
+      top: 0;
+      background-color: #e01222; }
+  @media only screen and (max-width: 479px) {
+    .kzProgressWrap .kzProgressBar {
+      padding-left: 160px;
+      padding-right: 20px; } }
+
+.kzACContentWrap {
+  margin: 20px 0; }
+  .kzACContentWrap .kzACContentInner {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+  .kzACContentWrap .kzACLinkBar {
+    margin-bottom: 1px;
+    font-size: 0;
+    background-color: #fff; }
+    .kzACContentWrap .kzACLinkBar a {
+      display: inline-block;
+      padding: 10px 18px;
+      border-right: 1px solid #f2f3f4;
+      font-size: 14px; }
+      .kzACContentWrap .kzACLinkBar a.active, .kzACContentWrap .kzACLinkBar a:hover {
+        color: #fff;
+        background-color: #257dff; }
+  .kzACContentWrap .kzACContentBox .kzACContentTitle {
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+    color: #257dff;
+    border-bottom: 1px dotted #ddd; }
+  .kzACContentWrap .kzACContentBox .kzACContentDetailBox {
+    position: relative;
+    margin-bottom: 1px;
+    padding: 14px 28px 30px;
+    background-color: #fff; }
+  .kzACContentWrap .kzbuyTicketBox {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 102;
+    text-align: center;
+    background-color: #257dff; }
+    .kzACContentWrap .kzbuyTicketBox a {
+      display: inline-block;
+      margin: 20px 0;
+      padding: 6px 36px;
+      color: #fff;
+      background-color: #ff9100; }
+      .kzACContentWrap .kzbuyTicketBox a:hover {
+        background-color: #c38129; }
+  @media only screen and (max-width: 479px) {
+    .kzACContentWrap .kzbuyTicketBox a {
+      margin: 14px 0; } }
+
+.kzloginWrap {
+  position: relative;
+  min-height: 100vh;
+  background-color: #257dff; }
+  .kzloginWrap .kzloginInner {
+    position: absolute;
+    width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff; }
+  .kzloginWrap .kzloginTitle {
+    padding: 20px;
+    text-align: center; }
+    .kzloginWrap .kzloginTitle h3 {
+      position: relative;
+      font-size: 20px;
+      color: #666;
+      z-index: 1; }
+      .kzloginWrap .kzloginTitle h3:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -50px;
+        width: 100px;
+        height: 30px;
+        background-color: #fff;
+        z-index: -1; }
+      .kzloginWrap .kzloginTitle h3:after {
+        content: "";
+        position: absolute;
+        top: 49%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #efefef;
+        z-index: -2; }
+    .kzloginWrap .kzloginTitle h4 {
+      font-size: 12px;
+      color: #ccc; }
+  .kzloginWrap .kzloginTypebar {
+    text-align: center;
+    border-top: 1px solid #efefef;
+    overflow: hidden; }
+    .kzloginWrap .kzloginTypebar a {
+      float: left;
+      width: 50%;
+      line-height: 50px;
+      font-size: 16px;
+      color: #999;
+      background-color: #efefef; }
+      .kzloginWrap .kzloginTypebar a.active, .kzloginWrap .kzloginTypebar a:hover {
+        color: #ff9100;
+        background-color: #fff; }
+  .kzloginWrap .kzVCLoginBox {
+    display: none; }
+  .kzloginWrap .kzpwLoginBox {
+    padding: 20px; }
+    .kzloginWrap .kzpwLoginBox .kzloginLi {
+      position: relative;
+      margin-bottom: 24px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi input {
+        width: 100%;
+        outline: none;
+        border: 1px solid #ddd;
+        line-height: 38px;
+        text-indent: 50px;
+        border-radius: 2px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi i {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        border-right: 1px solid #ddd;
+        background: url(../images/public/kzicon.png) no-repeat;
+        background-position: -314px -13px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi .kzerrorTips {
+        position: absolute;
+        left: 0;
+        bottom: -18px;
+        color: #f00;
+        font-size: 12px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi ::-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #bbb; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzpasswordLi i {
+        background-position: -358px -13px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi i {
+        background-position: -406px -15px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi input {
+        width: calc(100% - 156px); }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCLi .kzgetVC {
+        float: right;
+        width: 138px;
+        height: 40px;
+        border-radius: 2px;
+        overflow: hidden; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi i {
+        background-position: -447px -14px; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi input {
+        width: calc(100% - 156px); }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg {
+        float: right;
+        width: 138px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 2px;
+        overflow: hidden;
+        color: #fff;
+        background-color: #257dff; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg:hover {
+          background-color: #1561d1; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzVCMgLi .kzgetVCMg.active {
+          cursor: no-drop;
+          background-color: #ccc; }
+      .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi {
+        color: #666; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi input {
+          position: relative;
+          width: 16px;
+          height: 16px;
+          margin-right: 5px; }
+          .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi input:checked:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            opacity: 1;
+            background: url(../images/public/kzicon.png) no-repeat;
+            background-position: -5px -246px; }
+        .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi a {
+          color: #666; }
+          .kzloginWrap .kzpwLoginBox .kzloginLi.kzagreeLi a:hover {
+            color: #333; }
+    .kzloginWrap .kzpwLoginBox .kzsubmitBox .kzloginSubBtn {
+      margin-bottom: 10px;
+      width: 100%;
+      border: none;
+      outline: none;
+      line-height: 50px;
+      font-size: 16px;
+      border-radius: 2px;
+      color: #fff;
+      background-color: #ff9100;
+      transition: all .3s; }
+      .kzloginWrap .kzpwLoginBox .kzsubmitBox .kzloginSubBtn:hover {
+        background-color: #d77d06; }
+  .kzloginWrap .kzLoginOterBox {
+    position: relative;
+    border-top: 1px solid #ddd;
+    line-height: 50px;
+    text-align: center;
+    overflow: hidden; }
+    .kzloginWrap .kzLoginOterBox:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 1px;
+      background-color: #ddd; }
+    .kzloginWrap .kzLoginOterBox a {
+      float: left;
+      width: 50%;
+      color: #999; }
+      .kzloginWrap .kzLoginOterBox a:hover {
+        color: #ff9100; }
+  @media only screen and (max-width: 479px) {
+    .kzloginWrap .kzloginInner {
+      width: 98%; } }
+
+.kzregWrap .kzpwLoginBox {
+  padding-top: 0; }
+
+.kzcontentMemberWrap .kzcontentTitle h5:before {
+  display: none; }
+
+.memberbody {
+  padding-bottom: 50px; }
+
+.kzmemberLinkWrap {
+  padding-top: 20px; }
+  .kzmemberLinkWrap .kzmemberLinkInner {
+    margin-left: -10px; }
+  .kzmemberLinkWrap .kzmemberLinkLi {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    text-align: center; }
+    .kzmemberLinkWrap .kzmemberLinkLi img {
+      transition: all .3s; }
+    .kzmemberLinkWrap .kzmemberLinkLi:hover img {
+      transform: scale(1.02); }
+  @media only screen and (max-width: 767px) {
+    .kzmemberLinkWrap .kzmemberLinkLi {
+      margin-bottom: 10px; } }
+
+.kzmemberBT {
+  color: #666;
+  padding: 15px 0;
+  background-color: #fff; }
+  .kzmemberBT .kzmemberBTLi {
+    position: relative;
+    color: #666; }
+    .kzmemberBT .kzmemberBTLi:not(:last-of-type):after {
+      content: ">";
+      display: inline-block;
+      padding: 0 6px; }
+    .kzmemberBT .kzmemberBTLi:last-of-type {
+      color: #ff9100; }
+  .kzmemberBT .kzmembersearchBox {
+    float: right;
+    top: -5px;
+    position: relative; }
+    .kzmemberBT .kzmembersearchBox:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      z-index: 1;
+      top: 5px;
+      left: 6px;
+      background: url(../images/public/kzicon.png) no-repeat;
+      background-position: -3px -282px; }
+    .kzmemberBT .kzmembersearchBox input[type="search"] {
+      text-indent: 2rem;
+      width: 286px;
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid #ddd;
+      border-radius: 3px; }
+    .kzmemberBT .kzmembersearchBox .kzsearchBtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 32px;
+      height: 32px;
+      width: 70px;
+      text-align: center;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+      color: #fff;
+      background: #257dff; }
+      .kzmemberBT .kzmembersearchBox .kzsearchBtn:hover {
+        background-color: #0061f1; }
+
+@media screen and (max-width: 767px) {
+  .memberPaddingTop {
+    margin-top: 0;
+    padding-top: 24px; }
+
+  .kzmembersearchBox {
+    top: 0 !important;
+    margin-top: 8px;
+    float: none !important; }
+    .kzmembersearchBox input[type="search"] {
+      width: 100% !important; } }
+.kzSPQL .kzinnerQL {
+  margin-top: 16px; }
+
+.kzSPWrap .kzheader {
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: #257dff; }
+.kzSPWrap .kzSPBox {
+  margin-bottom: 20px;
+  padding: 14px 20px;
+  background-color: #fff;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2); }
+.kzSPWrap table {
+  width: 100%;
+  border-collapse: collapse; }
+.kzSPWrap caption {
+  padding: 15px 0 20px;
+  text-align: left;
+  font-size: 18px;
+  border-bottom: 1px dotted #ddd;
+  color: #333; }
+.kzSPWrap tr {
+  background-color: #fafafa; }
+.kzSPWrap td {
+  padding: 10px 0;
+  min-width: 60px;
+  border-bottom: 4px solid #fff; }
+.kzSPWrap .kztableHeader th {
+  padding: 10px 0;
+  text-align: left;
+  font-weight: 100;
+  color: #999; }
+.kzSPWrap .kzshareBox {
+  margin: 15px 0 10px;
+  text-align: right; }
+  .kzSPWrap .kzshareBox .kzshareBtn {
+    padding: 6px 20px;
+    color: #fff;
+    background-color: #ff9100; }
+    .kzSPWrap .kzshareBox .kzshareBtn:hover {
+      background-color: #cc7400; }
+
+.kzmemberMoreBox {
+  margin: 20px 0;
+  line-height: 36px;
+  text-align: center;
+  background-color: #fff; }
+  .kzmemberMoreBox .kzmore {
+    display: block;
+    font-size: 12px;
+    color: #999; }
+    .kzmemberMoreBox .kzmore:hover {
+      color: #fff;
+      background-color: #ddd; }
+
+             /*
+* 分享样式
+*/
+.kzshareWrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3); }
+  .kzshareWrap .kzshareInner {
+    position: absolute;
+    max-width: 400px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .kzshareWrap .kzshareBtnNow {
+    display: block;
+    margin-top: 20px;
+    line-height: 40px;
+    color: #fff;
+    background-color: #ff9100; }
+    .kzshareWrap .kzshareBtnNow:hover {
+      background-color: #cc7400; }
+  @media only screen and (max-width: 767px) {
+    .kzshareWrap .kzshareInner {
+      position: absolute;
+      max-width: 80%;
+      top: 10%;
+      left: 10%;
+      transform: translate(0, 0); } }
+
+             /*
+* 渠道统计
+*/
+.kzchannelWrap .kzchannelInner {
+  margin: 20px 0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff; }
+.kzchannelWrap .kzchannelLi {
+  color: #ff6766;
+  padding: 60px 0;
+  text-align: center; }
+.kzchannelWrap .kzcount {
+  font-size: 24px; }
+  .kzchannelWrap .kzcount i {
+    font-size: 14px;
+    font-style: normal; }
+.kzchannelWrap .kzTips {
+  font-size: 16px;
+  color: #666; }
+.kzchannelWrap .kzchannelLi2 {
+  color: #ff6801;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee; }
+.kzchannelWrap .kzchannelLi3 {
+  color: #3498c8; }
+.kzchannelWrap .kzWCBtn {
+  display: inline-block;
+  width: 114px;
+  height: 28px;
+  margin-top: 14px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #eee;
+  color: #999;
+  font-size: 12px; }
+  .kzchannelWrap .kzWCBtn:hover {
+    color: #fff;
+    background-color: #ff9100; }
+.kzchannelWrap .kzBtn {
+  display: inline-block;
+  width: 116px;
+  line-height: 30px;
+  margin-top: 12px;
+  border: 1px solid #efefef;
+  font-size: 12px;
+  color: #999; }
+  .kzchannelWrap .kzBtn:hover {
+    color: #fff;
+    background-color: #ff9100; }
+@media screen and (max-width: 476px) {
+  .kzchannelWrap .kzchannelLi {
+    padding: 30px 0; }
+  .kzchannelWrap .kzcount {
+    font-size: 18px; }
+  .kzchannelWrap .kzTips {
+    font-size: 14px; } }
+
+             /*
+* 渠道列表
+*/
+.kzagentList .kzheader {
+  line-height: 40px;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  background-color: #257dff; }
+.kzagentList .kzagentInner {
+  margin: 20px 0;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff; }
+  .kzagentList .kzagentInner table {
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 14px; }
+    .kzagentList .kzagentInner table th {
+      padding: 6px 1px;
+      font-weight: normal;
+      color: #999; }
+    .kzagentList .kzagentInner table tr {
+      background-color: #fafafa; }
+    .kzagentList .kzagentInner table td {
+      padding: 6px 1px;
+      border-bottom: 4px solid #fff;
+      word-break: break-all;
+      color: #666; }
+  .kzagentList .kzagentInner .kzdetailBtn {
+    display: inline-block;
+    padding: 4px 20px;
+    border: 1px solid #eee;
+    font-size: 12px;
+    color: #999; }
+    .kzagentList .kzagentInner .kzdetailBtn:hover {
+      color: #fff;
+      background-color: #ff9100; }
+  .kzagentList .kzagentInner .kzleft {
+    width: 115px;
+    text-align: right; }
+  .kzagentList .kzagentInner .kzright {
+    text-align: left;
+    padding: 10px 14px;
+    box-sizing: border-box; }
+    .kzagentList .kzagentInner .kzright input[type='text'],
+    .kzagentList .kzagentInner .kzright input[type='password'] {
+      width: 100%;
+      line-height: 34px;
+      text-indent: 10px;
+      border: 1px solid #efefef; }
+    .kzagentList .kzagentInner .kzright .kzyellowPrice {
+      font-size: 16px;
+      color: #ff9100; }
+    .kzagentList .kzagentInner .kzright label {
+      margin-right: 30px; }
+    @media screen and (max-width: 476px) {
+      .kzagentList .kzagentInner .kzright label {
+        margin-right: 8px; } }
+    .kzagentList .kzagentInner .kzright input[type='radio'] {
+      position: relative;
+      vertical-align: middle;
+      margin-right: 8px; }
+      .kzagentList .kzagentInner .kzright input[type='radio']:checked:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #ff9100; }
+.kzagentList .kzpayLI {
+  box-shadow: 0 1px 0 0 #efefef, 0 -1px 0 0 #efefef; }
+.kzagentList .kzorder {
+  min-width: 40px; }
+.kzagentList .kzorderAll {
+  min-width: 50px; }
+.kzagentList .kzCut {
+  min-width: 50px; }
+.kzagentList .KzSalesman {
+  min-width: 50px; }
+.kzagentList .KzIncome {
+  min-width: 50px; }
+.kzagentList .kzsaleType {
+  min-width: 60px; }
+.kzagentList .kzActive {
+  min-width: 60px; }
+.kzagentList .kzSettlementPrice {
+  min-width: 40px; }
+.kzagentList .KzCount {
+  min-width: 30px; }
+.kzagentList .KzPrice {
+  min-width: 30px; }
+.kzagentList .kzStatu {
+  min-width: 40px; }
+.kzagentList .kzDate {
+  min-width: 40px; }
+.kzagentList .kzOperator {
+  min-width: 40px; }
+.kzagentList .kzOperator {
+  min-width: 40px; }
+.kzagentList .kzStore {
+  min-width: 40px; }
+.kzagentList .kzsubBtn {
+  display: block;
+  margin: 0 12px;
+  text-align: center;
+  color: #fff;
+  line-height: 34px;
+  background-color: #ff9100; }
+  .kzagentList .kzsubBtn:hover {
+    background-color: #fe8100; }
+.kzagentList .kzVCLI .kzright input[type='text'] {
+  margin-bottom: 6px;
+  margin-right: 10px;
+  width: 160px; }
+.kzagentList .kzVCLI .kzright a {
+  display: inline-block;
+  width: 138px;
+  line-height: 34px;
+  text-align: center;
+  vertical-align: top;
+  color: #fff;
+  background-color: #257dff; }
+  .kzagentList .kzVCLI .kzright a:hover {
+    background-color: #0061f1; }
+.kzagentList .kzACTips td {
+  padding: 15px 0 10px !important;
+  text-align: center;
+  color: #6f6f6f; }
+  .kzagentList .kzACTips td span {
+    color: #fe0505; }
+.kzagentList .kzBackBtn {
+  display: block;
+  margin: 0 12px;
+  text-align: center;
+  color: #fff;
+  line-height: 34px;
+  background-color: #ccc; }
+  .kzagentList .kzBackBtn:hover {
+    background-color: #b3b3b3; }
+.kzagentList .kzStatuTd {
+  color: #fa0b0b !important; }
+
+             /*
+* 我的订单
+*/
+.kzmyOrderList .kzheader {
+  margin: 20px 0; }
+.kzmyOrderList .kzheaderOrder {
+  padding: 0 10px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #257dff; }
+  .kzmyOrderList .kzheaderOrder span {
+    display: inline-block;
+    margin-right: 14px; }
+  .kzmyOrderList .kzheaderOrder .kzorderTime {
+    float: right; }
+.kzmyOrderList .kzagentInner table {
+  text-align: left; }
+  .kzmyOrderList .kzagentInner table tr {
+    background-color: #fafafa; }
+    .kzmyOrderList .kzagentInner table tr td {
+      padding: 10px;
+      border-bottom: 10px solid #fff;
+      color: #333; }
+.kzmyOrderList .kzagentInner .kzorderImage {
+  width: 170px;
+  box-sizing: border-box; }
+.kzmyOrderList .kzorderBar {
+  padding: 0 10px 10px 10px;
+  font-size: 12px; }
+  .kzmyOrderList .kzorderBar span {
+    display: inline-block;
+    margin-right: 20px; }
+  .kzmyOrderList .kzorderBar .kzCodeBtn {
+    float: right;
+    display: inline-block;
+    padding: 8px 20px;
+    color: #fff;
+    background-color: #ff9100; }
+    .kzmyOrderList .kzorderBar .kzCodeBtn:hover {
+      background-color: #fe8100; }
+@media screen and (max-width: 767px) {
+  .kzmyOrderList .kzagentInner .kzorderImage {
+    width: auto; } }
+@media screen and (max-width: 476px) {
+  .kzmyOrderList .kzheaderOrder {
+    font-size: 12px; }
+    .kzmyOrderList .kzheaderOrder span {
+      margin-right: 10px; } }
+
+             /*
+* 我的二维码
+*/
+.kzQRList {
+  padding: 10px;
+  margin-left: -10px;
+  text-align: center; }
+  .kzQRList .kzQRLi {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #efefef;
+    color: #333; }
+    .kzQRList .kzQRLi h6 {
+      margin: 15px 0; }
+    .kzQRList .kzQRLi .kzQRCount {
+      margin: 8px 0; }
+    .kzQRList .kzQRLi .kzQRStatu {
+      margin: 10px 0; }
+  .kzQRList .activated .kzQRStatu {
+    color: #ff9100; }
+
+             /*
+* 财务中心
+*/
+.kzredPacketList .kzRPInner {
+  padding: 20px;
+  margin-left: -20px; }
+.kzredPacketList .kzRPLi {
+  padding: 12px 12px 0;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background-color: #ff5252; }
+.kzredPacketList .kzlineTop {
+  position: relative;
+  border-bottom: 1px dotted #fff;
+  color: #fff; }
+  .kzredPacketList .kzlineTop:before, .kzredPacketList .kzlineTop:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    left: -20px;
+    bottom: -7px;
+    border-radius: 50%;
+    background-color: #fff; }
+  .kzredPacketList .kzlineTop:after {
+    left: initial;
+    right: -20px; }
+.kzredPacketList .kzPriceBox {
+  display: inline-block;
+  padding: 0 26px;
+  font-size: 48px;
+  vertical-align: super; }
+  .kzredPacketList .kzPriceBox i {
+    vertical-align: super;
+    font-size: 22px;
+    font-style: normal; }
+.kzredPacketList .kzUseTimeBox {
+  display: inline-block; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 24px; }
+.kzredPacketList .kzRPStatus {
+  float: right;
+  width: 128px;
+  margin-top: 16px;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9100; }
+.kzredPacketList .kzRPUsed {
+  padding: 12px 0;
+  font-size: 12px; }
+.kzredPacketList .hadUsed {
+  background-color: #ccc; }
+  .kzredPacketList .hadUsed .kzRPStatus {
+    background-color: #aaa; }
+  .kzredPacketList .hadUsed .kzRPUsed {
+    color: #999; }
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  .kzredPacketList .kzPriceBox {
+    padding: 0 16px;
+    font-size: 38px; }
+    .kzredPacketList .kzPriceBox i {
+      font-size: 18px; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 20px; }
+  .kzredPacketList .kzRPStatus {
+    width: 98px; } }
+@media screen and (max-width: 767px) {
+  .kzredPacketList .kzRPInner {
+    padding: 10px; }
+  .kzredPacketList .kzRPLi {
+    margin-bottom: 10px; }
+  .kzredPacketList .kzPriceBox {
+    padding: 0 6px;
+    font-size: 28px; }
+    .kzredPacketList .kzPriceBox i {
+      font-size: 14px; }
+  .kzredPacketList .kzUseTimeBox span {
+    font-size: 16px; }
+  .kzredPacketList .kzUseTimeBox p {
+    font-size: 12px; }
+  .kzredPacketList .kzRPStatus {
+    width: 78px;
+    margin-top: 8px;
+    line-height: 24px;
+    font-size: 12px; } }
+
+.kzrechargeList .kzrechargeInner {
+  padding: 20px; }
+.kzrechargeList .kzrechargeAccount {
+  margin-bottom: 20px;
+  line-height: 34px; }
+  .kzrechargeList .kzrechargeAccount span {
+    display: inline-block;
+    width: 80px; }
+  .kzrechargeList .kzrechargeAccount input {
+    width: calc(100% - 90px);
+    line-height: 36px;
+    text-indent: 10px;
+    border: 1px solid #efefef; }
+.kzrechargeList .kzrechargeType {
+  margin-bottom: 20px;
+  line-height: 60px; }
+  .kzrechargeList .kzrechargeType span {
+    display: inline-block;
+    width: 80px; }
+  .kzrechargeList .kzrechargeType a {
+    margin-right: 20px; }
+.kzrechargeList .kzrechargeBtn,
+.kzrechargeList .kzcancelBtn {
+  display: block;
+  margin-bottom: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9100; }
+  .kzrechargeList .kzrechargeBtn:hover,
+  .kzrechargeList .kzcancelBtn:hover {
+    background-color: #e08000; }
+.kzrechargeList .kzcancelBtn {
+  background-color: #ccc; }
+  .kzrechargeList .kzcancelBtn:hover {
+    background-color: #bdbdbd; }
+@media screen and (max-width: 767px) {
+  .kzrechargeList .kzrechargeInner {
+    padding: 10px; }
+  .kzrechargeList .kzrechargeAccount,
+  .kzrechargeList .kzrechargeType {
+    margin-bottom: 10px; }
+  .kzrechargeList .kzrechargeType a {
+    margin-right: 10px; }
+  .kzrechargeList .kzrechargeBtn,
+  .kzrechargeList .kzcancelBtn {
+    margin-bottom: 10px; }
+  .kzrechargeList .wxpay {
+    display: block;
+    margin-top: 10px;
+    margin-left: 83px; } }
+
+             /*
+* 设置
+*/
+.kzsetList .kzsetTips {
+  margin: 70px 0;
+  color: #666; }
+.kzsetList .kzsetInner {
+  padding: 20px;
+  text-align: center; }
+.kzsetList .kzsetBtn {
+  display: block;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9100; }
+  .kzsetList .kzsetBtn:hover {
+    background-color: #d67a00; }
+
+             /*
+* 修改密码
+*/
+.kzsetFormList .kzsetFormInner {
+  padding: 20px; }
+.kzsetFormList .kzinputBox {
+  line-height: 36px;
+  margin-bottom: 20px; }
+  .kzsetFormList .kzinputBox .kzLabel {
+    display: inline-block;
+    width: 80px;
+    padding-right: 6px;
+    box-sizing: border-box;
+    text-align: right;
+    color: #666; }
+  .kzsetFormList .kzinputBox input {
+    display: inline-block;
+    width: calc(100% - 90px);
+    text-indent: 10px;
+    height: 34px;
+    border: 1px solid #efefef; }
+.kzsetFormList .kzsaveBtn,
+.kzsetFormList .kzbackBtn {
+  display: block;
+  margin-bottom: 10px;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9100; }
+  .kzsetFormList .kzsaveBtn:hover,
+  .kzsetFormList .kzbackBtn:hover {
+    background-color: #d67a00; }
+.kzsetFormList .kzbackBtn {
+  background-color: #ccc; }
+  .kzsetFormList .kzbackBtn:hover {
+    background-color: #b8b8b8; }
+.kzsetFormList .kzsubReview {
+  margin-bottom: 50px; }
+.kzsetFormList .kzagentApplyInner {
+  background: initial;
+  box-shadow: none;
+  font-size: 12px; }
+  .kzsetFormList .kzagentApplyInner .kzagentApplyTip {
+    padding: 20px 20px 0; }
+  .kzsetFormList .kzagentApplyInner span {
+    color: #ff9100; }
+
+             /*
+* 订单支付详情
+*/
+.kzorderDetailList .kzorderDetailInner {
+  padding: 20px; }
+.kzorderDetailList .kzorderTitle {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #ddd;
+  font-size: 16px;
+  color: #333; }
+.kzorderDetailList table {
+  text-align: left !important;
+  padding-bottom: 0 !important; }
+.kzorderDetailList .kzorderNumber {
+  color: #333 !important; }
+.kzorderDetailList .kznumber {
+  width: 80px; }
+.kzorderDetailList .kzLeft {
+  width: 90px;
+  color: #333 !important;
+  text-align: right;
+  padding-right: 5px; }
+.kzorderDetailList .active img {
+  outline: 1px solid #FF9100; }
+.kzorderDetailList .alipayBtn {
+  display: inline-block;
+  margin-bottom: 10px; }
+.kzorderDetailList .kzpayNum {
+  margin-bottom: 50px;
+  padding-left: 20px;
+  line-height: 50px;
+  height: 50px;
+  color: #333;
+  background-color: #fff; }
+  .kzorderDetailList .kzpayNum span {
+    color: #f00;
+    font-size: 24px; }
+  .kzorderDetailList .kzpayNum a {
+    float: right;
+    width: 190px;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff9100; }
+    .kzorderDetailList .kzpayNum a:hover {
+      background-color: #d67a00; }
+@media screen and (max-width: 476px) {
+  .kzorderDetailList .kzpayNum {
+    margin-bottom: 30px;
+    padding-left: 10px; }
+    .kzorderDetailList .kzpayNum span {
+      font-size: 18px; }
+    .kzorderDetailList .kzpayNum a {
+      width: 160px;
+      font-size: 14px; } }
+
+             /*
+* 扫码支付
+*/
+.kzonlinePayList .kzonlinePayInner {
+  padding: 0 20px 10px;
+  text-align: center;
+  color: #666; }
+  .kzonlinePayList .kzonlinePayInner p {
+    padding: 15px 0; }
+  .kzonlinePayList .kzonlinePayInner .kzonlineBox {
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef; }
+    .kzonlinePayList .kzonlinePayInner .kzonlineBox p:first-child {
+      padding-bottom: 0px; }
+.kzonlinePayList .kzotherPay,
+.kzonlinePayList .kzmodifyOrder {
+  display: block;
+  margin: 10px 0;
+  line-height: 34px;
+  text-align: center;
+  color: #fff;
+  background-color: #ff9100; }
+  .kzonlinePayList .kzotherPay:hover,
+  .kzonlinePayList .kzmodifyOrder:hover {
+    background-color: #d67a00; }
+.kzonlinePayList .kzmodifyOrder {
+  background-color: #ccc; }
+  .kzonlinePayList .kzmodifyOrder:hover {
+    background-color: #b8b8b8; }
+
+             /*
+* 支付完成
+*/
+.kzpayOverList .kzpayOverInner {
+  text-align: center;
+  padding: 140px 20px; }
+.kzpayOverList .kzpayOkBox {
+  margin: 30px 0;
+  line-height: 28px;
+  color: #333; }
+.kzpayOverList .kzcountDown {
+  font-size: 12px;
+  color: #666; }
+  .kzpayOverList .kzcountDown span {
+    margin-left: 40px; }
+    .kzpayOverList .kzcountDown span i {
+      font-style: normal; }
+.kzpayOverList .kzturnBtn {
+  display: inline-block;
+  margin: 20px auto;
+  line-height: 32px;
+  width: 130px;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  color: #666; }
+  .kzpayOverList .kzturnBtn:hover {
+    color: #fff;
+    background-color: #ccc; }
+@media screen and (max-width: 476px) {
+  .kzpayOverList .kzpayOverInner {
+    padding: 72px 10px; } }
+
+.kzRedListBox {
+  max-width: 1200px; }
+
+             /*
+* 红包
+*/
+.kzRedWrap {
+  position: fixed;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all .3s; }
+  .kzRedWrap.active {
+    height: 100%; }
+    .kzRedWrap.active .kzRedBox {
+      display: block; }
+    .kzRedWrap.active .kzCloseRed {
+      display: block; }
+  .kzRedWrap.kzRedOpen .kzRedBox {
+    height: 5.48rem;
+    background: url(../images/public/redbottombg.png) no-repeat;
+    background-size: cover; }
+    .kzRedWrap.kzRedOpen .kzRedBox:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1.7rem;
+      top: 0;
+      z-index: 1;
+      background: url(../images/public/redcoins.png) no-repeat;
+      background-size: cover; }
+    .kzRedWrap.kzRedOpen .kzRedBox:before {
+      z-index: 2;
+      background: url(../images/public/redtopbg.png) no-repeat;
+      background-size: contain;
+      background-position: 0px .34rem; }
+  .kzRedWrap.kzRedOpen .kzCoin,
+  .kzRedWrap.kzRedOpen .kzGetRedTip,
+  .kzRedWrap.kzRedOpen .kzOpenRed {
+    display: none; }
+  .kzRedWrap.kzRedOpen .kzRedTips,
+  .kzRedWrap.kzRedOpen .kzRedRule,
+  .kzRedWrap.kzRedOpen .kzRedNumber,
+  .kzRedWrap.kzRedOpen .kzRedTips2,
+  .kzRedWrap.kzRedOpen .kzGotoRed {
+    display: block; }
+  .kzRedWrap.kzRedOpen .kzCloseRed {
+    margin-top: 3.25rem; }
+  .kzRedWrap .kzRedTips {
+    display: none;
+    position: relative;
+    margin-top: 1.8rem;
+    z-index: 3;
+    text-align: center;
+    font-size: .24rem;
+    color: #FFE98D; }
+  .kzRedWrap .kzRedNumber {
+    display: none;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: .5rem;
+    color: #FFE98D; }
+    .kzRedWrap .kzRedNumber i {
+      font-style: normal;
+      font-size: .24rem; }
+  .kzRedWrap .kzRedTips2 {
+    display: none;
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    font-size: .16rem;
+    color: #8C1010; }
+  .kzRedWrap .kzGotoRed {
+    display: none;
+    position: relative;
+    z-index: 3;
+    width: 2.3rem;
+    height: .6rem;
+    margin: .2rem auto;
+    background: url(../images/public/redgoto.png) no-repeat;
+    background-size: contain; }
+  .kzRedWrap .kzRedRule {
+    display: none;
+    position: relative;
+    z-index: 3;
+    padding: .1rem .3rem;
+    width: 3rem;
+    box-sizing: border-box;
+    margin: .3rem auto;
+    border-radius: .05rem;
+    color: #8C1010;
+    font-size: .14rem;
+    background: rgba(255, 255, 255, 0.15);
+    list-style: disc; }
+    .kzRedWrap .kzRedRule li {
+      list-style: disc; }
+    .kzRedWrap .kzRedRule p {
+      text-align: center; }
+  @media only screen and (max-width: 479px) {
+    .kzRedWrap .kzRedRule {
+      width: 3.4rem;
+      margin: .2rem auto;
+      padding: .1rem 0rem .1rem .3rem;
+      font-size: .1rem; } }
+  .kzRedWrap .kzRedBox {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3.8rem;
+    height: 5.14rem;
+    transform: translate(-50%, -50%);
+    background: url(../images/public/redbg.png) no-repeat;
+    background-size: cover; }
+    .kzRedWrap .kzRedBox:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/public/redseal.png) no-repeat;
+      background-size: cover; }
+  .kzRedWrap .kzCoin {
+    position: absolute;
+    width: 1.8rem;
+    height: 1.8rem;
+    left: 50%;
+    top: .7rem;
+    transform: translateX(-50%);
+    background: url(../images/public/redcoin.png) no-repeat;
+    background-size: cover; }
+  .kzRedWrap .kzGetRedTip {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    font-size: .3rem;
+    color: #FFE98D; }
+  .kzRedWrap .kzOpenRed {
+    position: absolute;
+    width: 2.3rem;
+    height: .6rem;
+    bottom: .8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: url(../images/public/openredbtn.png) no-repeat;
+    background-size: contain; }
+  .kzRedWrap .kzCloseRed {
+    display: none;
+    position: absolute;
+    width: .6rem;
+    height: .6rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 3.1rem;
+    background: url(../images/public/closeredbtn.png) no-repeat;
+    background-size: cover; }
+
+@media only screen and (max-width: 476px) {
+  .kzactiveBody {
+    padding-bottom: 110px; }
+
+  .kzACContentWrap .kzbuyTicketBox {
+    bottom: 50px; } }
+             /*
+* 商户中心
+*/
+.tbBCBackIndex {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: 660px;
+  padding-top: 4px;
+  z-index: 102;
+  box-sizing: border-box; }
+  .tbBCBackIndex a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding-top: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #fff;
+    background-color: #257dff; }
+    .tbBCBackIndex a:hover {
+      background-color: #0061f1; }
+  @media only screen and (max-width: 1300px) {
+    .tbBCBackIndex {
+      left: inherit;
+      right: 25px; } }
+
+.kzBCIndexWrap {
+  padding-bottom: 40px; }
+  .kzBCIndexWrap .kzBCIndexHeaderInner {
+    margin: 18px 0;
+    padding: 70px 0;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1); }
+    .kzBCIndexWrap .kzBCIndexHeaderInner .span6 {
+      text-align: center; }
+    .kzBCIndexWrap .kzBCIndexHeaderInner a {
+      display: inline-block;
+      height: 80px;
+      line-height: 80px;
+      padding: 0 80px;
+      font-size: 24px;
+      box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+      color: #000;
+      background-color: #f2f3f4; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a:hover {
+        color: #fff;
+        background-color: #ff6801; }
+  .kzBCIndexWrap .kzBCTip {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #333; }
+  .kzBCIndexWrap .kzBCIndexLiInner {
+    margin-left: -6px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      display: block;
+      margin-left: 6px;
+      margin-bottom: 6px;
+      height: 170px;
+      padding: 60px 0;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 20px;
+      color: #151513;
+      background-color: #fff;
+      box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1); }
+      .kzBCIndexWrap .kzBCIndexLiInner a:hover {
+        color: #fff;
+        background-color: #ff6801; }
+        .kzBCIndexWrap .kzBCIndexLiInner a:hover i {
+          color: #fff; }
+    .kzBCIndexWrap .kzBCIndexLiInner i {
+      display: block;
+      font-size: 14px;
+      font-style: normal;
+      color: #999; }
+  @media only screen and (max-width: 767px) {
+    .kzBCIndexWrap .kzBCIndexHeaderInner {
+      padding: 50px 0; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a {
+        padding: 0 50px;
+        height: 60px;
+        line-height: 60px;
+        font-size: 18px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      height: 150px;
+      padding: 50px 0; } }
+  @media only screen and (max-width: 476px) {
+    .kzBCIndexWrap {
+      padding-bottom: 20px; }
+    .kzBCIndexWrap .kzBCIndexHeaderInner {
+      padding: 40px 0; }
+      .kzBCIndexWrap .kzBCIndexHeaderInner a {
+        padding: 0 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px; }
+    .kzBCIndexWrap .kzBCIndexLiInner a {
+      padding: 50px 0;
+      font-size: 18px; }
+    .kzBCIndexWrap .kzBCIndexLiInner i {
+      font-size: 12px; } }
+
+.kzBusinessVRWrap .kzBusinessVRInner {
+  padding: 12px 70px;
+  box-sizing: border-box; }
+  .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable {
+    border-collapse: collapse; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable td,
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable th {
+      border-collapse: collapse;
+      border: 1px solid #d6d5d5 !important;
+      color: #201f1f; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable th {
+      font-size: 16px; }
+    .kzBusinessVRWrap .kzBusinessVRInner .kzBusinessVRTable td {
+      padding-left: 10px;
+      text-align: left; }
+.kzBusinessVRWrap .kzBusinessVRBtnBox {
+  padding: 20px 0 40px;
+  text-align: center; }
+  .kzBusinessVRWrap .kzBusinessVRBtnBox a {
+    display: inline-block;
+    width: 358px;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 3px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    background-color: #a1a1a1; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a:hover {
+      background-color: #888888; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a.kzBusinessVRVC {
+      color: #fc0101;
+      background-color: #ff9100; }
+      .kzBusinessVRWrap .kzBusinessVRBtnBox a.kzBusinessVRVC:hover {
+        background-color: #e68300; }
+.kzBusinessVRWrap .kzBusinessVROk,
+.kzBusinessVRWrap .kzBusinessVRFail {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 24px;
+  color: #090202; }
+  .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips,
+  .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+    position: relative;
+    display: inline-block;
+    width: 560px;
+    padding-left: 100px;
+    text-align: left;
+    box-sizing: border-box; }
+    .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips:before,
+    .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: -18px;
+      width: 70px;
+      height: 70px;
+      background: url(../images/public/kzicon.png);
+      background-position: 2px -386px; }
+.kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+  color: #f90101; }
+  .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips:before {
+    top: 0;
+    background-position: 2px -514px; }
+.kzBusinessVRWrap .kzBusinessVRClose {
+  margin-top: 10px;
+  text-align: center; }
+  .kzBusinessVRWrap .kzBusinessVRClose a {
+    display: inline-block;
+    width: 560px;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 2px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff9100; }
+    .kzBusinessVRWrap .kzBusinessVRClose a:hover {
+      background-color: #cc7400; }
+@media only screen and (max-width: 769px) {
+  .kzBusinessVRWrap .kzBusinessVRInner {
+    padding: 10px; }
+  .kzBusinessVRWrap .kzBusinessVRBtnBox {
+    padding: 10px 0 30px; }
+    .kzBusinessVRWrap .kzBusinessVRBtnBox a {
+      width: 158px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px; }
+  .kzBusinessVRWrap .kzBusinessVROk,
+  .kzBusinessVRWrap .kzBusinessVRFail {
+    font-size: 18px; }
+    .kzBusinessVRWrap .kzBusinessVROk .kzBusinessVRTips,
+    .kzBusinessVRWrap .kzBusinessVRFail .kzBusinessVRTips {
+      width: auto; }
+  .kzBusinessVRWrap .kzBusinessVRClose a {
+    width: 98%; } }
+
+/*# sourceMappingURL=kingzhu-old0503.css.map */

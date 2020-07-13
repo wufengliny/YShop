@@ -1,0 +1,137 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="Keywords" content="天污影视">
+    <meta name="description" content="天污影视" />
+    <title>天污影视-首页</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+<body>
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+    <!--public aside bar-->
+    @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
+    <!--banner -->
+    <section class="kzindexBanner wow fadeInDown">
+        <div class="container full">
+            <div class="swiper-container kzindexBanner-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#this" style="background-image: url(/Content/images/temp/banner/01.jpg);"></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#this" style="background-image: url(/Content/images/temp/banner/01.jpg);"></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--免费视频-->
+    <section class="kzlistWrap  kzlistPriceWrap">
+        <div class="container">
+            <div class="kztitleBox wow fadeInLeft">
+                <h5>免费视频  <span>/ Free Vedio</span></h5>
+                <a class="kzmore" href="#this" style="display:none">更多</a>
+            </div>
+            <div class="kzactivitiesList wow fadeInRight clearfix">
+                @{
+                    List<MC_Vedios> listFree = ViewBag.listFree;
+                    if (listFree != null && listFree.Count > 0)
+                    {
+                        for (int i = 0; i < listFree.Count; i++)
+                        {
+                            string freeCover = listFree[i].Cover;
+                            if (freeCover.ToLower().Contains("https:") || freeCover.ToLower().Contains("http:"))
+                            {
+
+                            }
+                            else
+                            {
+                                freeCover = ViewBag.picurl + freeCover;
+                            }
+                            <div class="span3 col-sm-6">
+                                <a href="/home/MHView?id=@listFree[i].ID" class="kzlistLi">
+                                    <div class="kzimage">
+
+                                        <img src="@freeCover" />
+                                    </div>
+                                    <p class="kzbrief">
+                                        @listFree[i].Name
+                                    </p>
+                                </a>
+                            </div>
+                        }
+                    }
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <!--VIP视频-->
+    <section class="kzlistWrap kzlistactivitiesWrap">
+        <div class="container">
+            <div class="kztitleBox wow fadeInLeft">
+                <h5>VIP视频  <span>/ VIP Vedio</span></h5>
+            </div>
+            <div class="kzactivitiesList wow fadeInRight clearfix">
+                @{
+                    List<MC_Vedios> list = ViewBag.list;
+                    if (list != null && list.Count > 0)
+                    {
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            string freeCover = list[i].Cover;
+                            if (freeCover.ToLower().Contains("https:") || freeCover.ToLower().Contains("http:"))
+                            {
+
+                            }
+                            else
+                            {
+                                freeCover = ViewBag.picurl + freeCover;
+                            }
+                            <div class="span3 col-sm-6">
+                                <a href="/home/MHView?id=@list[i].ID" class="kzlistLi">
+                                    <div class="kzimage">
+                                        <img src="@freeCover" />
+                                    </div>
+                                    <p class="kzbrief">
+                                        @list[i].Name
+                                    </p>
+                                </a>
+                            </div>
+                        }
+
+                    }
+                }
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    @{Html.RenderPartial("/views/PartV/PhoneNav.cshtml");}
+    <!--public footer-->
+    @{Html.RenderPartial("/views/PartV/Footer.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+</body>
+</html>

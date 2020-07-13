@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcPager">
+      <HintPath>..\DLL\MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +63,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UCommon">
+      <HintPath>..\DLL\UCommon.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -88,11 +94,101 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\kaysitecss.css" />
+    <Content Include="Content\css\kingzhu-old0503.css" />
+    <Content Include="Content\css\kingzhu.css" />
+    <Content Include="Content\css\swiper,animate,scroll.min.css" />
+    <Content Include="Content\images\pic_loading.gif" />
+    <Content Include="Content\images\public\alipayIcon.png" />
+    <Content Include="Content\images\public\aside.jpg" />
+    <Content Include="Content\images\public\asideBG.jpg" />
+    <Content Include="Content\images\public\closeredbtn.png" />
+    <Content Include="Content\images\public\kzicon.png" />
+    <Content Include="Content\images\public\loginBg.jpg" />
+    <Content Include="Content\images\public\logo.png" />
+    <Content Include="Content\images\public\m01.jpg" />
+    <Content Include="Content\images\public\m02.jpg" />
+    <Content Include="Content\images\public\m03.jpg" />
+    <Content Include="Content\images\public\m04.jpg" />
+    <Content Include="Content\images\public\m05.jpg" />
+    <Content Include="Content\images\public\m06.jpg" />
+    <Content Include="Content\images\public\m07.jpg" />
+    <Content Include="Content\images\public\m08.jpg" />
+    <Content Include="Content\images\public\m09.jpg" />
+    <Content Include="Content\images\public\membericon.png" />
+    <Content Include="Content\images\public\mid-circle.png" />
+    <Content Include="Content\images\public\navbar.png" />
+    <Content Include="Content\images\public\ok.png" />
+    <Content Include="Content\images\public\openredbtn.png" />
+    <Content Include="Content\images\public\redbg.png" />
+    <Content Include="Content\images\public\redbottombg.png" />
+    <Content Include="Content\images\public\redcoin.png" />
+    <Content Include="Content\images\public\redcoins.png" />
+    <Content Include="Content\images\public\redgoto.png" />
+    <Content Include="Content\images\public\redseal.png" />
+    <Content Include="Content\images\public\redtopbg.png" />
+    <Content Include="Content\images\public\SecKillIcon.png" />
+    <Content Include="Content\images\public\small-circle.png" />
+    <Content Include="Content\images\public\weixincode.jpg" />
+    <Content Include="Content\images\public\wxpayIcon.png" />
+    <Content Include="Content\images\temp\about01.jpg" />
+    <Content Include="Content\images\temp\about02.jpg" />
+    <Content Include="Content\images\temp\acd01.jpg" />
+    <Content Include="Content\images\temp\acgz01.jpg" />
+    <Content Include="Content\images\temp\active01.jpg" />
+    <Content Include="Content\images\temp\acxz01.jpg" />
+    <Content Include="Content\images\temp\ad01.jpg" />
+    <Content Include="Content\images\temp\banner\01.jpg" />
+    <Content Include="Content\images\temp\indexli01.jpg" />
+    <Content Include="Content\images\temp\myorder.jpg" />
+    <Content Include="Content\images\temp\news1.jpg" />
+    <Content Include="Content\images\temp\newstemp.jpg" />
+    <Content Include="Content\images\temp\o1.jpg" />
+    <Content Include="Content\images\temp\qr.jpg" />
+    <Content Include="Content\images\temp\share.jpg" />
+    <Content Include="Content\images\temp\vccode.jpg" />
+    <Content Include="Content\images\temp\weixin.jpg" />
+    <Content Include="Content\js\jquery-1.7.1.js" />
+    <Content Include="Content\js\jquery-2.2.4.min.js" />
+    <Content Include="Content\js\jquery.min.js" />
+    <Content Include="Content\js\kingzhu.js" />
+    <Content Include="Content\js\kingzhu2.js" />
+    <Content Include="Content\js\layer,wow,scroll.js" />
+    <Content Include="Content\js\skin\default\icon-ext.png" />
+    <Content Include="Content\js\skin\default\icon.png" />
+    <Content Include="Content\js\skin\default\layer.css" />
+    <Content Include="Content\js\skin\default\loading-0.gif" />
+    <Content Include="Content\js\skin\default\loading-1.gif" />
+    <Content Include="Content\js\skin\default\loading-2.gif" />
+    <Content Include="Content\js\swiper.jquery.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.min.js" />
+    <Content Include="Content\Player\ckplayer\ckplayer.swf" />
+    <Content Include="Content\Player\ckplayer\ckplayer.xml" />
+    <Content Include="Content\Player\ckplayer\language.xml" />
+    <Content Include="Content\Player\ckplayer\style.xml" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\css\base.scss" />
+    <Content Include="Content\css\chwconfig.scss" />
+    <Content Include="Content\css\kingzhu-old0503.css.map" />
+    <Content Include="Content\css\kingzhu-old0503.scss" />
+    <Content Include="Content\css\kingzhu.css.map" />
+    <Content Include="Content\css\kingzhu.scss" />
+    <Content Include="Content\css\kzconfig.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -100,7 +196,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\PartV\Footer.cshtml" />
+    <Content Include="Views\PartV\FooterJC.cshtml" />
+    <Content Include="Views\PartV\HeadJC.cshtml" />
+    <Content Include="Views\PartV\LeftNav.cshtml" />
+    <Content Include="Views\PartV\MemberTop.cshtml" />
+    <Content Include="Views\PartV\Nav.cshtml" />
+    <Content Include="Views\PartV\PhoneNav.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Home\FreeVedio.cshtml" />
+    <Content Include="Views\Home\VIPVedio.cshtml" />
+    <Content Include="Views\Home\MHView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,8 +225,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{c2dd5803-f245-4bfe-851e-614438656d8a}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{26ce212f-c3ca-4331-8c5d-04f3cbad1fbe}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

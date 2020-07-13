@@ -97,12 +97,12 @@
                     {
                         for (int i = 0; i < list.Count; i++)
                         {
-                            string freeCover =ViewBag.fileurl+ list[i].Cover;
+                            string vipCover =ViewBag.fileurl+ list[i].Cover;
 
                             <div class="span3 col-sm-6">
                                 <a href="/home/MHView?id=@list[i].ID"  class="kzlistLi">
                                     <div class="kzimage">
-                                        <img src="@freeCover" />
+                                        <img src="@vipCover" />
                                     </div>
                                     <p class="kzbrief">
                                         @list[i].Name
