@@ -15,18 +15,23 @@ namespace CodeMaker
         public Maker()
         {
             InitializeComponent();
-            string defaultConn= System.Configuration.ConfigurationManager.AppSettings["defaultconn"];
+            InitConns();
+        }
+        private void InitConns()
+        {
+            string defaultConn = System.Configuration.ConfigurationManager.AppSettings["DefaultConn"];
             var list = System.Configuration.ConfigurationManager.AppSettings;
             List<string> listcons = new List<string>();
             foreach (var item in list)
             {
-                if (item.ToString().StartsWith("conn"))
+                if (item.ToString().StartsWith("Conn"))
                 {
-                    this.cbb_conns.Items.Add(item); ;
+                    this.cbb_conns.Items.Add(item);
                 }
             }
             this.cbb_conns.SelectedItem = defaultConn;
         }
+
 
         private void btnColse_Click(object sender, EventArgs e)
         {
@@ -35,17 +40,9 @@ namespace CodeMaker
 
         private void btnConn_Click(object sender, EventArgs e)
         {
-            var list = System.Configuration.ConfigurationManager.AppSettings;
-            List<string> listcons = new List<string>();
-            foreach(var item in list)
-            {
-                if(item.ToString().StartsWith("conn"))
-                {
-                    listcons.Add(item.ToString());
-                    string txtval = System.Configuration.ConfigurationManager.AppSettings[item.ToString()];
-                }
-            }
-
+            this.Hide();
+            CodeGenerate cg = new CodeGenerate();
+            cg.Show();
         }
     }
 }

@@ -49,6 +49,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeGenerate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CodeGenerate.Designer.cs">
+      <DependentUpon>CodeGenerate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maker.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CodeGenerate.resx">
+      <DependentUpon>CodeGenerate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maker.resx">
       <DependentUpon>Maker.cs</DependentUpon>
     </EmbeddedResource>
