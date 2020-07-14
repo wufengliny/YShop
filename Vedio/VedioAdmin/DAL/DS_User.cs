@@ -91,6 +91,15 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
         }
+        public int UpdateLoginErr(int ID)
+        {
+            string str = " update S_User set ErrorCount=ErrorCount+1,LastErrTime=GETDATE() where ID=@ID";
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
+        }
+
+
 
         public int VIPLoad(int ID, DateTime endtime)
         {

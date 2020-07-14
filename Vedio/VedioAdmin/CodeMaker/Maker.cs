@@ -35,14 +35,18 @@ namespace CodeMaker
 
         private void btnColse_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void btnConn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CodeGenerate cg = new CodeGenerate();
-            cg.Show();
+            UCommon.UUtils.SetAppSetting("DefaultConn", this.cbb_conns.SelectedItem.ToString());
+            //测试连接
+            
+            //
+            this.DialogResult = DialogResult.OK;
+            this.Dispose();
+            this.Close();
         }
     }
 }

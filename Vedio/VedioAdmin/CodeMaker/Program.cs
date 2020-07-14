@@ -16,7 +16,19 @@ namespace CodeMaker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Maker());
+            Maker ma = new Maker();
+            ma.ShowDialog();
+            if(ma.DialogResult==DialogResult.OK)
+            {
+                ma.Dispose();
+                Application.Run(new CodeGenerate());
+            }
+            else if (ma.DialogResult == DialogResult.Cancel)
+            {
+                ma.Dispose();
+                Application.Exit();
+            }
+            
         }
     }
 }

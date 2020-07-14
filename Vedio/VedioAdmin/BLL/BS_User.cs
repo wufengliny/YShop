@@ -29,7 +29,10 @@ namespace BLL
         {
             return dal.UpdateEnable(ID,Enable);
         }
-
+        public int UpdateLoginErr(int ID)
+        {
+            return dal.UpdateLoginErr(ID);
+        }
         public MS_User GetModelByID(int ID)
         {
             return dal.GetModelByID(ID);

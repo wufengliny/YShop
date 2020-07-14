@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="Keywords" content="登录">
+    <meta name="description" content="登录" />
+    <title>登录</title>
+    @{Html.RenderPartial("/views/PartV/HeadJC.cshtml");}
+</head>
+
+<body style="padding: 0;">
+
+    <!--public header-->
+    @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
+    <!--reg Box-->
+    <section class="kzloginWrap  kzregWrap kzLoginWhiteModel">
+        <div class="kzloginInner">
+            <div class="kzloginTitle">
+                <h3>登陆</h3>
+                <h4>Login</h4>
+            </div>
+            <form class="kzpwLoginBox" id="jkzpwLogin" action="#this">
+                <div class="kzloginLi kzusernameLi">
+                    <input type="text" name="Account" id="Account" placeholder="请输入账号" />
+                    <i class="kzicon-username"></i>
+
+                </div>
+                <div class="kzloginLi kzpasswordLi">
+                    <input type="password" name="pwd" id="pwd" placeholder="请输入密码" />
+                    <i class="kzicon-password"></i>
+
+                </div>
+
+                <div class="kzloginLi kzVCLi kzVCMgLi">
+                    <input type="text" name="pcode" id="pcode" placeholder="请输入验证码" />
+                    <a class="kzgetVC" href="#this" onclick="changesrc()" alt="获取图片验证码">
+                        <img id="codeimg" src="/ValidateCode/GetValidateCodekay" />
+                    </a>
+                    <i class="kzicon-VCCode"></i>
+
+                </div>
+
+                <div style="display:none" class="kzloginLi kzagreeLi">
+                    <input type="checkbox" checked="" />我已经认真阅读并同意<a href="#this">《服务协议》</a>
+                </div>
+
+                <div class="kzsubmitBox">
+                    <input type="button" onclick="dologin()" class="kzloginSubBtn" value="立即登录" />
+                </div>
+            </form>
+            <div class="kzLoginOterBox">
+                <a href="/login/reg">立即注册</a>
+                <a href="/">首页</a>
+            </div>
+        </div>
+    </section>
+    @{Html.RenderPartial("/views/PartV/FooterJC.cshtml");}
+
+    <script>
+        function dologin()
+        {
+            var data = $("#jkzpwLogin").serialize();
+            $.post("/Login/LoginPost", data, function (res) {
+                if(res=="ok")
+                {
+                    location.href = '/member/index';
+                }
+                else
+                {
+                    alert(res);
+                }
+            })
+        }
+        function changesrc() {
+            $("#codeimg").attr("src", '/ValidateCode/GetValidateCodekay?t=' + new Date().getMilliseconds());
+        }
+    </script>
+</body>
+
+</html>

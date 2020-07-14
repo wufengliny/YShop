@@ -25,15 +25,13 @@
     @{Html.RenderPartial("/views/PartV/Nav.cshtml");}
     <!--public aside bar-->
     @{Html.RenderPartial("/views/PartV/LeftNav.cshtml");}
-
-
     <!--面包屑导航-->
     <!--详情头部-->
     <section class="kzACHeaderWrap">
         <div class="container">
             <div class="kzACHeaderInner clearfix">
                 @{
-                    if (ViewBag.IsFree == 1 || ViewBag.VIP == 1)
+                    if (ViewBag.Price == 0 || ViewBag.VIP)
                     {
                         <div class="span6 col-sm-12">
                             <div class="swiper-container kzACDBanner-container wow fadeInLeft">
