@@ -40,13 +40,23 @@ namespace CodeMaker
 
         private void btnConn_Click(object sender, EventArgs e)
         {
-            UCommon.UUtils.SetAppSetting("DefaultConn", this.cbb_conns.SelectedItem.ToString());
-            //测试连接
-            
-            //
-            this.DialogResult = DialogResult.OK;
-            this.Dispose();
-            this.Close();
+            string connName = this.cbb_conns.SelectedItem.ToString();
+            UCommon.UUtils.SetAppSetting("DefaultConn", connName);
+            try
+            {
+                new Helper.SQLHelper(connName);
+                Helper.SQLHelper.ExecuteScalar(CommandType.Text, "select 8 ");
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
+                this.Close();
+                //
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("数据库连接失败："+ex.Message);
+            }
+       
         }
+
     }
 }

@@ -55,6 +55,8 @@
     <Compile Include="CodeGenerate.Designer.cs">
       <DependentUpon>CodeGenerate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\HandlerHelper.cs" />
+    <Compile Include="Helper\SQLHelper.cs" />
     <Compile Include="Maker.cs">
       <SubType>Form</SubType>
     </Compile>

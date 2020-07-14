@@ -21,7 +21,55 @@ namespace acode //可以修改成实际项目的命名空间名称
         {
 
         }
+        /// <summary>
+        /// 该函数把SqlParameter添加到SqlCommand，为Direction为ParameterDirection.InputOutput的参数并且Value为null的参数使用DBNull.Value.
+        /// <param name="command">要添加commandParameters的command</param>
+        /// <param name="commandParameters">要添加到commond的SqlParameter数组</param>
+        private static void AttachParameters(SqlCommand command, SqlParameter[] commandParameters)
+        {
+            foreach (SqlParameter p in commandParameters)
+            {
+                //check for derived output value with no value assigned
+                if ((p.Direction == ParameterDirection.InputOutput) && (p.Value == null))
+                {
+                    p.Value = DBNull.Value;
+                }
 
+                command.Parameters.Add(p);
+            }
+        }
+        private static void PrepareCommand(SqlCommand command, SqlConnection connection, SqlTransaction transaction, CommandType commandType, string commandText, SqlParameter[] commandParameters)
+        {
+            //if the provided connection is not open, we will open it
+            if (connection.State != ConnectionState.Open)
+            {
+                connection.Open();
+            }
+
+            //associate the connection with the command
+            command.Connection = connection;
+
+            //set the command text (stored procedure name or SQL statement)
+            command.CommandText = commandText;
+            command.CommandTimeout = 1200;
+
+            //if we were provided a transaction, assign it.
+            if (transaction != null)
+            {
+                command.Transaction = transaction;
+            }
+
+            //set the command type
+            command.CommandType = commandType;
+
+            //attach the command parameters if they are provided
+            if (commandParameters != null)
+            {
+                AttachParameters(command, commandParameters);
+            }
+
+            return;
+        }
         #region 公用方法
 
         public static int GetMaxID(string FieldName, string TableName)
