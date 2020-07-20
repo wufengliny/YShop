@@ -1,0 +1,323 @@
+﻿@model PagedList<MC_Vedios>
+@{
+    Layout = null;
+    string Title = string.IsNullOrEmpty(ViewBag.Title) ? "记录青年生活" : ViewBag.Title;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
+    <meta http-equiv=”Cache-Control” content=”no-transform” />
+    <meta http-equiv=”Cache-Control” content=”no-siteapp” />
+    <title>@Title</title>
+    @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
+    <style>
+        :root {
+            --mian-max-width: 1200px;
+        }
+
+        .enlighter-default {
+            max-height: 400px;
+            overflow-y: auto !important;
+        }
+    </style>
+    <meta name='apple-mobile-web-app-title' content='@Title'>
+    <!--[if IE]><script src="http://mqs.hk/wp-content/themes/zibll/js/libs/html5.min.js"></script><![endif]-->
+</head>
+<body class="home blog white-theme nav-fixed site-layout-1">
+    <header class="header header-layout-3">
+        <nav class="navbar navbar-top center">
+            <div class="container-fluid container-header">
+                <!--logo 部分-->
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        <a class="navbar-logo" href="/aca/index" title="@Title">
+                            <img src="/content/aca/images/ico.ico" switch-src="/content/aca/images/ico.ico" alt="@Title" height="50">
+                        </a>
+                    </div>
+                    <!--手机菜单按钮 部分-->
+                    <button type="button" data-toggle-class data-target=".mobile-navbar" class="navbar-toggle">
+                        <i data-class="icon em12" data-viewBox="0 0 1024 1024" data-svg="menu" aria-hidden="true"></i>
+                    </button>
+                    <!--手机搜索 部分-->
+                    <button type="button" style="display:none" data-toggle-class data-target=".navbar-search" class="navbar-toggle">
+                        <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <!-- 登录注册按钮 电脑部分-->
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-form navbar-right">
+                        <ul class="list-inline splitters relative">
+                            <li>
+                                <a href="javascript:;" class="btn signin-loader"><i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i></a>
+                                <ul class="sub-menu">
+                                    <div class="sub-user-box theme-box">
+                                        <div class="text-center mb10 header-user-href">
+                                            <a href="javascript:;" class="signin-loader">
+                                                <div class="badg mb6 toggle-radius c-blue">
+                                                    <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                                <div class="c-blue">登录</div>
+                                            </a>
+                                            <a href="javascript:;" class="signup-loader">
+                                                <div class="badg mb6 toggle-radius c-green">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>
+                                                </div><div class="c-green">注册</div>
+                                            </a>
+                                            <a style="display:none" target="_blank" href="http://mqs.hk/index.php/resetpassword/">
+                                                <div class="badg mb6 toggle-radius c-purple">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="user_rp" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="c-purple">找回密码</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <!--搜索按钮 电脑部分-->
+                            <li class="relative" style="display:none">
+                                <a href="javascript:;" data-toggle-class data-target=".navbar-search" class="btn nav-search-btn">
+                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true">
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--主题 电脑部分-->
+                    <div class="navbar-form navbar-right">
+                        <a href="javascript:;" class="toggle-theme toggle-radius">
+                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="theme" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="navbar-right"></div>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+    <!--搜索框 手机电脑-->
+    <div class="fixed-body main-bg box-body navbar-search">
+        <div class="theme-box">
+            <button class="close" data-toggle-class data-target=".navbar-search"><i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024"></i></button>
+        </div><div class="box-body">
+            <div class="search-input">
+                <form method="get" class="relative line-form" action="/">
+                    <input type="text" name="s" class="line-form-input" tabindex="2" placeholder="请输入资源名称">
+                    <div class="abs-right muted-color">
+                        <button type="submit" tabindex="3" class="null"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></button>
+                    </div>
+                    <i class="line-form-line"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--登录注册按钮 手机部分-->
+    <div class="mobile-header">
+        <nav nav-touch="left" class="mobile-navbar visible-xs-block scroll-y mini-scrollbar left">
+            <a href="javascript:;" class="toggle-theme toggle-radius">
+                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="theme" aria-hidden="true"></i>
+            </a>
+            <div class="posts-nav-box" data-title="文章目录"></div>
+            <ul style="display:none" class="mobile-menus theme-box">
+                <li>
+                    <a href="http://mqs.hk/wp-admin/nav-menus.php" class="signin-loader loaderbt">添加导航菜单</a>
+                </li>
+            </ul>
+            <div class="sub-user-box theme-box">
+                <div class="text-center mb10 header-user-href">
+                    <a href="javascript:;" class="signin-loader">
+                        <div class="badg mb6 toggle-radius c-blue">
+                            <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i>
+                        </div><div class="c-blue">登录</div>
+                    </a>
+                    <a href="javascript:;" class="signup-loader">
+                        <div class="badg mb6 toggle-radius c-green">
+                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>
+                        </div><div class="c-green">注册</div>
+                    </a>
+                    <a style="display:none" target="_blank" href="#this">
+                        <div class="badg mb6 toggle-radius c-purple">
+                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="user_rp" aria-hidden="true"></i>
+                        </div><div class="c-purple">找回密码</div>
+                    </a>
+                </div>
+            </div><div class="mobile-nav-widget">
+            </div>
+        </nav>
+        <div class="fixed-body" data-close=".mobile-navbar"></div>
+    </div>
+
+
+    <div class="container fluid-widget"></div>
+    <main role="main" class="container">
+        <div class="content-wrap">
+            <div class="content-layout">
+                <div class="index-tab">
+                    <ul class="scroll-x mini-scrollbar">
+                        @{
+                            string txtCategory = Request.QueryString["Category"];
+                        }
+                        <li class="@(string.IsNullOrEmpty(txtCategory)?"active":"")"><a href="/aca/index">全部</a></li>
+                        <li class="@(txtCategory=="国产"?"active":"")"><a href="/aca/index?Category=国产">国产</a></li>
+                        <li class="@(txtCategory=="日本"?"active":"")"><a href="/aca/index?Category=日本">日本</a></li>
+                        <li class="@(txtCategory=="欧美"?"active":"")"><a href="/aca/index?Category=欧美">欧美</a></li>
+                        @*<li class="@(txtCategory=="韩国"?"active":"")"><a href="/aca/index?Category=韩国">韩国</a></li>*@
+                        <li class="@(txtCategory=="剧情"?"active":"")"><a href="/aca/index?Category=剧情">剧情</a></li>
+                    </ul>
+                </div>
+                <!--标签导航 样式eg-->
+                <div class="ajaxpager" style="display:none">
+                    <div class="ajax-option">
+                        <div class="option-dropdown splitters-this-r">
+                            分类
+                            <i class="fa fa-fw fa-sort ml6" aria-hidden="true"></i>
+                            <div class="option-dropdown-items main-shadow radius8 main-bg scroll-y mini-scrollbar">
+                                <a ajax-replace="true" class="ajax-next text-ellipsis" href="">国产</a>
+                                <a ajax-replace="true" class="ajax-next text-ellipsis" href="">亚洲</a>
+                            </div>
+                        </div>
+                        <ul class="list-inline scroll-x mini-scrollbar option-items">
+                            <a ajax-replace="true" class="ajax-next text-ellipsis" href="">国产</a>
+                            <a ajax-replace="true" class="ajax-next text-ellipsis" href="">亚洲</a>
+                        </ul>
+                        <div class="option-dropdown splitters-this-r">
+                            专题
+                            <i class="fa fa-fw fa-sort ml6" aria-hidden="true"></i>
+                            <div class="option-dropdown-items main-shadow radius8 main-bg scroll-y mini-scrollbar">
+                                <a ajax-replace="true" class="ajax-next text-ellipsis" href="">专题01</a>
+                            </div>
+                        </div>
+                        <ul class="list-inline scroll-x mini-scrollbar option-items">
+                            <a ajax-replace="true" class="ajax-next text-ellipsis" href="">专题01</a>
+                        </ul>
+                        <div class="option-dropdown splitters-this-r">
+                            标签
+                            <i class="fa fa-fw fa-sort ml6" aria-hidden="true"></i>
+                            <div class="option-dropdown-items main-shadow radius8 main-bg scroll-y mini-scrollbar">
+                                <a href="https://demo.zibll.com/tag/seo" ajax-replace="true" class="ajax-next text-ellipsis">标签01</a>
+                            </div>
+                        </div>
+                        <ul class="list-inline scroll-x mini-scrollbar option-items">
+                            <a href="https://demo.zibll.com/tag/seo%e5%b7%a5%e5%85%b7" ajax-replace="true" class="ajax-next text-ellipsis">标签01</a>
+                        </ul>
+                    </div>
+                    <div></div>
+
+                    <!-- eg加载更多样式-->
+                    <div class="text-center theme-pagination ajax-pag" style="display:none">
+                        <div class="next-page ajax-next">
+                            <a href="">
+                                <i class="fa fa-arrow-right"></i>加载更多
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+                <div class="tab-content">
+                    <div class="ajaxpager tab-pane fade in active" id="index-tab-1">
+                        @{
+                            if (Model != null && Model.Count > 0)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    string cover = ViewBag.picurl + item.Cover;
+                                    <posts class="posts-item ajax-item main-shadow radius8 card">
+                                        <a class="item-thumbnail" href="/">
+                                            <img data-src="@cover" alt="@item.Name" class="lazyload fit-cover radius8">
+                                        </a>
+                                        <div class="item-body">
+                                            <h5 class="item-heading text-ellipsis-2">
+                                                <a href="/">@item.Name<span class="focus-color"></span></a>
+                                            </h5>
+                                            <p class="item-tags scroll-x mini-scrollbar">
+                                                <a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/">
+                                                    <i class="fa fa-folder-open-o" aria-hidden="true"></i>@item.Category
+                                                </a>
+                                            </p>
+                                            <div class="item-meta muted-3-color">
+                                                <item class="meta-author"><span class="icon-circle">@item.AddTime.ToString("yyyy-MM-dd")</span></item>
+                                                <div class="meta-right pull-right">
+                                                    @*<item class="meta-love"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="love" aria-hidden="true"></i>@item.Likes</item>*@
+                                                    <item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>@item.Hits</item>
+                                                    @*<item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>@item.Goods</item>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </posts>
+                                }
+                            }
+                        }
+
+
+                    </div>
+                    @if (Model != null && Model.Count > 0)
+                    {
+                        @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pi", PagerItemWrapperFormatString = "<li>{0}</li>", CurrentPagerItemWrapperFormatString = "<li class=\"active\"><span>{0}</span></li>", FirstPageText = "首页", NextPageText = "»", PrevPageText = "上一页", LastPageText = "尾页", ContainerTagName = "ul", AutoHide = false }, new { @class = "pagination" })
+                    }
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fluid-widget"></div>
+    <div class="notyn"></div>
+    <footer class="footer">
+        <div class="container-fluid container-footer">
+            <ul class="list-inline">
+                <li class="hidden-xs" style="max-width: 300px;">
+                </li>
+                <li style="max-width: 550px;">
+                    <p class="footer-muted em09">Copyright &copy;&nbsp;2020&nbsp;·&nbsp;<a href="/aca/index">@Title</a></p><div class="footer-contact hidden-xs"></div>
+                </li>
+                <li class="">
+                </li>
+            </ul>
+            <div class="">
+                <p class="footer-conter"></p>
+            </div>
+        </div>
+    </footer>
+    <!--window_variable_start-->
+    <script type="text/javascript">
+        window._win = {
+            www: 'http://localhost:8051',
+            uri: 'http://localhost:8051/content/aca/js',
+            ver: '3.3',
+            ajaxpager: '',
+            ajax_trigger: '<i class="fa fa-arrow-right"></i>加载更多',
+            ajax_nomore: '没有更多内容了',
+            qj_loading: '',
+            url_rp: 'http://mqs.hk/index.php/resetpassword/',
+            highlight_kg: '1',
+            highlight_hh: '1',
+            highlight_btn: '1',
+            highlight_zt: 'enlighter',
+            up_max_size: '4'
+        }
+    </script>
+    <!--window_variable_end-->
+    <!-- 返回顶部-->
+    <div class="float-right text-center">
+        <a class="main-shadow muted-2-color ontop radius8 fade" title="返回顶部" href="javascript:(scrollTo());">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+    </div>
+
+    <!-- 登录注册 页面HTML部分-->
+    @{Html.RenderPartial("/views/PartV/aca/funLogin.cshtml");}
+
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var zibpay_ajax_url = "";
+/* ]]> */
+    </script>
+    @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+</body>
+</html>

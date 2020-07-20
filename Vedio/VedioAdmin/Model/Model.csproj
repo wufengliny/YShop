@@ -47,6 +47,7 @@
     <Compile Include="MC_Vedios.cs" />
     <Compile Include="ModelView\S_AdminViewModels.cs" />
     <Compile Include="MS_User.cs" />
+    <Compile Include="MS_UserLoginIP.cs" />
     <Compile Include="Power\MS_Admin.cs" />
     <Compile Include="Power\MS_AdminGroup.cs" />
     <Compile Include="Power\MS_Config.cs" />

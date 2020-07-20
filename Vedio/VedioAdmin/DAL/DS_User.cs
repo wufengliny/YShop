@@ -98,7 +98,18 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, str, param);
         }
-
+        public int UpdateLoginOK(string IP,DateTime dt, int ID)
+        {
+            string str = "  update S_User set ErrorCount=0,LoginCount=LoginCount+1,LastLoginIP=@LastLoginIP,LastLoginTime=@LastLoginTime where ID=@ID";
+            SqlParameter[] parameters = {
+                new SqlParameter("@LastLoginIP", SqlDbType.NVarChar,100),
+               new SqlParameter("@LastLoginTime", SqlDbType.DateTime,8),
+               new SqlParameter("@ID", SqlDbType.Int,4)};
+            parameters[0].Value = IP;
+            parameters[1].Value = dt;
+            parameters[2].Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, str, parameters);
+        }
 
 
         public int VIPLoad(int ID, DateTime endtime)

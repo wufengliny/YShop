@@ -94,6 +94,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\aca\css\bootstrap.min.css" />
+    <Content Include="Content\aca\css\font-awesome.min.css" />
+    <Content Include="Content\aca\css\main.css" />
+    <Content Include="Content\aca\css\style.min.css" />
+    <Content Include="Content\aca\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\aca\fonts\lg.svg" />
+    <Content Include="Content\aca\images\ico.ico" />
+    <Content Include="Content\aca\js\bootstrap.min.js" />
+    <Content Include="Content\aca\js\jquery.cookie.min.js" />
+    <Content Include="Content\aca\js\jquery.min.js" />
+    <Content Include="Content\aca\js\lazysizes.min.js" />
+    <Content Include="Content\aca\js\loader.js" />
+    <Content Include="Content\aca\js\main.js" />
+    <Content Include="Content\aca\js\mini-touch.js" />
+    <Content Include="Content\aca\js\pay.js" />
+    <Content Include="Content\aca\js\sign-register.js" />
+    <Content Include="Content\aca\js\svg-icon.js" />
+    <Content Include="Content\aca\js\wp-embed.min.js" />
     <Content Include="Content\css\kaysitecss.css" />
     <Content Include="Content\css\kingzhu-old0503.css" />
     <Content Include="Content\css\kingzhu.css" />
@@ -178,6 +196,9 @@
     <Content Include="Content\css\kingzhu.css.map" />
     <Content Include="Content\css\kingzhu.scss" />
     <Content Include="Content\css\kzconfig.scss" />
+    <Content Include="Content\aca\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\aca\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\aca\fonts\fontawesome-webfont.woff" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -188,8 +209,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AcaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ValidateCodeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -218,6 +241,11 @@
     <Content Include="Views\Home\VIPVedio.cshtml" />
     <Content Include="Views\Home\MHView.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Aca\Index.cshtml" />
+    <Content Include="Views\PartV\aca\HeadJC.cshtml" />
+    <Content Include="Views\PartV\aca\FooterJC.cshtml" />
+    <Content Include="Views\Aca\Test.cshtml" />
+    <Content Include="Views\PartV\aca\funLogin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -228,6 +256,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ValidateCode\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">

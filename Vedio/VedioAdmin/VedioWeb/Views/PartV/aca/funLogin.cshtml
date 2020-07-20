@@ -1,0 +1,116 @@
+﻿<div class="modal fade" id="u_sign" tabindex="-1" role="dialog">
+    <div class="modal-dialog" style="max-width:320px;margin: auto;" role="document">
+        <div class="modal-content">
+            <div class="sign">
+                <div class="sign-content modal-body">
+                    <button class="close" data-dismiss="modal">
+                        <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024"></i>
+                    </button>
+                    <div class="text-center">
+                        <div class="sign-img box-body"><img  data-src="/content/aca/images/ico.ico" switch-src="/content/aca/images/ico.ico"  class="lazyload"></div>
+                        <ul class="list-inline splitters">
+                            <li class="active"><a href="#tab-sign-in" data-toggle="tab">登录</a></li>
+                            <li><a href="#tab-sign-up" data-toggle="tab">注册</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="tab-sign-in">
+                            <form id="sign-in" class="wyz">
+                                <ul>
+                                    <li class="relative line-form">
+                                        <input type="text" name="Account" id="Account" class="line-form-input" tabindex="1" placeholder="账户">
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li class="relative line-form">
+                                        <input type="password" name="pwd" id="pwd" class="line-form-input" tabindex="2" placeholder="登录密码">
+                                        <div class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></div>
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li class="relative line-form">
+                                        <input type="text" name="pcode" class="line-form-input" autocomplete="off"  placeholder="验证码">
+                                        <span class="yztx abs-right">
+                                            <img id="codeimg" src="/ValidateCode/GetValidateCodekay" onclick="changesrc()"  />
+                                        </span>
+                                        <div class="abs-right match-ok muted-color"><i class="fa-fw fa fa-check-circle"></i></div>
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li style="display:none" class="relative line-form">
+                                        <label class="muted-color em09">
+                                            <input type="checkbox" checked="checked" tabindex="4" name="remember" value="forever">
+                                            记住登录
+                                        </label>
+                                        <a class="abs-right muted-2-color" href="/">找回密码</a>
+                                    </li>
+                                </ul>
+                                <div class="box-body">
+                                    <input type="hidden" name="action" value="signin">
+                                    <button type="button" onclick="dologin()" class="but radius jb-blue padding-lg signsubmit-loader btn-block"><i class="fa fa-sign-in mr10"></i>登录</button>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="tab-sign-up">
+                            <form id="sign-up">
+                                <ul>
+                                    <li class="relative line-form">
+                                        <input type="text" name="name" class="line-form-input" tabindex="1" placeholder="设置用户名">
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li class="relative line-form">
+                                        <input type="text" name="email" class="line-form-input" tabindex="2" placeholder="邮箱">
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li class="relative line-form">
+                                        <input type="password" name="password2" class="line-form-input" tabindex="3" placeholder="设置密码">
+                                        <div class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></div>
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                    <li class="relative line-form">
+                                        <input type="password" name="repassword" class="line-form-input" tabindex="4" placeholder="重复密码">
+                                        <div class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></div>
+                                        <i class="line-form-line"></i>
+                                    </li>
+                                </ul>
+                                <div class="box-body">
+                                    <input type="hidden" name="action" value="signup">
+                                    <button type="button"  class="but radius jb-green padding-lg signsubmit-loader btn-block">
+                                    <i data-class="icon mr10" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>注册
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-tips"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function dologin() {
+        var Account = $("#Account").val();
+        if (Account == "") {
+            notyf("请输入您的账号","danger",2,"");
+            return;
+        }
+        var pwd = $("#pwd").val();
+        if (pwd == "") {
+            notyf("请输入密码", "danger", 2, "");
+            return;
+        }
+        var data = $("#sign-in").serialize();
+        $.post("/Login/LoginPost", data, function (res) {
+            if (res == "ok") {
+                location.href = '/member/index';
+            }
+            else {
+                notyf(res, "danger", 2, "");
+            }
+        })
+    }
+    function changesrc() {
+        $("#codeimg").attr("src", '/ValidateCode/GetValidateCodekay?t=' + new Date().getMilliseconds());
+    }
+</script>

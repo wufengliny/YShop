@@ -33,6 +33,10 @@ namespace BLL
         {
             return dal.UpdateLoginErr(ID);
         }
+        public int UpdateLoginOK(string IP, DateTime dt, int ID)
+        {
+            return dal.UpdateLoginOK(IP,dt,ID);
+        }
         public MS_User GetModelByID(int ID)
         {
             return dal.GetModelByID(ID);

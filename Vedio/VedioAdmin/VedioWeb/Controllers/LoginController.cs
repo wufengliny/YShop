@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using Entity;
 using BLL;
+using UCommon;
+
 namespace VedioWeb.Controllers
 {
     public class LoginController : Controller
@@ -50,48 +52,41 @@ namespace VedioWeb.Controllers
                 new BS_User().UpdateLoginErr(model.ID);
                 return Content("密码错误");
             }
-            //string strCountIP = " select count(ID) from UserLoginIP where UID=" + model.ID;
-            //object objip = new Yax.BLL.BCommon().ExecuteScalar(strCountIP);
-            //int ipNum = 0;
-            //int.TryParse(objip.ToString(), out ipNum);
-            //if (ipNum > 10)
-            //{
-            //    if (ipNum > 15)
-            //    {
-            //        return Content("由于您在过多地方登录，现在已被限制登录");
-            //    }
-            //}
-            ////
-            //string ClientIP = Yax.Common.Utils.GetClientIP();
-            //Yax.Model.UserLoginIP MIP = new Yax.BLL.UserLoginIP().GetModelByIP(ClientIP, model.ID);
-            //if (MIP == null)
-            //{
-            //    string strip = " INSERT INTO [dbo].[UserLoginIP]([IP],[Count],[UID],[Account])";
-            //    strip += " VALUES('" + ClientIP + "',1," + model.ID + ",'" + model.Account + "')";
-            //    new Yax.BLL.BCommon().ExecuteScalar(strip);
-            //}
-            //else
-            //{
-            //    string strip = " update UserLoginIP set Count=Count+1 where id=" + MIP.ID;
-            //    new Yax.BLL.BCommon().ExecuteScalar(strip);
-            //}
-            //// 登陆成功
-            //int _Exp = 60 * 24 * 60;//过期时间,浏览器进程
-            //DateTime dtNow = DateTime.Now;
-            //int ISVIP = 0;
-            //if (model.VIP == 1 && model.VIPEndTime > DateTime.Now)
-            //{
-            //    ISVIP = 1;
-            //}
-            //Yax.Common.Cookies.AddCookies(PubStr.MemberCookieName, "userid", SecurityHelper.Encrypt(model.ID.ToString()), _Exp);
-            //Yax.Common.Cookies.AddCookies(PubStr.MemberCookieName, "Account", SecurityHelper.Encrypt(model.Account.ToString()), _Exp);
-            //Yax.Common.Cookies.AddCookies(PubStr.MemberCookieName, "UserType", SecurityHelper.Encrypt(model.UserType.ToString()), _Exp);
-            //Yax.Common.Cookies.AddCookies(PubStr.MemberCookieName, "lastlogintime", SecurityHelper.Encrypt(dtNow.ToString()), _Exp);
-            //Yax.Common.Cookies.AddCookies(PubStr.MemberCookieName, "VIP", SecurityHelper.Encrypt(ISVIP.ToString()), _Exp);
-            //string upstr = "  update Y_User set ErrorCount=0,LoginCount=LoginCount+1,LastLoginIP='" + Utils.GetClientIP() + "',LastLoginTime='" + dtNow + "' where id=" + model.ID;
-            //new Yax.BLL.BCommon().ExecuteScalar(upstr);
+            int ipNum =new  BS_UserLoginIP().CountByUID(model.ID);
+            if (ipNum > 15)
+            {
+                return Content("由于您在过多地方登录，现在已被限制登录");
+            }
+            string ClientIP = UCommon.UUtils.GetClientIP();
+            MS_UserLoginIP MIP = new BS_UserLoginIP().GetModelByIPUID(ClientIP, model.ID);
+            if (MIP == null)
+            {
+                MIP = new MS_UserLoginIP();
+                MIP.Account = model.Account;
+                MIP.Count = 1;
+                MIP.IP = ClientIP;
+                MIP.UID = model.ID;
+                new BS_UserLoginIP().Add(MIP);
+            }
+            else
+            {
+                new BS_UserLoginIP().UpdateCount(MIP.ID);
+            }
+            //登陆成功
+            int _Exp = 60 * 24 * 60;//过期时间,浏览器进程
+            DateTime dtNow = DateTime.Now;
+            int ISVIP = 0;
+            if (model.VIP&& model.VIPEndTime > DateTime.Now)
+            {
+                ISVIP = 1;
+            }
+            Cookies.AddCookies(PubStr.MemberCookieName, "userid", SecurityHelper.Encrypt(model.ID.ToString()), _Exp);
+            Cookies.AddCookies(PubStr.MemberCookieName, "Account", SecurityHelper.Encrypt(model.Account.ToString()), _Exp);
+            Cookies.AddCookies(PubStr.MemberCookieName, "UserType", SecurityHelper.Encrypt(model.UserType.ToString()), _Exp);
+            Cookies.AddCookies(PubStr.MemberCookieName, "lastlogintime", SecurityHelper.Encrypt(dtNow.ToString()), _Exp);
+            Cookies.AddCookies(PubStr.MemberCookieName, "VIP", SecurityHelper.Encrypt(ISVIP.ToString()), _Exp);
+            new BS_User().UpdateLoginOK(ClientIP,dtNow,model.ID);
             return Content("ok");
-
         }
     }
 }
