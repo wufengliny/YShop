@@ -1,0 +1,45 @@
+﻿@{
+    string menuSid = Request.QueryString["menusid"];
+}
+    <ul class="list-inline scroll-x mini-scrollbar box-body author-set-tab">
+        <li class="@(string.IsNullOrEmpty(menuSid)?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/Index">
+                <i class="fa fa-address-card hide-sm fa-fw" aria-hidden="true"></i>个人信息
+            </a>
+        </li>
+        <li class="@(menuSid=="2"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/ModHeadPic?menusid=2">
+                <i class="fa fa-user-circle-o hide-sm fa-fw" aria-hidden="true"></i>修改头像
+            </a>
+        </li>
+        <li class="@(menuSid=="3"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/ModBanner?menusid=3">
+                <i class="fa fa-picture-o hide-sm fa-fw" aria-hidden="true"></i>修改封面
+            </a>
+        </li>
+        <li class="@(menuSid=="4"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/BindEmail?menusid=4">
+                <i class="fa fa-cog hide-sm fa-fw" aria-hidden="true"></i>绑定邮箱
+            </a>
+        </li>
+        <li class="@(menuSid=="5"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/ModPwd?menusid=5">
+                <i class="fa fa-empire hide-sm fa-fw" aria-hidden="true"></i>修改密码
+            </a>
+        </li>
+        <li class="@(menuSid=="6"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/OpneVIP?menusid=6">
+                <i class="fa fa-diamond hide-sm fa-fw" aria-hidden="true"></i>VIP会员
+            </a>
+        </li>
+        <li class="@(menuSid=="7"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/Reward?menusid=7">
+                <i class="fa fa-usd hide-sm fa-fw" aria-hidden="true"></i>打赏设置
+            </a>
+        </li>
+        <li class="@(menuSid=="8"?"active":"")">
+            <a class="muted-2-color but hollow" href="/Member/Orders?menusid=8">
+                <i class="fa fa-shopping-cart hide-sm fa-fw" aria-hidden="true"></i>支付订单
+            </a>
+        </li>
+    </ul>

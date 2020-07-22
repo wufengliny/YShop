@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Web;
 using UCommon;
 namespace BLL
@@ -12,40 +11,21 @@ namespace BLL
     {
         public CurrentUser()
         {
-            string name = "";//HttpContext.Current.User.Identity.Name
-            if (HttpContext.Current != null)
+            string idStr = Cookies.GetCookies(PubStr.MemberCookieName, "userid");
+            string lastlogintimeStr = Cookies.GetCookies(PubStr.MemberCookieName, "lastlogintime");
+            if(!string.IsNullOrEmpty(idStr))
             {
-                name = HttpContext.Current.User.Identity.Name;
+                idStr = SecurityHelper.Decrypt(idStr);
+                int id = 0;
+                int.TryParse(idStr, out id);
+                ID = id;
+                lastlogintimeStr = SecurityHelper.Decrypt(lastlogintimeStr);
+                Lastlogintime = UUtils.FromUnixStampSecond(lastlogintimeStr);
+                Account = Cookies.GetCookies(PubStr.MemberCookieName, "Account");
+                Account = SecurityHelper.Decrypt(Account);
+                UserType = Cookies.GetCookies(PubStr.MemberCookieName, "UserType");
+                UserType= SecurityHelper.Decrypt(UserType);
             }
-            if (!string.IsNullOrEmpty(name))
-            {
-                try
-                {
-                    string[] userInfo = UCommon.SecurityHelper.DecryptDES(name).Split(new string[] { ",|" }, StringSplitOptions.None);
-                    ID = int.Parse(userInfo[0]);
-                    Account = userInfo[1];
-                    RealName = userInfo[2];
-                    Level = int.Parse(userInfo[3]);
-                    if (userInfo.Length > 4)
-                    {
-                        CustPre = userInfo[4];
-                    }
-                    else
-                    {
-                        CustPre = new BS_Config().GetModelByIDFromCache(57).Value;
-                    }
-                    MachineCode = userInfo[5];
-                }
-                catch (Exception e)
-                {
-
-                }
-            }
-            else
-            {
-
-            }
-
         }
 
         public int ID
@@ -59,35 +39,11 @@ namespace BLL
             get;
             set;
         }
-        public string RealName
-        {
-            get;
-            set;
-        }
-
-        public int Level
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 客户前缀
-        /// </summary>
-        public string CustPre
-        {
-            get;
-            set;
-        }
-        /// <summary>
-        /// 机器码
-        /// </summary>
-        public string MachineCode
-        {
-            get;
-            set;
-        }
 
 
+        public string UserType { get; set; }
+
+        public DateTime Lastlogintime { get; set; }
 
 
 

@@ -1,7 +1,6 @@
 ﻿@model PagedList<MC_Vedios>
 @{
     Layout = null;
-    string Title = string.IsNullOrEmpty(ViewBag.Title) ? "记录青年生活" : ViewBag.Title;
 }
 <!DOCTYPE HTML>
 <html>
@@ -12,98 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
     <meta http-equiv=”Cache-Control” content=”no-transform” />
     <meta http-equiv=”Cache-Control” content=”no-siteapp” />
-    <title>@Title</title>
+    <title>@ViewBag.Title</title>
     @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
-    <style>
-        :root {
-            --mian-max-width: 1200px;
-        }
-
-        .enlighter-default {
-            max-height: 400px;
-            overflow-y: auto !important;
-        }
-    </style>
-    <meta name='apple-mobile-web-app-title' content='@Title'>
+    <meta name='apple-mobile-web-app-title' content='@ViewBag.Title'>
     <!--[if IE]><script src="http://mqs.hk/wp-content/themes/zibll/js/libs/html5.min.js"></script><![endif]-->
 </head>
+<!--body class  dark-theme-->
 <body class="home blog white-theme nav-fixed site-layout-1">
     <header class="header header-layout-3">
-        <nav class="navbar navbar-top center">
-            <div class="container-fluid container-header">
-                <!--logo 部分-->
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <a class="navbar-logo" href="/aca/index" title="@Title">
-                            <img src="/content/aca/images/ico.ico" switch-src="/content/aca/images/ico.ico" alt="@Title" height="50">
-                        </a>
-                    </div>
-                    <!--手机菜单按钮 部分-->
-                    <button type="button" data-toggle-class data-target=".mobile-navbar" class="navbar-toggle">
-                        <i data-class="icon em12" data-viewBox="0 0 1024 1024" data-svg="menu" aria-hidden="true"></i>
-                    </button>
-                    <!--手机搜索 部分-->
-                    <button type="button" style="display:none" data-toggle-class data-target=".navbar-search" class="navbar-toggle">
-                        <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i>
-                    </button>
-                </div>
-                <!-- 登录注册按钮 电脑部分-->
-                <div class="collapse navbar-collapse">
-                    <div class="navbar-form navbar-right">
-                        <ul class="list-inline splitters relative">
-                            <li>
-                                <a href="javascript:;" class="btn signin-loader"><i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i></a>
-                                <ul class="sub-menu">
-                                    <div class="sub-user-box theme-box">
-                                        <div class="text-center mb10 header-user-href">
-                                            <a href="javascript:;" class="signin-loader">
-                                                <div class="badg mb6 toggle-radius c-blue">
-                                                    <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true">
-                                                    </i>
-                                                </div>
-                                                <div class="c-blue">登录</div>
-                                            </a>
-                                            <a href="javascript:;" class="signup-loader">
-                                                <div class="badg mb6 toggle-radius c-green">
-                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>
-                                                </div><div class="c-green">注册</div>
-                                            </a>
-                                            <a style="display:none" target="_blank" href="http://mqs.hk/index.php/resetpassword/">
-                                                <div class="badg mb6 toggle-radius c-purple">
-                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="user_rp" aria-hidden="true"></i>
-                                                </div>
-                                                <div class="c-purple">找回密码</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </li>
-                            <!--搜索按钮 电脑部分-->
-                            <li class="relative" style="display:none">
-                                <a href="javascript:;" data-toggle-class data-target=".navbar-search" class="btn nav-search-btn">
-                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true">
-                                    </i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--主题 电脑部分-->
-                    <div class="navbar-form navbar-right">
-                        <a href="javascript:;" class="toggle-theme toggle-radius">
-                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="theme" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                    <div class="navbar-right"></div>
-                </div>
-            </div>
-        </nav>
-
-
+        @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
     </header>
     <!--搜索框 手机电脑-->
     <div class="fixed-body main-bg box-body navbar-search">
         <div class="theme-box">
-            <button class="close" data-toggle-class data-target=".navbar-search"><i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024"></i></button>
+            <button class="close" data-toggle-class data-target=".navbar-search">
+                <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024"></i>
+            </button>
         </div><div class="box-body">
             <div class="search-input">
                 <form method="get" class="relative line-form" action="/">
@@ -118,37 +41,7 @@
     </div>
     <!--登录注册按钮 手机部分-->
     <div class="mobile-header">
-        <nav nav-touch="left" class="mobile-navbar visible-xs-block scroll-y mini-scrollbar left">
-            <a href="javascript:;" class="toggle-theme toggle-radius">
-                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="theme" aria-hidden="true"></i>
-            </a>
-            <div class="posts-nav-box" data-title="文章目录"></div>
-            <ul style="display:none" class="mobile-menus theme-box">
-                <li>
-                    <a href="http://mqs.hk/wp-admin/nav-menus.php" class="signin-loader loaderbt">添加导航菜单</a>
-                </li>
-            </ul>
-            <div class="sub-user-box theme-box">
-                <div class="text-center mb10 header-user-href">
-                    <a href="javascript:;" class="signin-loader">
-                        <div class="badg mb6 toggle-radius c-blue">
-                            <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i>
-                        </div><div class="c-blue">登录</div>
-                    </a>
-                    <a href="javascript:;" class="signup-loader">
-                        <div class="badg mb6 toggle-radius c-green">
-                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>
-                        </div><div class="c-green">注册</div>
-                    </a>
-                    <a style="display:none" target="_blank" href="#this">
-                        <div class="badg mb6 toggle-radius c-purple">
-                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="user_rp" aria-hidden="true"></i>
-                        </div><div class="c-purple">找回密码</div>
-                    </a>
-                </div>
-            </div><div class="mobile-nav-widget">
-            </div>
-        </nav>
+        @{Html.RenderPartial("/views/PartV/aca/NavWap.cshtml");}
         <div class="fixed-body" data-close=".mobile-navbar"></div>
     </div>
 
@@ -230,15 +123,15 @@
                                 {
                                     string cover = ViewBag.picurl + item.Cover;
                                     <posts class="posts-item ajax-item main-shadow radius8 card">
-                                        <a class="item-thumbnail" href="/">
+                                        <a class="item-thumbnail" target="_blank" href="/aca/play?ID=@item.ID">
                                             <img data-src="@cover" alt="@item.Name" class="lazyload fit-cover radius8">
                                         </a>
                                         <div class="item-body">
                                             <h5 class="item-heading text-ellipsis-2">
-                                                <a href="/">@item.Name<span class="focus-color"></span></a>
+                                                <a  href="/aca/play?ID=@item.ID">@item.Name<span class="focus-color"></span></a>
                                             </h5>
                                             <p class="item-tags scroll-x mini-scrollbar">
-                                                <a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/">
+                                                <a class="but c-blue" title="查看更多@(item.Category)" href="/aca/index?Category=@item.Category">
                                                     <i class="fa fa-folder-open-o" aria-hidden="true"></i>@item.Category
                                                 </a>
                                             </p>
@@ -268,56 +161,16 @@
     </main>
     <div class="container fluid-widget"></div>
     <div class="notyn"></div>
-    <footer class="footer">
-        <div class="container-fluid container-footer">
-            <ul class="list-inline">
-                <li class="hidden-xs" style="max-width: 300px;">
-                </li>
-                <li style="max-width: 550px;">
-                    <p class="footer-muted em09">Copyright &copy;&nbsp;2020&nbsp;·&nbsp;<a href="/aca/index">@Title</a></p><div class="footer-contact hidden-xs"></div>
-                </li>
-                <li class="">
-                </li>
-            </ul>
-            <div class="">
-                <p class="footer-conter"></p>
-            </div>
-        </div>
-    </footer>
+    @{Html.RenderPartial("/views/PartV/aca/Footer.cshtml");}
     <!--window_variable_start-->
-    <script type="text/javascript">
-        window._win = {
-            www: 'http://localhost:8051',
-            uri: 'http://localhost:8051/content/aca/js',
-            ver: '3.3',
-            ajaxpager: '',
-            ajax_trigger: '<i class="fa fa-arrow-right"></i>加载更多',
-            ajax_nomore: '没有更多内容了',
-            qj_loading: '',
-            url_rp: 'http://mqs.hk/index.php/resetpassword/',
-            highlight_kg: '1',
-            highlight_hh: '1',
-            highlight_btn: '1',
-            highlight_zt: 'enlighter',
-            up_max_size: '4'
-        }
-    </script>
     <!--window_variable_end-->
     <!-- 返回顶部-->
-    <div class="float-right text-center">
-        <a class="main-shadow muted-2-color ontop radius8 fade" title="返回顶部" href="javascript:(scrollTo());">
-            <i class="fa fa-arrow-up"></i>
-        </a>
-    </div>
+    @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
 
     <!-- 登录注册 页面HTML部分-->
     @{Html.RenderPartial("/views/PartV/aca/funLogin.cshtml");}
 
-    <script type='text/javascript'>
-        /* <![CDATA[ */
-        var zibpay_ajax_url = "";
-/* ]]> */
-    </script>
+
     @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
 </body>
 </html>

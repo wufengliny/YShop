@@ -19,5 +19,14 @@ namespace VedioWeb.Controllers
             byte[] bytes = vCode.CreateCodeKayimg(strcode);
             return File(bytes, @"image");
         }
+        public ActionResult GetValidateCodekayReg()
+        {
+            UValidateCode vCode = new UValidateCode();
+            string strcode = UUtils.RandCodestr(4);
+            string ENcode = SecurityHelper.Encrypt_jia(strcode, "kay965ou");
+            Cookies.AddCookies(PubStr.CheckCodeCookieName, "ValidecodekayReg", ENcode, 10);
+            byte[] bytes = vCode.CreateCodeKayimg(strcode);
+            return File(bytes, @"image");
+        }
     }
 }

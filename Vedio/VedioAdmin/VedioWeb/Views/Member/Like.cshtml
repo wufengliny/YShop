@@ -1,0 +1,115 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
+    <meta http-equiv=”Cache-Control” content=”no-transform” />
+    <meta http-equiv=”Cache-Control” content=”no-siteapp” />
+    <title>@ViewBag.Title</title>
+    @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
+    <meta name='apple-mobile-web-app-title' content='@ViewBag.Title'>
+</head>
+
+<body class="archive author author-xiaoka author-2 logged-in  nav-fixed site-layout-1">
+    <header class="header header-layout-3">
+        @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
+    </header>
+
+    <div class="fixed-body main-bg box-body navbar-search">
+        <div class="theme-box">
+            <button class="close" data-toggle-class data-target=".navbar-search">
+                <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024">
+                </i>
+            </button>
+        </div>
+        <div class="box-body">
+            <div class="search-input">
+                <form method="get" class="relative line-form" action="">
+                    <input type="text" name="s" class="line-form-input" tabindex="2" placeholder="开启精彩搜索">
+                    <div class="abs-right muted-color">
+                        <button type="submit" tabindex="3" class="null"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></button>
+                    </div>
+                    <i class="line-form-line"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-header">
+        @{Html.RenderPartial("/views/PartV/aca/NavWap.cshtml");}
+        <div class="fixed-body" data-close=".mobile-navbar"></div>
+    </div>
+
+    <div class="container fluid-widget"></div>
+    <main class="container">
+        <div class="content-wrap">
+            <div class="content-layout">
+                @{Html.RenderPartial("/views/PartV/aca/MemberBanner.cshtml");}
+
+                @{Html.RenderPartial("/views/PartV/aca/MemberTab.cshtml");}
+
+                <div class="main-bg zib-widget author-content nobottom">
+
+                    <!--author-tab-content 会员中心内容 不同部分-->
+                    <div class="tab-content author-tab-content">
+
+                        <posts class="posts-item ajax-item main-shadow radius8 card">
+                            <a class="item-thumbnail" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/"><img src="http://mqs.hk/wp-content/themes/zibll/img/thumbnail.svg" data-src="http://mqs.hk/wp-content/uploads/2020/07/01f9b91505c8a61075384ee838b7a48e-1024x576.jpg" alt="No GoogleKey-记录老年生活" class="lazyload fit-cover radius8"></a><div class="item-body">
+                                <h5 class="item-heading text-ellipsis-2">
+                                    <a href="http://mqs.hk/index.php/2020/07/19/no-googlekey/">No GoogleKey<span class="focus-color"></span></a>
+                                </h5>
+                                <p class="item-tags scroll-x mini-scrollbar"><a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/"><i class="fa fa-folder-open-o" aria-hidden="true"></i>未分类</a></p><div class="item-meta muted-3-color"><item class="meta-author"><span class="icon-circle">19小时前</span></item><div class="meta-right pull-right"><item class="meta-comm"><a data-toggle="tooltip" title="去评论" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/#respond"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>0</a></item><item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>35</item><item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>0</item></div></div>
+                            </div>
+                        </posts>
+                        <posts class="posts-item ajax-item main-shadow radius8 card">
+                            <a class="item-thumbnail" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/"><img src="http://mqs.hk/wp-content/themes/zibll/img/thumbnail.svg" data-src="http://mqs.hk/wp-content/uploads/2020/07/01f9b91505c8a61075384ee838b7a48e-1024x576.jpg" alt="No GoogleKey-记录老年生活" class="lazyload fit-cover radius8"></a><div class="item-body">
+                                <h5 class="item-heading text-ellipsis-2">
+                                    <a href="http://mqs.hk/index.php/2020/07/19/no-googlekey/">No GoogleKey<span class="focus-color"></span></a>
+                                </h5>
+                                <p class="item-tags scroll-x mini-scrollbar"><a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/"><i class="fa fa-folder-open-o" aria-hidden="true"></i>未分类</a></p><div class="item-meta muted-3-color"><item class="meta-author"><span class="icon-circle">19小时前</span></item><div class="meta-right pull-right"><item class="meta-comm"><a data-toggle="tooltip" title="去评论" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/#respond"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>0</a></item><item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>35</item><item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>0</item></div></div>
+                            </div>
+                        </posts>
+                        <posts class="posts-item ajax-item main-shadow radius8 card">
+                            <a class="item-thumbnail" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/"><img src="http://mqs.hk/wp-content/themes/zibll/img/thumbnail.svg" data-src="http://mqs.hk/wp-content/uploads/2020/07/01f9b91505c8a61075384ee838b7a48e-1024x576.jpg" alt="No GoogleKey-记录老年生活" class="lazyload fit-cover radius8"></a><div class="item-body">
+                                <h5 class="item-heading text-ellipsis-2">
+                                    <a href="http://mqs.hk/index.php/2020/07/19/no-googlekey/">No GoogleKey<span class="focus-color"></span></a>
+                                </h5>
+                                <p class="item-tags scroll-x mini-scrollbar"><a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/"><i class="fa fa-folder-open-o" aria-hidden="true"></i>未分类</a></p><div class="item-meta muted-3-color"><item class="meta-author"><span class="icon-circle">19小时前</span></item><div class="meta-right pull-right"><item class="meta-comm"><a data-toggle="tooltip" title="去评论" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/#respond"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>0</a></item><item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>35</item><item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>0</item></div></div>
+                            </div>
+                        </posts>
+                        <posts class="posts-item ajax-item main-shadow radius8 card">
+                            <a class="item-thumbnail" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/"><img src="http://mqs.hk/wp-content/themes/zibll/img/thumbnail.svg" data-src="http://mqs.hk/wp-content/uploads/2020/07/01f9b91505c8a61075384ee838b7a48e-1024x576.jpg" alt="No GoogleKey-记录老年生活" class="lazyload fit-cover radius8"></a><div class="item-body">
+                                <h5 class="item-heading text-ellipsis-2">
+                                    <a href="http://mqs.hk/index.php/2020/07/19/no-googlekey/">No GoogleKey<span class="focus-color"></span></a>
+                                </h5>
+                                <p class="item-tags scroll-x mini-scrollbar"><a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/"><i class="fa fa-folder-open-o" aria-hidden="true"></i>未分类</a></p><div class="item-meta muted-3-color"><item class="meta-author"><span class="icon-circle">19小时前</span></item><div class="meta-right pull-right"><item class="meta-comm"><a data-toggle="tooltip" title="去评论" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/#respond"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>0</a></item><item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>35</item><item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>0</item></div></div>
+                            </div>
+                        </posts>
+                        <posts class="posts-item ajax-item main-shadow radius8 card">
+                            <a class="item-thumbnail" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/"><img src="http://mqs.hk/wp-content/themes/zibll/img/thumbnail.svg" data-src="http://mqs.hk/wp-content/uploads/2020/07/01f9b91505c8a61075384ee838b7a48e-1024x576.jpg" alt="No GoogleKey-记录老年生活" class="lazyload fit-cover radius8"></a><div class="item-body">
+                                <h5 class="item-heading text-ellipsis-2">
+                                    <a href="http://mqs.hk/index.php/2020/07/19/no-googlekey/">No GoogleKey<span class="focus-color"></span></a>
+                                </h5>
+                                <p class="item-tags scroll-x mini-scrollbar"><a class="but c-blue" title="查看更多分类文章" href="http://mqs.hk/uncategorized/"><i class="fa fa-folder-open-o" aria-hidden="true"></i>未分类</a></p><div class="item-meta muted-3-color"><item class="meta-author"><span class="icon-circle">19小时前</span></item><div class="meta-right pull-right"><item class="meta-comm"><a data-toggle="tooltip" title="去评论" href="http://mqs.hk/index.php/2020/07/19/no-googlekey/#respond"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>0</a></item><item class="meta-view"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>35</item><item class="meta-like"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>0</item></div></div>
+                            </div>
+                        </posts>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fluid-widget"></div><div class="notyn"></div>
+    @{Html.RenderPartial("/views/PartV/aca/Footer.cshtml");}
+    <!--window_variable_start-->
+    <!--window_variable_end-->
+
+    @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+</body>
+</html>

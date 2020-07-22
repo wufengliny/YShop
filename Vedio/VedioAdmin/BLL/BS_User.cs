@@ -17,9 +17,9 @@ namespace BLL
             PagedList<MS_User> pl = new PagedList<MS_User>((List<MS_User>)list[1], pageIndex, pageSize, int.Parse(list[0].ToString()));
             return pl;
         }
-        public int AddByAdmin(MS_User model)
+        public int Add(MS_User model)
         {
-            return dal.AddByAdmin(model);
+            return dal.Add(model);
         }
         public int EditByAdmin(MS_User model)
         {

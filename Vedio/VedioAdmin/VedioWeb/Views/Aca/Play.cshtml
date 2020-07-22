@@ -1,0 +1,89 @@
+﻿@model PagedList<MC_Vedios>
+@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
+    <meta http-equiv=”Cache-Control” content=”no-transform” />
+    <meta http-equiv=”Cache-Control” content=”no-siteapp” />
+    <title>@ViewBag.Title</title>
+    @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
+    <meta name='apple-mobile-web-app-title' content='@ViewBag.Title'>
+    <!--[if IE]><script src="http://mqs.hk/wp-content/themes/zibll/js/libs/html5.min.js"></script><![endif]-->
+</head>
+<!--body class  dark-theme-->
+<body class="home blog white-theme nav-fixed site-layout-1">
+    <header class="header header-layout-3">
+        @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
+    </header>
+    <!--搜索框 手机电脑-->
+    <div class="fixed-body main-bg box-body navbar-search">
+        <div class="theme-box">
+            <button class="close" data-toggle-class data-target=".navbar-search">
+                <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024"></i>
+            </button>
+        </div><div class="box-body">
+            <div class="search-input">
+                <form method="get" class="relative line-form" action="/">
+                    <input type="text" name="s" class="line-form-input" tabindex="2" placeholder="请输入资源名称">
+                    <div class="abs-right muted-color">
+                        <button type="submit" tabindex="3" class="null"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></button>
+                    </div>
+                    <i class="line-form-line"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--登录注册按钮 手机部分-->
+    <div class="mobile-header">
+        @{Html.RenderPartial("/views/PartV/aca/NavWap.cshtml");}
+        <div class="fixed-body" data-close=".mobile-navbar"></div>
+    </div>
+
+
+    <div class="container fluid-widget"></div>
+    <main role="main" class="container">
+        <div class="content-wrap">
+            <div class="content-layout">
+                <div class="index-tab">
+                    <ul class="scroll-x mini-scrollbar">
+                        @{
+                            string txtCategory = Request.QueryString["Category"];
+                        }
+                        <li class="@(string.IsNullOrEmpty(txtCategory)?"active":"")"><a href="/aca/index">全部</a></li>
+                        <li class="@(txtCategory=="国产"?"active":"")"><a href="/aca/index?Category=国产">国产</a></li>
+                        <li class="@(txtCategory=="日本"?"active":"")"><a href="/aca/index?Category=日本">日本</a></li>
+                        <li class="@(txtCategory=="欧美"?"active":"")"><a href="/aca/index?Category=欧美">欧美</a></li>
+                        @*<li class="@(txtCategory=="韩国"?"active":"")"><a href="/aca/index?Category=韩国">韩国</a></li>*@
+                        <li class="@(txtCategory=="剧情"?"active":"")"><a href="/aca/index?Category=剧情">剧情</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="ajaxpager tab-pane fade in active" id="index-tab-1">
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fluid-widget"></div>
+    <div class="notyn"></div>
+    @{Html.RenderPartial("/views/PartV/aca/Footer.cshtml");}
+    <!--window_variable_start-->
+    <!--window_variable_end-->
+    <!-- 返回顶部-->
+    @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
+
+    <!-- 登录注册 页面HTML部分-->
+    @{Html.RenderPartial("/views/PartV/aca/funLogin.cshtml");}
+
+
+    @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+</body>
+</html>

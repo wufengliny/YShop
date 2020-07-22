@@ -1,0 +1,131 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
+    <meta http-equiv=”Cache-Control” content=”no-transform” />
+    <meta http-equiv=”Cache-Control” content=”no-siteapp” />
+    <title>@ViewBag.Title</title>
+    @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
+    <meta name='apple-mobile-web-app-title' content='@ViewBag.Title'>
+</head>
+
+<body class="archive author author-xiaoka author-2 logged-in  nav-fixed site-layout-1">
+    <header class="header header-layout-3">
+        @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
+    </header>
+
+    <div class="fixed-body main-bg box-body navbar-search">
+        <div class="theme-box">
+            <button class="close" data-toggle-class data-target=".navbar-search">
+                <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024">
+                </i>
+            </button>
+        </div>
+        <div class="box-body">
+            <div class="search-input">
+                <form method="get" class="relative line-form" action="http://mqs.hk/">
+                    <input type="text" name="s" class="line-form-input" tabindex="2" placeholder="开启精彩搜索">
+                    <div class="abs-right muted-color">
+                        <button type="submit" tabindex="3" class="null"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></button>
+                    </div>
+                    <i class="line-form-line"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-header">
+        @{Html.RenderPartial("/views/PartV/aca/NavWap.cshtml");}
+        <div class="fixed-body" data-close=".mobile-navbar"></div>
+    </div>
+
+    <div class="container fluid-widget"></div>
+    <main class="container">
+        <div class="content-wrap">
+            <div class="content-layout">
+                @{Html.RenderPartial("/views/PartV/aca/MemberBanner.cshtml");}
+
+                @{Html.RenderPartial("/views/PartV/aca/MemberTab.cshtml");}
+
+                <div class="main-bg zib-widget author-content nobottom">
+                    <!--author-tab-content 会员中心内容 不同部分-->
+                    <div class="tab-content author-tab-content">
+                        <div class="ajax-item">
+                            @{Html.RenderPartial("/views/PartV/aca/MemberTabLeftMenu.cshtml");}
+                            <div class="author-set-con">
+                                <div class="tab-content author-tab-set">
+                                    <div class="tab-pane list-unstyled fade in active" id="author-tab-dataset">
+                                        <form class="set-rewards-form text-center">
+                                            <div class="box-body">
+                                                <p class="muted-color">请在下方设置打赏的标题文案，并上传微信和支付宝收款二维码</p>
+                                            </div>
+                                            <div class="box-body radius8 main-shadow">
+                                                <div class="box-body rewards-title notop">
+                                                    <div class="muted-color text-left">打赏文案：</div>
+                                                    <div class="relative line-form">
+                                                        <input type="input" class="line-form-input" name="rewards_title" value="" placeholder="文章很赞！支持以下吧">
+                                                        <i class="line-form-line"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="list-inline avatar-upload">
+                                                    <li>
+                                                        <p class="muted-2-color">微信收款码</p>
+                                                        <div class="upload-preview large radius8 preview weixin"></div>
+                                                        <label>
+                                                            <a class="but hollow padding-lg c-green">
+                                                                <i class="fa fa-cloud-upload mr10"></i>上传微信收款码
+                                                            </a>
+                                                            <input class="hide" type="file" data-preview=".preview.weixin" accept="image/gif,image/jpeg,image/jpg,image/png" data-tag="weixin" name="image_upload" action="image_upload" multiple="false">
+                                                        </label>
+                                                    </li>
+                                                    <li>
+                                                        <p class="muted-2-color">支付宝收款码</p>
+                                                        <div class="upload-preview large radius8 preview alipay"></div>
+                                                        <label>
+                                                            <a class="but hollow padding-lg c-blue">
+                                                                <i class="fa fa-cloud-upload mr10"></i>上传支付宝收款码
+                                                            </a>
+                                                            <input class="hide" type="file" data-preview=".preview.alipay" accept="image/gif,image/jpeg,image/jpg,image/png" data-tag="alipay" name="image_upload" action="image_upload" multiple="false">
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <div class="progress progress-striped active">
+                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:0;">
+                                                        <span class="">10%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-body">
+                                                <button type="button" action="info.upload" class="but b-theme author-submit padding-lg" name="submit">提交</button>
+                                                <input type="hidden" name="user_id" value="75">
+                                                <input type="hidden" id="upload_rewards_nonce" name="upload_rewards_nonce" value="fa4fde66bb" />
+                                                <input type="hidden" name="_wp_http_referer" value="/wp-content/themes/zibll/action/author-content.php?type=author-tab-user-data-set&amp;id=75" />
+                                                <input type="hidden" name="action" value="set.rewards">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fluid-widget"></div><div class="notyn"></div>
+    @{Html.RenderPartial("/views/PartV/aca/Footer.cshtml");}
+    <!--window_variable_start-->
+    <!--window_variable_end-->
+
+    @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+</body>
+</html>

@@ -12,6 +12,7 @@ namespace VedioWeb.Controllers
         // GET: Aca
         public ActionResult Index(int pi = 1)
         {
+            ViewBag.Title = "记录青年生活";
             string strWhere = " where cv.Enable=1  ";
             string SortStr = "[IsTop] Desc,[Sort] desc";
             string Category = UCommon.UUtils.GetSafeQueryString("Category");
@@ -23,6 +24,12 @@ namespace VedioWeb.Controllers
             ViewBag.weburl = new BS_Config().GetModelByKeyFromCache("weburl").Value;
             var list = new BC_Vedios().Pager(pi, 20, strWhere, SortStr);
             return View(list);
+        }
+
+
+        public ActionResult Play()
+        {
+            return View();
         }
 
         public ActionResult Test()

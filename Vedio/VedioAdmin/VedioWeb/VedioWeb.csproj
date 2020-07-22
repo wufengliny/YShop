@@ -97,10 +97,14 @@
     <Content Include="Content\aca\css\bootstrap.min.css" />
     <Content Include="Content\aca\css\font-awesome.min.css" />
     <Content Include="Content\aca\css\main.css" />
+    <Content Include="Content\aca\css\other.css" />
     <Content Include="Content\aca\css\style.min.css" />
     <Content Include="Content\aca\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\aca\fonts\lg.svg" />
+    <Content Include="Content\aca\images\girl.jpg" />
+    <Content Include="Content\aca\images\head.jpeg" />
     <Content Include="Content\aca\images\ico.ico" />
+    <Content Include="Content\aca\js\author.js" />
     <Content Include="Content\aca\js\bootstrap.min.js" />
     <Content Include="Content\aca\js\jquery.cookie.min.js" />
     <Content Include="Content\aca\js\jquery.min.js" />
@@ -212,7 +216,11 @@
     <Compile Include="Controllers\AcaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\ValidateCodeController.cs" />
+    <Compile Include="Filters\ErrorFilter.cs" />
+    <Compile Include="Filters\MemActionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +254,25 @@
     <Content Include="Views\PartV\aca\FooterJC.cshtml" />
     <Content Include="Views\Aca\Test.cshtml" />
     <Content Include="Views\PartV\aca\funLogin.cshtml" />
+    <Content Include="Views\PartV\aca\NavWeb.cshtml" />
+    <Content Include="Views\PartV\aca\NavWap.cshtml" />
+    <Content Include="Views\Member\OpneVIP.cshtml" />
+    <Content Include="Views\PartV\aca\MemberBanner.cshtml" />
+    <Content Include="Views\PartV\aca\MemberTab.cshtml" />
+    <Content Include="Views\PartV\aca\Footer.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\PartV\aca\ScrollTop.cshtml" />
+    <Content Include="Views\Member\Like.cshtml" />
+    <Content Include="Views\PartV\aca\MemberTabLeftMenu.cshtml" />
+    <Content Include="Views\Member\ModHeadPic.cshtml" />
+    <Content Include="Views\Member\ModBanner.cshtml" />
+    <Content Include="Views\Member\BindEmail.cshtml" />
+    <Content Include="Views\Member\ModPwd.cshtml" />
+    <Content Include="Views\Member\Reward.cshtml" />
+    <Content Include="Views\Member\Orders.cshtml" />
+    <Content Include="Views\Member\Focus.cshtml" />
+    <Content Include="Views\Member\Comment.cshtml" />
+    <Content Include="Views\Aca\Play.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -256,6 +283,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Test\" />
     <Folder Include="Views\ValidateCode\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,125 @@
+﻿<nav class="navbar navbar-top center">
+    <div class="container-fluid container-header">
+        <!--logo 部分-->
+        <div class="navbar-header">
+            <div class="navbar-brand">
+                <a class="navbar-logo" href="/aca/index" title="@ViewBag.Title">
+                    <img src="/content/aca/images/ico.ico" switch-src="/content/aca/images/ico.ico" alt="@ViewBag.Title" height="50">
+                </a>
+            </div>
+            <!--手机菜单按钮 部分-->
+            <button type="button" data-toggle-class data-target=".mobile-navbar" class="navbar-toggle">
+                <i data-class="icon em12" data-viewBox="0 0 1024 1024" data-svg="menu" aria-hidden="true"></i>
+            </button>
+            <!--手机搜索 部分-->
+            <button type="button" style="display:none" data-toggle-class data-target=".navbar-search" class="navbar-toggle">
+                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <!-- 登录注册按钮 电脑部分-->
+            <div class="navbar-form navbar-right">
+                @{
+                    if (new BLL.CurrentUser().ID>0)
+                    {
+                        <ul class="list-inline splitters relative">
+                            <li>
+                                <a href="javascript:;" class="btn"><i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i></a>
+                                <ul class="sub-menu">
+                                    <div class="sub-user-box theme-box">
+                                        <ul class="list-inline box-body">
+                                            <li>
+                                                <div class="avatar-img">
+                                                    <img alt='xiaoka' src="/Content/aca/images/head.jpeg"  class='lazyload avatar avatar-96' height='96' width='96' />
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <b>@(new BLL.CurrentUser().Account)</b>
+                                                </div>
+                                                <div>
+                                                    <a class="pay-vip but jb-red radius payvip-icon" href="javascript:;">
+                                                        <i data-class="em12 mr3" data-viewBox="0 0 1024 1024" data-svg="vip_1" aria-hidden="true"></i>开通会员
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                               
+                                        <div class="relative">
+                                            <i class="line-form-line"></i>
+                                        </div>
+                                        <div class="text-center mt10 mb10 header-user-href">
+                                            <a href="/member/index">
+                                                <div class="badg mb6 toggle-radius c-blue">
+                                                    <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="c-blue">个人中心</div>
+                                            </a>
+                                            <a href="/Login/LoginOut" data-toggle="modal" >
+                                                <div class="badg mb6 toggle-radius c-red">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signout" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="c-red">退出登录</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="relative" style="display:none">
+                                <a href="javascript:;" data-toggle-class data-target=".navbar-search" class="btn nav-search-btn"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul class="list-inline splitters relative">
+                            <li>
+                                <a href="javascript:;" class="btn signin-loader"><i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true"></i></a>
+                                <ul class="sub-menu">
+                                    <div class="sub-user-box theme-box">
+                                        <div class="text-center mb10 header-user-href">
+                                            <a href="javascript:;" class="signin-loader">
+                                                <div class="badg mb6 toggle-radius c-blue">
+                                                    <i data-class="icon" data-viewBox="50 0 924 924" data-svg="user" aria-hidden="true">
+                                                    </i>
+                                                </div>
+                                                <div class="c-blue">登录</div>
+                                            </a>
+                                            <a href="javascript:;" class="signup-loader">
+                                                <div class="badg mb6 toggle-radius c-green">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="signup" aria-hidden="true"></i>
+                                                </div><div class="c-green">注册</div>
+                                            </a>
+                                            <a style="display:none" target="_blank" href="http://mqs.hk/index.php/resetpassword/">
+                                                <div class="badg mb6 toggle-radius c-purple">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="user_rp" aria-hidden="true"></i>
+                                                </div>
+                                                <div class="c-purple">找回密码</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <!--搜索按钮 电脑部分-->
+                            <li class="relative" style="display:none">
+                                <a href="javascript:;" data-toggle-class data-target=".navbar-search" class="btn nav-search-btn">
+                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true">
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                }
+
+            </div>
+            <!--主题 电脑部分-->
+            <div class="navbar-form navbar-right">
+                <a href="javascript:;" class="toggle-theme toggle-radius">
+                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="theme" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="navbar-right"></div>
+        </div>
+    </div>
+</nav>

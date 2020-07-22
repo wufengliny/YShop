@@ -1,0 +1,469 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=0.0">
+    <meta http-equiv=”Cache-Control” content=”no-transform” />
+    <meta http-equiv=”Cache-Control” content=”no-siteapp” />
+    <title>@ViewBag.Title</title>
+    @{Html.RenderPartial("/views/PartV/aca/HeadJC.cshtml");}
+    <meta name='apple-mobile-web-app-title' content='@ViewBag.Title'>
+</head>
+
+<body class="archive author author-xiaoka author-2 logged-in  nav-fixed site-layout-1">
+    <header class="header header-layout-3">
+        @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
+    </header>
+
+    <div class="fixed-body main-bg box-body navbar-search">
+        <div class="theme-box">
+            <button class="close" data-toggle-class data-target=".navbar-search">
+                <i data-svg="close" data-class="ic-close" data-viewbox="0 0 1024 1024">
+                </i>
+            </button>
+        </div>
+        <div class="box-body">
+            <div class="search-input">
+                <form method="get" class="relative line-form" action="">
+                    <input type="text" name="s" class="line-form-input" tabindex="2" placeholder="开启精彩搜索">
+                    <div class="abs-right muted-color">
+                        <button type="submit" tabindex="3" class="null"><i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="search" aria-hidden="true"></i></button>
+                    </div>
+                    <i class="line-form-line"></i>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-header">
+        @{Html.RenderPartial("/views/PartV/aca/NavWap.cshtml");}
+        <div class="fixed-body" data-close=".mobile-navbar"></div>
+    </div>
+
+    <div class="container fluid-widget"></div>
+    <main class="container">
+        <div class="content-wrap">
+            <div class="content-layout">
+                @{Html.RenderPartial("/views/PartV/aca/MemberBanner.cshtml");}
+
+                @{Html.RenderPartial("/views/PartV/aca/MemberTab.cshtml");}
+
+                <div class="main-bg zib-widget author-content nobottom">
+                    <!--author-tab-content 会员中心内容 不同部分-->
+                    <div class="tab-content author-tab-content">
+
+                        <div class="ajaxpager">
+                            <div class="ajax-item text-center">
+                                <ul class="list-inline splitters relative">
+                                    <li class="active">
+                                        <a data-toggle="tab" class="muted-color" href="#ajaxauthor-tab-follow">关注 6</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" class="muted-color" href="#ajaxauthor-tab-followed">粉丝 0</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content box-body">
+                                    <div class="tab-pane fade in active" id="ajaxauthor-tab-follow">
+
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-10" data-container="#container-10" data-target="#author-more-popover10" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/10">
+                                                        <img alt='haobanz' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/10">haobanz</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="10">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">这家伙很懒，什么都没有写...</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover10" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://demo.zibll.com/wp-content/themes/zibll/img/user_t.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='haobanz' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/10">haobanz</a>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="10">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag"></dt>
+                                                                    <dt class="author-desc muted-3-color em09">这家伙很懒，什么都没有写...</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-3" data-container="#container-3" data-target="#author-more-popover3" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/3">
+                                                        <img alt='小萌妹' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/3">小萌妹</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="3">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">这家伙很懒，什么都没有写...</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover3" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://demo.zibll.com/wp-content/themes/zibll/img/user_t.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='小萌妹' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/3">小萌妹</a>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="3">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag">
+                                                                        <a class="but c-blue tag-posts" data-toggle="tooltip" title="查看更多文章" href="https://demo.zibll.com/author/0">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="post" aria-hidden="true"></i>10
+                                                                        </a>
+                                                                        <a class="but c-red tag-view" data-toggle="tooltip" title="人气值 1358">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="huo" aria-hidden="true"></i>1358
+                                                                        </a>
+                                                                        <a class="but c-yellow tag-like" data-toggle="tooltip" title="获得7个点赞">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>7
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-desc muted-3-color em09">这家伙很懒，什么都没有写...</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-5" data-container="#container-5" data-target="#author-more-popover5" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/5">
+                                                        <img alt='花仙生' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/5">花仙生</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="5">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">这家伙很懒，什么都没有写...</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover5" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://demo.zibll.com/wp-content/themes/zibll/img/user_t.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='花仙生' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/5">花仙生</a>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="5">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag">
+                                                                        <a class="but c-blue tag-posts" data-toggle="tooltip" title="查看更多文章" href="https://demo.zibll.com/author/0">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="post" aria-hidden="true"></i>16
+                                                                        </a>
+                                                                        <a class="but c-red tag-view" data-toggle="tooltip" title="人气值 2009">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="huo" aria-hidden="true"></i>2009
+                                                                        </a>
+                                                                        <a class="but c-yellow tag-like" data-toggle="tooltip" title="获得8个点赞">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>8
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-desc muted-3-color em09">这家伙很懒，什么都没有写...</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-6" data-container="#container-6" data-target="#author-more-popover6" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/6">
+                                                        <img alt='笑开心' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/6">笑开心</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="6">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">这家伙很懒，什么都没有写...</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover6" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://demo.zibll.com/wp-content/themes/zibll/img/user_t.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='笑开心' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/6">笑开心</a>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="6">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag">
+                                                                        <a class="but c-blue tag-posts" data-toggle="tooltip" title="查看更多文章" href="https://demo.zibll.com/author/0">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="post" aria-hidden="true"></i>18
+                                                                        </a>
+                                                                        <a class="but c-red tag-view" data-toggle="tooltip" title="人气值 3574">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="huo" aria-hidden="true"></i>3574
+                                                                        </a>
+                                                                        <a class="but c-yellow tag-like" data-toggle="tooltip" title="获得17个点赞">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>17
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-desc muted-3-color em09">这家伙很懒，什么都没有写...</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-4" data-container="#container-4" data-target="#author-more-popover4" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/4">
+                                                        <img alt='安静' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/4">安静, 安静</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="4">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">这家伙很懒，什么都没有写...</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover4" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://demo.zibll.com/wp-content/themes/zibll/img/user_t.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='安静' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/4">安静, 安静</a>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="4">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag">
+                                                                        <a class="but c-blue tag-posts" data-toggle="tooltip" title="查看更多文章" href="https://demo.zibll.com/author/0">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="post" aria-hidden="true"></i>36
+                                                                        </a>
+                                                                        <a class="but c-red tag-view" data-toggle="tooltip" title="人气值 4038">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="huo" aria-hidden="true"></i>4038
+                                                                        </a>
+                                                                        <a class="but c-yellow tag-like" data-toggle="tooltip" title="获得8个点赞">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>8
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-desc muted-3-color em09">这家伙很懒，什么都没有写...</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="author-minicard radius8">
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <a id="container-1" data-container="#container-1" data-target="#author-more-popover1" data-trigger="hover" data-placement="top" data-toggle="html-popover" class="avatar-img" href="https://demo.zibll.com/author/1">
+                                                        <img alt='Qinver' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            <a href="https://demo.zibll.com/author/1">Qinver</a>
+                                                            <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="1">
+                                                                <count>
+                                                                    <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                </count>
+                                                            </a>
+                                                        </dt>
+                                                        <dd class="avatar-dest em09 muted-3-color text-ellipsis">做个小站，搞点小意思</dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div id="author-more-popover1" class="hide">
+                                                <div class="author-more">
+                                                    <div class="article-author main-bg theme-box box-body radius8 main-shadow relative">
+                                                        <div class="avatar-img-bg">
+                                                            <img class="lazyload fit-cover" data-src="https://oss.zibll.com/demo.zibll.com/2020/03/sinder-1-1.jpg">
+                                                        </div>
+                                                        <ul class="list-inline avatar-info radius8">
+                                                            <li>
+                                                                <div class="avatar-img">
+                                                                    <img alt='Qinver' src="https://demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png" data-src='//demo.zibll.com/wp-content/themes/zibll/img/avatar-default.png' class='lazyload avatar avatar-96' height='96' width='96' />
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <dl>
+                                                                    <dt class="avatar-name clearfix">
+                                                                        <a href="https://demo.zibll.com/author/1">Qinver</a>
+                                                                        <sapn data-toggle="tooltip" title="钻石会员">
+                                                                            <i data-class="em12 ml3" data-viewBox="0 0 1024 1024" data-svg="vip_2" aria-hidden="true"></i>
+                                                                        </sapn>
+                                                                        <a href="javascript:;" data-action="follow_user" class="focus-color em09 ml10 follow actived" data-pid="1">
+                                                                            <count>
+                                                                                <i class="fa fa-ban mr6" aria-hidden="true"></i>取消关注
+                                                                            </count>
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-tag">
+                                                                        <a class="but c-blue tag-posts" data-toggle="tooltip" title="查看更多文章" href="https://demo.zibll.com/author/0">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="post" aria-hidden="true"></i>48
+                                                                        </a>
+                                                                        <a class="but c-green tag-view" data-toggle="tooltip" title="共计2条评论">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="comment" aria-hidden="true"></i>2
+                                                                        </a>
+                                                                        <a class="but c-red tag-view" data-toggle="tooltip" title="人气值 1.7W+">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="huo" aria-hidden="true"></i>1.7W+
+                                                                        </a>
+                                                                        <a class="but c-yellow tag-like" data-toggle="tooltip" title="获得530个点赞">
+                                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>530
+                                                                        </a>
+                                                                    </dt>
+                                                                    <dt class="author-desc muted-3-color em09">做个小站，搞点小意思</dt>
+                                                                </dl>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                   
+                                    </div>
+                                    <div class="tab-pane fade" id="ajaxauthor-tab-followed">
+                                        <p class="em09 muted-3-color separator" style="line-height:90px">暂无粉丝</p>
+                                    </div>
+                                    <div class="ajax-pag hide">
+                                        <div class="next-page ajax-next">
+                                            <a href="#"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="container fluid-widget"></div><div class="notyn"></div>
+    @{Html.RenderPartial("/views/PartV/aca/Footer.cshtml");}
+    <!--window_variable_start-->
+    <!--window_variable_end-->
+
+    @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
+
+    @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+</body>
+</html>

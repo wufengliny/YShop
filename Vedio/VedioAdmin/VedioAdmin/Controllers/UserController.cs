@@ -84,7 +84,7 @@ namespace VedioAdmin.Controllers
             model.ErrorCount = 0;
             model.UserType = "会员";
             model.VIP = false;
-            int res = new BS_User().AddByAdmin(model);
+            int res = new BS_User().Add(model);
             if (res > 0)
             {
                 return Content("操作成功");

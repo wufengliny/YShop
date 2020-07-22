@@ -25,7 +25,7 @@ namespace DAL
             };
             return AspNetPagerList.PagerLsit<MS_User>(modelp);
         }
-        public int AddByAdmin(MS_User model)
+        public int Add(MS_User model)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("INSERT INTO S_User(");
@@ -61,6 +61,8 @@ namespace DAL
             parameters[12].Value = model.VIP;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
+
+
 
         public int EditByAdmin(MS_User model)
         {
