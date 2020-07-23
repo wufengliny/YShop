@@ -101,6 +101,7 @@
     <Content Include="Content\aca\css\style.min.css" />
     <Content Include="Content\aca\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\aca\fonts\lg.svg" />
+    <Content Include="Content\aca\images\adeg.jpg" />
     <Content Include="Content\aca\images\girl.jpg" />
     <Content Include="Content\aca\images\head.jpeg" />
     <Content Include="Content\aca\images\ico.ico" />
@@ -273,6 +274,7 @@
     <Content Include="Views\Member\Focus.cshtml" />
     <Content Include="Views\Member\Comment.cshtml" />
     <Content Include="Views\Aca\Play.cshtml" />
+    <Content Include="Views\Test\Article.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -284,7 +286,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Test\" />
     <Folder Include="Views\ValidateCode\" />
   </ItemGroup>
   <ItemGroup>

@@ -182,15 +182,18 @@ namespace VedioAdmin.Controllers
         }
 
 
+
         [HttpPost]
         [Power("VediosEdit", ComEnum.OpenTypeEnum.Ajax)]
-        public ActionResult Edit(string txtName, int ID, string CategoryA, decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "")
+        public ActionResult Edit(string txtName, int ID, string CategoryA, decimal Price = 0, string Cover = "", string tags = "", string Seriousname = "",string Url="",string VedioLong="")
         {
             MC_Vedios model = new MC_Vedios();
             model.Name = txtName;
             model.Category = CategoryA;
             model.Cover = Cover;
             model.Tag = tags;
+            model.Url = Url;
+            model.VedioLong = VedioLong;
             if (Price < 0)
             {
                 Price = 0;

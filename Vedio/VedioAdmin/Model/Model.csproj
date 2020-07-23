@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kay\APIResut.cs" />
+    <Compile Include="MC_Orders.cs" />
     <Compile Include="MC_Serious.cs" />
     <Compile Include="MC_Tags.cs" />
+    <Compile Include="MC_UserGoods.cs" />
+    <Compile Include="MC_UserLikes.cs" />
     <Compile Include="MC_Vedios.cs" />
     <Compile Include="ModelView\S_AdminViewModels.cs" />
     <Compile Include="MS_User.cs" />

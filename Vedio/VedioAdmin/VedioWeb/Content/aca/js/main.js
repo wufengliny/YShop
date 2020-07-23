@@ -471,29 +471,7 @@ $('.toggle-theme').click(function () {
     })
 })
 
-/*==============点赞===收藏===关注===========*/
-tbquire(["jquery.cookie"], function () {
-    _win.bd.on("click", '[data-action]', function () {
-        var _this = $(this),
-            pid = s = _this.attr("data-pid");
-        key = _this.attr("data-action");
-        type = key;
-        _type = 'zibll' + type;
-        data = {
-            type: type,
-            key: key,
-            pid: pid
-        };
-        if (!_win.is_signin) {
-            var t = lcs.get(_type) || "";
-            if (-1 !== t.indexOf("," + s + ",")) return notyf("已赞过此" + (type == 'like' ? '文章' : '评论') + "了！", "warning");;
-            t ? t.length >= 160 ? (t = t.substring(0, t.length - 1), t = t.substr(1).split(","),
-                t.splice(0, 1), t.push(s), t = t.join(","), lcs.set(_type, "," + t + ",")) : lcs.set(_type, t + s + ",") : lcs.set(_type, "," + s + ",");
 
-        }
-        action_ajax(_this, data, '已赞！感谢您的支持')
-    })
-})
 
 function action_ajax(_this, type, pid, key, text) {
     c = text || "处理完成";
@@ -584,7 +562,7 @@ $(".navbar-top li.menu-item-has-children>a").each(function () {
     $(this).append('<i class="fa fa-angle-down ml6"></i>');
 });
 
-//系统通知
+//系统通知  warning  success  danger
 function notyf(str, ys, time, id) {
         ys = ys || "success";
         time = time || 5000;

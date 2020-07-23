@@ -72,7 +72,29 @@ namespace BLL
         {
             return dal.UpdateTop(ID,istop);
         }
-
-
+        public int UpdateHit(int ID)
+        {
+            return dal.UpdateHit(ID);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="AddOrCancel">1 加 2 减</param>
+        /// <returns></returns>
+        public int UpdateLike(int ID, int AddOrCancel)
+        {
+            return dal.UpdateLike(ID,AddOrCancel);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="AddOrCancel">1 加 2 减</param>
+        /// <returns></returns>
+        public int UpdateGoods(int ID, int AddOrCancel)
+        {
+            return dal.UpdateGoods(ID, AddOrCancel);
+        }
     }
 }

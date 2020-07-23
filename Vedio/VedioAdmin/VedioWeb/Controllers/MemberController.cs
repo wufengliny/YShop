@@ -104,9 +104,11 @@ namespace VedioWeb.Controllers
         /// 我的收藏
         /// </summary>
         /// <returns></returns>
-        public ActionResult Like()
+        public ActionResult Like(int pi = 1)
         {
-            return View();
+            int uid = new CurrentUser().ID;
+            var list = new BC_UserLikes().PagerLikes(pi, 20, uid);
+            return View(list);
         }
         /// <summary>
         /// 关注

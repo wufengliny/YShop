@@ -161,7 +161,7 @@
                                 @item.Price
                             </td>
                             <td>
-                                @item.AddTime
+                                @item.AddTime.ToLongDateString()
                             </td>
                             <td>
                                 <a class="btn btn-info btn-xs" onclick="doplay(@item.ID)">播放</a>

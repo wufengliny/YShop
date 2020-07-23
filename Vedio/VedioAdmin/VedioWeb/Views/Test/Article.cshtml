@@ -19,7 +19,6 @@
 </head>
 <!--body class  dark-theme-->
 <body class="home blog white-theme nav-fixed site-layout-1">
-    <input type="hidden" name="id" id="id"  value="@Request.QueryString["ID"]" />
     <header class="header header-layout-3">
         @{Html.RenderPartial("/views/PartV/aca/NavWeb.cshtml");}
     </header>
@@ -94,16 +93,10 @@
                                                     </a>
                                                 </item>
                                                 <item class="meta-view">
-                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="favorite" aria-hidden="true"></i>
-                                                    <span id="numlike">@Model.Likes</span> 
-                                                </item>
-
-                                                <item class="meta-like">
-                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>
-                                                    <span id="numGoods">@Model.Goods</span>  
-                                                </item>
-                                                <item class="meta-view">
                                                     <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="view" aria-hidden="true"></i>@Model.Hits
+                                                </item>
+                                                <item class="meta-like">
+                                                    <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>@Model.Goods
                                                 </item>
                                             </div>
                                         </div>
@@ -111,59 +104,142 @@
                                 </div>
                                 <div class="article-content">
                                     <div data-nav="posts" class="theme-box wp-posts-content">
-
-                                        @{
-                                            if (ViewBag.AllowPlay)
-                                            {
-                                                <article class="article wp-posts-content">
-                                                    <h1 class="has-text-align-center"> <qc>@Model.Name</qc></h1>
-                                                    <hr class="wp-block-separator is-style-wide" />
-                                                    <div class="span6 col-sm-12">
-                                                        <div class="swiper-container kzACDBanner-container wow fadeInLeft">
-                                                            <div id="videock">
-                                                            </div>
-                                                            <div class="swiper-pagination"></div>
-                                                        </div>
+                                        <h1 class="wp-block-zibllblock-biaoti title-theme">简单介绍</h1>
+                                        <p>收款支付功能就不在介绍了，简单说一下付费下载的功能</p>
+                                        <ul>
+                                            <li>下载内容的标题、简介、详情均可自定义，也可留空</li>
+                                            <li>下载按钮的文字、颜色、更多内容均可自定义，也可留空</li>
+                                        </ul>
+                                        <p>本文的设置如下：</p>
+                                        <div class="wp-block-zibllblock-quote">
+                                            <div class="quote_q">
+                                                <i class="fa fa-quote-left"></i>
+                                                <p>如果您有好的建议，欢迎与我交流</p>
+                                            </div>
+                                        </div>
+                                        <div data-quantity="3" data-radius="false" class="wp-block-zibllblock-buttons">
+                                            <span class="an_1 but hollow c-blue">
+                                                <a href="#">支付功能设置教程</a>
+                                            </span>
+                                            <span class="an_2 but jb-red">
+                                                <a href="https://demo.zibll.com/wp-content/themes/zibll/go.php?url=aHR0cHM6Ly93d3cuemlibGwuY29tLzI4Lmh0bWw=">主题介绍</a>
+                                            </span>
+                                            <span class="an_3 but jb-green">
+                                                <a href="https://demo.zibll.com/wp-content/themes/zibll/go.php?url=aHR0cHM6Ly93d3cuemlibGwuY29tLzM3NS5odG1s">更新日志</a>
+                                            </span>
+                                        </div>
+                                        <div class="zib-widget pay-box order-type-2" id="posts-pay">
+                                            <div class="pay-tag abs-center">付费资源</div>
+                                            <ul class="list-inline">
+                                                <li>
+                                                    <div class="pay-thumbnail">
+                                                        <img src="https://demo.zibll.com/wp-content/themes/zibll/img/thumbnail.svg" data-src="https://oss.zibll.com/demo.zibll.com/2020/03/f97a55d38bb4477ca9adab1fe1d08117-384x400.jpeg" alt="子比主题付费下载演示-简单优雅的支付体验-Zibll主题演示" class="lazyload fit-cover radius8">
                                                     </div>
-                                                </article>
-                                            }
-                                            else
-                                            {
-                                                <div data-quantity="3" data-radius="false" class="wp-block-zibllblock-buttons">
-                                                    <span class="an_1 but hollow c-blue">
-                                                        <a href="#">付费购买</a>
-                                                    </span>
-                                                    <span class="an_2 but jb-red">
-                                                        <a href="#">月度VIP</a>
-                                                    </span>
-                                                    <span class="an_3 but jb-green">
-                                                        <a href="">永久VIP</a>
-                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <div>
+                                                            <b class="badg jb-red mr6" style="font-size: 12px; padding: 2px 10px; line-height: 1.4; ">
+                                                                <i class="fa fa-check mr6" aria-hidden="true"></i>已支付
+                                                            </b>
+                                                            <b>子比主题付费下载演示-简单优雅的支付体验</b>
+                                                        </div>
+                                                        <div class="meta-time em09 muted-2-color">
+                                                            订单号：
+                                                            <a target="_blank" href="https://demo.zibll.com/author/75?page=pay" class="">0722043533693921587</a>
+                                                        </div>
+                                                        <dd class="meta-time em09 muted-2-color">
+                                                            付款时间：2020-07-22 16:36:08
+                                                            <sapn class="pull-right em12">
+                                                                <span class="pay-mark">R币</span>0.3
+                                                            </sapn>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <div class="hidden-box show">
+                                                <div class="hidden-text">
+                                                    <i class="fa fa-download mr6" aria-hidden="true"></i>资源下载
                                                 </div>
-                                                <img src="@ViewBag.cover" />
-                                            }
-                                        }
-
-                                        <div class="text-center post-actions">
-                                            <a href="javascript:;" onclick="dolike(this)" data-action="favorite" class="action @ViewBag.likeStr  action-favorite" data-pid="1221">
-                                                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="favorite" aria-hidden="true"></i>
-                                                <text id="txtlike">
-                                                    @(ViewBag.likeStr== "actived"? "已收藏" : "收藏")
-                                                </text>
-                                            </a>
-
-                                            <a href="javascript:;" onclick="doGoods(this)" data-action="like" class="action @ViewBag.goodsStr action-like" data-pid="1221">
-                                                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>
-                                                <text id="txtGoods">
-                                                    @(ViewBag.goodsStr == "actived"? "已点赞" : "点赞")
-                                                </text>
-                                            </a>
-
-
+                                                <div>
+                                                    <div class="but-download">
+                                                        <a target="_blank" href="https://demo.zibll.com/wp-content/themes/zibll/zibpay/download.php?post_id=1221&amp;down_id=1&amp;key=2318c40a2a" class="mr10 but b-purple">
+                                                            <i class="fa fa-download mr10" aria-hidden="true"></i>本地下载
+                                                        </a>
+                                                        <sapn class="badg">这是本地上传的内容</span>
+                                                    </div>
+                                                    <div class="but-download">
+                                                        <a target="_blank" href="https://demo.zibll.com/wp-content/themes/zibll/zibpay/download.php?post_id=1221&amp;down_id=2&amp;key=2318c40a2a" class="mr10 but b-theme baidu">
+                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="pan_baidu" aria-hidden="true"></i>百度网盘
+                                                        </a>
+                                                    </div>
+                                                    <div class="but-download">
+                                                        <a target="_blank" href="https://demo.zibll.com/wp-content/themes/zibll/zibpay/download.php?post_id=1221&amp;down_id=3&amp;key=2318c40a2a" class="mr10 but b-theme weiyun">
+                                                            <i data-class="icon" data-viewBox="0 0 1400 1024" data-svg="weiyun" aria-hidden="true"></i>腾讯微云
+                                                        </a>
+                                                    </div>
+                                                    <div class="but-download">
+                                                        <a target="_blank" href="https://demo.zibll.com/wp-content/themes/zibll/zibpay/download.php?post_id=1221&amp;down_id=4&amp;key=2318c40a2a" class="mr10 but b-theme lanzou">
+                                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="lanzou" aria-hidden="true"></i>蓝奏云
+                                                        </a>
+                                                    </div>
+                                                    <div class="but-download">
+                                                        <a target="_blank" href="https://demo.zibll.com/wp-content/themes/zibll/zibpay/download.php?post_id=1221&amp;down_id=5&amp;key=2318c40a2a" class="mr10 but b-theme ctfile">
+                                                            <i data-class="icon" data-viewBox="0 0 1260 1024" data-svg="ctfile" aria-hidden="true"></i>城通网盘
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pay-extra-hide">这里是额外隐藏内容，方便填写解压密码等内容</div>
+                                            <div class="pay-details">
+                                                <p>这里是更多详情设置，支持插入任意HTML代码，方便添加版权提醒等内容</p>
+                                                <ul>
+                                                    <li>下载内容的标题、简介、详情均可自定义，也可留空</li>
+                                                    <li>下载按钮的文字、颜色、更多内容均可自定义，也可留空</li>
+                                                    <li>付费下载可单独设置额外隐藏内容</li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
 
-                                   
+                                    <div class="text-center post-actions">
+                                        <a href="javascript:;" data-action="like" class="action action-like" data-pid="1221">
+                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>
+                                            <text>点赞</text>
+                                            <count>2</count>
+                                        </a>
+                                        <div href="javascript:;" class="action action-share hover-show">
+                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="share" aria-hidden="true"></i>
+                                            <text>分享</text>
+                                            <div class="zib-widget hover-show-con share-button">
+                                                <a class="bds qzone" target="_blank" title="分享到QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://demo.zibll.com/1221.html&#38;title=子比主题付费下载演示-简单优雅的支付体验-Zibll主题演示&#38;pics=https://oss.zibll.com/demo.zibll.com/2020/03/f97a55d38bb4477ca9adab1fe1d08117.jpeg&#38;summary=子比主题本次更新中，带来了全新的支付功能，包含付费阅读、付费下载。支付功能能有效的提高网站的运营效果！    如果您需要体验付费阅读功能，请查看下面这篇文章        简单介绍    收款支付功能就不在介绍了，简单说一下付费下载的功能    下载内容的标题、简介、详情均可自定义，也可留空下载按钮的文字、颜色、更多内容均可自定义，也可留空 付费下载可单独设置额外隐藏内容，方便填写解压密码什么的付">
+                                                    <svg t="1555860145812" class="icon" viewBox="0 0 1159 1024">
+                                                        <path d="M1159.511619 372.253643c0-12.905868 0-9.276093-12.905869-9.276093h-346.845214l-51.220166-91.551004L607.382434 0h-25.811737l-128.252068 271.426546L403.308389 362.97755H0v5.646318l72.59551 51.220165 201.654195 179.875542-45.977157 411.374557c0 12.905868 2.823159 12.905868 28.231587 12.905868l335.149272-205.687278 334.745963 205.687278c12.905868 0 13.309177 0 26.215045-12.905868l-64.126034-411.374557 192.78141-165.35644zM312.564002 766.285939l372.253643-303.691217L337.97243 403.308389h526.720756l-322.646711 290.785349L875.985821 766.285939z" fill="#eab32c"></path>
+                                                    </svg>
+                                                </a>
+                                                <a class="bds tsina" target="_blank" title="分享到新浪微博" href="http://service.weibo.com/share/share.php?url=https://demo.zibll.com/1221.html&#38;title=子比主题付费下载演示-简单优雅的支付体验-Zibll主题演示&#38;pic=https://oss.zibll.com/demo.zibll.com/2020/03/f97a55d38bb4477ca9adab1fe1d08117.jpeg&#38;searchPic=false">
+                                                    <svg t="1555857500786" class="icon" viewBox="0 0 1194 1024">
+                                                        <path d="M850.801 524.863c-41.947-8.678-21.697-30.375-21.697-30.375s40.501-66.536-8.678-115.716c-60.751-60.751-206.842 7.233-206.842 7.233-56.411 17.358-40.501-7.233-33.268-50.626 0-50.626-17.358-135.966-166.342-85.34-146.091 52.072-273.379 229.986-273.379 229.986-89.68 118.609-78.109 209.736-78.109 209.736 21.697 202.503 237.218 257.468 403.559 270.486 176.467 14.464 412.238-60.751 484.56-214.074 73.769-151.877-57.858-212.628-99.805-221.307M480.51 903.833c-175.020 7.233-315.326-79.554-315.326-196.717s140.305-209.736 315.326-218.413c173.573-7.233 315.326 65.090 315.326 180.806 0 117.162-141.752 225.646-315.326 234.324z" fill="#d81e06" p-id="3535"></path>
+                                                        <path d="M445.796 566.81c-175.020 20.25-154.77 185.145-154.77 185.145s-1.447 52.072 47.733 78.109c102.697 54.965 208.288 21.697 261.807-47.733 52.072-67.984 20.25-235.771-154.77-215.521M400.956 796.796c-33.268 4.339-59.304-14.464-59.304-41.947s23.143-56.411 56.411-59.304c37.608-2.892 62.198 18.804 62.198 44.84 0 27.483-26.036 53.518-59.304 56.411M503.654 708.562c-11.572 8.678-24.59 7.233-30.375-2.892s-4.339-24.59 7.233-33.268c13.018-10.125 26.036-7.233 31.822 2.892 7.233 10.125 2.892 24.59-8.678 33.268z" fill="#2c2c2c" p-id="3536"></path>
+                                                        <path d="M1105.376 433.737c1.447-2.892 1.447-7.233 1.447-10.125 2.892-15.911 4.339-31.822 4.339-47.733 0-173.573-141.752-313.88-315.326-313.88-24.59 0-43.393 18.804-43.393 43.393 0 24.59 18.804 43.393 43.393 43.393 125.841 0 227.093 101.252 227.093 227.093 0 14.464-1.447 27.483-4.339 41.947v0c0 1.447 0 2.892 0 4.339 0 24.59 18.804 43.393 43.393 43.393 21.697 0 39.054-13.018 43.393-31.822v0c0 0 0 0 0 0z" fill="#d81e06" p-id="3537"></path>
+                                                        <path d="M969.41 391.79c0-5.786 1.447-10.125 1.447-15.911 0-95.466-78.109-173.573-173.573-173.573-20.25 0-36.161 15.911-36.161 36.161 0 20.25 15.911 36.161 36.161 36.161 56.411 0 101.252 44.84 101.252 101.252 0 4.339 0 8.678-1.447 13.018h1.447c0 1.447-1.447 2.892-1.447 4.339 0 20.25 15.911 36.161 36.161 36.161 18.804 0 33.268-14.464 34.715-31.822v0c0-1.447 0-1.447 0-2.892 1.447 0 1.447 0 1.447-2.892 0 1.447 0 1.447 0 0z" fill="#d81e06"></path>
+                                                    </svg>
+                                                </a>
+                                                <a class="bds sqq" target="_blank" title="分享给QQ好友" href="https://connect.qq.com/widget/shareqq/index.html?url=https://demo.zibll.com/1221.html&#38;desc=子比主题本次更新中，带来了全新的支付功能，包含付费阅读、付费下载。支付功能能有效的提高网站的运营效果！    如果您需要体验付费阅读功能，请查看下面这篇文章        简单介绍    收款支付功能就不在介绍了，简单说一下付费下载的功能    下载内容的标题、简介、详情均可自定义，也可留空下载按钮的文字、颜色、更多内容均可自定义，也可留空 付费下载可单独设置额外隐藏内容，方便填写解压密码什么的付&#38;title=子比主题付费下载演示-简单优雅的支付体验-Zibll主题演示&#38;pics=https://oss.zibll.com/demo.zibll.com/2020/03/f97a55d38bb4477ca9adab1fe1d08117.jpeg">
+                                                    <svg class="icon" viewBox="0 0 1024 1024">
+                                                        <path d="M909.937778 664.803556c-18.432-110.876444-95.829333-183.523556-95.829333-183.523556 11.064889-100.664889-29.496889-118.528-29.496889-118.528C776.106667 51.313778 517.432889 56.775111 512 56.917333c-5.432889-0.142222-264.135111-5.603556-272.611556 305.863111 0 0-40.561778 17.863111-29.496889 118.528 0 0-77.397333 72.647111-95.829333 183.523556 0 0-9.841778 187.335111 88.462222 22.954667 0 0 22.129778 62.435556 62.663111 118.528 0 0-72.504889 25.486222-66.332444 91.761778 0 0-2.474667 73.898667 154.823111 68.835556 0 0 110.563556-8.903111 143.758222-57.344l29.240889 0c33.166222 48.440889 143.758222 57.344 143.758222 57.344 157.240889 5.091556 154.794667-68.835556 154.794667-68.835556 6.115556-66.247111-66.332444-91.761778-66.332444-91.761778 40.533333-56.092444 62.663111-118.528 62.663111-118.528C919.751111 852.167111 909.937778 664.803556 909.937778 664.803556L909.937778 664.803556zM909.937778 664.803556" fill="#1296db"></path>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:;" data-action="favorite" class="action action-favorite" data-pid="1221">
+                                            <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="favorite" aria-hidden="true"></i>
+                                            <text>
+                                                收藏
+                                                <count>1</count>
+                                            </text>
+                                        </a>
+                                    </div>
 
 
                                     <div class="text-center theme-box muted-3-color box-body separator em09">THE END</div>
@@ -180,11 +256,11 @@
 
 
                         </div>
-                 
-                        
+
+
 
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -552,76 +628,6 @@
         return player.getByElement(div).innerHTML;
     }
     var zoom = 1;
-    </script>
-
-    <script>
-        function dolike(obj) {
-            var addOrCancel = 1;
-            if ($(obj).hasClass("actived")) {
-                addOrCancel = 2;
-            }
-            else {
-                addOrCancel = 1;//收藏
-            }
-            var id = $("#id").val();
-            $.post("/aca/DoLike", "ID=" + id + "&addOrCancel=" + addOrCancel, function (res) {
-                if (res == "操作成功") {
-                    if (addOrCancel == 1) {
-                        notyf("已收藏！", "", 2);
-                        $(obj).addClass("actived");
-                        $("#txtlike").html("已收藏");
-                        var num = parseInt($("#numlike").html());
-                        num += 1;
-                        $("#numlike").html(num)
-                    }
-                    else {
-                        notyf("已取消收藏！", "warning", 2);
-                        $(obj).removeClass("actived");
-                        $("#txtlike").html("收藏");
-                        var num = parseInt($("#numlike").html());
-                        num -= 1;
-                        $("#numlike").html(num)
-                    }
-                }
-                else {
-                    notyf(res,"warning",3);
-                }
-            })
-        }
-
-        function doGoods(obj) {
-            var addOrCancel = 1;
-            if ($(obj).hasClass("actived")) {
-                addOrCancel = 2;
-            }
-            else {
-                addOrCancel = 1;//点赞
-            }
-            var id = $("#id").val();
-            $.post("/aca/DoGoods", "ID=" + id + "&addOrCancel=" + addOrCancel, function (res) {
-                if (res == "操作成功") {
-                    if (addOrCancel == 1) {
-                        notyf("已点赞！", "", 2);
-                        $(obj).addClass("actived");
-                        $("#txtGoods").html("已点赞");
-                        var num = parseInt($("#numGoods").html());
-                        num += 1;
-                        $("#numGoods").html(num)
-                    }
-                    else {
-                        notyf("已取消点赞！", "warning", 2);
-                        $(obj).removeClass("actived");
-                        $("#txtGoods").html("点赞");
-                        var num = parseInt($("#numGoods").html());
-                        num -= 1;
-                        $("#numGoods").html(num)
-                    }
-                }
-                else {
-                    notyf(res, "warning", 3);
-                }
-            })
-        }
     </script>
 </body>
 </html>

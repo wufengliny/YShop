@@ -51,8 +51,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BC_Orders.cs" />
     <Compile Include="BC_Serious.cs" />
     <Compile Include="BC_Tags.cs" />
+    <Compile Include="BC_UserGoods.cs" />
+    <Compile Include="BC_UserLikes.cs" />
     <Compile Include="BC_Vedios.cs" />
     <Compile Include="BS_User.cs" />
     <Compile Include="BS_UserLoginIP.cs" />

@@ -106,6 +106,8 @@ namespace DAL
             strSql.Append("Tag=@Tag,");
             strSql.Append("Category=@Category,");
             strSql.Append("SeriousID=@SeriousID,");
+            strSql.Append("Url=@Url,");
+            strSql.Append("VedioLong=@VedioLong,");
             strSql.Append("Price=@Price");
             strSql.Append(" WHERE ID=@ID");
             SqlParameter[] parameters = {
@@ -115,6 +117,8 @@ namespace DAL
                new SqlParameter("@Tag", SqlDbType.NVarChar,500),
                new SqlParameter("@Category", SqlDbType.NVarChar,100),
                new SqlParameter("@SeriousID", SqlDbType.Int,4),
+               new SqlParameter("@Url", SqlDbType.NVarChar,500),
+               new SqlParameter("@VedioLong", SqlDbType.NVarChar,100),
                new SqlParameter("@Price", SqlDbType.Decimal,9),
                };
             parameters[0].Value = model.ID;
@@ -123,7 +127,9 @@ namespace DAL
             parameters[3].Value = model.Tag;
             parameters[4].Value = model.Category;
             parameters[5].Value = model.SeriousID;
-            parameters[6].Value = model.Price;
+            parameters[6].Value = model.Url;
+            parameters[7].Value = model.VedioLong;
+            parameters[8].Value = model.Price;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
 
@@ -205,6 +211,59 @@ namespace DAL
             parameters[1].Value = istop;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
-
+        public int UpdateHit(int ID)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE C_Vedios SET Hits+=1 where  ID=@ID");
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), param);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="AddOrCancel">1 加 2 减</param>
+        /// <returns></returns>
+        public int UpdateLike(int ID,int AddOrCancel)
+        {
+            StringBuilder strSql = new StringBuilder();
+            string strac = "";
+            if(AddOrCancel==1)
+            {
+                strac = "+=";
+            }
+            else
+            {
+                strac = "-=";
+            }
+            strSql.Append("UPDATE C_Vedios SET Likes "+ strac + " 1 where  ID=@ID");
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), param);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="AddOrCancel">1 加 2 减</param>
+        /// <returns></returns>
+        public int UpdateGoods(int ID, int AddOrCancel)
+        {
+            StringBuilder strSql = new StringBuilder();
+            string strac = "";
+            if (AddOrCancel == 1)
+            {
+                strac = "+=";
+            }
+            else
+            {
+                strac = "-=";
+            }
+            strSql.Append("UPDATE C_Vedios SET Goods " + strac + " 1 where  ID=@ID");
+            SqlParameter param = new SqlParameter("@ID", SqlDbType.Int, 4);
+            param.Value = ID;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), param);
+        }
     }
 }
