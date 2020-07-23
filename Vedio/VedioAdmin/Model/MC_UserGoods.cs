@@ -31,5 +31,7 @@ namespace Entity
         /// </summary>
         public DateTime AddTime { get; set; }
         #endregion Model
+
+        public string Cover { get; set; }
     }
 }

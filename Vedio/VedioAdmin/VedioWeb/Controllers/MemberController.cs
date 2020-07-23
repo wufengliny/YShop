@@ -108,8 +108,17 @@ namespace VedioWeb.Controllers
         {
             int uid = new CurrentUser().ID;
             var list = new BC_UserLikes().PagerLikes(pi, 20, uid);
+            ViewBag.picurl = new BS_Config().GetModelByKeyFromCache("picurl").Value;
             return View(list);
         }
+        public ActionResult Goods(int pi = 1)
+        {
+            int uid = new CurrentUser().ID;
+            var list = new BC_UserGoods().PagerGoods(pi, 20, uid);
+            ViewBag.picurl = new BS_Config().GetModelByKeyFromCache("picurl").Value;
+            return View(list);
+        }
+
         /// <summary>
         /// 关注
         /// </summary>

@@ -275,6 +275,7 @@
     <Content Include="Views\Member\Comment.cshtml" />
     <Content Include="Views\Aca\Play.cshtml" />
     <Content Include="Views\Test\Article.cshtml" />
+    <Content Include="Views\Member\Goods.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

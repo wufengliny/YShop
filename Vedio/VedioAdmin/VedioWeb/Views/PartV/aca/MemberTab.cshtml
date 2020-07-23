@@ -6,20 +6,27 @@
         <li class="@(string.IsNullOrEmpty(menuID)?"active":"")">
             <a data-ajax="" href="/Member/Index"><i class="fa fa-address-card-o mr6"></i>用户</a>
         </li>
-        <li class="@(menuID=="2"?"active":"")" style="display:none" >
+        <li class="@(menuID=="2"?"active":"")" style="display:none">
             <a href="/Member/OpneVIP?menuid=2"><i class="fa fa fa-file-text-o mr6"></i>发布</a>
         </li>
-        <li  class="@(menuID=="3"?"active":"")">
+        <li class="@(menuID=="3"?"active":"")">
             <a data-ajax="" href="/Member/Like?menuid=3"><i class="fa fa-star-o mr6"></i>收藏</a>
         </li>
-        <li class="@(menuID=="4"?"active":"")" >
+        <li class="@(menuID=="4"?"active":"")">
             <a data-ajax="" href="/Member/Comment?menuid=4"><i class="fa fa-comments-o mr6"></i>评论</a>
         </li>
-        <li class="@(menuID=="5"?"active":"")" >
+        <li class="@(menuID=="5"?"active":"")">
             <a data-ajax="" href="/Member/Focus?menuid=5"><i class="fa fa-heart-o mr6"></i>关注</a>
         </li>
         <li class="@(menuID=="6"?"active":"")">
-            <a  data-ajax="" href="/Member/OpneVIP?menuid=6"><i class="fa fa-user-o mr6"></i>资料</a>
+            <a data-ajax="" href="/Member/OpneVIP?menuid=6"><i class="fa fa-user-o mr6"></i>资料</a>
+        </li>
+        <li class="@(menuID=="7"?"active":"")">
+            <a data-ajax="" href="/Member/Goods?menuid=7">
+                <i data-class="icon" data-viewBox="0 0 1024 1024" data-svg="like" aria-hidden="true"></i>
+           
+                点赞
+            </a>
         </li>
     </ul>
 </div>

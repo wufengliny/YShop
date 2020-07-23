@@ -19,14 +19,14 @@ namespace DAL
             str += "  where cu.UID="+UID+" ";
             MAspNetPager modelp = new MAspNetPager()
             {
-                OrderString = "cu.AddTime desc",
+                OrderString = "AddTime desc",
                 PageIndex = pageIndex,
                 PageSize = pageSize,
                 ReFieldsStr = "*",
                 TableName = "(" + str + ") rest",
                 WhereString = ""
             };
-            return AspNetPagerList.PagerLsit<MC_Vedios>(modelp);
+            return AspNetPagerList.PagerLsit<MC_UserLikes>(modelp);
         }
 
         /// <summary>

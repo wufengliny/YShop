@@ -12,6 +12,24 @@ namespace DAL
 {
     public class DC_UserGoods
     {
+
+        public List<object> PagerGoods(int pageIndex, int pageSize, int UID)
+        {
+            string str = " select cu.UID,cu.VedioID,cu.AddTime, cv.Name as VedioName,cv.Cover from  ";
+            str += "  C_UserGoods   cu left join C_Vedios cv on cu.VedioID=cv.ID   ";
+            str += "  where cu.UID=" + UID + " ";
+            MAspNetPager modelp = new MAspNetPager()
+            {
+                OrderString = "AddTime desc",
+                PageIndex = pageIndex,
+                PageSize = pageSize,
+                ReFieldsStr = "*",
+                TableName = "(" + str + ") rest",
+                WhereString = ""
+            };
+            return AspNetPagerList.PagerLsit<MC_UserGoods>(modelp);
+        }
+
         /// <summary>
         /// 增加一条数据(表C_UserGoods)
         /// </summary>
