@@ -80,7 +80,20 @@ namespace DAL
             parameters[2].Value = model.Memo;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
         }
-
+        public int EditPwd(MS_User model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE S_User SET ");
+            strSql.Append("Pwd=@Pwd ");
+            strSql.Append(" WHERE ID=@ID");
+            SqlParameter[] parameters = {
+                new SqlParameter("@ID", SqlDbType.Int,4),
+               new SqlParameter("@Pwd", SqlDbType.NVarChar,100)
+              };
+            parameters[0].Value = model.ID;
+            parameters[1].Value = model.Pwd;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+        }
         /// <summary>
         /// 禁用 启用
         /// </summary>

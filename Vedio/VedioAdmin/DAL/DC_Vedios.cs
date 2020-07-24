@@ -219,6 +219,27 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), param);
         }
+
+        public int UpdateOther(int ID, int Hits,int Goods,int Likes)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("UPDATE C_Vedios SET ");
+            strSql.Append("Hits=@Hits,");
+            strSql.Append("Goods=@Goods,");
+            strSql.Append("Likes=@Likes ");
+            strSql.Append(" WHERE ID=@ID");
+            SqlParameter[] parameters = {
+                new SqlParameter("@ID", SqlDbType.Int,4),
+               new SqlParameter("@Hits", SqlDbType.Int,9),
+                new SqlParameter("@Goods", SqlDbType.Int,9),
+                 new SqlParameter("@Likes", SqlDbType.Int,9)
+               };
+            parameters[0].Value = ID;
+            parameters[1].Value = Hits;
+            parameters[2].Value = Goods;
+            parameters[3].Value = Likes;
+            return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), parameters);
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -265,5 +286,49 @@ namespace DAL
             param.Value = ID;
             return SQLHelper.ExecuteNonQuery(CommandType.Text, strSql.ToString(), param);
         }
+
+        public int DataNumSet(string setType, int Hits , int Goods , int Likes , decimal Price)
+        {
+            StringBuilder sb = new StringBuilder("");
+            string sign = string.Empty;
+            switch(setType)
+            {
+                case "val":
+                    sign = "";
+                    break;
+                case "add":
+                    sign = "+";
+                    break;
+                case "minus":
+                    sign = "-";
+                    break;
+            }
+            if(Hits>-1)
+            {
+                sb.AppendLine(" update C_Vedios set Hits "+ sign + "="+Hits +" ;");
+            }
+            if (Goods > -1)
+            {
+                sb.AppendLine(" update C_Vedios set Goods " + sign + "=" + Goods + " ;");
+            }
+            if(Likes>-1)
+            {
+                sb.AppendLine(" update C_Vedios set Likes " + sign + "=" + Likes + " ;");
+            }
+            if(Price>-1)
+            {
+                sb.AppendLine(" update C_Vedios set Price " + sign + "=" + Price + " ;");
+            }
+            string sqltxt = sb.ToString();
+            if (!string.IsNullOrEmpty(sqltxt))
+            {
+                return SQLHelper.ExecuteNonQuery(CommandType.Text, sqltxt);
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
     }
 }

@@ -7,6 +7,7 @@ using VedioAdmin.Filters;
 using BLL;
 using Entity;
 using Webdiyer.WebControls.Mvc;
+using System.CodeDom;
 
 namespace VedioAdmin.Controllers
 {
@@ -341,6 +342,32 @@ namespace VedioAdmin.Controllers
             }
             
         }
+
+        /// <summary>
+        /// 浏览量  收藏  点赞 -- 添加时间
+        /// </summary>
+        /// <returns></returns>
+        [Power("VediosSetOther", ComEnum.OpenTypeEnum.Dialog)]
+        [HttpGet]
+        public ActionResult SetOther(int ID)
+        {
+            MC_Vedios model = new BC_Vedios().GetModelByID(ID);
+            return View(model);
+        }
+        [HttpPost]
+        [Power("VediosSetOther", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult SetOther(int ID, int txtHits,int txtGoods,int txtLikes)
+        {
+            int res= new BC_Vedios().UpdateOther(ID,txtHits,txtGoods,txtLikes);
+            if (res > 0)
+            {
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
+        }
         #endregion
 
 
@@ -483,8 +510,41 @@ namespace VedioAdmin.Controllers
             {
                 return Content("操作失败");
             }
-        } 
+        }
         #endregion
 
+        #region 数据配置
+        /// <summary>
+        /// 点赞 访问 收藏 价格 数量配置
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Power("VedioDataNumSet", ComEnum.OpenTypeEnum.Page, true)]
+        public ActionResult DataNumSet()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Power("VedioDataNumSet", ComEnum.OpenTypeEnum.Ajax)]
+        public ActionResult DataNumSet(string setType, int Hits = -1, int Goods = -1, int Likes = -1, decimal Price = -1)
+        {
+            int res = new BC_Vedios().DataNumSet(setType, Hits, Goods, Likes, Price);
+            if (res > 0)
+            {
+                string sign = string.Empty;
+                OperateLogAdd("点赞 访问 收藏 价格 全局配置setType:" + setType + "Hits:" + Hits + "Goods:" + Goods + "Likes:" + Likes + "Price:" + Price, false);
+                return Content("操作成功");
+            }
+            else
+            {
+                return Content("操作失败");
+            }
+
+        }
+
+
+        #endregion
     }
+
+
 }

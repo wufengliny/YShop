@@ -316,6 +316,8 @@
     <Content Include="Views\User\Add.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\VIPLoad.cshtml" />
+    <Content Include="Views\Vedios\DataNumSet.cshtml" />
+    <Content Include="Views\Vedios\SetOther.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

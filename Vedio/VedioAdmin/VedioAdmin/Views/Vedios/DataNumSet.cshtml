@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "数据配置";
+}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h3 class="page-header">点赞 访问 收藏 价格 全局配置</h3>
+    <div id="error-panel"></div>
+    <div id="container" class="table-responsive">
+        <form class="form-inline" id="_ModalForm">
+            <table class="table table-striped table-hover table-bordered">
+                <tr>
+                    <td>
+                        访问数
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Hits" id="Hits" type="number" placeholder="放空不修改" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        点赞数
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Goods" id="Goods"
+                               placeholder="放空不修改" type="number" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        收藏数
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Likes" id="Likes"
+                               placeholder="放空不修改" type="number" value="" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        价格
+                    </td>
+                    <td colspan="3">
+                        <input class="form-control" name="Price" id="Price"
+                               placeholder="放空不修改" type="number" value="" />
+                    </td>
+                </tr>
+            </table>
+            <div>
+                <button type="button" onclick="dosub('val')" class="btn btn-primary">全部配置为输入值</button>
+                <button type="button" onclick="dosub('add')" class="btn btn-warning">全部增加对应值</button>
+                <button type="button" onclick="dosub('minus')" class="btn btn-danger">全部减少对应值</button>
+            </div>
+            <input type="hidden" name="setType" id="setType" value="" />
+        </form>
+        
+    </div>
+</div>
+
+<style>
+    input {
+        max-width: 700px;
+    }
+</style>
+<script>
+    function dosub(setType) {
+        $("#setType").val(setType);
+        var data = $("#_ModalForm").serialize();
+        $.post("/Vedios/DataNumSet", data, function (res) {
+            alert(res);
+        })
+    }
+</script>
+@*<script src="~/Content/js/jquery-1.10.2.min.js"></script>*@
+
+
+
+
+
+
+

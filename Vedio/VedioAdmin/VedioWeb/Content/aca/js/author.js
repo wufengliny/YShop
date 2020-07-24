@@ -2,39 +2,6 @@ tbfine(function () {
     return {
         init: function () {
             var ajax_url = _win.uri + '/action/user.php';
-            function save_userdata(data, c, _this) {
-                //console.log(data);
-                notyf("正在处理请稍等...", "load", "", "user_ajax"),
-                    _this.attr('disabled', true),
-                    c = c || "处理完成";
-                $.ajax({
-                    type: "POST",
-                    url: ajax_url,
-                    data: data,
-                    dataType: "json",
-                    success: function (n) {
-                       // console.log(n);
-                        ys = (n.ys ? n.ys : (n.error ? 'danger' : ""));
-                        notyf(n.msg || c, ys, '', 'user_ajax');
-                        _this.attr('disabled', false);
-                        n.error || _this.parents('form').find("input:password").val("");
-                    }
-                });
-            }
-            //社交帐号解绑
-            _win.bd.on("click", '.oauth-untying', function (e) {
-                var r= confirm( "确认要解除帐号绑定吗？" );
-                if (r==true){
-                    data = {};
-                    _this = $(this);
-                    data['action'] = 'oauth.untying';
-                    data['user_id'] = _this.attr('user-id');
-                    data['type'] = _this.attr('untying-type');
-                    save_userdata(data, '已解除绑定', $(this))
-                }
-            })
-
-
             //支付订单AJAX翻页
             _win.bd.on("click", '.order-ajax-next', function (e) {
                     /*  AJAX获取包装函数   (必须)
@@ -114,13 +81,6 @@ tbfine(function () {
                 var form = _this.parents('form');
                 var inputs = form.serializeObject();
                 switch (type) {
-                    case 'data.set':
-                        var form = _this.parents('form');
-                        var inputs = form.serializeObject();
-
-                        save_userdata(inputs, '保存成功', _this);
-
-                        break;
                     case 'info.upload':
                         if (up_djyz) {
                             notyf('正在处理中，请勿重复提交', 'warning', '2000');

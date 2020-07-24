@@ -178,6 +178,7 @@
                                     }
                                 }
                                 <a class="btn btn-danger btn-xs" onclick="Dodelete(@item.ID)">删除</a>
+                                <a class="btn btn-success btn-xs" onclick="doOther(@item.ID)">其它</a>
                             </td>
                         </tr>
                     }
@@ -202,6 +203,9 @@
 
         function create() {
              $loadModal('/Vedios/Add');
+        }
+        function doOther(ID) {
+            $loadModal('/Vedios/SetOther?ID=' + ID);
         }
         function edit(id) {
             $loadModal('/Vedios/Add?id=' + id);

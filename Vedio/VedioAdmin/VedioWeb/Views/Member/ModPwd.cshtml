@@ -62,7 +62,7 @@
                                 <div class="tab-content author-tab-set">
                                     <div class="tab-pane list-unstyled fade in active" id="author-tab-dataset">
                                         <div class="theme-box">
-                                            <form>
+                                            <form id="subform">
                                                 <div class="zib-widget">
                                                     <div class="box-body">
                                                         <div class="title-h-left">
@@ -76,7 +76,7 @@
                                                         <div class="author-set-left">原密码</div>
                                                         <div class="author-set-right">
                                                             <div class="relative">
-                                                                <input type="password" class="form-control" name="passwordold" placeholder="请输入原密码">
+                                                                <input type="password" class="form-control" id="passwordold" name="passwordold" placeholder="请输入原密码">
                                                                 <label class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></label>
                                                             </div>
                                                         </div>
@@ -85,7 +85,7 @@
                                                         <div class="author-set-left">新密码</div>
                                                         <div class="author-set-right">
                                                             <div class="relative">
-                                                                <input type="password" class="form-control" name="password" placeholder="请输入新密码">
+                                                                <input type="password" class="form-control" id="password" name="password" placeholder="请输入新密码">
                                                                 <label class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></label>
                                                             </div>
                                                         </div>
@@ -94,7 +94,7 @@
                                                         <div class="author-set-left">确认新密码</div>
                                                         <div class="author-set-right">
                                                             <div class="relative">
-                                                                <input type="password" class="form-control" name="password2" placeholder="请再输入新密码">
+                                                                <input type="password" class="form-control" id="password2" name="password2" placeholder="请再输入新密码">
                                                                 <label class="abs-right passw muted-color"><i class="fa-fw fa fa-eye"></i></label>
                                                             </div>
                                                         </div>
@@ -102,9 +102,7 @@
                                                     <div class="box-body">
                                                         <div class="author-set-left"></div>
                                                         <div class="author-set-right">
-                                                            <button type="button" action="data.set" class="but b-theme padding-lg author-submit" name="submit">提交</button>
-                                                            <input type="hidden" name="user_id" value="2">
-                                                            <input type="hidden" name="action" value="password.edit">
+                                                            <button type="button" onclick="dosub()"  class="but b-theme padding-lg author-submit" >提交</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -128,5 +126,34 @@
     @{Html.RenderPartial("/views/PartV/aca/ScrollTop.cshtml");}
 
     @{Html.RenderPartial("/views/PartV/aca/FooterJC.cshtml");}
+
+    <script>
+        function dosub() {
+            var passwordold = $("#passwordold").val();
+            if (passwordold == "") {
+                notyf("请输入原密码", "warning", 2);
+                return;
+            }
+            var password = $("#password").val();
+            var password2 = $("#password2").val();
+            if (password == "") {
+                notyf("请输入新密码", "warning", 2);
+                return;
+            }
+            if (password != password2) {
+                notyf("两次输入密码不一致", "warning", 2);
+                return;
+            }
+            var data = $("#subform").serialize();
+            $.post("/member/ModPwd", data, function (res) {
+                if (res == "操作成功") {
+                    notyf("修改成功", "", "2");
+                }
+                else {
+                    notyf(res, "warning", 2);
+                }
+            })
+        }
+    </script>
 </body>
 </html>

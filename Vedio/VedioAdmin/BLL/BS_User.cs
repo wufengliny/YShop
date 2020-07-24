@@ -25,6 +25,10 @@ namespace BLL
         {
             return dal.EditByAdmin(model);
         }
+        public int EditPwd(MS_User model)
+        {
+            return dal.EditPwd(model);
+        }
         public int UpdateEnable(int ID, int Enable)
         {
             return dal.UpdateEnable(ID,Enable);

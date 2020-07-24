@@ -76,6 +76,10 @@ namespace BLL
         {
             return dal.UpdateHit(ID);
         }
+        public int UpdateOther(int ID, int Hits, int Goods, int Likes)
+        {
+            return dal.UpdateOther(ID,Hits,Goods,Likes);
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -95,6 +99,10 @@ namespace BLL
         public int UpdateGoods(int ID, int AddOrCancel)
         {
             return dal.UpdateGoods(ID, AddOrCancel);
+        }
+        public int DataNumSet(string setType, int Hits, int Goods, int Likes, decimal Price)
+        {
+            return dal.DataNumSet(setType,Hits,Goods, Likes,Price);
         }
     }
 }
